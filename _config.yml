@@ -3,7 +3,7 @@ description: "Module handbook for the B.A. Games & Immersive Media"
 lang: en
 markdown: kramdown
 permalink: pretty
-baseurl: "/gmb-module-handbook"
+baseurl: "/GMB_Handbook"
 url: ""
 exclude:
   - README.md
