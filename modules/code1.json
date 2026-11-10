@@ -1,0 +1,131 @@
+{
+  "id": "code1",
+  "title": "Code 1",
+  "module_code": "IV-2023-2808",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "name": "Code 1",
+      "label": "a)",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know the basic concepts of interactive audio-visual applications."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand basic information structures for interactive 2D-graphics and audio as implemented by web-technologies."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "work with a programming language and use software development and source control environments."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse simple human-computer-interactions and use computational thinking to formulate algorithms for their realization"
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "be creative and experiment with procedural coding, web- and other technologies"
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate and improve their coded creations"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a) Code 1",
+      "items": [
+        "Creative Code",
+        "Web Fundamentals",
+        "2D-Scenegraph",
+        "Procedural Code",
+        "Coding Audio-Visuals",
+        "Computational Thinking"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a) Code 1",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a) Code 1",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a) Code 1",
+      "description": "Written Examination during semester (sbK)",
+      "graded_assessment": true,
+      "credits": 6
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
+  "lecturers": [
+    {
+      "component": "a) Code 1",
+      "names": [
+        "Prof. Jirka Dell´Oro-Friedl"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a) Code 1",
+      "reference": "Mozilla: MDN Web Docs, Mozilla Foundation, 2025, https://developer.mozilla.org/en-US/."
+    },
+    {
+      "component": "a) Code 1",
+      "reference": "Scharwies, Matthias: SELFHTML-Wiki, SELFHTML e.V., 2025, https://wiki.selfhtml.org/."
+    },
+    {
+      "component": "a) Code 1",
+      "reference": "Microsoft: TypeScript: JavaScript With Syntax For Types, Microsoft Corporation, 2025, https://www.typescriptlang.org/."
+    }
+  ],
+  "source_pages": [
+    10,
+    11,
+    12
+  ],
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 10–12."
+}

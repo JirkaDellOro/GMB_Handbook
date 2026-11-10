@@ -1,0 +1,148 @@
+{
+  "id": "stem1",
+  "title": "STEM 1",
+  "module_code": "IV-2023-2809",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "STEM 1 Seminar",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "3 SWS / 33.75h",
+      "self_study_hours": 90,
+      "class_size": 35
+    },
+    {
+      "label": "b)",
+      "name": "STEM 1 Practical",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "1 SWS / 11.25h",
+      "self_study_hours": 45,
+      "class_size": 20
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "reliably reproduce central basic concepts of projection (set theory).",
+        "know how to articulate geometric questions precisely using the appropriate technical terms."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "recognise, understand and reproduce, meaningful connections and proof elements or derivations in the field of geometry and the mapping of three-dimensional objects on two-dimensional planes."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply techniques of vector calculus and matrix algebra to geometrical problems and to questions of the position and representation of spatial objects."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse geometric problems in the plane and space, while selecting the appropriate tools from those provided."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "items": [
+        "Coordinates of Points and Vectors, Change of Coordinate Frames",
+        "Systems of Linear Equations",
+        "Metric Spaces: Distances, Lengths, Angles",
+        "Matrices, Linear and Affine Transformations",
+        "Homogeneous Coordinates",
+        "Parallel, Axonometric and Orthographic Projections",
+        "Linear Perspective: Image Construction using Desargues' Theorem",
+        "Points at Infinity and Vanishing Points",
+        "Projection Matrices: Unified Approach",
+        "Camera Models in Computer Graphics and Computer Vision"
+      ]
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "items": [
+        "All contents of course a) are applied and practised."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "items": [
+        "Seminar",
+        "--"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "items": [
+        "None"
+      ]
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "description": "",
+      "graded_assessment": null,
+      "credits": null
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "description": "",
+      "graded_assessment": null,
+      "credits": null
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Dr. Thomas Schneider",
+  "lecturers": [],
+  "reading_list": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "reference": "Anton, Howard; Rorres, Chris; Kaul, Anton: Elementary Linear Algebra: Applications Version (12th Edition), Wiley, 2019, ISBN: 1119282365."
+    },
+    {
+      "component": "a) STEM 1 Seminar",
+      "reference": "Lengyel, Eric: Mathematics for 3D Game Programming and Computer Graphics (3rd Edition), Cengage Learning PTR, 2011, ISBN: 1435458869."
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "reference": "See course a). --"
+    }
+  ],
+  "source_pages": [
+    16,
+    17,
+    18,
+    19
+  ],
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 16, 17, 18, 19."
+}

@@ -1,0 +1,122 @@
+{
+  "id": "project1",
+  "title": "Project 1",
+  "module_code": "IV-2023-2807",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Entry Project - No Code",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 20
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "specify the basics of agile projects.",
+        "specify the basics of agile learning."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand the benefits of agility.",
+        "understand the basics of No-Code/Low-Code game development."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "reflect their personal skills for team projects."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "present their results to an audience.",
+        "develop a simple computer game in a playful approach."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "understand the impact of following courses.",
+        "evaluate the limitations of No-Code/Low-Code game development."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a) Entry Project - No Code",
+      "items": [
+        "No-Code/Low-Code game project",
+        "Agile mindset",
+        "Project-based learning",
+        "Methods (Scrum, Kanban, Team Building)",
+        "Game design documents",
+        "Developing a simple computer game",
+        "Presentation and event planning"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a) Entry Project - No Code",
+      "items": [
+        "Project"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a) Entry Project - No Code",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a) Entry Project - No Code",
+      "description": "--",
+      "graded_assessment": null,
+      "credits": null
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Nikolaus Hottong",
+  "lecturers": [
+    {
+      "component": "a) Entry Project - No Code",
+      "names": [
+        "Prof. Dr. Uwe Hahne"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a) Entry Project - No Code",
+      "reference": "Depending on subject of study and task. --"
+    }
+  ],
+  "source_pages": [
+    13,
+    14,
+    15
+  ],
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 13, 14, 15."
+}

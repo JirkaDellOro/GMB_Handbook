@@ -1,0 +1,123 @@
+{
+  "id": "visual1",
+  "title": "Visual 1",
+  "module_code": "IV-2023-2811",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Visual 1",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 20
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "gain knowledge of and practice the essential basics of visual design."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand artistic processes and assess composition and design."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "develop and implement design concepts."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "break down creative processes, analyse design parameters and visualize production processes."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "combine creative processes to create coherent design concepts for immersive media."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "iterative evaluation of own work and implementation of visual adjustments."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a) Visual 1",
+      "items": [
+        "Draft and sketching",
+        "Figurative thinking",
+        "Storyboard",
+        "Colour theory and practical application",
+        "Visual character-development",
+        "UI design basics"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a) Visual 1",
+      "items": [
+        "Seminar / Practical/lab"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a) Visual 1",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a) Visual 1",
+      "description": "",
+      "graded_assessment": null,
+      "credits": null
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Niv Shpigel",
+  "lecturers": [
+    {
+      "component": "a) Visual 1",
+      "names": [
+        "Prof. Niv Shpigel"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a) Visual 1",
+      "reference": "Will be given in lecture as applicable. --"
+    }
+  ],
+  "source_pages": [
+    23,
+    24,
+    25
+  ],
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 23, 24, 25."
+}
