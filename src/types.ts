@@ -41,10 +41,7 @@ export interface ModuleData {
   extraction_note?: string;
 }
 
-export interface ModuleManifestEntry {
-  id: string;
-  file: string;
+export interface SemesterGroup {
   title: string;
-  semester?: number | string;
-  credits?: number | string;
+  modules: string[];
 }

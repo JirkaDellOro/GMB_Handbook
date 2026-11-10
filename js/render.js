@@ -24,23 +24,26 @@ function section(title, parent) {
     parent.append(node);
     return node;
 }
-export function renderModuleTile(entry) {
+export function renderModuleTile(module) {
     const link = el('a', 'module-tile');
-    link.href = `./module.html?id=${encodeURIComponent(entry.id)}`;
-    appendText(link, 'span', String(entry.semester ?? '').padStart(2, '0'), 'tile-number');
+    link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
+    appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'), 'tile-number');
     const main = el('span', 'tile-main');
-    appendText(main, 'strong', entry.title);
-    appendText(main, 'small', `Semester ${entry.semester ?? '—'} · Required module`);
+    appendText(main, 'strong', module.title);
+    appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
     link.append(main);
-    appendText(link, 'span', `${entry.credits ?? '—'} ECTS`, 'tile-credits');
+    appendText(link, 'span', `${module.credits ?? '—'} ECTS`, 'tile-credits');
     appendText(link, 'span', '↗', 'tile-arrow');
     return link;
 }
-export function renderModuleList(target, entries) {
+export async function renderModuleList(target, semesters, loadModule) {
     target.replaceChildren();
-    const sorted = [...entries].sort((a, b) => Number(a.semester ?? 99) - Number(b.semester ?? 99) || a.title.localeCompare(b.title));
-    for (const entry of sorted)
-        target.append(renderModuleTile(entry));
+    for (const semester of semesters) {
+        const group = section(semester.title, target);
+        const modules = await Promise.all(semester.modules.map(id => loadModule(id)));
+        for (const module of modules)
+            group.append(renderModuleTile(module));
+    }
 }
 export function renderModuleDetail(target, module) {
     target.replaceChildren();

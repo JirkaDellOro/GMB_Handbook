@@ -1,14 +1,14 @@
-import type { ModuleData, ModuleManifestEntry } from './types.js';
+import type { ModuleData, SemesterGroup } from './types.js';
 
 const MODULES_PATH = './modules/';
-let manifestPromise: Promise<ModuleManifestEntry[]> | undefined;
+let manifestPromise: Promise<SemesterGroup[]> | undefined;
 const moduleCache = new Map<string, Promise<ModuleData>>();
 
-export function loadManifest(): Promise<ModuleManifestEntry[]> {
+export function loadManifest(): Promise<SemesterGroup[]> {
   if (!manifestPromise) {
-    manifestPromise = fetch(`${MODULES_PATH}manifest.json`)
+    manifestPromise = fetch('./manifest.json')
       .then(checkResponse)
-      .then(response => response.json() as Promise<ModuleManifestEntry[]>);
+      .then(response => response.json() as Promise<SemesterGroup[]>);
   }
   return manifestPromise;
 }

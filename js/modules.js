@@ -3,7 +3,7 @@ let manifestPromise;
 const moduleCache = new Map();
 export function loadManifest() {
     if (!manifestPromise) {
-        manifestPromise = fetch(`${MODULES_PATH}manifest.json`)
+        manifestPromise = fetch('./manifest.json')
             .then(checkResponse)
             .then(response => response.json());
     }
