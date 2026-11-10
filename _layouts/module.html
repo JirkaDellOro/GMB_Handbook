@@ -27,10 +27,22 @@ layout: default
     <div class="component-card">
       <h3>{{ component.label }} {{ component.name }}</h3>
       <dl class="detail-grid">
-        <div><dt>Language</dt><dd>{{ component.language | join: ' / ' }}</dd></div>
-        <div><dt>Contact hours</dt><dd>{{ component.contact_hours }}</dd></div>
-        <div><dt>Self-study</dt><dd>{{ component.self_study_hours }} h</dd></div>
-        <div><dt>Class size</dt><dd>{{ component.class_size }}</dd></div>
+        <div>
+          <dt>Language</dt>
+          <dd>{{ component.language | join: ' / ' }}</dd>
+        </div>
+        <div>
+          <dt>Contact hours</dt>
+          <dd>{{ component.contact_hours }}</dd>
+        </div>
+        <div>
+          <dt>Self-study</dt>
+          <dd>{{ component.self_study_hours }} h</dd>
+        </div>
+        <div>
+          <dt>Class size</dt>
+          <dd>{{ component.class_size }}</dd>
+        </div>
       </dl>
     </div>
     {% endfor %}
@@ -52,24 +64,30 @@ layout: default
   <section class="content-section">
     <h2>Individual Component Content</h2>
     {% for section in module.individual_component_content %}
-      <h3>{{ section.component }}</h3>
-      <ul class="tag-list">{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>
+    <h3>{{ section.component }}</h3>
+    <ul class="tag-list">{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>
     {% endfor %}
   </section>
 
   <section class="two-column-sections">
-    <div class="content-section"><h2>Teaching Methods</h2>
-      {% for section in module.teaching_methods %}<h3>{{ section.component }}</h3><ul>{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
+    <div class="content-section">
+      <h2>Teaching Methods</h2>
+      {% for section in module.teaching_methods %}<h3>{{ section.component }}</h3>
+      <ul>{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
     </div>
-    <div class="content-section"><h2>Prerequisites</h2>
-      {% for section in module.prerequisites %}<h3>{{ section.component }}</h3><ul>{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
+    <div class="content-section">
+      <h2>Prerequisites</h2>
+      {% for section in module.prerequisites %}<h3>{{ section.component }}</h3>
+      <ul>{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endfor %}
     </div>
   </section>
 
   <section class="content-section">
     <h2>Methods of Assessment</h2>
     {% for item in module.assessment %}
-    <div class="assessment-row"><strong>{{ item.component }}</strong><span>{{ item.description }}</span><span>{% if item.graded_assessment %}Graded assessment{% else %}Non-graded assessment{% endif %}</span><strong>{{ item.credits }} CP</strong></div>
+    <div class="assessment-row"><strong>{{ item.component }}</strong><span>{{ item.description }}</span><span>{% if
+        item.graded_assessment %}Graded assessment{% else %}Non-graded assessment{% endif %}</span><strong>{{
+        item.credits }} CP</strong></div>
     {% endfor %}
   </section>
 
@@ -82,19 +100,25 @@ layout: default
   <section class="content-section">
     <h2>Person responsible for Module and Lecturers</h2>
     <p><strong>Person responsible for module:</strong> {{ module.responsible_person }}</p>
-    {% for item in module.lecturers %}<p><strong>{{ item.component }}</strong><br>{{ item.names | join: ', ' }}</p>{% endfor %}
+    {% for item in module.lecturers %}<p><strong>{{ item.component }}</strong><br>{{ item.names | join: ', ' }}</p>{%
+    endfor %}
   </section>
 
   <section class="content-section">
     <h2>Reading List</h2>
-    <ol class="reading-list">
+    <ul>
       {% for item in module.reading_list %}
-      <li>{{ item.author }}: <em>{{ item.title }}</em>, {{ item.publisher }}, {{ item.year }}, <a href="{{ item.url }}">{{ item.url }}</a></li>
+      <li>
+        {{ item.reference }}
+      </li>
       {% endfor %}
-    </ol>
+    </ul>
   </section>
   <p class="source-note">{{ module.extraction_note }}</p>
 </article>
 {% else %}
-<div class="notice"><h1>Module not found</h1><p>No JSON data was found for this module.</p></div>
+<div class="notice">
+  <h1>Module not found</h1>
+  <p>No JSON data was found for this module.</p>
+</div>
 {% endif %}

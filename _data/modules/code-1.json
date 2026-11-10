@@ -77,25 +77,16 @@
   ],
   "reading_list": [
     {
-      "author": "Mozilla",
-      "title": "MDN Web Docs",
-      "publisher": "Mozilla Foundation",
-      "year": 2025,
-      "url": "https://developer.mozilla.org/en-US/"
+      "component": "a) Code 1",
+      "reference": "Mozilla: MDN Web Docs, Mozilla Foundation, 2025, https://developer.mozilla.org/en-US/."
     },
     {
-      "author": "Scharwies, Matthias",
-      "title": "SELFHTML-Wiki",
-      "publisher": "SELFHTML e.V.",
-      "year": 2025,
-      "url": "https://wiki.selfhtml.org/"
+      "component": "a) Code 1",
+      "reference": "Scharwies, Matthias: SELFHTML-Wiki, SELFHTML e.V., 2025, https://wiki.selfhtml.org/."
     },
     {
-      "author": "Microsoft",
-      "title": "TypeScript: JavaScript With Syntax For Types.",
-      "publisher": "Microsoft Corporation",
-      "year": 2025,
-      "url": "https://www.typescriptlang.org/"
+      "component": "a) Code 1",
+      "reference": "Microsoft: TypeScript: JavaScript With Syntax For Types, Microsoft Corporation, 2025, https://www.typescriptlang.org/."
     }
   ],
   "source_pages": [10, 11, 12],
