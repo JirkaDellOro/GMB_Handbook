@@ -1,0 +1,16 @@
+---
+layout: default
+title: Modules
+permalink: /modules/
+---
+<div class="listing-heading"><p class="eyebrow">Games &amp; Immersive Media B.A.</p><h1>Modules</h1><p>Browse the modules currently included in this test project.</p></div>
+<div class="module-list">
+{% for pair in site.data.modules %}
+  {% assign module = pair[1] %}
+  <a class="module-tile" href="{{ '/modules/' | append: pair[0] | append: '/' | relative_url }}">
+    <span class="tile-number">{% if module.semester < 10 %}0{% endif %}{{ module.semester }}</span>
+    <span class="tile-main"><strong>{{ module.title }}</strong><small>Semester {{ module.semester }} · Required module</small></span>
+    <span class="tile-credits">{{ module.credits }} ECTS</span><span class="tile-arrow">↗</span>
+  </a>
+{% endfor %}
+</div>

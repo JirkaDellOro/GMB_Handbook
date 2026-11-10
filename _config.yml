@@ -1,0 +1,11 @@
+title: "Games & Immersive Media – Module Handbook"
+description: "Module handbook for the B.A. Games & Immersive Media"
+lang: en
+markdown: kramdown
+permalink: pretty
+baseurl: "/gmb-module-handbook"
+url: ""
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
