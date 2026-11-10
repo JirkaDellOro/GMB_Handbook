@@ -1,0 +1,121 @@
+{
+  "id": "project-3",
+  "title": "Project 3",
+  "module_code": "IV-2024-2888",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Project 3 - Intermediate Digital",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "3 SWS / 33.75h",
+      "self_study_hours": 146.25,
+      "class_size": 20
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "gain experience working on a project in a team."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand agile project management."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply the skills and knowledge acquired in the other modules so far."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse and detect interesting opportunities for human-computer-interaction within given constraints."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "design, create and present a simple digital prototype of an interactive, immersive application or game."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate their prototype e.g., by conducting user tests and recommend improvements."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "items": [
+        "Design and creation of a simple interactive application",
+        "Practical application of various skills acquired in previous modules",
+        "Implementation of graphics, sound, behaviour, animation, text",
+        "Team- and project management",
+        "Practice visualization, documentation, communication, presentation",
+        "Work with digital material to create prototypes"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "items": [
+        "Project"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "description": "",
+      "graded_assessment": null,
+      "credits": null
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Dean of Studies GMB",
+  "lecturers": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "names": []
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "reference": "Depending on subject of study and task. --"
+    }
+  ],
+  "source_pages": [
+    45,
+    46,
+    47
+  ],
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 45, 46, 47."
+}
