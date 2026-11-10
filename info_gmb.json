@@ -1,0 +1,499 @@
+{
+    "course": 9,
+    "spoVersion": 10,
+    "manualVersion": 5,
+    "effectiveSince": "SoSe24",
+    "lastChangeInfo": "Last Change : 07.02.2024 - SPO Version 10 (As of 13.12.2023)",
+    "imagePath": {
+        "courseOfStudies": 9,
+        "courseName": "GMB",
+        "path": "/KV_GMB.jpg"
+    },
+    "masterFlag": false,
+    "electivePart": false,
+    "infoTextMain": "§ 87 Bachelor Study Programme - Games & Immersive Media",
+    "infoTextParts": [
+        {
+            "part": "The total number of required and elective courses necessary, including the internship semester, for successful completion of the programme is 210 credit points (ECTS)."
+        },
+        {
+            "part": "In the Games & Immersive Media study programme, the foundation level studies comprise two curricular semesters, while the advanced level studies comprise five curricular semesters."
+        },
+        {
+            "part": "The fifth curricular semester is the internship semester."
+        },
+        {
+            "part": "Regarding the regulations for study semesters abroad, refer to § 3a in the General Section of the General Bachelor SPO."
+        },
+        {
+            "part": "The elective area serves to deepen and expand the degree content autonomously. The following general regulations apply to the electives:",
+            "subparts": [
+                "A total of four elective modules (Elective 1-4) must be completed during the advanced level studies, which specifically deepen the topics of the GMB programme. The Faculty Business, Design & Media offers regularly in-depth elective modules and individual classes / courses.",
+                "Courses offered outside the Faculty Digital Media can also be recognised if approved by the Dean of Studies.",
+                "Every elective module requires a total of 6 credit points. At least 50%/half of the credit points must be achieved in the graded assessment.",
+                "Until the end of the programme, students may combine completed individual classes into a maximum of two elective modules. This also applies to the so-called heterogeneous modules."
+            ]
+        },
+        {
+            "part": "Graded certificate and bachelor degree certificate are issued in English."
+        },
+        {
+            "part": "The courses required for successful completion of the programme and the associated non-graded and graded assessments are found in Table 2 for the foundation level studies and in Table 3 for the advanced level studies. Table 1 shows an overview of the module structure."
+        }
+    ],
+    "moduleStructureInfo": [
+        {
+            "semester": 1,
+            "order": 4,
+            "text": "Visual 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Visual 1",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 1,
+            "order": 1,
+            "text": "Code 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Code 1",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 1,
+            "order": 2,
+            "text": "Theory 1",
+            "width": 1,
+            "footnote": 1,
+            "events": [
+                {
+                    "eventName": "Computer Science and HCI Theory",
+                    "type": "V/S",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "work": "1R",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 1,
+            "order": 3,
+            "text": "STEM 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "STEM 1 Seminar",
+                    "type": "S",
+                    "sws": 3,
+                    "exam": "1K",
+                    "cp": 4
+                },
+                {
+                    "eventName": "STEM 1 Practical",
+                    "type": "P",
+                    "sws": 1,
+                    "work": "1sbA",
+                    "cp": 2
+                }
+            ]
+        },
+        {
+            "semester": 1,
+            "order": 5,
+            "text": "Project 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Entry Project - No Code",
+                    "type": "W",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 2,
+            "order": 4,
+            "text": "Visual 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Visual 2 - Game Asset Creation",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 2,
+            "order": 1,
+            "text": "Code 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Code 2",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 2,
+            "order": 3,
+            "text": "Sound 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Sound 1 - Basics of sound and music design",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 2,
+            "order": 2,
+            "text": "Theory 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Theory 2 - Game Design",
+                    "type": "S/P",
+                    "sws": 2,
+                    "exam": "1sbK",
+                    "cp": 3
+                },
+                {
+                    "eventName": "Theory 2 - Data Driven Game Design",
+                    "type": "S",
+                    "sws": 2,
+                    "exam": "1KO",
+                    "cp": 3
+                }
+            ]
+        },
+        {
+            "semester": 2,
+            "order": 5,
+            "text": "Project 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Project 2 - Physical Game",
+                    "type": "W",
+                    "sws": 3,
+                    "exam": "1A",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 3,
+            "order": 1,
+            "text": "Code 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Code 3 - Realtime Computer Graphics",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 3,
+            "order": 2,
+            "text": "Sound 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Sound 2 - Concepts and techniques in interactive and immersive audio design",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 3,
+            "order": 3,
+            "text": "STEM 2",
+            "width": 1,
+            "footnote": 1,
+            "events": [
+                {
+                    "eventName": "STEM 2",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbK, 1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 3,
+            "order": 4,
+            "text": "Visual 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Visual 3 - Game Character Design and Animation",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 3,
+            "order": 5,
+            "text": "Project 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Project 3 - Intermediate Digital Project",
+                    "type": "W",
+                    "sws": 3,
+                    "exam": "1A",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "order": 1,
+            "text": "Code 4",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Code 4",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1K",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "order": 2,
+            "text": "Theory 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Theory 3",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "order": 4,
+            "text": "STEM 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "STEM 3 - Physical Computing",
+                    "type": "S/P",
+                    "sws": 4,
+                    "exam": "1sbA",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "order": 3,
+            "text": "Business 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Business 1",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 4,
+            "order": 5,
+            "text": "Project 4",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Project 4 - Advanced Digital Project",
+                    "type": "W",
+                    "sws": 3,
+                    "exam": "1A",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 5,
+            "order": 1,
+            "text": "Internship",
+            "width": 5,
+            "events": [
+                {
+                    "eventName": "Internship",
+                    "type": "",
+                    "work": "1sbA",
+                    "cp": 28
+                },
+                {
+                    "eventName": "Seminar Internship",
+                    "type": "S",
+                    "sws": 1,
+                    "work": "1R",
+                    "cp": 2
+                }
+            ]
+        },
+        {
+            "semester": 6,
+            "order": 1,
+            "text": "Elective 1",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Elective Course (WPM) see (5)",
+                    "type": "",
+                    "exam": "PL",
+                    "work": "SL",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 6,
+            "order": 2,
+            "text": "Elective 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Elective Course (WPM) see (5)",
+                    "type": "",
+                    "exam": "PL",
+                    "work": "SL",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 6,
+            "order": 3,
+            "text": "Business 2",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Business 2",
+                    "type": "S",
+                    "sws": 4,
+                    "exam": "1sbK",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 6,
+            "order": 4,
+            "text": "Project 5",
+            "width": 2,
+            "events": [
+                {
+                    "eventName": "Project 5 - Complex Digital Project",
+                    "type": "W",
+                    "sws": 3,
+                    "exam": "1A",
+                    "cp": 12
+                }
+            ]
+        },
+        {
+            "semester": 7,
+            "order": 1,
+            "text": "Elective 3",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Elective Course (WPM) see (5)",
+                    "type": "",
+                    "exam": "PL",
+                    "work": "SL",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 7,
+            "order": 2,
+            "text": "Elective 4",
+            "width": 1,
+            "events": [
+                {
+                    "eventName": "Elective Course (WPM) see (5)",
+                    "type": "",
+                    "exam": "PL",
+                    "work": "SL",
+                    "cp": 6
+                }
+            ]
+        },
+        {
+            "semester": 7,
+            "order": 3,
+            "text": "Thesis",
+            "width": 3,
+            "events": [
+                {
+                    "eventName": "Bachelor thesis",
+                    "type": "",
+                    "exam": "1T",
+                    "cp": 12
+                },
+                {
+                    "eventName": "Thesis Seminar",
+                    "type": "S",
+                    "sws": 2,
+                    "work": "1PN",
+                    "cp": 6
+                }
+            ]
+        }
+    ],
+    "footnotes": [
+        "The total of the graded assessment is only passed if all multiple component assessments are graded at least “adequate” (4,0). In case of failure, only the failed component assessments must or may be repeated."
+    ],
+    "footerText": "MHB_GMB_SPO_10"
+}
