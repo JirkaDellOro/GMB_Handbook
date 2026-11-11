@@ -26,8 +26,8 @@
     {
       "category": "Knowledge",
       "items": [
-        "act as a team leader to produce interactive and immersive applications.",
-        "know he fundamentals of the publishing business and marketing"
+        "do advanced financial calculations used to create coherent cost budgets for development.",
+        "know the fundamentals of publishing and marketing in the gaming industry."
       ]
     },
     {
@@ -45,7 +45,13 @@
     {
       "category": "Synthesis",
       "items": [
-        "draft a business plan for a start-up based on a concept of a product to create."
+        "create a business plan for a start-up based on a concept of a product to create."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate potential, earning power, and sustainability of start-ups and projects."
       ]
     }
   ],
@@ -53,10 +59,11 @@
     {
       "component": "a) Business 2",
       "items": [
-        "Publishing",
+        "Advanced Financial Calculations",
         "Entrepreneurship",
         "Monetization",
-        "Marketing",
+        "Advanced Community Management",
+        "Producing",
         "Lifecycle Management"
       ]
     }
