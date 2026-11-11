@@ -187,24 +187,31 @@ export function renderModuleDetail(target, module) {
         facts.append(cell);
     }
     article.append(facts);
-    const components = section('Components', article);
+    const components = section('Course Components', article);
+    const componentScroll = el('div', 'table-scroll');
+    const componentTable = el('table', 'component-table');
+    const componentHead = el('thead');
+    const componentHeader = el('tr');
+    for (const heading of ['Component', 'Course type', 'Language', 'Contact hours', 'Self-study', 'Class size', 'ECTS'])
+        appendText(componentHeader, 'th', heading);
+    componentHead.append(componentHeader);
+    componentTable.append(componentHead);
+    const componentBody = el('tbody');
     for (const component of module.components ?? []) {
-        const card = el('div', 'component-card');
-        appendText(card, 'h3', `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim());
-        const details = el('dl', 'detail-grid');
-        const values = [
-            ['Language', component.language?.join(' / ')], ['Course type', component.course_type], ['Contact hours', component.contact_hours],
-            ['Self-study', component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`], ['Class size', component.class_size], ['Component ECTS', component.credit_points]
-        ];
-        for (const [label, value] of values) {
-            const wrap = el('div');
-            appendText(wrap, 'dt', label);
-            appendText(wrap, 'dd', value);
-            details.append(wrap);
-        }
-        card.append(details);
-        components.append(card);
+        const row = el('tr');
+        appendText(row, 'td', `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim());
+        appendText(row, 'td', component.course_type);
+        appendText(row, 'td', component.language?.join(' / '));
+        appendText(row, 'td', component.contact_hours);
+        appendText(row, 'td', component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`);
+        appendText(row, 'td', component.class_size);
+        appendText(row, 'td', component.credit_points);
+        componentBody.append(row);
     }
+    componentTable.append(componentBody);
+    componentScroll.append(componentTable);
+    components.append(componentScroll);
+
     const outcomes = section('Module Learning Outcomes', article);
     if (module.learning_outcomes_intro)
         appendText(outcomes, 'p', module.learning_outcomes_intro);
@@ -235,14 +242,28 @@ export function renderModuleDetail(target, module) {
     }
     article.append(twoCol);
     const assessment = section('Methods of Assessment', article);
+    const assessmentScroll = el('div', 'table-scroll');
+    const assessmentTable = el('table', 'assessment-table');
+    const assessmentHead = el('thead');
+    const assessmentHeader = el('tr');
+    for (const heading of ['Component', 'Code', 'Assessment', 'Grading', 'ECTS'])
+        appendText(assessmentHeader, 'th', heading);
+    assessmentHead.append(assessmentHeader);
+    assessmentTable.append(assessmentHead);
+    const assessmentBody = el('tbody');
     for (const item of module.assessment ?? []) {
-        const row = el('div', 'assessment-row');
-        appendText(row, 'strong', item.component);
-        appendText(row, 'span', item.description);
-        appendText(row, 'span', item.code ? `${item.code} · ${item.graded_assessment === null || item.graded_assessment === undefined ? '—' : item.graded_assessment ? 'Graded assessment' : 'Non-graded assessment'}` : (item.graded_assessment === null || item.graded_assessment === undefined ? '—' : item.graded_assessment ? 'Graded assessment' : 'Non-graded assessment'));
-        appendText(row, 'strong', item.credits === null || item.credits === undefined ? '—' : `${item.credits} CP`);
-        assessment.append(row);
+        const row = el('tr');
+        appendText(row, 'td', item.component);
+        appendText(row, 'td', item.code);
+        appendText(row, 'td', item.description);
+        appendText(row, 'td', item.graded_assessment === null || item.graded_assessment === undefined ? undefined : item.graded_assessment ? 'Graded' : 'Non-graded');
+        appendText(row, 'td', item.credits);
+        assessmentBody.append(row);
     }
+    assessmentTable.append(assessmentBody);
+    assessmentScroll.append(assessmentTable);
+    assessment.append(assessmentScroll);
+
     const applicability = section('Applicability of Module', article);
     appendText(applicability, 'p', 'Required module in:');
     addList(applicability, module.applicability);
