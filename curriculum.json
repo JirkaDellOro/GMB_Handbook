@@ -1,8 +1,8 @@
 {
   "columns": ["Visual", "Sound", "Theory", "STEM", "Code", "Business", "Electives", "Projects"],
   "studyStages": [
-    { "title": "Hauptstudium", "firstSemester": 3, "lastSemester": 7 },
-    { "title": "Grundstudium", "firstSemester": 1, "lastSemester": 2 }
+    { "title": "Advanced Studies", "firstSemester": 3, "lastSemester": 7 },
+    { "title": "Foundation Studies", "firstSemester": 1, "lastSemester": 2 }
   ],
   "modules": {
     "visual1": { "column": "Visual", "block": 3 },
