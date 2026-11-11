@@ -103,13 +103,15 @@
   "lecturers": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     }
   ],
   "reading_list": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "reference": "Depending on subject of study and task. --"
+      "reference": "Depending on subject of study and task."
     }
   ],
   "source_pages": [
