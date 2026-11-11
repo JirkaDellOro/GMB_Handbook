@@ -101,13 +101,15 @@
       "component": "a) STEM 2",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "description": "Written Exam during semester (sbK)"
     },
     {
       "component": "a) STEM 2",
       "code": "1sbA",
       "graded_assessment": true,
-      "credits": null
+      "credits": null,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
