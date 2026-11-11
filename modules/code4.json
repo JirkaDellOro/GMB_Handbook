@@ -98,10 +98,9 @@
   "assessment": [
     {
       "component": "a) Code 4",
-      "description": "",
+      "code": "1K",
       "graded_assessment": true,
-      "credits": null,
-      "code": "1K"
+      "credits": 6
     }
   ],
   "applicability": [
