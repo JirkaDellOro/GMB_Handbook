@@ -104,13 +104,15 @@
   "lecturers": [
     {
       "component": "a) Project 2 - Physical Game",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     }
   ],
   "reading_list": [
     {
       "component": "a) Project 2 - Physical Game",
-      "reference": "Depending on subject of study and task. --"
+      "reference": "Depending on subject of study and task."
     }
   ],
   "source_pages": [
