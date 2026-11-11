@@ -83,11 +83,10 @@
   ],
   "assessment": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
-      "description": "",
+      "component": "a) Code 3 - Realtime Computer",
+      "code": "1sbA",
       "graded_assessment": true,
-      "credits": null,
-      "code": "1sbA"
+      "credits": 6
     }
   ],
   "applicability": [
