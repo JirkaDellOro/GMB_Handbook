@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "V/S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -93,9 +95,15 @@
   ],
   "assessment": [
     {
-      "component": "a) Computer Science and HCI Theory",
-      "description": "",
-      "graded_assessment": null,
+      "component": "a) Computer Science and HCI",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": null
+    },
+    {
+      "component": "a) Computer Science and HCI",
+      "code": "1R",
+      "graded_assessment": false,
       "credits": null
     }
   ],
