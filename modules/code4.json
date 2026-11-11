@@ -95,10 +95,10 @@
   "assessment": [
     {
       "component": "a) Code 4",
-      "code": "1K",
+      "code": "1sbK",
       "graded_assessment": true,
       "credits": 6,
-      "description": "Written Examination (K)"
+      "description": "Written Examination during semester (sbK)"
     }
   ],
   "applicability": [
@@ -120,11 +120,5 @@
       "component": "a) Code 4",
       "reference": "Russell, Stuart; Norvig, Peter: Artificial Intelligence: A Modern Approach, Pearson, 2021, ISBN: 1292401133"
     }
-  ],
-  "source_pages": [
-    57,
-    58,
-    59
-  ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 57, 58, 59."
+  ]
 }

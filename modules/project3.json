@@ -14,8 +14,8 @@
       "language": [
         "English"
       ],
-      "contact_hours": "3 SWS / 33.75h",
-      "self_study_hours": 146.25,
+      "contact_hours": "6 SWS / 67.5h",
+      "self_study_hours": 112.5,
       "class_size": 20,
       "course_type": "W",
       "credit_points": 6
@@ -115,11 +115,5 @@
       "component": "a) Project 3 - Intermediate Digital Project",
       "reference": "Depending on subject of study and task."
     }
-  ],
-  "source_pages": [
-    42,
-    43,
-    44
-  ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 42, 43, 44."
+  ]
 }
