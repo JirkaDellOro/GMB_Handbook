@@ -1,7 +1,7 @@
 {
   "id": "theory2",
   "title": "Theory 2",
-  "module_code": "IV-2024-2872",
+  "module_code": "DM-2024-2872",
   "semester": 2,
   "workload_hours": 180,
   "credits": 6,
@@ -23,7 +23,7 @@
     },
     {
       "label": "b)",
-      "name": "Theory 2 - Data Driven Game",
+      "name": "Theory 2 - Data Driven Game Design",
       "language": [
         "German",
         "English"
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Data Driven Game Design Design",
       "items": [
         "Elementary Combinatorics",
         "Finite Probability Spaces: Examples",
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Data Driven Game Design Design",
       "items": [
         "Seminar"
       ]
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Data Driven Game Design Design",
       "items": [
         "None"
       ]
@@ -133,7 +133,7 @@
       "credits": 3
     },
     {
-      "component": "b) Theory 2 - Data Driven Game",
+      "component": "b) Theory 2 - Data Driven Game Design",
       "code": "1KO",
       "graded_assessment": true,
       "credits": 3
@@ -151,7 +151,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Data Driven Game Design Design",
       "names": [
         "Prof. Dr. Ekkehard Batzies"
       ]
@@ -179,7 +179,7 @@
       "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518."
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Data Driven Game Design Design",
       "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8. --"
     }
   ],

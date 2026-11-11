@@ -1,7 +1,7 @@
 {
   "id": "theory1",
   "title": "Theory 1",
-  "module_code": "IV-2023-2810",
+  "module_code": "DM-2023-2810",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -98,13 +98,13 @@
       "component": "a) Computer Science and HCI",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": null
+      "credits": 3
     },
     {
       "component": "a) Computer Science and HCI",
       "code": "1R",
       "graded_assessment": false,
-      "credits": null
+      "credits": 3
     }
   ],
   "applicability": [
