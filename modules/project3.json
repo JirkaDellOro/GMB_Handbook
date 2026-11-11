@@ -63,7 +63,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project Project",
+      "component": "a) Project 3 - Intermediate Digital Project",
       "items": [
         "Design and creation of a simple interactive application",
         "Practical application of various skills acquired in previous modules",
@@ -76,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project Project",
+      "component": "a) Project 3 - Intermediate Digital Project",
       "items": [
         "Project"
       ]
@@ -84,7 +84,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project Project",
+      "component": "a) Project 3 - Intermediate Digital Project",
       "items": [
         "None"
       ]
@@ -104,14 +104,16 @@
   "responsible_person": "Dean of Studies GMB",
   "lecturers": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project Project",
-      "names": []
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "names": [
+        "N.N."
+      ]
     }
   ],
   "reading_list": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project Project",
-      "reference": "Depending on subject of study and task. --"
+      "component": "a) Project 3 - Intermediate Digital Project",
+      "reference": "Depending on subject of study and task."
     }
   ],
   "source_pages": [
