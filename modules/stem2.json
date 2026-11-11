@@ -1,7 +1,7 @@
 {
   "id": "stem2",
   "title": "STEM 2",
-  "module_code": "IV-2024-2892",
+  "module_code": "DM-2024-2892",
   "semester": 3,
   "workload_hours": 180,
   "credits": 6,
@@ -96,7 +96,7 @@
       "component": "a) STEM 2",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": null
+      "credits": 6
     },
     {
       "component": "a) STEM 2",

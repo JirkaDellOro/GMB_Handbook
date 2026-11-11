@@ -1,9 +1,9 @@
 {
   "id": "project5",
   "title": "Project 5",
-  "module_code": "IV-2024-2899",
+  "module_code": "DM-2024-2899",
   "semester": 6,
-  "workload_hours": 371.25,
+  "workload_hours": 360,
   "credits": 12,
   "frequency": "WiSe",
   "duration": 1,
@@ -117,5 +117,5 @@
     83,
     84
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 82, 83, 84."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 82, 83, 84. The PDF lists 360 h as the module workload, but its component figures (45 h contact time + 326.25 h self-study) sum to 371.25 h. The module workload field follows the PDF header; component values are retained as printed."
 }

@@ -1,7 +1,7 @@
 {
   "id": "stem1",
   "title": "STEM 1",
-  "module_code": "IV-2023-2809",
+  "module_code": "DM-2023-2809",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -119,7 +119,7 @@
     {
       "component": "b) STEM 1 Practical",
       "code": "1sbA",
-      "graded_assessment": true,
+      "graded_assessment": false,
       "credits": 2
     }
   ],
