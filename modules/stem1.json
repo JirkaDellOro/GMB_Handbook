@@ -12,7 +12,6 @@
       "label": "a)",
       "name": "STEM 1 Seminar",
       "language": [
-        "German",
         "English"
       ],
       "contact_hours": "3 SWS / 33.75h",
@@ -25,7 +24,6 @@
       "label": "b)",
       "name": "STEM 1 Practical",
       "language": [
-        "German",
         "English"
       ],
       "contact_hours": "1 SWS / 11.25h",
@@ -137,10 +135,10 @@
     },
     {
       "component": "b) STEM 1 Practical",
-      "code": "1sbA",
+      "code": "1sbaL",
       "graded_assessment": false,
       "credits": 2,
-      "description": "Practical Assignment during semester (sbA)"
+      "description": "Laboratory work, normally with standard procedures"
     }
   ],
   "applicability": [
