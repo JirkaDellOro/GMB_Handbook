@@ -112,15 +112,19 @@
   ],
   "reading_list": [
     {
-      "component": "a) Code 2",
+      "component": "a) Code 1",
+      "reference": "Kecher, Christoph; Hoffmann-Elbern, Ralf; Will, Thorsten: UML 2.5, Rheinwerk Computing, 2021, ISBN: 978-3-8362-8447-9"
+    },
+    {
+      "component": "a) Code 1",
       "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/"
     },
     {
-      "component": "a) Code 2",
+      "component": "a) Code 1",
       "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Booklet.pdf"
     },
     {
-      "component": "a) Code 2",
+      "component": "a) Code 1",
       "reference": "Santamaria, Paula: TypeScript Gamified, Selfpublished 2026, https://paulasantamaria.gumroad.com/l/typescript-gamified"
     }
   ]
