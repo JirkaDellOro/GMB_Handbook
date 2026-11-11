@@ -66,6 +66,12 @@
       "items": [
         "incorporate acquired practical qualifications into the tasks of the degree programme and underpin them theoretically."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "better assess their own strengths and weaknesses and plan their further studies accordingly."
+      ]
     }
   ],
   "individual_component_content": [
@@ -131,12 +137,14 @@
   "lecturers": [
     {
       "component": "a) Internship",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     },
     {
       "component": "b) Seminar Internship",
       "names": [
-        "TBD"
+        "Prof. Jirka Dell´Oro-Friedl"
       ]
     }
   ],
@@ -147,7 +155,7 @@
     },
     {
       "component": "b) Seminar Internship",
-      "reference": "Will be given in lecture as applicable. --"
+      "reference": "Will be given in lecture as applicable."
     }
   ],
   "source_pages": [
