@@ -56,6 +56,12 @@
       "items": [
         "compare optical imaging in photography / cinematography and computer graphics / computer vision."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate different physics engines in terms of their functionality and simulation fidelity and realism."
+      ]
     }
   ],
   "individual_component_content": [
