@@ -1,4 +1,4 @@
-import type { ModuleData, SemesterGroup } from './types.js';
+import type { CurriculumData, ModuleData, SemesterGroup } from './types.js';
 
 const MODULES_PATH = './modules/';
 let manifestPromise: Promise<SemesterGroup[]> | undefined;
@@ -11,6 +11,10 @@ export function loadManifest(): Promise<SemesterGroup[]> {
       .then(response => response.json() as Promise<SemesterGroup[]>);
   }
   return manifestPromise;
+}
+
+export function loadCurriculum(): Promise<CurriculumData> {
+  return fetch('./curriculum.json').then(checkResponse).then(response => response.json() as Promise<CurriculumData>);
 }
 
 export function loadModule(id: string): Promise<ModuleData> {
