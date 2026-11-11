@@ -101,13 +101,13 @@
   ],
   "assessment": [
     {
-      "component": "a) Computer Science and HCI",
+      "component": "a) Computer Science and HCI Theory",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 3
     },
     {
-      "component": "a) Computer Science and HCI",
+      "component": "a) Computer Science and HCI Theory",
       "code": "1R",
       "graded_assessment": false,
       "credits": 3
