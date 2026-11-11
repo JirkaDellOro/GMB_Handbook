@@ -1,7 +1,7 @@
 {
   "id": "project3",
   "title": "Project 3",
-  "module_code": "IV-2024-2888",
+  "module_code": "DM-2024-2888",
   "semester": 3,
   "workload_hours": 180,
   "credits": 6,
@@ -10,7 +10,7 @@
   "components": [
     {
       "label": "a)",
-      "name": "Project 3 - Intermediate Digital",
+      "name": "Project 3 - Intermediate Digital Project",
       "language": [
         "German",
         "English"
@@ -63,7 +63,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project",
+      "component": "a) Project 3 - Intermediate Digital Project Project",
       "items": [
         "Design and creation of a simple interactive application",
         "Practical application of various skills acquired in previous modules",
@@ -76,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project",
+      "component": "a) Project 3 - Intermediate Digital Project Project",
       "items": [
         "Project"
       ]
@@ -84,7 +84,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project",
+      "component": "a) Project 3 - Intermediate Digital Project Project",
       "items": [
         "None"
       ]
@@ -92,7 +92,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Project 3 - Intermediate Digital",
+      "component": "a) Project 3 - Intermediate Digital Project",
       "code": "1A",
       "graded_assessment": true,
       "credits": 6
@@ -104,13 +104,13 @@
   "responsible_person": "Dean of Studies GMB",
   "lecturers": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project",
+      "component": "a) Project 3 - Intermediate Digital Project Project",
       "names": []
     }
   ],
   "reading_list": [
     {
-      "component": "a) Project 3 - Intermediate Digital Project",
+      "component": "a) Project 3 - Intermediate Digital Project Project",
       "reference": "Depending on subject of study and task. --"
     }
   ],
