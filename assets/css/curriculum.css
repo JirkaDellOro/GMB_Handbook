@@ -81,7 +81,6 @@
   padding: 4px 7px 17px;
 }
 .curriculum-module-cell .curriculum-module-title {
-  font-size: clamp(10px, 1vw, 14px);
   line-height: 1.1;
 }
 .curriculum-module-cell .curriculum-module-meta {
