@@ -10,15 +10,27 @@
   "components": [
     {
       "label": "a)",
-      "name": "STEM 2",
+      "name": "STEM 2 Seminar",
       "language": [
         "English"
       ],
-      "contact_hours": "4 SWS / 45h",
-      "self_study_hours": 135,
+      "contact_hours": "2 SWS / 22.5h",
+      "self_study_hours": 67.5,
       "class_size": 35,
       "course_type": "S",
-      "credit_points": 6
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "STEM 2 Implementation Lab",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "2 SWS / 22.5h",
+      "self_study_hours": 67.5,
+      "class_size": 35,
+      "course_type": "P",
+      "credit_points": 3
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -26,14 +38,12 @@
     {
       "category": "Knowledge",
       "items": [
-        "articulate accurately relationships of differential calculus and kinematics.",
-        "reproduce essential concepts of geometrical (ray) optics reliably."
+        "articulate accurately relationships of differential calculus and kinematics."
       ]
     },
     {
       "category": "Comprehension",
       "items": [
-        "capture basic principles of the paraxial processing model for imaging systems.",
         "understand mathematical modelling of simple dynamical systems."
       ]
     },
@@ -41,19 +51,12 @@
       "category": "Practical Use",
       "items": [
         "apply methods for the description of dynamic systems to simple systems.",
-        "apply the basic laws of ray optics to the imaging properties of camera lenses."
       ]
     },
     {
       "category": "Analysis",
       "items": [
         "analyse the effect of varying system parameters and initial conditions on system behaviour."
-      ]
-    },
-    {
-      "category": "Synthesis",
-      "items": [
-        "compare optical imaging in photography / cinematography and computer graphics / computer vision."
       ]
     },
     {
@@ -72,24 +75,33 @@
         "Dynamical Systems: Deterministic Models, Differential Equations",
         "Setting up and Evaluating Models for Example Systems",
         "Project Work: Visualization of the Behaviour of Simple Systems by Means of Web Applications",
-        "Foundations of Camera Optics: Paraxial Ray Tracing, Camera Lenses and their cardinal points",
-        "Focus, Magnification, Depth of Focus",
-        "Comparison: Optical Properties of the Human Eye vs. Camera Optics",
         "Physics Engines"
       ]
     }
   ],
   "teaching_methods": [
     {
-      "component": "a) STEM 2",
+      "component": "a) STEM 2 Seminar",
       "items": [
         "Seminar"
+      ]
+    },
+    {
+      "component": "b) STEM 2 Implementation Lab",
+      "items": [
+        "Implementation Lab: Project Work"
       ]
     }
   ],
   "prerequisites": [
     {
-      "component": "a) STEM 2",
+      "component": "a) STEM 2 Implementation Lab",
+      "items": [
+        "none"
+      ]
+    },
+    {
+      "component": "b) STEM 2 Seminar",
       "items": [
         "none"
       ]
@@ -97,18 +109,18 @@
   ],
   "assessment": [
     {
-      "component": "a) STEM 2",
+      "component": "a) STEM 2 Seminar",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": 6,
+      "credits": 3,
       "description": "Written Exam during semester (sbK)"
     },
     {
-      "component": "a) STEM 2",
-      "code": "1sbA",
+      "component": "b) STEM 2 Implementation Lab",
+      "code": "1sbaA",
       "graded_assessment": true,
       "credits": null,
-      "description": "Practical Assignment during semester (sbA)"
+      "description": "Practical Assignment during semester (sbaA)"
     }
   ],
   "applicability": [
@@ -132,10 +144,6 @@
     {
       "component": "a) STEM 2",
       "reference": "Strang, Gilbert: Differential Equations and Linear Algebra, Wellesley-Cambridge Press, 2015, ISBN: 0980232791"
-    },
-    {
-      "component": "a) STEM 2",
-      "reference": "Erb, Roger: Optik mit GeoGebra, De Gruyter, 2016, ISBN: 3110491273"
     },
     {
       "component": "a) STEM 2",

@@ -22,7 +22,7 @@
     },
     {
       "label": "b)",
-      "name": "Theory 2 - Data Driven Game Design",
+      "name": "Theory 2 - Game Theory",
       "language": [
         "English"
       ],
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Game Theory",
       "items": [
         "Elementary Combinatorics",
         "Finite Probability Spaces: Examples",
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Game Theory",
       "items": [
         "Seminar"
       ]
@@ -129,7 +129,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Game Theory",
       "items": [
         "None"
       ]
@@ -140,15 +140,22 @@
       "component": "a) Theory 2 - Game Design",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": 3,
+      "credits": 2,
       "description": "Written Exam during semester (sbK)"
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
-      "code": "1KO",
+      "component": "a) Theory 2 - Game Design",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 1,
+      "description": "Practical Assignment during semester (sbA)"
+    },
+    {
+      "component": "b) Theory 2 - Game Theory",
+      "code": "1sbK",
       "graded_assessment": true,
       "credits": 3,
-      "description": "Colloquium (KO)"
+      "description": "Written Exam during semester (sbK)"
     }
   ],
   "applicability": [
@@ -163,7 +170,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Game Theory",
       "names": [
         "Prof. Dr. Ekkehard Batzies"
       ]
@@ -191,7 +198,7 @@
       "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518"
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
+      "component": "b) Theory 2 - Game Theory",
       "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8"
     }
   ],

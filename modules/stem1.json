@@ -38,7 +38,7 @@
     {
       "category": "Knowledge",
       "items": [
-        "reliably reproduce central basic concepts of projection (set theory).",
+        "reliably reproduce standard 2D representations of 3D objects.",
         "know how to articulate geometric questions precisely using the appropriate technical terms."
       ]
     },
@@ -86,8 +86,7 @@
         "Parallel, Axonometric and Orthographic Projections",
         "Linear Perspective: Image Construction using Desargues' Theorem",
         "Points at Infinity and Vanishing Points",
-        "Projection Matrices: Unified Approach",
-        "Camera Models in Computer Graphics and Computer Vision"
+        "Projection Matrices: Unified Approach"
       ]
     },
     {
@@ -107,7 +106,7 @@
     {
       "component": "b) STEM 1 Practical",
       "items": [
-        "Practical/lab"
+        "Workshop / Math Lab"
       ]
     }
   ],
@@ -138,7 +137,7 @@
       "code": "1sbaL",
       "graded_assessment": false,
       "credits": 2,
-      "description": "Laboratory work, normally with standard procedures"
+      "description": "Structured Assignments during semester (sbaL)"
     }
   ],
   "applicability": [
