@@ -105,7 +105,7 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
 export function renderModuleOverview(target: HTMLElement, modules: ModuleData[]): void {
   target.replaceChildren();
   const sectionNode = el('section', 'overview-table-section');
-  appendText(sectionNode, 'h2', 'Module Overview');
+  appendText(sectionNode, 'h2', 'Table 2 · Module Overview');
   const scroll = el('div', 'table-scroll');
   const table = el('table', 'overview-table');
   const headers = ['Module', 'Module code', 'Semester', 'Duration', 'Frequency', 'Workload', 'ECTS'];
@@ -193,7 +193,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   }
   article.append(facts);
 
-  const components = section('Course Components', article);
+  const components = section('Table 3 · Course Components', article);
   const componentScroll = el('div', 'table-scroll');
   const componentTable = el('table', 'component-table');
   const componentHead = el('thead');
