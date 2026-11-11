@@ -15,9 +15,11 @@
         "German",
         "English"
       ],
-      "contact_hours": "0 SWS / 0h",
+      "contact_hours": null,
       "self_study_hours": 840,
-      "class_size": 1
+      "class_size": 1,
+      "course_type": null,
+      "credit_points": 28
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 37.5,
-      "class_size": 50
+      "class_size": 50,
+      "course_type": "S",
+      "credit_points": 2
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -109,9 +113,15 @@
   "assessment": [
     {
       "component": "a) Internship",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 28
+    },
+    {
+      "component": "b) Seminar Internship",
+      "code": "1R",
+      "graded_assessment": false,
+      "credits": 2
     }
   ],
   "applicability": [
