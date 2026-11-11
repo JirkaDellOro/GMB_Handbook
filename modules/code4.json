@@ -74,8 +74,7 @@
         "Networking Multiplayer-Game server:",
         "Online: Client Server /P2P /MMOG Architectures and Protocols",
         "Local: LAN/WLAN",
-        "Dedicated MMOG@home: NAT, DDNS, STUN Cloud Gaming over public networks (Shadow/Blade/",
-        "Google)"
+        "Dedicated MMOG@home: NAT, DDNS, STUN Cloud Gaming over public networks (Shadow/Blade/Google)"
       ]
     }
   ],
@@ -83,7 +82,7 @@
     {
       "component": "a) Code 4",
       "items": [
-        "Semiar, Practical"
+        "Seminar, Practical"
       ]
     }
   ],
