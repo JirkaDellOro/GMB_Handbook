@@ -69,3 +69,23 @@
   .curriculum-column-heading { font-size: 11px; }
   .curriculum-stage { font-size: 14px; }
 }
+
+/* Multiple modules in one semester/subject cell (e.g. Electives) */
+.curriculum-module-cell {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  min-height: 0;
+}
+.curriculum-module-cell > .curriculum-module {
+  padding: 4px 7px 17px;
+}
+.curriculum-module-cell .curriculum-module-title {
+  font-size: clamp(10px, 1vw, 14px);
+  line-height: 1.1;
+}
+.curriculum-module-cell .curriculum-module-meta {
+  right: 7px;
+  bottom: 4px;
+  font-size: 10px;
+}
