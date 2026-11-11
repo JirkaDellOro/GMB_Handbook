@@ -15,9 +15,11 @@
         "German",
         "English"
       ],
-      "contact_hours": "2 SWS / 22.5h",
+      "contact_hours": null,
       "self_study_hours": 360,
-      "class_size": 1
+      "class_size": 1,
+      "course_type": null,
+      "credit_points": 12
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 167.5,
-      "class_size": 40
+      "class_size": 40,
+      "course_type": "S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -111,9 +115,15 @@
   "assessment": [
     {
       "component": "a) Bachelor Thesis",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1T",
+      "graded_assessment": true,
+      "credits": 12
+    },
+    {
+      "component": "b) Thesis Seminar",
+      "code": "1PN",
+      "graded_assessment": false,
+      "credits": 6
     }
   ],
   "applicability": [
