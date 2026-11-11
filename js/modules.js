@@ -9,6 +9,9 @@ export function loadManifest() {
     }
     return manifestPromise;
 }
+export function loadCurriculum() {
+    return fetch('./curriculum.json').then(checkResponse).then(response => response.json());
+}
 export function loadModule(id) {
     if (!/^[a-z0-9]+$/.test(id))
         return Promise.reject(new Error('Invalid module ID.'));

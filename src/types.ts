@@ -45,3 +45,6 @@ export interface SemesterGroup {
   title: string;
   modules: string[];
 }
+
+export interface CurriculumModulePosition { column: string; block: number | null; style?: 'project' | 'internship'; span?: number; }
+export interface CurriculumData { columns: string[]; studyStages: { title: string; firstSemester: number; lastSemester: number }[]; modules: Record<string, CurriculumModulePosition>; }
