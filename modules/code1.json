@@ -1,7 +1,7 @@
 {
   "id": "code1",
   "title": "Code 1",
-  "module_code": "IV-2023-2808",
+  "module_code": "DM-2023-2808",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -95,7 +95,7 @@
       "component": "a) Code 1",
       "description": "",
       "graded_assessment": true,
-      "credits": null,
+      "credits": 6,
       "code": "1sbK"
     }
   ],

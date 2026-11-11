@@ -1,7 +1,7 @@
 {
   "id": "code3",
   "title": "Code 3",
-  "module_code": "IV-2024-2889",
+  "module_code": "DM-2024-2889",
   "semester": 3,
   "workload_hours": 180,
   "credits": 6,
@@ -10,7 +10,7 @@
   "components": [
     {
       "label": "a)",
-      "name": "Code 3 - Realtime Computer",
+      "name": "Code 3 - Realtime Computer Graphics",
       "language": [
         "German",
         "English"
@@ -55,7 +55,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "items": [
         "Realtime Computer Graphics",
         "Shader",
@@ -67,7 +67,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "items": [
         "Seminar, Practical"
       ]
@@ -75,7 +75,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "items": [
         "None"
       ]
@@ -83,7 +83,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Code 3 - Realtime Computer",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6
@@ -95,7 +95,7 @@
   "responsible_person": "Prof. Dr. Uwe Hahne",
   "lecturers": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "names": [
         "Prof. Christoph Müller"
       ]
@@ -103,15 +103,15 @@
   ],
   "reading_list": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "reference": "Akenine-Möller, Tomas; Haines, Eric; Hoffman Naty: Real-time Rendering, Fourth Edition, A K Peters/ CRC Press, 2018, ISBN: 9781138627000."
     },
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https:// graphicscodex.com."
     },
     {
-      "component": "a) Code 3 - Realtime Computer Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
       "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/. --"
     }
   ],
