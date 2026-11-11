@@ -26,13 +26,13 @@
     {
       "category": "Knowledge",
       "items": [
-        "know the basic concepts of interactive audio-visual applications."
+        "know the basic concepts of interactive visual applications."
       ]
     },
     {
       "category": "Comprehension",
       "items": [
-        "understand basic information structures for interactive 2D-graphics and audio as implemented by web-technologies."
+        "understand basic information structures for interactive 2D-graphics as implemented by web-technologies."
       ]
     },
     {
@@ -68,7 +68,7 @@
         "Web Fundamentals",
         "2D-Scenegraph",
         "Procedural Code",
-        "Coding Audio-Visuals",
+        "Coding Visuals",
         "Computational Thinking"
       ]
     }
@@ -110,11 +110,18 @@
       ]
     }
   ],
-  "reading_list": [],
-  "source_pages": [
-    7,
-    8,
-    9
-  ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 7, 8, 9."
+  "reading_list": [
+    {
+      "component": "a) Code 2",
+      "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/"
+    },
+    {
+      "component": "a) Code 2",
+      "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Booklet.pdf"
+    },
+    {
+      "component": "a) Code 2",
+      "reference": "Santamaria, Paula: TypeScript Gamified, Selfpublished 2026, https://paulasantamaria.gumroad.com/l/typescript-gamified"
+    }
+  ]
 }
