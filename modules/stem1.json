@@ -17,7 +17,9 @@
       ],
       "contact_hours": "3 SWS / 33.75h",
       "self_study_hours": 90,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "1 SWS / 11.25h",
       "self_study_hours": 45,
-      "class_size": 20
+      "class_size": 20,
+      "course_type": "P",
+      "credit_points": 2
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -108,15 +112,15 @@
   "assessment": [
     {
       "component": "a) STEM 1 Seminar",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1K",
+      "graded_assessment": true,
+      "credits": 4
     },
     {
       "component": "b) STEM 1 Practical",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 2
     }
   ],
   "applicability": [
