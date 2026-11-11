@@ -61,6 +61,19 @@
       "items": [
         "analyse geometric problems in the plane and space, while selecting the appropriate tools from those provided."
       ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "recognise and exploit common structures and patterns in different mathematical areas.",
+        "present an overview of a suitable delimited model relevant to computer graphics or computer vision."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "weigh up different procedures (e.g., for linking affine or projective transformations) in terms of clarity and effort."
+      ]
     }
   ],
   "individual_component_content": [
@@ -90,8 +103,13 @@
     {
       "component": "a) STEM 1 Seminar",
       "items": [
-        "Seminar",
-        "--"
+        "Seminar"
+      ]
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "items": [
+        "Practical/lab"
       ]
     }
   ],
@@ -127,7 +145,20 @@
     "Games & Immersive Media B.A. (SPO-Version: 10)"
   ],
   "responsible_person": "Prof. Dr. Thomas Schneider",
-  "lecturers": [],
+  "lecturers": [
+    {
+      "component": "a) STEM 1 Seminar",
+      "names": [
+        "Prof. Dr. Thomas Schneider"
+      ]
+    },
+    {
+      "component": "b) STEM 1 Practical",
+      "names": [
+        "Prof. Dr. Thomas Schneider"
+      ]
+    }
+  ],
   "reading_list": [
     {
       "component": "a) STEM 1 Seminar",
