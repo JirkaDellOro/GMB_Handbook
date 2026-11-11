@@ -123,13 +123,15 @@
       "component": "a) Bachelor Thesis",
       "code": "1T",
       "graded_assessment": true,
-      "credits": 12
+      "credits": 12,
+      "description": "Thesis (T)"
     },
     {
       "component": "b) Thesis Seminar",
       "code": "1PN",
       "graded_assessment": false,
-      "credits": 6
+      "credits": 6,
+      "description": "Presentation (PN)"
     }
   ],
   "applicability": [
