@@ -94,7 +94,8 @@
       "component": "a) Business 1",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "description": "Written Exam during semester (sbK)"
     }
   ],
   "applicability": [
