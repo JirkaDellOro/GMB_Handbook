@@ -113,7 +113,8 @@
     {
       "component": "a) STEM 2",
       "names": [
-        "Prof. Dr. Thomas Schneider"
+        "Prof. Dr. Thomas Schneider",
+        "Prof. Dr. Uwe Hahne"
       ]
     }
   ],
@@ -132,7 +133,7 @@
     },
     {
       "component": "a) STEM 2",
-      "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065. --"
+      "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065."
     }
   ],
   "source_pages": [
