@@ -64,6 +64,19 @@
         "analyse game types and strategies by means of game theoretical methods.",
         "analyse game ideas and deduct patterns and rules usable for game design."
       ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create a game design document using a variety of techniques."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate selected games by their typologies and the corresponding strategy algorithms.",
+        "evaluate games and interactive applications with scientific methods."
+      ]
     }
   ],
   "individual_component_content": [
@@ -81,7 +94,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design Design",
+      "component": "b) Theory 2 - Data Driven Game Design",
       "items": [
         "Elementary Combinatorics",
         "Finite Probability Spaces: Examples",
@@ -92,8 +105,7 @@
         "Categories of Games",
         "Representation of games",
         "Players' Strategies",
-        "Nash Equilibria",
-        "--"
+        "Nash Equilibria"
       ]
     }
   ],
@@ -105,7 +117,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design Design",
+      "component": "b) Theory 2 - Data Driven Game Design",
       "items": [
         "Seminar"
       ]
@@ -119,7 +131,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design Design",
+      "component": "b) Theory 2 - Data Driven Game Design",
       "items": [
         "None"
       ]
@@ -151,7 +163,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design Design",
+      "component": "b) Theory 2 - Data Driven Game Design",
       "names": [
         "Prof. Dr. Ekkehard Batzies"
       ]
@@ -179,8 +191,8 @@
       "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518."
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design Design",
-      "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8. --"
+      "component": "b) Theory 2 - Data Driven Game Design",
+      "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8."
     }
   ],
   "source_pages": [
