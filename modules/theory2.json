@@ -17,7 +17,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 67.5,
-      "class_size": 36
+      "class_size": 36,
+      "course_type": "S/P",
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 67.5,
-      "class_size": 36
+      "class_size": 36,
+      "course_type": "S",
+      "credit_points": 3
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -124,15 +128,15 @@
   "assessment": [
     {
       "component": "a) Theory 2 - Game Design",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 3
     },
     {
-      "component": "b) Theory 2 - Data Driven Game Design",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "component": "b) Theory 2 - Data Driven Game",
+      "code": "1KO",
+      "graded_assessment": true,
+      "credits": 3
     }
   ],
   "applicability": [
