@@ -60,13 +60,15 @@
       "component": "a) Elective Course (WPM) see (5)",
       "code": "PL",
       "graded_assessment": true,
-      "credits": null
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
     },
     {
       "component": "a) Elective Course (WPM) see (5)",
       "code": "SL",
       "graded_assessment": false,
-      "credits": null
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
     }
   ],
   "applicability": [
