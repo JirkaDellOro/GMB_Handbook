@@ -104,13 +104,15 @@
       "component": "a) Computer Science and HCI Theory",
       "code": "1sbK",
       "graded_assessment": true,
-      "credits": 3
+      "credits": 3,
+      "description": "Written Exam during semester (sbK)"
     },
     {
       "component": "a) Computer Science and HCI Theory",
       "code": "1R",
       "graded_assessment": false,
-      "credits": 3
+      "credits": 3,
+      "description": "Presentation with documentation (R)"
     }
   ],
   "applicability": [
