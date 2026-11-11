@@ -99,6 +99,42 @@ export function renderCurriculum(target, modules, curriculum) {
     legend.textContent = 'Blocknummer des Moduls   x.y   Leistungspunkte nach ECTS';
     target.append(legend);
 }
+
+export function renderModuleOverview(target, modules) {
+    target.replaceChildren();
+    const sectionNode = el('section', 'overview-table-section');
+    appendText(sectionNode, 'h2', 'Module Overview');
+    const scroll = el('div', 'table-scroll');
+    const table = el('table', 'overview-table');
+    const headers = ['Module', 'Module code', 'Semester', 'Duration', 'Frequency', 'Workload', 'ECTS'];
+    const thead = el('thead');
+    const headerRow = el('tr');
+    for (const heading of headers)
+        appendText(headerRow, 'th', heading);
+    thead.append(headerRow);
+    table.append(thead);
+    const tbody = el('tbody');
+    for (const module of modules) {
+        const row = el('tr');
+        const titleCell = el('td');
+        const link = el('a', undefined, module.title);
+        link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
+        titleCell.append(link);
+        row.append(titleCell);
+        appendText(row, 'td', module.module_code);
+        appendText(row, 'td', module.semester);
+        appendText(row, 'td', module.duration === null || module.duration === undefined ? undefined : String(module.duration));
+        appendText(row, 'td', module.frequency);
+        appendText(row, 'td', module.workload_hours === null || module.workload_hours === undefined ? undefined : `${module.workload_hours} h`);
+        appendText(row, 'td', module.credits);
+        tbody.append(row);
+    }
+    table.append(tbody);
+    scroll.append(table);
+    sectionNode.append(scroll);
+    target.append(sectionNode);
+}
+
 export function renderModuleTile(module) {
     const link = el('a', 'module-tile');
     link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
@@ -157,8 +193,8 @@ export function renderModuleDetail(target, module) {
         appendText(card, 'h3', `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim());
         const details = el('dl', 'detail-grid');
         const values = [
-            ['Language', component.language?.join(' / ')], ['Contact hours', component.contact_hours],
-            ['Self-study', component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`], ['Class size', component.class_size]
+            ['Language', component.language?.join(' / ')], ['Course type', component.course_type], ['Contact hours', component.contact_hours],
+            ['Self-study', component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`], ['Class size', component.class_size], ['Component ECTS', component.credit_points]
         ];
         for (const [label, value] of values) {
             const wrap = el('div');
@@ -203,7 +239,7 @@ export function renderModuleDetail(target, module) {
         const row = el('div', 'assessment-row');
         appendText(row, 'strong', item.component);
         appendText(row, 'span', item.description);
-        appendText(row, 'span', item.graded_assessment === null || item.graded_assessment === undefined ? '—' : item.graded_assessment ? 'Graded assessment' : 'Non-graded assessment');
+        appendText(row, 'span', item.code ? `${item.code} · ${item.graded_assessment === null || item.graded_assessment === undefined ? '—' : item.graded_assessment ? 'Graded assessment' : 'Non-graded assessment'}` : (item.graded_assessment === null || item.graded_assessment === undefined ? '—' : item.graded_assessment ? 'Graded assessment' : 'Non-graded assessment'));
         appendText(row, 'strong', item.credits === null || item.credits === undefined ? '—' : `${item.credits} CP`);
         assessment.append(row);
     }
