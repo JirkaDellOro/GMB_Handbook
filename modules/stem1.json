@@ -132,13 +132,15 @@
       "component": "a) STEM 1 Seminar",
       "code": "1K",
       "graded_assessment": true,
-      "credits": 4
+      "credits": 4,
+      "description": "Written Examination (K)"
     },
     {
       "component": "b) STEM 1 Practical",
       "code": "1sbA",
       "graded_assessment": false,
-      "credits": 2
+      "credits": 2,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
