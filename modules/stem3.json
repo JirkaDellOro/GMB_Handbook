@@ -51,6 +51,18 @@
         "derive prerequisites for the use of computer vision algorithms and other information processing methods.",
         "understand requirements and challenges of systems consisting of sensors, actors and SBC/MCU."
       ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "implement an application for system sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate an implemented application for a system consisting of sensors, actors and SBC/MCU with regard to its usability in practice."
+      ]
     }
   ],
   "individual_component_content": [
