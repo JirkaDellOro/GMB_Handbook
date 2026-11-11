@@ -93,7 +93,7 @@
   "assessment": [
     {
       "component": "a) Code 1",
-      "description": "",
+      "description": "Written Exam during semester (sbK)",
       "graded_assessment": true,
       "credits": 6,
       "code": "1sbK"
