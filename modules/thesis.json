@@ -133,12 +133,14 @@
   "lecturers": [
     {
       "component": "a) Bachelor Thesis",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     },
     {
       "component": "b) Thesis Seminar",
       "names": [
-        "TBD"
+        "N.N."
       ]
     }
   ],
@@ -149,7 +151,7 @@
     },
     {
       "component": "b) Thesis Seminar",
-      "reference": "Depending on the chosen topic and thesis supervisor. --"
+      "reference": "Depending on the chosen topic and thesis supervisor."
     }
   ],
   "source_pages": [
