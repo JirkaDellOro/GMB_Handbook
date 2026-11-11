@@ -50,15 +50,15 @@
     "modules": [
       "project5",
       "business2",
-      "elective1",
-      "elective2"
+      "elective2",
+      "elective1"
     ]
   },
   {
     "title": "Semester 7",
     "modules": [
-      "elective3",
       "elective4",
+      "elective3",
       "thesis"
     ]
   }

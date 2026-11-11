@@ -78,14 +78,14 @@
   min-height: 0;
 }
 .curriculum-module-cell > .curriculum-module {
-  padding: 4px 7px 17px;
+  padding: 4px 4px 4px;
 }
 .curriculum-module-cell .curriculum-module-title {
-  font-size: clamp(10px, 1vw, 14px);
+  /* font-size: clamp(10px, 1vw, 14px); */
   line-height: 1.1;
 }
 .curriculum-module-cell .curriculum-module-meta {
   right: 7px;
   bottom: 4px;
-  font-size: 10px;
+  /* font-size: 10px; */
 }
