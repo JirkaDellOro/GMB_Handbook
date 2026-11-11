@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 36
+      "class_size": 36,
+      "course_type": "S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -92,10 +94,10 @@
   ],
   "assessment": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "component": "a) Sound 1 - Basics of sound and",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 6
     }
   ],
   "applicability": [
