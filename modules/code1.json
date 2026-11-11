@@ -111,20 +111,7 @@
       ]
     }
   ],
-  "reading_list": [
-    {
-      "component": "a) Code 1",
-      "reference": "Mozilla: MDN Web Docs, Mozilla Foundation, 2025, https://developer.mozilla.org/en-US/."
-    },
-    {
-      "component": "a) Code 1",
-      "reference": "Scharwies, Matthias: SELFHTML-Wiki, SELFHTML e.V., 2025, https://wiki.selfhtml.org/."
-    },
-    {
-      "component": "a) Code 1",
-      "reference": "Microsoft: TypeScript: JavaScript With Syntax For Types, Microsoft Corporation, 2025, https://www.typescriptlang.org/."
-    }
-  ],
+  "reading_list": [],
   "source_pages": [
     10,
     11,
