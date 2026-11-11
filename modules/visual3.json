@@ -56,14 +56,19 @@
       "items": [
         "synthesize complex animation scenarios for real-time applications from individual results."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine their own semester work in the context of what they have learned."
+      ]
     }
   ],
   "individual_component_content": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "items": [
-        "Advanced Material and Shading, 3D-Animation (Realtime), Non-linear animation, Animation State-",
-        "machines, Animation Blending",
+        "Advanced Material and Shading, 3D-Animation (Realtime), Non-linear animation, Animation State-machines, Animation Blending",
         "Combining Physics and scripted Animation",
         "Character Animation, Rigging Forward / Inverse Kinematics",
         "Walk Cycles",
@@ -74,7 +79,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "items": [
         "Seminar, Practical"
       ]
@@ -82,7 +87,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "items": [
         "None"
       ]
@@ -102,24 +107,25 @@
   "responsible_person": "Prof. Christoph Müller",
   "lecturers": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "names": [
-        "Prof. Regina Reusch"
+        "Prof. Christoph Müller",
+        "Prof. Niv Shpigel"
       ]
     }
   ],
   "reading_list": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "reference": "Williams, Richard: The Animator's Survival Kit: A Manual of Methods, Principles and Formulas for Classical, Computer, Games, Stop Motion and Internet Animators, Farrar, Straus and Giroux, 2012, ISBN: 978-0865478978."
     },
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
+      "component": "a) Visual 3 - Game Character Design and Animation",
       "reference": "Osipa, Jason: Stop Staring: Facial Modeling and Animation Done Right (3rd Edition), Sybex, 2010, ISBN: 0470609907."
     },
     {
-      "component": "a) Visual 3 - Game Character Design and Animation Design and Animation",
-      "reference": "Totten, Chris: Game Character Creation with Blender and Unity, Sybex, 2012, ISBN: 1118172728. --"
+      "component": "a) Visual 3 - Game Character Design and Animation",
+      "reference": "Totten, Chris: Game Character Creation with Blender and Unity, Sybex, 2012, ISBN: 1118172728."
     }
   ],
   "source_pages": [
