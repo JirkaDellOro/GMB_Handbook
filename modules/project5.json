@@ -93,7 +93,8 @@
       "component": "a) Project 5 - Complex Digital Project",
       "code": "1A",
       "graded_assessment": true,
-      "credits": 12
+      "credits": 12,
+      "description": "Practical Assignment (A)"
     }
   ],
   "applicability": [
