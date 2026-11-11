@@ -119,7 +119,7 @@
       "component": "b) STEM 2 Implementation Lab",
       "code": "1sbaA",
       "graded_assessment": true,
-      "credits": null,
+      "credits": 3,
       "description": "Practical Assignment during semester (sbaA)"
     }
   ],
@@ -149,11 +149,5 @@
       "component": "a) STEM 2",
       "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065"
     }
-  ],
-  "source_pages": [
-    45,
-    46,
-    47
-  ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 45, 46, 47."
+  ]
 }
