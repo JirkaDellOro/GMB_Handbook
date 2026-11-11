@@ -94,7 +94,8 @@
       "component": "a) Project 2 - Physical Game",
       "code": "1A",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "description": "Practical Assignment (A)"
     }
   ],
   "applicability": [
