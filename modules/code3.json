@@ -99,7 +99,8 @@
       "component": "a) Code 3 - Realtime Computer Graphics",
       "code": "1sbA",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
