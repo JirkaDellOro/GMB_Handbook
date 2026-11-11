@@ -27,10 +27,6 @@
     {
       "category": "Knowledge",
       "items": [
-        "Depending on the elective course (WPM) ### Individual Component Content",
-        "a) Elective Course (WPM) see (5)",
-        "Depending on the elective course (WPM) ### Teaching Methods",
-        "a) Elective Course (WPM) see (5)",
         "Depending on the elective course (WPM)"
       ]
     }
@@ -47,9 +43,7 @@
     {
       "component": "a) Elective Course (WPM) see (5)",
       "items": [
-        "Depending on the elective course (WPM)",
-        "```",
-        "--"
+        "Depending on the elective course (WPM)"
       ]
     }
   ],
@@ -88,7 +82,7 @@
   "reading_list": [
     {
       "component": "a) Elective Course (WPM) see (5)",
-      "reference": "Depending on the elective course (WPM). --"
+      "reference": "Depending on the elective course (WPM)"
     }
   ],
   "source_pages": [
