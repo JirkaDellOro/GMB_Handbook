@@ -99,7 +99,8 @@
       "component": "a) Code 4",
       "code": "1K",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "description": "Written Examination (K)"
     }
   ],
   "applicability": [
