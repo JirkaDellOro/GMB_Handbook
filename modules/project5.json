@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 326.25,
-      "class_size": 20
+      "class_size": 20,
+      "course_type": "W",
+      "credit_points": 12
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -89,9 +91,9 @@
   "assessment": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1A",
+      "graded_assessment": true,
+      "credits": 12
     }
   ],
   "applicability": [
