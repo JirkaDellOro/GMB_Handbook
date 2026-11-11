@@ -1,7 +1,7 @@
 {
   "id": "visual1",
   "title": "Visual 1",
-  "module_code": "IV-2023-2811",
+  "module_code": "DM-2023-2811",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 20
+      "class_size": 20,
+      "course_type": "S/P",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -91,9 +93,10 @@
   "assessment": [
     {
       "component": "a) Visual 1",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
@@ -111,13 +114,13 @@
   "reading_list": [
     {
       "component": "a) Visual 1",
-      "reference": "Will be given in lecture as applicable. --"
+      "reference": "Will be given in lecture as applicable."
     }
   ],
   "source_pages": [
-    23,
-    24,
-    25
+    20,
+    21,
+    22
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 23, 24, 25."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 20, 21, 22."
 }

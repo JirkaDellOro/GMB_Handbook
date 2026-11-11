@@ -1,7 +1,7 @@
 {
   "id": "thesis",
   "title": "Thesis",
-  "module_code": "IV-2024-2905",
+  "module_code": "DM-2024-2905",
   "semester": 7,
   "workload_hours": 572.5,
   "credits": 18,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 360,
-      "class_size": 1
+      "class_size": 1,
+      "course_type": null,
+      "credit_points": 12
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 167.5,
-      "class_size": 40
+      "class_size": 40,
+      "course_type": "S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -63,6 +67,12 @@
       "category": "Synthesis",
       "items": [
         "make a contribution to the state-of-the-art in games and immersive media."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically discuss and evaluate their work in a chosen context."
       ]
     }
   ],
@@ -111,9 +121,17 @@
   "assessment": [
     {
       "component": "a) Bachelor Thesis",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1T",
+      "graded_assessment": true,
+      "credits": 12,
+      "description": "Thesis (T)"
+    },
+    {
+      "component": "b) Thesis Seminar",
+      "code": "1PN",
+      "graded_assessment": false,
+      "credits": 6,
+      "description": "Presentation (PN)"
     }
   ],
   "applicability": [
@@ -123,12 +141,14 @@
   "lecturers": [
     {
       "component": "a) Bachelor Thesis",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     },
     {
       "component": "b) Thesis Seminar",
       "names": [
-        "TBD"
+        "N.N."
       ]
     }
   ],
@@ -139,12 +159,12 @@
     },
     {
       "component": "b) Thesis Seminar",
-      "reference": "Depending on the chosen topic and thesis supervisor. --"
+      "reference": "Depending on the chosen topic and thesis supervisor."
     }
   ],
   "source_pages": [
-    89,
-    90
+    86,
+    87
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 89, 90."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 86, 87."
 }

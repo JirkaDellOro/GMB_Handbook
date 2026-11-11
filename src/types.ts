@@ -5,12 +5,15 @@ export interface ModuleComponent {
   contact_hours?: string | number;
   self_study_hours?: string | number;
   class_size?: string | number;
+  course_type?: string | null;
+  credit_points?: string | number | null;
 }
 
 export interface ComponentSection { component?: string; items?: string[] }
 export interface LearningOutcome { category?: string; items?: string[] }
 export interface Assessment {
   component?: string;
+  code?: string | null;
   description?: string;
   graded_assessment?: boolean | null;
   credits?: string | number | null;

@@ -1,7 +1,7 @@
 {
   "id": "stem2",
   "title": "STEM 2",
-  "module_code": "IV-2024-2892",
+  "module_code": "DM-2024-2892",
   "semester": 3,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -54,6 +56,12 @@
       "items": [
         "compare optical imaging in photography / cinematography and computer graphics / computer vision."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate different physics engines in terms of their functionality and simulation fidelity and realism."
+      ]
     }
   ],
   "individual_component_content": [
@@ -84,17 +92,24 @@
     {
       "component": "a) STEM 2",
       "items": [
-        "none",
-        "--"
+        "none"
       ]
     }
   ],
   "assessment": [
     {
       "component": "a) STEM 2",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Written Exam during semester (sbK)"
+    },
+    {
+      "component": "a) STEM 2",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": null,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
@@ -105,32 +120,33 @@
     {
       "component": "a) STEM 2",
       "names": [
-        "Prof. Dr. Thomas Schneider"
+        "Prof. Dr. Thomas Schneider",
+        "Prof. Dr. Uwe Hahne"
       ]
     }
   ],
   "reading_list": [
     {
       "component": "a) STEM 2",
-      "reference": "Kleppner, Daniel; Dourmashkin, Peter; Ramsey, Norman: Quick Calculus: A Self-Teaching Guide (3rd Edition), Jossey-Bass, 2022, ISBN: 1119743192."
+      "reference": "Kleppner, Daniel; Dourmashkin, Peter; Ramsey, Norman: Quick Calculus: A Self-Teaching Guide (3rd Edition), Jossey-Bass, 2022, ISBN: 1119743192"
     },
     {
       "component": "a) STEM 2",
-      "reference": "Strang, Gilbert: Differential Equations and Linear Algebra, Wellesley-Cambridge Press, 2015, ISBN: 0980232791."
+      "reference": "Strang, Gilbert: Differential Equations and Linear Algebra, Wellesley-Cambridge Press, 2015, ISBN: 0980232791"
     },
     {
       "component": "a) STEM 2",
-      "reference": "Erb, Roger: Optik mit GeoGebra, De Gruyter, 2016, ISBN: 3110491273."
+      "reference": "Erb, Roger: Optik mit GeoGebra, De Gruyter, 2016, ISBN: 3110491273"
     },
     {
       "component": "a) STEM 2",
-      "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065. --"
+      "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065"
     }
   ],
   "source_pages": [
-    48,
-    49,
-    50
+    45,
+    46,
+    47
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 48, 49, 50."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 45, 46, 47."
 }

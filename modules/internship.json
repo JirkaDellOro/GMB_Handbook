@@ -1,7 +1,7 @@
 {
   "id": "internship",
   "title": "Internship",
-  "module_code": "IV-2024-2898",
+  "module_code": "DM-2024-2898",
   "semester": 5,
   "workload_hours": 900,
   "credits": 30,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "0 SWS / 0h",
       "self_study_hours": 840,
-      "class_size": 1
+      "class_size": 1,
+      "course_type": null,
+      "credit_points": 28
     },
     {
       "label": "b)",
@@ -28,7 +30,9 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 37.5,
-      "class_size": 50
+      "class_size": 50,
+      "course_type": "S",
+      "credit_points": 2
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -61,6 +65,12 @@
       "category": "Synthesis",
       "items": [
         "incorporate acquired practical qualifications into the tasks of the degree programme and underpin them theoretically."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "better assess their own strengths and weaknesses and plan their further studies accordingly."
       ]
     }
   ],
@@ -109,9 +119,17 @@
   "assessment": [
     {
       "component": "a) Internship",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": false,
+      "credits": 28,
+      "description": "Practical Assignment during semester (sbA)"
+    },
+    {
+      "component": "b) Seminar Internship",
+      "code": "1R",
+      "graded_assessment": false,
+      "credits": 2,
+      "description": "Presentation with documentation (R)"
     }
   ],
   "applicability": [
@@ -121,12 +139,14 @@
   "lecturers": [
     {
       "component": "a) Internship",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     },
     {
       "component": "b) Seminar Internship",
       "names": [
-        "TBD"
+        "Prof. Jirka Dell´Oro-Friedl"
       ]
     }
   ],
@@ -137,13 +157,13 @@
     },
     {
       "component": "b) Seminar Internship",
-      "reference": "Will be given in lecture as applicable. --"
+      "reference": "Will be given in lecture as applicable."
     }
   ],
   "source_pages": [
-    72,
-    73,
-    74
+    69,
+    70,
+    71
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 72, 73, 74."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 69, 70, 71."
 }

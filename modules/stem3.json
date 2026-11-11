@@ -1,7 +1,7 @@
 {
   "id": "stem3",
   "title": "STEM 3",
-  "module_code": "IV-2024-2896",
+  "module_code": "DM-2024-2896",
   "semester": 4,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 30
+      "class_size": 30,
+      "course_type": "S/P",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -48,6 +50,18 @@
       "items": [
         "derive prerequisites for the use of computer vision algorithms and other information processing methods.",
         "understand requirements and challenges of systems consisting of sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "implement an application for system sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate an implemented application for a system consisting of sensors, actors and SBC/MCU with regard to its usability in practice."
       ]
     }
   ],
@@ -81,9 +95,10 @@
   "assessment": [
     {
       "component": "a) STEM 3 - Physical Computing",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
@@ -94,6 +109,7 @@
     {
       "component": "a) STEM 3 - Physical Computing",
       "names": [
+        "Prof. Dr. Uwe Hahne",
         "Prof. Dr. Gabriel Rausch"
       ]
     }
@@ -101,25 +117,25 @@
   "reading_list": [
     {
       "component": "a) STEM 3 - Physical Computing",
-      "reference": "Szeliski, Richard: Computer Vision: Algorithms and Applications (2nd Edition), Springer, 2022, ISBN: 3030343715 – online at https://szeliski.org/."
+      "reference": "Szeliski, Richard: Computer Vision: Algorithms and Applications (2nd Edition), Springer, 2022, ISBN: 3030343715 – online at https://szeliski.org/"
     },
     {
       "component": "a) STEM 3 - Physical Computing",
-      "reference": "Kuniavsky, Mike: Smart things: Ubiquitous Computing User Experience Design, Morgan Kaufmann, 2010, ISBN: 0123748992."
+      "reference": "Kuniavsky, Mike: Smart things: Ubiquitous Computing User Experience Design, Morgan Kaufmann, 2010, ISBN: 0123748992"
     },
     {
       "component": "a) STEM 3 - Physical Computing",
-      "reference": "O'Sullivan, Dan; Igoe, Tom: Physical Computing: Sensing and Controlling the Physical World with Computers, Course Technology, 2004, ISBN: 978-1592003464."
+      "reference": "O'Sullivan, Dan; Igoe, Tom: Physical Computing: Sensing and Controlling the Physical World with Computers, Course Technology, 2004, ISBN: 978-1592003464"
     },
     {
       "component": "a) STEM 3 - Physical Computing",
-      "reference": "Horowitz, Paul; Hill, Winfield: The Art of Electronics: The x Chapters, Cambridge University Press, 2020, ISBN: 1108499945. --"
+      "reference": "Horowitz, Paul; Hill, Winfield: The Art of Electronics: The x Chapters, Cambridge University Press, 2020, ISBN: 1108499945"
     }
   ],
   "source_pages": [
-    66,
-    67,
-    68
+    63,
+    64,
+    65
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 66, 67, 68."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 63, 64, 65."
 }

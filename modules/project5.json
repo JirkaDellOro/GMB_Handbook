@@ -1,9 +1,9 @@
 {
   "id": "project5",
   "title": "Project 5",
-  "module_code": "IV-2024-2899",
+  "module_code": "DM-2024-2899",
   "semester": 6,
-  "workload_hours": 371.25,
+  "workload_hours": 360,
   "credits": 12,
   "frequency": "WiSe",
   "duration": 1,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 326.25,
-      "class_size": 20
+      "class_size": 20,
+      "course_type": "W",
+      "credit_points": 12
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -89,9 +91,10 @@
   "assessment": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1A",
+      "graded_assessment": true,
+      "credits": 12,
+      "description": "Practical Assignment (A)"
     }
   ],
   "applicability": [
@@ -101,19 +104,21 @@
   "lecturers": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "names": []
+      "names": [
+        "All professors of the faculty"
+      ]
     }
   ],
   "reading_list": [
     {
       "component": "a) Project 5 - Complex Digital Project",
-      "reference": "Depending on subject of study and task. --"
+      "reference": "Depending on subject of study and task."
     }
   ],
   "source_pages": [
-    82,
-    83,
-    84
+    79,
+    80,
+    81
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 82, 83, 84."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 79, 80, 81. Das PDF weist im Modulstamm 360 h Workload aus. Die Angaben der Komponente (45 h Kontaktzeit + 326,25 h Selbststudium) ergeben jedoch 371,25 h. Das Feld workload_hours folgt dem Modulstamm; die Komponentenwerte bleiben wie gedruckt erhalten."
 }

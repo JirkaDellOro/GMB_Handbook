@@ -1,7 +1,7 @@
 {
   "id": "code3",
   "title": "Code 3",
-  "module_code": "IV-2024-2889",
+  "module_code": "DM-2024-2889",
   "semester": 3,
   "workload_hours": 180,
   "credits": 6,
@@ -10,14 +10,16 @@
   "components": [
     {
       "label": "a)",
-      "name": "Code 3 - Realtime Computer",
+      "name": "Code 3 - Realtime Computer Graphics",
       "language": [
         "German",
         "English"
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 40
+      "class_size": 40,
+      "course_type": "S/P",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -48,6 +50,19 @@
       "items": [
         "get an overview of the architecture of a real-time media application.",
         "evaluate the interaction of additional APIs in their own real-time computer graphics application."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "integrate further APIs for visualization and audio in the own code.",
+        "implement interactive real-time visualizations in appropriate tools."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine the own term paper and plan improvements/optimizations."
       ]
     }
   ],
@@ -82,9 +97,10 @@
   "assessment": [
     {
       "component": "a) Code 3 - Realtime Computer Graphics",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Practical Assignment during semester (sbA)"
     }
   ],
   "applicability": [
@@ -95,6 +111,7 @@
     {
       "component": "a) Code 3 - Realtime Computer Graphics",
       "names": [
+        "Prof. Dr. Uwe Hahne",
         "Prof. Christoph Müller"
       ]
     }
@@ -102,21 +119,21 @@
   "reading_list": [
     {
       "component": "a) Code 3 - Realtime Computer Graphics",
-      "reference": "Akenine-Möller, Tomas; Haines, Eric; Hoffman Naty: Real-time Rendering, Fourth Edition, A K Peters/ CRC Press, 2018, ISBN: 9781138627000."
+      "reference": "Akenine-Möller, Tomas; Haines, Eric; Hoffman Naty: Real-time Rendering, Fourth Edition, A K Peters/ CRC Press, 2018, ISBN: 9781138627000"
     },
     {
       "component": "a) Code 3 - Realtime Computer Graphics",
-      "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https:// graphicscodex.com."
+      "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https://graphicscodex.com"
     },
     {
       "component": "a) Code 3 - Realtime Computer Graphics",
-      "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/. --"
+      "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/"
     }
   ],
   "source_pages": [
-    42,
-    43,
-    44
+    39,
+    40,
+    41
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 42, 43, 44."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 39, 40, 41."
 }

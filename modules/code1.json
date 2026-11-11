@@ -1,7 +1,7 @@
 {
   "id": "code1",
   "title": "Code 1",
-  "module_code": "IV-2023-2808",
+  "module_code": "DM-2023-2808",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -91,9 +93,10 @@
   "assessment": [
     {
       "component": "a) Code 1",
-      "description": "Written Examination during semester (sbK)",
+      "description": "Written Exam during semester (sbK)",
       "graded_assessment": true,
-      "credits": 6
+      "credits": 6,
+      "code": "1sbK"
     }
   ],
   "applicability": [
@@ -108,24 +111,11 @@
       ]
     }
   ],
-  "reading_list": [
-    {
-      "component": "a) Code 1",
-      "reference": "Mozilla: MDN Web Docs, Mozilla Foundation, 2025, https://developer.mozilla.org/en-US/."
-    },
-    {
-      "component": "a) Code 1",
-      "reference": "Scharwies, Matthias: SELFHTML-Wiki, SELFHTML e.V., 2025, https://wiki.selfhtml.org/."
-    },
-    {
-      "component": "a) Code 1",
-      "reference": "Microsoft: TypeScript: JavaScript With Syntax For Types, Microsoft Corporation, 2025, https://www.typescriptlang.org/."
-    }
-  ],
+  "reading_list": [],
   "source_pages": [
-    10,
-    11,
-    12
+    7,
+    8,
+    9
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 10–12."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 7, 8, 9."
 }

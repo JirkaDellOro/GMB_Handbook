@@ -1,7 +1,7 @@
 {
   "id": "theory1",
   "title": "Theory 1",
-  "module_code": "IV-2023-2810",
+  "module_code": "DM-2023-2810",
   "semester": 1,
   "workload_hours": 180,
   "credits": 6,
@@ -10,14 +10,16 @@
   "components": [
     {
       "label": "a)",
-      "name": "Computer Science and HCI",
+      "name": "Computer Science and HCI Theory",
       "language": [
         "German",
         "English"
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "V/S",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -56,6 +58,13 @@
         "design and create interactions and user interfaces.",
         "realize basic algorithms / programs."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate user interfaces using heuristics and design principles.",
+        "evaluate code for programming principles."
+      ]
     }
   ],
   "individual_component_content": [
@@ -86,17 +95,24 @@
     {
       "component": "a) Computer Science and HCI Theory",
       "items": [
-        "None",
-        "--"
+        "None"
       ]
     }
   ],
   "assessment": [
     {
       "component": "a) Computer Science and HCI Theory",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Written Exam during semester (sbK)"
+    },
+    {
+      "component": "a) Computer Science and HCI Theory",
+      "code": "1R",
+      "graded_assessment": false,
+      "credits": 3,
+      "description": "Presentation with documentation (R)"
     }
   ],
   "applicability": [
@@ -114,13 +130,13 @@
   "reading_list": [
     {
       "component": "a) Computer Science and HCI Theory",
-      "reference": "Will be given in lecture as applicable. --"
+      "reference": "Will be given in lecture as applicable"
     }
   ],
   "source_pages": [
-    20,
-    21,
-    22
+    17,
+    18,
+    19
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 20, 21, 22."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 17, 18, 19."
 }

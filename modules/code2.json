@@ -1,7 +1,7 @@
 {
   "id": "code2",
   "title": "Code 2",
-  "module_code": "IV-2024-2870",
+  "module_code": "DM-2024-2870",
   "semester": 2,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 35
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -90,9 +92,10 @@
   "assessment": [
     {
       "component": "a) Code 2",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Written Exam during semester (sbK)"
     }
   ],
   "applicability": [
@@ -110,17 +113,17 @@
   "reading_list": [
     {
       "component": "a) Code 2",
-      "reference": "Kecher, Christoph; Hoffmann-Elbern, Ralf; Will, Thorsten: UML 2.5, Rheinwerk Computing, 2021, ISBN: 978-3-8362-8447-9."
+      "reference": "Kecher, Christoph; Hoffmann-Elbern, Ralf; Will, Thorsten: UML 2.5, Rheinwerk Computing, 2021, ISBN: 978-3-8362-8447-9"
     },
     {
       "component": "a) Code 2",
-      "reference": "Nystrom, Robert: Game Programming Patterns, Genever Benning, 2014, ISBN: 0990582906 – online at https://gameprogrammingpatterns.com/contents.html. --"
+      "reference": "Nystrom, Robert: Game Programming Patterns, Genever Benning, 2014, ISBN: 0990582906 – online at https://gameprogrammingpatterns.com/contents.html"
     }
   ],
   "source_pages": [
-    26,
-    27,
-    28
+    23,
+    24,
+    25
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 26, 27, 28."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 23, 24, 25."
 }

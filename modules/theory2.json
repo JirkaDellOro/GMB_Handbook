@@ -1,7 +1,7 @@
 {
   "id": "theory2",
   "title": "Theory 2",
-  "module_code": "IV-2024-2872",
+  "module_code": "DM-2024-2872",
   "semester": 2,
   "workload_hours": 180,
   "credits": 6,
@@ -17,18 +17,22 @@
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 67.5,
-      "class_size": 36
+      "class_size": 36,
+      "course_type": "S/P",
+      "credit_points": 3
     },
     {
       "label": "b)",
-      "name": "Theory 2 - Data Driven Game",
+      "name": "Theory 2 - Data Driven Game Design",
       "language": [
         "German",
         "English"
       ],
       "contact_hours": "2 SWS / 22.5h",
       "self_study_hours": 67.5,
-      "class_size": 36
+      "class_size": 36,
+      "course_type": "S",
+      "credit_points": 3
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -60,6 +64,19 @@
         "analyse game types and strategies by means of game theoretical methods.",
         "analyse game ideas and deduct patterns and rules usable for game design."
       ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create a game design document using a variety of techniques."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate selected games by their typologies and the corresponding strategy algorithms.",
+        "evaluate games and interactive applications with scientific methods."
+      ]
     }
   ],
   "individual_component_content": [
@@ -88,8 +105,7 @@
         "Categories of Games",
         "Representation of games",
         "Players' Strategies",
-        "Nash Equilibria",
-        "--"
+        "Nash Equilibria"
       ]
     }
   ],
@@ -124,15 +140,17 @@
   "assessment": [
     {
       "component": "a) Theory 2 - Game Design",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Written Exam during semester (sbK)"
     },
     {
       "component": "b) Theory 2 - Data Driven Game Design",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1KO",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Colloquium (KO)"
     }
   ],
   "applicability": [
@@ -156,34 +174,34 @@
   "reading_list": [
     {
       "component": "a) Theory 2 - Game Design",
-      "reference": "Schell, Jesse: The Art of Game Design: A Book of Lenses (3rd Edition), Taylor & Francis, 2019, ISBN: 1138632058."
+      "reference": "Schell, Jesse: The Art of Game Design: A Book of Lenses (3rd Edition), Taylor & Francis, 2019, ISBN: 1138632058"
     },
     {
       "component": "a) Theory 2 - Game Design",
-      "reference": "Fritz, Jürgen: Das Spiel verstehen: Eine Einführung in Theorie und Bedeutung (Grundlagentexte Soziale Berufe), Beltz Juventa, 2004, ISBN: 3779919419."
+      "reference": "Fritz, Jürgen: Das Spiel verstehen: Eine Einführung in Theorie und Bedeutung (Grundlagentexte Soziale Berufe), Beltz Juventa, 2004, ISBN: 3779919419"
     },
     {
       "component": "a) Theory 2 - Game Design",
-      "reference": "Huizinga, Johan: Homo Ludens, Taylor & Francis, 1949, ISBN: 9781315824161."
+      "reference": "Huizinga, Johan: Homo Ludens, Taylor & Francis, 1949, ISBN: 9781315824161"
     },
     {
       "component": "a) Theory 2 - Game Design",
-      "reference": "Caillois, Roger (Author); Barash, Meyer (Translator): Man, play, and games, University of Illinois Press, 2001, ISBN: 978-0252070334."
+      "reference": "Caillois, Roger (Author); Barash, Meyer (Translator): Man, play, and games, University of Illinois Press, 2001, ISBN: 978-0252070334"
     },
     {
       "component": "a) Theory 2 - Game Design",
-      "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518."
+      "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518"
     },
     {
       "component": "b) Theory 2 - Data Driven Game Design",
-      "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8. --"
+      "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8"
     }
   ],
   "source_pages": [
-    35,
-    36,
-    37,
-    38
+    32,
+    33,
+    34,
+    35
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 35, 36, 37, 38."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 32, 33, 34, 35."
 }

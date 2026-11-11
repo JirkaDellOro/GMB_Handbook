@@ -1,7 +1,7 @@
 {
   "id": "elective1",
   "title": "Elective 1",
-  "module_code": "IV-2024-2900",
+  "module_code": "DM-2024-2900",
   "semester": 6,
   "workload_hours": 180,
   "credits": 6,
@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 50
+      "class_size": 50,
+      "course_type": null,
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -25,10 +27,6 @@
     {
       "category": "Knowledge",
       "items": [
-        "Depending on the elective course (WPM) ### Individual Component Content",
-        "a) Elective Course (WPM) see (5)",
-        "Depending on the elective course (WPM) ### Teaching Methods",
-        "a) Elective Course (WPM) see (5)",
         "Depending on the elective course (WPM)"
       ]
     }
@@ -45,9 +43,7 @@
     {
       "component": "a) Elective Course (WPM) see (5)",
       "items": [
-        "Depending on the elective course (WPM)",
-        "```",
-        "--"
+        "Depending on the elective course (WPM)"
       ]
     }
   ],
@@ -62,9 +58,17 @@
   "assessment": [
     {
       "component": "a) Elective Course (WPM) see (5)",
-      "description": "",
-      "graded_assessment": null,
-      "credits": null
+      "code": "PL",
+      "graded_assessment": true,
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
+    },
+    {
+      "component": "a) Elective Course (WPM) see (5)",
+      "code": "SL",
+      "graded_assessment": false,
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
     }
   ],
   "applicability": [
@@ -80,12 +84,12 @@
   "reading_list": [
     {
       "component": "a) Elective Course (WPM) see (5)",
-      "reference": "Depending on the elective course (WPM). --"
+      "reference": "Depending on the elective course (WPM)"
     }
   ],
   "source_pages": [
-    78,
-    79
+    75,
+    76
   ],
-  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Formulierungen wurden nicht redaktionell überarbeitet. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 78, 79."
+  "extraction_note": "Übertragen aus der PDF-Textextraktion. Inhaltliche Angaben wurden mit dem Original-PDF abgeglichen und bei Extraktionsfehlern korrigiert. Quelle: Module Handbook GMB, SPO-Version 10, PDF-Seiten 75, 76. Hinweis zur Prüfungsform: Tabelle 3 weist PL (benotet) und SL (unbenotet) aus; die Moduldetailseite nennt „Depending on the elective course (WPM)“ sowie „Exam, 6 CP“. Das PDF ordnet die 6 CP nicht einzeln PL oder SL zu."
 }
