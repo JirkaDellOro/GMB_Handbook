@@ -51,11 +51,24 @@
         "get an overview of the architecture of a real-time media application.",
         "evaluate the interaction of additional APIs in their own real-time computer graphics application."
       ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "integrate further APIs for visualization and audio in the own code.",
+        "implement interactive real-time visualizations in appropriate tools."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine the own term paper and plan improvements/optimizations."
+      ]
     }
   ],
   "individual_component_content": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "items": [
         "Realtime Computer Graphics",
         "Shader",
@@ -67,7 +80,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "items": [
         "Seminar, Practical"
       ]
@@ -75,7 +88,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "items": [
         "None"
       ]
@@ -95,24 +108,25 @@
   "responsible_person": "Prof. Dr. Uwe Hahne",
   "lecturers": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "names": [
+        "Prof. Dr. Uwe Hahne",
         "Prof. Christoph Müller"
       ]
     }
   ],
   "reading_list": [
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
+      "component": "a) Code 3 - Realtime Computer Graphics",
       "reference": "Akenine-Möller, Tomas; Haines, Eric; Hoffman Naty: Real-time Rendering, Fourth Edition, A K Peters/ CRC Press, 2018, ISBN: 9781138627000."
     },
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
-      "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https:// graphicscodex.com."
+      "component": "a) Code 3 - Realtime Computer Graphics",
+      "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https://graphicscodex.com."
     },
     {
-      "component": "a) Code 3 - Realtime Computer Graphics Graphics",
-      "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/. --"
+      "component": "a) Code 3 - Realtime Computer Graphics",
+      "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/."
     }
   ],
   "source_pages": [
