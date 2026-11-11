@@ -1,0 +1,37 @@
+{
+  "columns": ["Visual", "Sound", "Theory", "STEM", "Code", "Business", "Electives", "Projects"],
+  "studyStages": [
+    { "title": "Hauptstudium", "firstSemester": 3, "lastSemester": 7 },
+    { "title": "Grundstudium", "firstSemester": 1, "lastSemester": 2 }
+  ],
+  "modules": {
+    "visual1": { "column": "Visual", "block": 3 },
+    "visual2": { "column": "Visual", "block": 1 },
+    "visual3": { "column": "Visual", "block": 2 },
+    "sound1": { "column": "Sound", "block": 3 },
+    "sound2": { "column": "Sound", "block": 1 },
+    "theory1": { "column": "Theory", "block": 2 },
+    "theory2": { "column": "Theory", "block": 4 },
+    "theory3": { "column": "Theory", "block": 2 },
+    "stem1": { "column": "STEM", "block": null },
+    "stem2": { "column": "STEM", "block": 3 },
+    "stem3": { "column": "STEM", "block": 3 },
+    "code1": { "column": "Code", "block": 4 },
+    "code2": { "column": "Code", "block": 2 },
+    "code3": { "column": "Code", "block": 4 },
+    "code4": { "column": "Code", "block": 1 },
+    "business1": { "column": "Business", "block": 4 },
+    "business2": { "column": "Business", "block": null },
+    "elective1": { "column": "Electives", "block": 1 },
+    "elective2": { "column": "Electives", "block": 2 },
+    "elective3": { "column": "Electives", "block": 3 },
+    "elective4": { "column": "Electives", "block": 4 },
+    "project1": { "column": "Projects", "block": 1, "style": "project" },
+    "project2": { "column": "Projects", "block": 5, "style": "project" },
+    "project3": { "column": "Projects", "block": 5, "style": "project" },
+    "project4": { "column": "Projects", "block": 5, "style": "project" },
+    "project5": { "column": "Projects", "block": null, "style": "project" },
+    "thesis": { "column": "Projects", "block": null, "style": "project" },
+    "internship": { "column": "Visual", "block": null, "style": "internship", "span": 8 }
+  }
+}
