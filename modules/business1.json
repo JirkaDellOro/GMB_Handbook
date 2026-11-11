@@ -26,37 +26,37 @@
     {
       "category": "Knowledge",
       "items": [
-        "know the fundamentals of business economy and community management."
+        "know the fundamentals of business economics, project management, and community management."
       ]
     },
     {
       "category": "Comprehension",
       "items": [
-        "understand the dependencies between the various parts of a project and the implications."
+        "understand the dependencies between the various parts of a project and their implications."
       ]
     },
     {
       "category": "Practical Use",
       "items": [
-        "act as a team leader to produce interactive and immersive applications."
+        "draft and assess business plans, act as a team leader to produce interactive and immersive applications."
       ]
     },
     {
       "category": "Analysis",
       "items": [
-        "analyse an immersive application at different stages of development and assess quality."
+        "analyse an immersive application at different stages of development."
       ]
     },
     {
       "category": "Synthesis",
       "items": [
-        "estimate and calculate the costs of development of immersive applications."
+        "estimate and calculate the development costs of immersive applications."
       ]
     },
     {
       "category": "Evaluation",
       "items": [
-        "evaluate the results of user researches and their implications."
+        "formatively evaluate efficiency, quality, and feasibility of a project."
       ]
     }
   ],
@@ -64,11 +64,13 @@
     {
       "component": "a) Business 1",
       "items": [
-        "Producing",
-        "Quality Management",
-        "User Research",
-        "Community Management",
-        "Financial Calculation"
+        "Business Fundamentals",
+        "Game Theory of Cooperation and Contracts",
+        "Legal Forms and Business Models",
+        "Businessplans and Pitching",
+        "Project and Team Management",
+        "Basic Financial Calculations",
+        "Basic Community Management"
       ]
     }
   ],
