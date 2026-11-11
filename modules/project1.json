@@ -17,7 +17,9 @@
       ],
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
-      "class_size": 20
+      "class_size": 20,
+      "course_type": "W",
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -90,9 +92,9 @@
   "assessment": [
     {
       "component": "a) Entry Project - No Code",
-      "description": "--",
-      "graded_assessment": null,
-      "credits": null
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 6
     }
   ],
   "applicability": [
