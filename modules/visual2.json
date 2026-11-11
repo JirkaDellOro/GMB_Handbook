@@ -56,6 +56,12 @@
       "items": [
         "develop novel approaches and processes for complex tasks in 3D asset generation."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine their own semester work in the context of what they have learned."
+      ]
     }
   ],
   "individual_component_content": [
@@ -87,8 +93,7 @@
     {
       "component": "a) Visual 2 - Game Asset Creation",
       "items": [
-        "None",
-        "--"
+        "None"
       ]
     }
   ],
@@ -115,7 +120,7 @@
   "reading_list": [
     {
       "component": "a) Visual 2 - Game Asset Creation",
-      "reference": "Baechler, Oscar; Greer, Xury: Blender 3D By Example: A project-based guide to learning the latest Blender 3D, EEVEE rendering engine, and Grease Pencil, 2nd Edition, Packt Publishing, 2020, ISBN: 978-1789612561. --"
+      "reference": "Baechler, Oscar; Greer, Xury: Blender 3D By Example: A project-based guide to learning the latest Blender 3D, EEVEE rendering engine, and Grease Pencil, 2nd Edition, Packt Publishing, 2020, ISBN: 978-1789612561."
     }
   ],
   "source_pages": [
