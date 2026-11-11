@@ -49,6 +49,11 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     stage.style.gridRow = `${firstRow} / span ${rowSpan}`;
     grid.append(stage);
   }
+  const cells = new Map<string, {
+    row: number;
+    gridColumn: string;
+    entries: { module: ModuleData; semester: number; block: number | null; style: string }[];
+  }>();
   for (const module of modules) {
     const position = curriculum.modules[module.id];
     if (!position) continue;
@@ -56,18 +61,32 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     const column = curriculum.columns.indexOf(position.column);
     if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
     const row = 8 - semester;
-    const style = position.style ?? '';
-    const link = el('a', `curriculum-module${style ? ` curriculum-${style}` : ''}`);
-    link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
-    link.setAttribute('aria-label', `${module.title}, semester ${semester}, ${module.credits ?? 'unknown'} ECTS`);
-    link.style.gridColumn = position.span ? `${column + 2} / span ${position.span}` : String(column + 2);
-    link.style.gridRow = String(row);
-    appendText(link, 'strong', module.title, 'curriculum-module-title');
-    if (style !== 'internship') {
-      const block = position.block === null ? '–' : String(position.block);
-      appendText(link, 'span', `${block}.${module.credits ?? '—'}`, 'curriculum-module-meta');
+    const gridColumn = position.span ? `${column + 2} / span ${position.span}` : String(column + 2);
+    const key = `${row}:${gridColumn}`;
+    const cell = cells.get(key) ?? { row, gridColumn, entries: [] };
+    cell.entries.push({ module, semester, block: position.block, style: position.style ?? '' });
+    cells.set(key, cell);
+  }
+  for (const cellData of cells.values()) {
+    const container = cellData.entries.length > 1 ? el('div', 'curriculum-module-cell') : grid;
+    container.style.gridColumn = cellData.gridColumn;
+    container.style.gridRow = String(cellData.row);
+    if (cellData.entries.length > 1) {
+      container.style.gridTemplateRows = `repeat(${cellData.entries.length}, minmax(0, 1fr))`;
+      grid.append(container);
     }
-    grid.append(link);
+    for (const entry of cellData.entries) {
+      const { module, semester, block, style } = entry;
+      const link = el('a', `curriculum-module${style ? ` curriculum-${style}` : ''}`);
+      link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
+      link.setAttribute('aria-label', `${module.title}, semester ${semester}, ${module.credits ?? 'unknown'} ECTS`);
+      appendText(link, 'strong', module.title, 'curriculum-module-title');
+      if (style !== 'internship') {
+        const blockLabel = block === null ? '–' : String(block);
+        appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`, 'curriculum-module-meta');
+      }
+      container.append(link);
+    }
   }
   layout.append(grid);
   scroll.append(layout);
