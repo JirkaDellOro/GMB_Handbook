@@ -121,13 +121,15 @@
       "component": "a) Internship",
       "code": "1sbA",
       "graded_assessment": false,
-      "credits": 28
+      "credits": 28,
+      "description": "Practical Assignment during semester (sbA)"
     },
     {
       "component": "b) Seminar Internship",
       "code": "1R",
       "graded_assessment": false,
-      "credits": 2
+      "credits": 2,
+      "description": "Presentation with documentation (R)"
     }
   ],
   "applicability": [
