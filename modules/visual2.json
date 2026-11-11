@@ -70,13 +70,12 @@
         "3D Modelling, Box Modelling, Sculpting",
         "Poly Modelling / Polygon Flow, Retopology Materials, Lights and Texturing",
         "UV Unwrapping, Texture Painting, Normal Mapping",
-        "Material generation for game engines",
         "Light and Material",
         "Character, from Concept Art to 3D-Primitive Block-Out",
-        "Animation Basics, Keyframe Animation, Path Animation",
         "From Models to Assets",
         "Modelling for Realtime Engines",
-        "Materials for Realtime Engines"
+        "Materials for Realtime Engines",
+        "Colour theory and practical application"
       ]
     }
   ],
@@ -92,7 +91,7 @@
     {
       "component": "a) Visual 2 - Game Asset Creation",
       "items": [
-        "None"
+        "Completion of Visual 1"
       ]
     }
   ],

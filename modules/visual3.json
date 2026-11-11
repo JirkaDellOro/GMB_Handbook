@@ -10,7 +10,7 @@
   "components": [
     {
       "label": "a)",
-      "name": "Visual 3 - Game Character Design and Animation",
+      "name": "Visual 3 - Game Character Animation",
       "language": [
         "English"
       ],
@@ -40,8 +40,7 @@
     {
       "category": "Practical Use",
       "items": [
-        "create complex character animation phases for non-linear playback in real-time environments.",
-        "create rule-based, physically simulated as well as generative animations for use in real-time environments."
+        "create complex character animation phases for non-linear playback in real-time environments."
       ]
     },
     {
@@ -65,10 +64,9 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "items": [
-        "Advanced Material and Shading, 3D-Animation (Realtime), Non-linear animation, Animation State-machines, Animation Blending",
-        "Combining Physics and scripted Animation",
+        "3D-Animation (Realtime), Non-linear animation, Animation State-machines, Animation Blending",
         "Character Animation, Rigging Forward / Inverse Kinematics",
         "Walk Cycles",
         "From Models to Assets",
@@ -78,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "items": [
         "Seminar, Practical"
       ]
@@ -86,15 +84,15 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "items": [
-        "None"
+        "Completion of Visual 2"
       ]
     }
   ],
   "assessment": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -107,7 +105,7 @@
   "responsible_person": "Prof. Christoph Müller",
   "lecturers": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "names": [
         "Prof. Christoph Müller",
         "Prof. Niv Shpigel"
@@ -116,15 +114,15 @@
   ],
   "reading_list": [
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "reference": "Williams, Richard: The Animator's Survival Kit: A Manual of Methods, Principles and Formulas for Classical, Computer, Games, Stop Motion and Internet Animators, Farrar, Straus and Giroux, 2012, ISBN: 978-0865478978"
     },
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "reference": "Osipa, Jason: Stop Staring: Facial Modeling and Animation Done Right (3rd Edition), Sybex, 2010, ISBN: 0470609907"
     },
     {
-      "component": "a) Visual 3 - Game Character Design and Animation",
+      "component": "a) Visual 3 - Game Character Animation",
       "reference": "Totten, Chris: Game Character Creation with Blender and Unity, Sybex, 2012, ISBN: 1118172728"
     }
   ],
