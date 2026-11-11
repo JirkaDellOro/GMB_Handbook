@@ -92,10 +92,9 @@
   "assessment": [
     {
       "component": "a) Code 2",
-      "description": "",
+      "code": "1sbK",
       "graded_assessment": true,
-      "credits": null,
-      "code": "1sbK"
+      "credits": 6
     }
   ],
   "applicability": [
