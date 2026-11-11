@@ -68,10 +68,11 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     cells.set(key, cell);
   }
   for (const cellData of cells.values()) {
-    const container = cellData.entries.length > 1 ? el('div', 'curriculum-module-cell') : grid;
-    container.style.gridColumn = cellData.gridColumn;
-    container.style.gridRow = String(cellData.row);
-    if (cellData.entries.length > 1) {
+    const isStacked = cellData.entries.length > 1;
+    const container = isStacked ? el('div', 'curriculum-module-cell') : grid;
+    if (isStacked) {
+      container.style.gridColumn = cellData.gridColumn;
+      container.style.gridRow = String(cellData.row);
       container.style.gridTemplateRows = `repeat(${cellData.entries.length}, minmax(0, 1fr))`;
       grid.append(container);
     }
@@ -80,6 +81,10 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
       const link = el('a', `curriculum-module${style ? ` curriculum-${style}` : ''}`);
       link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
       link.setAttribute('aria-label', `${module.title}, semester ${semester}, ${module.credits ?? 'unknown'} ECTS`);
+      if (!isStacked) {
+        link.style.gridColumn = cellData.gridColumn;
+        link.style.gridRow = String(cellData.row);
+      }
       appendText(link, 'strong', module.title, 'curriculum-module-title');
       if (style !== 'internship') {
         const blockLabel = block === null ? '–' : String(block);
