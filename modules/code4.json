@@ -65,8 +65,7 @@
     {
       "component": "a) Code 4",
       "items": [
-        "Game AI: Finite Automata und Behaviour Trees, Agents, Search Problems, Uninformed Search,",
-        "Informed Search (A* and Heuristics)",
+        "Game AI: Finite Automata und Behaviour Trees, Agents, Search Problems, Uninformed Search, Informed Search (A* and Heuristics)",
         "Adversarial Search and Games I: Minimax,",
         "Alpha-beta Pruning Adversarial Search and Games II: Expect Imax, MCTSReinforcement Learning",
         "Network: Relational and NoSQL databases,",
