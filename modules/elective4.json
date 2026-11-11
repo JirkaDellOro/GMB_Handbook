@@ -1,7 +1,7 @@
 {
   "id": "elective4",
   "title": "Elective 4",
-  "module_code": "IV-2024-2904",
+  "module_code": "DM-2024-2904",
   "semester": 7,
   "workload_hours": 180,
   "credits": 6,
@@ -15,7 +15,7 @@
         "German",
         "English"
       ],
-      "contact_hours": null,
+      "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
       "class_size": 50,
       "course_type": null,
