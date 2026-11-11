@@ -58,6 +58,13 @@
         "design and create interactions and user interfaces.",
         "realize basic algorithms / programs."
       ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate user interfaces using heuristics and design principles.",
+        "evaluate code for programming principles."
+      ]
     }
   ],
   "individual_component_content": [
@@ -88,8 +95,7 @@
     {
       "component": "a) Computer Science and HCI Theory",
       "items": [
-        "None",
-        "--"
+        "None"
       ]
     }
   ],
