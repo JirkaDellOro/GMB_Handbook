@@ -15,9 +15,11 @@
         "German",
         "English"
       ],
-      "contact_hours": "4 SWS / 45h",
+      "contact_hours": null,
       "self_study_hours": 135,
-      "class_size": 50
+      "class_size": 50,
+      "course_type": null,
+      "credit_points": 6
     }
   ],
   "learning_outcomes_intro": "After successfully completing the module, students will be able to",
@@ -62,8 +64,14 @@
   "assessment": [
     {
       "component": "a) Elective Course (WPM) see (5)",
-      "description": "",
-      "graded_assessment": null,
+      "code": "PL",
+      "graded_assessment": true,
+      "credits": null
+    },
+    {
+      "component": "a) Elective Course (WPM) see (5)",
+      "code": "SL",
+      "graded_assessment": false,
       "credits": null
     }
   ],
