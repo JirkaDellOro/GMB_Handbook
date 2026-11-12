@@ -129,12 +129,11 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
   for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
     appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
+    const gridScroll = el('div', 'study-grid-scroll');
     const grid = el('div', 'study-data-grid');
-    grid.setAttribute('role', 'table');
     grid.setAttribute('aria-label', `Table ${range.number}: ${range.heading}`);
     for (const title of columns) {
       const cell = el('div', 'study-grid-cell study-grid-header', title);
-      cell.setAttribute('role', 'columnheader');
       grid.append(cell);
     }
     const semesterModules = new Map<number, ModuleData[]>();
@@ -150,7 +149,6 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
       const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
       const semesterTitle = el('div', 'study-grid-cell study-semester-title', `${semester}. Curricular Semester`);
       semesterTitle.style.gridColumn = 'span 6';
-      semesterTitle.setAttribute('role', 'rowheader');
       grid.append(semesterTitle);
       const semesterTotal = el('div', 'study-grid-cell study-semester-total', String(semesterCredits));
       semesterTotal.setAttribute('aria-label', `${semester} semester credit points`);
@@ -162,7 +160,6 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
         moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
         moduleCell.append(moduleLink);
         moduleCell.style.gridRow = `span ${components.length}`;
-        moduleCell.setAttribute('role', 'rowheader');
         grid.append(moduleCell);
         for (const component of components) {
           const componentName = component ? `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim() : '—';
@@ -176,7 +173,6 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
           ];
           for (const value of values) {
             const cell = el('div', 'study-grid-cell', value);
-            cell.setAttribute('role', 'cell');
             grid.append(cell);
           }
         }
@@ -189,7 +185,8 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
     overall.style.gridColumn = 'span 6';
     grid.append(overall);
     grid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
-    sectionNode.append(grid);
+    gridScroll.append(grid);
+    sectionNode.append(gridScroll);
     target.append(sectionNode);
   }
 }
