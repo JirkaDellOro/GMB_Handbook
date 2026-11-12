@@ -270,7 +270,9 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
       componentGrid.append(cell);
     }
   }
-  components.append(componentGrid);
+  const componentScroll = el('div', 'detail-grid-scroll');
+  componentScroll.append(componentGrid);
+  components.append(componentScroll);
 
   const outcomes = section('Module Learning Outcomes', article);
   if (module.learning_outcomes_intro) appendText(outcomes, 'p', module.learning_outcomes_intro);
@@ -315,7 +317,9 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
       assessmentGrid.append(cell);
     }
   }
-  assessment.append(assessmentGrid);
+  const assessmentScroll = el('div', 'detail-grid-scroll');
+  assessmentScroll.append(assessmentGrid);
+  assessment.append(assessmentScroll);
 
   const applicability = section('Applicability of Module', article);
   appendText(applicability, 'p', 'Required module in:'); addList(applicability, module.applicability);
