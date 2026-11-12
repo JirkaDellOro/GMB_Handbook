@@ -65,7 +65,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "items": [
         "3D Modelling, Box Modelling, Sculpting",
         "Poly Modelling / Polygon Flow, Retopology Materials, Lights and Texturing",
@@ -81,7 +81,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "items": [
         "Seminar, Practical"
       ]
@@ -89,7 +89,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "items": [
         "Completion of Visual 1"
       ]
@@ -97,7 +97,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -110,7 +110,7 @@
   "responsible_person": "Prof. Christoph Müller",
   "lecturers": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "names": [
         "Prof. Christoph Müller"
       ]
@@ -118,7 +118,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Visual 2 - Game Asset Creation",
+      "component": "a)",
       "reference": "Baechler, Oscar; Greer, Xury: Blender 3D By Example: A project-based guide to learning the latest Blender 3D, EEVEE rendering engine, and Grease Pencil, 2nd Edition, Packt Publishing, 2020, ISBN: 978-1789612561"
     }
   ],
