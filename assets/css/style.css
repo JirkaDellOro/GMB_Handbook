@@ -29,3 +29,49 @@
 .study-module-cell a:hover { text-decoration: underline; }
 .study-overall-label, .study-overall-total { background: #eaf0f2; font-weight: 800; border-bottom: 0; }
 .study-table-footnote { margin: 12px 2px 0; color: var(--muted); font-size: 12px; }
+
+/* Module detail data grids */
+.detail-data-grid {
+  display: grid;
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.component-grid {
+  grid-template-columns: minmax(150px, 1.35fr) repeat(5, minmax(105px, 1fr)) minmax(65px, .6fr);
+  min-width: 850px;
+}
+.assessment-grid {
+  grid-template-columns: minmax(135px, 1.1fr) minmax(65px, .55fr) minmax(240px, 2fr) minmax(115px, .9fr) minmax(65px, .55fr);
+  min-width: 760px;
+}
+.detail-grid-cell {
+  min-width: 0;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.detail-grid-cell:nth-child(7n + 1),
+.detail-grid-cell:nth-child(7n + 2),
+.detail-grid-cell:nth-child(7n + 3),
+.detail-grid-cell:nth-child(7n + 4),
+.detail-grid-cell:nth-child(7n + 5),
+.detail-grid-cell:nth-child(7n + 6),
+.detail-grid-cell:nth-child(7n + 7) { background: #fff; }
+.detail-grid-header {
+  background: #eaf0f2 !important;
+  color: var(--blue-dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+.assessment-grid .detail-grid-cell { border-bottom: 1px solid var(--line); }
+.assessment-grid .detail-grid-header { background: #eaf0f2 !important; }
+@media print {
+  .detail-data-grid { overflow: visible; min-width: 0; }
+  .component-grid { grid-template-columns: 1.35fr repeat(5, 1fr) .6fr; }
+  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+}
