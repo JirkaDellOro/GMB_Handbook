@@ -62,7 +62,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "items": [
         "Business Fundamentals",
         "Game Theory of Cooperation and Contracts",
@@ -76,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "items": [
         "Seminar"
       ]
@@ -84,7 +84,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "items": [
         "none"
       ]
@@ -92,7 +92,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 6,
@@ -105,7 +105,7 @@
   "responsible_person": "Prof. Dr. Alexander Maier",
   "lecturers": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "names": [
         "Prof. Dr. Alexander Maier"
       ]
@@ -113,7 +113,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Business 1",
+      "component": "a)",
       "reference": "Will be given in lecture as applicable."
     }
   ],
