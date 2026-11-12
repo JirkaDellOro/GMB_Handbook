@@ -78,13 +78,13 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "items": [
         "Depending on the chosen topic and thesis supervisor."
       ]
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "items": [
         "Depending on the chosen topic and thesis supervisor."
       ]
@@ -92,13 +92,13 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "items": [
         "Thesis"
       ]
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "items": [
         "Meetings with the supervisors, public thesis presentation and discussion"
       ]
@@ -106,13 +106,13 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "items": [
         "Successful completion of the degree programme, basic studies fully completed, thesis registration"
       ]
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "items": [
         "None"
       ]
@@ -120,14 +120,14 @@
   ],
   "assessment": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "code": "1T",
       "graded_assessment": true,
       "credits": 12,
       "description": "Thesis (T)"
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "code": "1PN",
       "graded_assessment": false,
       "credits": 6,
@@ -140,13 +140,13 @@
   "responsible_person": "Academics Vice Dean",
   "lecturers": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "names": [
         "All professors of the faculty"
       ]
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "names": [
         "N.N."
       ]
@@ -154,11 +154,11 @@
   ],
   "reading_list": [
     {
-      "component": "a) Bachelor Thesis",
+      "component": "a)",
       "reference": "Depending on the chosen topic and thesis supervisor."
     },
     {
-      "component": "b) Thesis Seminar",
+      "component": "b)",
       "reference": "Depending on the chosen topic and thesis supervisor."
     }
   ],
