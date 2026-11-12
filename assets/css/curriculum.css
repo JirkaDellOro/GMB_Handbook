@@ -1,15 +1,15 @@
 /* Homepage curriculum graphic */
-.home-page { background: #251724; }
-.home-page .site-header { background: #251724; border-bottom: 1px solid #56334f; color: #fff; }
-.home-page .brand { color: #fff; }
-.home-page .brand small { color: #c9a9c2; }
-.home-page .site-header nav a { color: #f0d9eb; }
+.home-page { background: var(--page-bg); }
+.home-page .site-header { background: var(--page-bg); border-bottom: 1px solid var(--line); color: var(--surface); }
+.home-page .brand { color: var(--surface); }
+.home-page .brand small { color: var(--muted); }
+.home-page .site-header nav a { color: var(--accent-light); }
 .home-page .page-shell { max-width: 1600px; padding-top: 28px; }
-.home-page .listing-heading { padding: 10px 0 24px; color: #fff; }
+.home-page .listing-heading { padding: 10px 0 24px; color: var(--surface); }
 .home-page .listing-heading h1 { font-size: clamp(30px, 4vw, 48px); }
-.home-page .listing-heading > p:last-child { color: #d2b9cd; margin-bottom: 0; }
-.home-page .listing-heading .eyebrow { color: #c58ab8; }
-.home-page .site-footer { background: #251724; color: #c9a9c2; border-top-color: #56334f; }
+.home-page .listing-heading > p:last-child { color: var(--muted); margin-bottom: 0; }
+.home-page .listing-heading .eyebrow { color: var(--accent-strong); }
+.home-page .site-footer { background: var(--page-bg); color: var(--muted); border-top-color: var(--line); }
 .curriculum-scroll { width: 100%; overflow-x: auto; padding-bottom: 4px; }
 .curriculum-layout { min-width: 980px; }
 .curriculum-headings, .curriculum-grid {
@@ -19,7 +19,7 @@
 }
 .curriculum-headings { margin-bottom: 8px; align-items: end; }
 .curriculum-column-heading {
-  color: #e9cfe3; text-align: center; font: 700 13px/1.2 Manrope, sans-serif;
+  color: var(--accent-light); text-align: center; font: 700 13px/1.2 Manrope, sans-serif;
   letter-spacing: .02em; padding: 0 2px 4px;
 }
 .curriculum-grid {
@@ -28,13 +28,13 @@
   position: relative;
 }
 .curriculum-semester {
-  color: #fff; font: 500 32px/1 Manrope, sans-serif;
+  color: var(--surface); font: 500 32px/1 Manrope, sans-serif;
   display: flex; align-items: center; justify-content: center;
 }
 .curriculum-module {
   position: relative; display: flex; align-items: center; justify-content: center;
   min-width: 0; min-height: 0; padding: 12px 10px 22px;
-  border-radius: 4px; background: #fff; color: #96358b;
+  border-radius: 4px; background: var(--surface); color: var(--accent);
   text-decoration: none; text-align: center; font-family: Manrope, sans-serif;
   transition: transform .14s ease, box-shadow .14s ease;
 }
@@ -42,22 +42,22 @@
 .curriculum-module:focus-visible { outline: 3px solid #f3b6e7; outline-offset: 3px; z-index: 2; }
 .curriculum-module-title { font-size: clamp(13px, 1.3vw, 20px); line-height: 1.2; font-weight: 800; }
 .curriculum-module-meta { position: absolute; right: 10px; bottom: 6px; font-size: 13px; line-height: 1; font-weight: 800; }
-.curriculum-project { background: #96358b; color: #fff; }
-.curriculum-project .curriculum-module-meta { color: #fff; }
+.curriculum-project { background: var(--accent); color: var(--surface); }
+.curriculum-project .curriculum-module-meta { color: var(--surface); }
 .curriculum-internship { padding: 12px; }
 .curriculum-internship .curriculum-module-title { font-size: 20px; }
 .curriculum-stage {
-  color: #fff; border-left: 3px solid #fff; position: relative;
+  color: var(--surface); border-left: 3px solid var(--surface); position: relative;
   writing-mode: vertical-rl; text-orientation: mixed;
   display: flex; align-items: center; justify-content: center;
   font: 700 17px/1 Manrope, sans-serif; letter-spacing: .02em;
 }
 .curriculum-stage::before, .curriculum-stage::after {
-  content: ''; position: absolute; left: -3px; width: 14px; height: 3px; background: #fff;
+  content: ''; position: absolute; left: -3px; width: 14px; height: 3px; background: var(--surface);
 }
 .curriculum-stage::before { top: 0; }
 .curriculum-stage::after { bottom: 0; }
-.curriculum-legend { color: #fff; text-align: center; font-size: 14px; font-weight: 700; margin: 24px 0 8px; }
+.curriculum-legend { color: var(--surface); text-align: center; font-size: 14px; font-weight: 700; margin: 24px 0 8px; }
 @media (max-width: 700px) {
   .home-page .site-header { align-items: flex-start; gap: 18px; flex-direction: column; }
   .home-page .page-shell { padding: 22px 14px 48px; }
