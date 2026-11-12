@@ -64,7 +64,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "items": [
         "3D-Animation (Realtime), Non-linear animation, Animation State-machines, Animation Blending",
         "Character Animation, Rigging Forward / Inverse Kinematics",
@@ -76,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "items": [
         "Seminar, Practical"
       ]
@@ -84,7 +84,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "items": [
         "Completion of Visual 2"
       ]
@@ -92,7 +92,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -105,7 +105,7 @@
   "responsible_person": "Prof. Christoph Müller",
   "lecturers": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "names": [
         "Prof. Christoph Müller",
         "Prof. Niv Shpigel"
@@ -114,15 +114,15 @@
   ],
   "reading_list": [
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "reference": "Williams, Richard: The Animator's Survival Kit: A Manual of Methods, Principles and Formulas for Classical, Computer, Games, Stop Motion and Internet Animators, Farrar, Straus and Giroux, 2012, ISBN: 978-0865478978"
     },
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "reference": "Osipa, Jason: Stop Staring: Facial Modeling and Animation Done Right (3rd Edition), Sybex, 2010, ISBN: 0470609907"
     },
     {
-      "component": "a) Visual 3 - Game Character Animation",
+      "component": "a)",
       "reference": "Totten, Chris: Game Character Creation with Blender and Unity, Sybex, 2012, ISBN: 1118172728"
     }
   ],
