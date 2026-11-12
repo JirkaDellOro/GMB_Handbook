@@ -288,6 +288,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   outcomes.append(outcomeGrid);
 
   const content = section('Individual Component Content', article);
+  content.classList.add('component-content-panel');
   for (const item of module.individual_component_content ?? []) {
     if (item.component) appendText(content, 'h3', componentReference(module, item.component));
     addList(content, item.items, 'tag-list');
