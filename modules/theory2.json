@@ -146,7 +146,7 @@
     {
       "component": "a) Theory 2 - Game Design",
       "code": "1sbA",
-      "graded_assessment": true,
+      "graded_assessment": false,
       "credits": 1,
       "description": "Practical Assignment during semester (sbA)"
     },
