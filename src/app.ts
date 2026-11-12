@@ -1,8 +1,9 @@
 import { loadCurriculum, loadManifest, loadModule } from './modules.js';
-import { renderCurriculum, renderError, renderModuleDetail, renderModuleList } from './render.js';
+import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from './render.js';
 
 async function start(): Promise<void> {
   const curriculumTarget = document.querySelector<HTMLElement>('#curriculum-grid');
+  const overviewTarget = document.querySelector<HTMLElement>('#module-overview');
   const listTarget = document.querySelector<HTMLElement>('#module-list');
   const detailTarget = document.querySelector<HTMLElement>('#module-detail');
 
@@ -22,6 +23,7 @@ async function start(): Promise<void> {
         [...new Set(semesters.flatMap(semester => semester.modules))].map(loadModule)
       );
       renderCurriculum(curriculumTarget, modules, curriculum);
+      if (overviewTarget) renderStudyTables(overviewTarget, modules);
       return;
     }
 
