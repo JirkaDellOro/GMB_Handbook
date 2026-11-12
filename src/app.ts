@@ -23,7 +23,7 @@ async function start(): Promise<void> {
         [...new Set(semesters.flatMap(semester => semester.modules))].map(loadModule)
       );
       renderCurriculum(curriculumTarget, modules, curriculum);
-      if (overviewTarget) renderModuleOverview(overviewTarget, modules);
+      if (overviewTarget) renderStudyTables(overviewTarget, modules);
       return;
     }
 
