@@ -68,7 +68,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "items": [
         "Why computer science?",
         "Current research and technology",
@@ -84,7 +84,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "items": [
         "Lecture (V) / Seminar (S)"
       ]
@@ -92,7 +92,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "items": [
         "None"
       ]
@@ -100,14 +100,14 @@
   ],
   "assessment": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 3,
       "description": "Written Exam during semester (sbK)"
     },
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "code": "1R",
       "graded_assessment": false,
       "credits": 3,
@@ -120,7 +120,7 @@
   "responsible_person": "Prof. Dr. Thomas Schlegel",
   "lecturers": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "names": [
         "Prof. Dr. Thomas Schlegel",
         "Prof. Niv Shpigel",
@@ -132,7 +132,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Computer Science and HCI Theory",
+      "component": "a)",
       "reference": "Will be given in lecture as applicable"
     }
   ],
