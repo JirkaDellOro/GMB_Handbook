@@ -157,14 +157,30 @@ const studyTableData: StudyTableSemester[] = [
   ] }
 ];
 
-export function renderStudyTables(target) {
+const studyTableRanges = [
+  { number: 2, firstSemester: 1, lastSemester: 2, heading: 'Foundation Studies' },
+  { number: 3, firstSemester: 3, lastSemester: 7, heading: 'Advanced Studies' }
+];
+
+function componentAssessments(module, component, graded) {
+  const componentName = `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim();
+  return (module.assessment ?? [])
+    .filter(item => item.component === componentName && item.graded_assessment === graded)
+    .map(item => item.code).filter(Boolean).join(', ');
+}
+
+function contactHoursSws(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  const match = String(value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+  return match ? match[1].replace(',', '.') : String(value);
+}
+
+export function renderStudyTables(target, modules) {
   target.replaceChildren();
-  for (const [tableNumber, semesters, heading] of [
-    [2, studyTableData.slice(0, 2), 'Foundation Studies'],
-    [3, studyTableData.slice(2), 'Advanced Studies']
-  ]) {
+  const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
+  for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
-    appendText(sectionNode, 'h2', `Table ${tableNumber}: Games & Immersive Media B.A. (${tableNumber === 2 ? '1-2' : '3-7'} ${heading} Curricular Semester)`);
+    appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
     const scroll = el('div', 'table-scroll');
     const table = el('table', 'study-table');
     const thead = el('thead');
@@ -173,55 +189,62 @@ export function renderStudyTables(target) {
     thead.append(header);
     table.append(thead);
     const body = el('tbody');
-    for (const semester of semesters) {
+    const semesterModules = new Map();
+    for (const module of orderedModules) {
+      const semester = Number(module.semester);
+      if (!Number.isInteger(semester) || semester < range.firstSemester || semester > range.lastSemester) continue;
+      const group = semesterModules.get(semester) ?? [];
+      group.push(module);
+      semesterModules.set(semester, group);
+    }
+    for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
+      const semesterItems = semesterModules.get(semester) ?? [];
+      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
       const semesterRow = el('tr', 'semester-row');
-      const semesterCell = el('th', undefined, `${semester.semester}. Curricular Semester`);
+      const semesterCell = el('th', undefined, `${semester}. Curricular Semester`);
       semesterCell.colSpan = 6;
       semesterRow.append(semesterCell);
-      const total = el('th', undefined, String(semester.credits));
+      const total = el('th', undefined, String(semesterCredits));
       total.className = 'semester-total';
       semesterRow.append(total);
       body.append(semesterRow);
-      for (const module of semester.modules) {
-        module.rows.forEach((item, index) => {
+      for (const module of semesterItems) {
+        const components = module.components?.length ? module.components : [undefined];
+        components.forEach((component, index) => {
           const row = el('tr', index === 0 ? 'module-first-row' : 'module-continuation-row');
           if (index === 0) {
             const moduleCell = el('th', 'module-group');
-            const moduleLink = el('a', undefined, `${module.title} (${module.credits} credits)`);
+            const moduleLink = el('a', undefined, `${module.title} (${module.credits ?? '—'} credits)`);
             moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
             moduleCell.append(moduleLink);
-            moduleCell.rowSpan = module.rows.length;
+            moduleCell.rowSpan = components.length;
             row.append(moduleCell);
           }
-          appendText(row, 'td', item.name);
-          appendText(row, 'td', item.type);
-          appendText(row, 'td', item.hours);
-          appendText(row, 'td', item.graded);
-          appendText(row, 'td', item.nonGraded);
-          appendText(row, 'td', item.credits);
+          const componentName = component ? `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim() : '—';
+          appendText(row, 'td', componentName);
+          appendText(row, 'td', component?.course_type);
+          appendText(row, 'td', contactHoursSws(component?.contact_hours));
+          appendText(row, 'td', component ? componentAssessments(module, component, true) : undefined);
+          appendText(row, 'td', component ? componentAssessments(module, component, false) : undefined);
+          appendText(row, 'td', component?.credit_points);
           body.append(row);
         });
       }
     }
-    if (tableNumber === 3) {
-      const overall = el('tr', 'overall-row');
-      const label = el('th', undefined, 'Overall'); label.colSpan = 6; overall.append(label);
-      overall.append(el('th', undefined, '150'));
-      body.append(overall);
-    } else {
-      const overall = el('tr', 'overall-row');
-      const label = el('th', undefined, 'Overall'); label.colSpan = 6; overall.append(label);
-      overall.append(el('th', undefined, '60'));
-      body.append(overall);
-    }
+    const overallCredits = orderedModules.filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
+      .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+    const overall = el('tr', 'overall-row');
+    const label = el('th', undefined, 'Overall');
+    label.colSpan = 6;
+    overall.append(label);
+    overall.append(el('th', undefined, String(overallCredits)));
+    body.append(overall);
     table.append(body);
     scroll.append(table);
     sectionNode.append(scroll);
-    if (tableNumber === 3) appendText(sectionNode, 'p', '(1) The total of the graded assessment is only passed if all multiple component assessments are graded at least “adequate” (4,0). In case of failure, only the failed component assessments must or may be repeated.', 'study-table-footnote');
     target.append(sectionNode);
   }
 }
-
 
 export function renderModuleTile(module) {
     const link = el('a', 'module-tile');
