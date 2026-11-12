@@ -62,7 +62,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "items": [
         "Basics of sound, listening and sonic interaction",
         "Impact of sound and music in media environments",
@@ -76,7 +76,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "items": [
         "Seminar"
       ]
@@ -84,7 +84,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "items": [
         "None"
       ]
@@ -92,7 +92,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -105,7 +105,7 @@
   "responsible_person": "Prof. Dr. Norbert Schnell",
   "lecturers": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "names": [
         "Prof. Dr. Norbert Schnell"
       ]
@@ -113,27 +113,27 @@
   ],
   "reading_list": [
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Collins, Karen: Playing with Sound – A Theory of Interacting with Sound and Music in Video Games, MIT Press, 2013, ISBN: 9780262018678"
     },
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Görne, Thomas: Sounddesign: Klang Wahrnehmung Emotion, Carl Hanser Verlag, 2017, ISBN: 3446442979"
     },
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Geronazzo, Michele; Serafin, Stefania: Sonic Interactions in Virtual Environments (Human–Computer Interaction Series), Springer International Publishing, 2022, ISBN: 978-3031040207"
     },
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Grimshaw, Mark: Game Sound Technology and Player Interaction: Concepts and Developments, Idea Group Reference, 2010, ISBN: 978-1616928285"
     },
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Kapralos, Bill; Tessler, Holly; Collins, Karen: The Oxford Handbook of Interactive Audio, Oxford University Press, 2014, 978-0199797226"
     },
     {
-      "component": "a) Sound 1 - Basics of sound and music design",
+      "component": "a)",
       "reference": "Karlin, Fred; Wright, Rayburn: On the Track: A Guide to Contemporary Film Scoring, Taylor & Francis, 2004, ISBN: 9780203643907"
     }
   ],
