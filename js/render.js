@@ -162,7 +162,7 @@ export function renderStudyTables(target) {
   for (const [tableNumber, semesters, heading] of [
     [2, studyTableData.slice(0, 2), 'Foundation Studies'],
     [3, studyTableData.slice(2), 'Advanced Studies']
-  ] as [number, StudyTableSemester[], string][]) {
+  ]) {
     const sectionNode = el('section', 'study-table-section');
     appendText(sectionNode, 'h2', `Table ${tableNumber}: Games & Immersive Media B.A. (${tableNumber === 2 ? '1-2' : '3-7'} ${heading} Curricular Semester)`);
     const scroll = el('div', 'table-scroll');
@@ -186,7 +186,10 @@ export function renderStudyTables(target) {
         module.rows.forEach((item, index) => {
           const row = el('tr', index === 0 ? 'module-first-row' : 'module-continuation-row');
           if (index === 0) {
-            const moduleCell = el('th', 'module-group', `${module.title} (${module.credits} credits)`);
+            const moduleCell = el('th', 'module-group');
+            const moduleLink = el('a', undefined, `${module.title} (${module.credits} credits)`);
+            moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
+            moduleCell.append(moduleLink);
             moduleCell.rowSpan = module.rows.length;
             row.append(moduleCell);
           }
