@@ -34,7 +34,7 @@
 .curriculum-module {
   position: relative; display: flex; align-items: center; justify-content: center;
   min-width: 0; min-height: 0; padding: 12px 10px 22px;
-  border-radius: 4px; background: var(--surface); color: var(--ink);
+  border-radius: 4px; background: var(--surface-soft); color: var(--ink);
   text-decoration: none; text-align: center; font-family: Manrope, sans-serif;
   transition: transform .14s ease, box-shadow .14s ease;
 }
