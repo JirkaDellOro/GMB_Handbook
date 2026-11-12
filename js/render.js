@@ -278,6 +278,7 @@ export function renderModuleDetail(target, module) {
     }
     outcomes.append(outcomeGrid);
     const content = section('Individual Component Content', article);
+    content.classList.add('component-content-panel');
     for (const item of module.individual_component_content ?? []) {
         if (item.component)
             appendText(content, 'h3', componentReference(module, item.component));
