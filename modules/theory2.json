@@ -79,7 +79,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "items": [
         "Game Studies",
         "Design Graphs",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "items": [
         "Elementary Combinatorics",
         "Finite Probability Spaces: Examples",
@@ -109,13 +109,13 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "items": [
         "Seminar, Practical"
       ]
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "items": [
         "Seminar"
       ]
@@ -123,13 +123,13 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "items": [
         "none"
       ]
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "items": [
         "None"
       ]
@@ -137,21 +137,21 @@
   ],
   "assessment": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 2,
       "description": "Written Exam during semester (sbK)"
     },
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": false,
       "credits": 1,
       "description": "Practical Assignment during semester (sbA)"
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 3,
@@ -164,13 +164,13 @@
   "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
   "lecturers": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "names": [
         "Prof. Jirka Dell´Oro-Friedl"
       ]
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "names": [
         "Prof. Dr. Ekkehard Batzies"
       ]
@@ -178,27 +178,27 @@
   ],
   "reading_list": [
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "reference": "Schell, Jesse: The Art of Game Design: A Book of Lenses (3rd Edition), Taylor & Francis, 2019, ISBN: 1138632058"
     },
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "reference": "Fritz, Jürgen: Das Spiel verstehen: Eine Einführung in Theorie und Bedeutung (Grundlagentexte Soziale Berufe), Beltz Juventa, 2004, ISBN: 3779919419"
     },
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "reference": "Huizinga, Johan: Homo Ludens, Taylor & Francis, 1949, ISBN: 9781315824161"
     },
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "reference": "Caillois, Roger (Author); Barash, Meyer (Translator): Man, play, and games, University of Illinois Press, 2001, ISBN: 978-0252070334"
     },
     {
-      "component": "a) Theory 2 - Game Design",
+      "component": "a)",
       "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518"
     },
     {
-      "component": "b) Theory 2 - Game Theory",
+      "component": "b)",
       "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8"
     }
   ]
