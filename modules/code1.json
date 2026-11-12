@@ -62,7 +62,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "items": [
         "Creative Code",
         "Web Fundamentals",
@@ -75,7 +75,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "items": [
         "Seminar"
       ]
@@ -83,7 +83,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "items": [
         "None"
       ]
@@ -91,7 +91,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "description": "Written Exam during semester (sbK)",
       "graded_assessment": true,
       "credits": 6,
@@ -104,7 +104,7 @@
   "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
   "lecturers": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "names": [
         "Prof. Jirka Dell´Oro-Friedl"
       ]
@@ -112,19 +112,19 @@
   ],
   "reading_list": [
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "reference": "Kecher, Christoph; Hoffmann-Elbern, Ralf; Will, Thorsten: UML 2.5, Rheinwerk Computing, 2021, ISBN: 978-3-8362-8447-9"
     },
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/"
     },
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Booklet.pdf"
     },
     {
-      "component": "a) Code 1",
+      "component": "a)",
       "reference": "Santamaria, Paula: TypeScript Gamified, Selfpublished 2026, https://paulasantamaria.gumroad.com/l/typescript-gamified"
     }
   ]

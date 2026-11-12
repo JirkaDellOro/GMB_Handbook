@@ -60,7 +60,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "items": [
         "No-Code/Low-Code game project",
         "Agile mindset",
@@ -74,7 +74,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "items": [
         "Project"
       ]
@@ -82,7 +82,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "items": [
         "None"
       ]
@@ -90,7 +90,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -103,7 +103,7 @@
   "responsible_person": "Prof. Nikolaus Hottong",
   "lecturers": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "names": [
         "Prof. Nikolaus Hottong",
         "Prof. Dr. Uwe Hahne"
@@ -112,7 +112,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Entry Project - No Code",
+      "component": "a)",
       "reference": "Depending on subject of study and task."
     }
   ],

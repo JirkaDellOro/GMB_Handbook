@@ -75,13 +75,13 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "items": [
         "Depends on degree programme and employer"
       ]
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "items": [
         "Self-critical reflection of activities and acquired knowledge in the context of professional activity"
       ]
@@ -89,13 +89,13 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "items": [
         "Internship"
       ]
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "items": [
         "Seminar"
       ]
@@ -103,13 +103,13 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "items": [
         "None"
       ]
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "items": [
         "None"
       ]
@@ -117,14 +117,14 @@
   ],
   "assessment": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": false,
       "credits": 28,
       "description": "Practical Assignment during semester (sbA)"
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "code": "1R",
       "graded_assessment": false,
       "credits": 2,
@@ -137,13 +137,13 @@
   "responsible_person": "Dean of Studies GMB",
   "lecturers": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "names": [
         "All professors of the faculty"
       ]
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "names": [
         "Prof. Jirka Dell´Oro-Friedl"
       ]
@@ -151,11 +151,11 @@
   ],
   "reading_list": [
     {
-      "component": "a) Internship",
+      "component": "a)",
       "reference": "None"
     },
     {
-      "component": "b) Seminar Internship",
+      "component": "b)",
       "reference": "Will be given in lecture as applicable."
     }
   ],

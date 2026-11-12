@@ -62,7 +62,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "items": [
         "Draft and sketching",
         "Figurative thinking",
@@ -74,7 +74,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "items": [
         "Seminar / Practical/lab"
       ]
@@ -82,7 +82,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "items": [
         "None"
       ]
@@ -90,7 +90,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "code": "1sbA",
       "graded_assessment": true,
       "credits": 6,
@@ -103,7 +103,7 @@
   "responsible_person": "Prof. Niv Shpigel",
   "lecturers": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "names": [
         "Prof. Niv Shpigel"
       ]
@@ -111,7 +111,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Visual 1",
+      "component": "a)",
       "reference": "Will be given in lecture as applicable."
     }
   ],

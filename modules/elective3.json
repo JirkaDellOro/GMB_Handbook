@@ -33,7 +33,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "items": [
         "Depending on the elective course (WPM)"
       ]
@@ -41,7 +41,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "items": [
         "Depending on the elective course (WPM)"
       ]
@@ -49,7 +49,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "items": [
         "Depending on the elective course (WPM)"
       ]
@@ -57,14 +57,14 @@
   ],
   "assessment": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "code": "PL",
       "graded_assessment": true,
       "credits": null,
       "description": "Depending on the elective course (WPM)"
     },
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "code": "SL",
       "graded_assessment": false,
       "credits": null,
@@ -77,13 +77,13 @@
   "responsible_person": "Academics Vice Dean",
   "lecturers": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "names": []
     }
   ],
   "reading_list": [
     {
-      "component": "a) Elective Course (WPM) see (5)",
+      "component": "a)",
       "reference": "Depending on the elective course (WPM)"
     }
   ],

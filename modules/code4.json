@@ -62,7 +62,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "items": [
         "Game AI: Finite Automata und Behaviour Trees, Agents, Search Problems, Uninformed Search, Informed Search (A* and Heuristics)",
         "Adversarial Search and Games I: Minimax,",
@@ -78,7 +78,7 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "items": [
         "Seminar, Practical"
       ]
@@ -86,7 +86,7 @@
   ],
   "prerequisites": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "items": [
         "none"
       ]
@@ -94,7 +94,7 @@
   ],
   "assessment": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 6,
@@ -107,7 +107,7 @@
   "responsible_person": "Prof. Nikolaus Hottong",
   "lecturers": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "names": [
         "Prof. Nikolaus Hottong",
         "Prof. Dr. Stephanie Heintz"
@@ -116,7 +116,7 @@
   ],
   "reading_list": [
     {
-      "component": "a) Code 4",
+      "component": "a)",
       "reference": "Russell, Stuart; Norvig, Peter: Artificial Intelligence: A Modern Approach, Pearson, 2021, ISBN: 1292401133"
     }
   ]
