@@ -125,6 +125,7 @@ export function renderStudyTables(target, modules) {
   for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
     appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
+    const gridScroll = el('div', 'study-grid-scroll');
     const grid = el('div', 'study-data-grid');
     grid.setAttribute('aria-label', `Table ${range.number}: ${range.heading}`);
     for (const title of columns) grid.append(el('div', 'study-grid-cell study-grid-header', title));
@@ -166,7 +167,8 @@ export function renderStudyTables(target, modules) {
     const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
     overall.style.gridColumn = 'span 6';
     grid.append(overall, el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
-    sectionNode.append(grid);
+    gridScroll.append(grid);
+    sectionNode.append(gridScroll);
     target.append(sectionNode);
   }
 }
