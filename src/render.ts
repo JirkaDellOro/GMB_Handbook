@@ -223,6 +223,7 @@ export function renderStudyTables(target: HTMLElement): void {
     table.append(body);
     scroll.append(table);
     sectionNode.append(scroll);
+    if (tableNumber === 3) appendText(sectionNode, 'p', '(1) The total of the graded assessment is only passed if all multiple component assessments are graded at least “adequate” (4,0). In case of failure, only the failed component assessments must or may be repeated.', 'study-table-footnote');
     target.append(sectionNode);
   }
 }
