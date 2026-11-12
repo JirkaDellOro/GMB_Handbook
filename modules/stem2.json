@@ -68,7 +68,7 @@
   ],
   "individual_component_content": [
     {
-      "component": "a) STEM 2",
+      "component": "a)",
       "items": [
         "Foundations: Basic Calculus, Parametrized Curves in the plane and in three-dimensional space,",
         "Elements of Kinematics",
@@ -81,13 +81,13 @@
   ],
   "teaching_methods": [
     {
-      "component": "a) STEM 2 Seminar",
+      "component": "a)",
       "items": [
         "Seminar"
       ]
     },
     {
-      "component": "b) STEM 2 Implementation Lab",
+      "component": "b)",
       "items": [
         "Implementation Lab: Project Work"
       ]
@@ -95,13 +95,13 @@
   ],
   "prerequisites": [
     {
-      "component": "a) STEM 2 Implementation Lab",
+      "component": "a)",
       "items": [
         "none"
       ]
     },
     {
-      "component": "b) STEM 2 Seminar",
+      "component": "b)",
       "items": [
         "none"
       ]
@@ -109,14 +109,14 @@
   ],
   "assessment": [
     {
-      "component": "a) STEM 2 Seminar",
+      "component": "a)",
       "code": "1sbK",
       "graded_assessment": true,
       "credits": 3,
       "description": "Written Exam during semester (sbK)"
     },
     {
-      "component": "b) STEM 2 Implementation Lab",
+      "component": "b)",
       "code": "1sbaA",
       "graded_assessment": true,
       "credits": 3,
@@ -129,7 +129,7 @@
   "responsible_person": "Prof. Dr. Thomas Schneider",
   "lecturers": [
     {
-      "component": "a) STEM 2",
+      "component": "a)",
       "names": [
         "Prof. Dr. Thomas Schneider",
         "Prof. Dr. Uwe Hahne"
@@ -138,15 +138,15 @@
   ],
   "reading_list": [
     {
-      "component": "a) STEM 2",
+      "component": "a)",
       "reference": "Kleppner, Daniel; Dourmashkin, Peter; Ramsey, Norman: Quick Calculus: A Self-Teaching Guide (3rd Edition), Jossey-Bass, 2022, ISBN: 1119743192"
     },
     {
-      "component": "a) STEM 2",
+      "component": "a)",
       "reference": "Strang, Gilbert: Differential Equations and Linear Algebra, Wellesley-Cambridge Press, 2015, ISBN: 0980232791"
     },
     {
-      "component": "a) STEM 2",
+      "component": "a)",
       "reference": "Bourg, David M.: Physics for Game Developers, O'Reilly & Associates, 2001, ISBN: 0596000065"
     }
   ]
