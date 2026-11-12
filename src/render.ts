@@ -192,7 +192,10 @@ export function renderStudyTables(target: HTMLElement): void {
         module.rows.forEach((item, index) => {
           const row = el('tr', index === 0 ? 'module-first-row' : 'module-continuation-row');
           if (index === 0) {
-            const moduleCell = el('th', 'module-group', `${module.title} (${module.credits} credits)`);
+            const moduleCell = el('th', 'module-group');
+            const moduleLink = el('a', undefined, `${module.title} (${module.credits} credits)`);
+            moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
+            moduleCell.append(moduleLink);
             moduleCell.rowSpan = module.rows.length;
             row.append(moduleCell);
           }
