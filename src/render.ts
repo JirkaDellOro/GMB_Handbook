@@ -109,20 +109,20 @@ const studyTableRanges = [
   { number: 3, firstSemester: 3, lastSemester: 7, heading: 'Advanced Studies' }
 ];
 
-function componentAssessments(module, component, graded) {
+function componentAssessments(module: ModuleData, component: NonNullable<ModuleData['components']>[number], graded: boolean): string {
   const componentName = `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim();
   return (module.assessment ?? [])
     .filter(item => item.component === componentName && item.graded_assessment === graded)
     .map(item => item.code).filter(Boolean).join(', ');
 }
 
-function contactHoursSws(value) {
+function contactHoursSws(value: NonNullable<ModuleData['components']>[number]['contact_hours']): string {
   if (value === null || value === undefined || value === '') return '—';
   const match = String(value).match(/^\s*(\d+(?:[.,]\d+)?)/);
   return match ? match[1].replace(',', '.') : String(value);
 }
 
-export function renderStudyTables(target, modules) {
+export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): void {
   target.replaceChildren();
   const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
   for (const range of studyTableRanges) {
