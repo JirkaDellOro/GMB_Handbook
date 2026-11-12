@@ -103,10 +103,15 @@ const studyTableRanges = [
     { number: 2, firstSemester: 1, lastSemester: 2, heading: 'Foundation Studies' },
     { number: 3, firstSemester: 3, lastSemester: 7, heading: 'Advanced Studies' }
 ];
+function componentReference(module, label) {
+    if (!label)
+        return undefined;
+    const component = module.components?.find(item => item.label === label);
+    return component ? `${component.label} ${component.name ?? ''}`.trim() : label;
+}
 function componentAssessments(module, component, graded) {
-    const componentName = `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim();
     return (module.assessment ?? [])
-        .filter(item => item.component === componentName && item.graded_assessment === graded)
+        .filter(item => item.component === component.label && item.graded_assessment === graded)
         .map(item => item.code).filter(Boolean).join(', ');
 }
 function contactHoursSws(value) {
@@ -275,7 +280,7 @@ export function renderModuleDetail(target, module) {
     const content = section('Individual Component Content', article);
     for (const item of module.individual_component_content ?? []) {
         if (item.component)
-            appendText(content, 'h3', item.component);
+            appendText(content, 'h3', componentReference(module, item.component));
         addList(content, item.items, 'tag-list');
     }
     const twoCol = el('section', 'two-column-sections');
@@ -284,7 +289,7 @@ export function renderModuleDetail(target, module) {
         appendText(block, 'h2', title);
         for (const item of items ?? []) {
             if (item.component)
-                appendText(block, 'h3', item.component);
+                appendText(block, 'h3', componentReference(module, item.component));
             addList(block, item.items);
         }
         twoCol.append(block);
@@ -300,7 +305,7 @@ export function renderModuleDetail(target, module) {
     }
     for (const item of module.assessment ?? []) {
         const values = [
-            item.component, item.code, item.description,
+            componentReference(module, item.component), item.code, item.description,
             item.graded_assessment === null || item.graded_assessment === undefined ? undefined : item.graded_assessment ? 'Graded' : 'Non-graded',
             item.credits
         ];
@@ -325,7 +330,7 @@ export function renderModuleDetail(target, module) {
     for (const item of module.lecturers ?? []) {
         const p = el('p');
         if (item.component)
-            p.append(el('strong', undefined, item.component), document.createElement('br'));
+            p.append(el('strong', undefined, componentReference(module, item.component)), document.createElement('br'));
         p.append(document.createTextNode(item.names?.join(', ') || '—'));
         people.append(p);
     }
