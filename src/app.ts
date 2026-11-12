@@ -1,5 +1,5 @@
 import { loadCurriculum, loadManifest, loadModule } from './modules.js';
-import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderModuleOverview } from './render.js';
+import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from './render.js';
 
 async function start(): Promise<void> {
   const curriculumTarget = document.querySelector<HTMLElement>('#curriculum-grid');
