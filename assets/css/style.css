@@ -10,16 +10,26 @@
 /* Official curriculum tables 2 and 3 */
 .study-table-section { margin: 42px 0 54px; }
 .study-table-section h2 { font-size: 22px; margin: 0 0 16px; padding-bottom: 10px; border-bottom: 2px solid var(--blue); }
-.study-table { width: 100%; min-width: 900px; border-collapse: collapse; background: #fff; font-size: 13px; line-height: 1.35; }
-.study-table th, .study-table td { padding: 9px 11px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
-.study-table thead th { background: #eaf0f2; color: var(--blue-dark); font-size: 11px; font-weight: 700; }
-.study-table .semester-row th { background: #dce8ec; font-weight: 800; }
-.study-table .semester-row .semester-total { text-align: right; }
-.study-table .module-group { min-width: 145px; background: #f7f9fa; font-weight: 700; vertical-align: top; }
-.study-table .module-group a { color: var(--blue); text-decoration: none; }
-.study-table .module-group a:hover { text-decoration: underline; }
-.study-table .module-continuation-row td { border-top: 0; }
-.study-table .overall-row th { background: #eaf0f2; font-weight: 800; }
-.study-table .overall-row th:last-child { text-align: right; }
-
+.study-data-grid {
+  display: grid;
+  grid-template-columns: minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.study-grid-cell { min-width: 0; padding: 10px 11px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.study-grid-header { background: #eaf0f2; color: var(--blue-dark); font-size: 11px; font-weight: 700; }
+.study-semester-title, .study-semester-total { background: #dce8ec; font-weight: 800; }
+.study-semester-total, .study-overall-total { text-align: right; }
+.study-module-cell { grid-row: span 1; background: #f7f9fa; font-weight: 700; }
+.study-module-cell a { color: var(--blue); text-decoration: none; }
+.study-module-cell a:hover { text-decoration: underline; }
+.study-overall-label, .study-overall-total { background: #eaf0f2; font-weight: 800; border-bottom: 0; }
+@media (max-width: 900px) {
+  .study-data-grid { grid-template-columns: minmax(125px, 1fr) minmax(180px, 1.5fr) repeat(5, minmax(105px, 1fr)); overflow-x: auto; }
+}
 .study-table-footnote { margin: 12px 2px 0; color: var(--muted); font-size: 12px; }
