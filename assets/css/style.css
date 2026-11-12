@@ -80,37 +80,26 @@
 
 /* Shared visual theme: aligned with the curriculum overview */
 body{background:var(--page-bg);color:var(--text)}
-.site-header{background:var(--page-bg);border-bottom-color:var(--line)}
+.site-header,.site-footer{background:var(--page-bg);border-color:var(--line)}
 .brand{color:var(--text)}
-.brand small,.site-footer{color:var(--muted)}
-.site-header nav a,.section-heading>a{color:var(--accent-light)}
-.site-footer{background:var(--page-bg);border-top-color:var(--line)}
-.listing-heading h1,.module-heading h1,.intro-block h2,.section-heading h2{color:var(--text)}
-.listing-heading>p:last-child,.module-code{color:var(--muted)}
-.back-link{color:var(--accent-light)}
-.content-section h2,.study-table-section h2{color:var(--text);border-bottom-color:var(--accent)}
+.brand small,.site-footer,.listing-heading>p:last-child,.module-code,.study-table-footnote{color:var(--muted)}
+.site-header nav a,.section-heading>a,.back-link{color:var(--accent-light)}
+.listing-heading h1,.module-heading h1,.intro-block h2,.section-heading h2,.content-section h2,.study-table-section h2{color:var(--text)}
+.content-section h2,.study-table-section h2{border-bottom-color:var(--accent)}
 .content-section p,.content-section li{color:var(--text-soft)}
 .facts-grid{background:var(--surface-soft);color:var(--ink)}
 .facts-grid div{border-color:var(--line-light)}
-.facts-grid span,.detail-grid dt{color:var(--muted-dark)}
-.component-card,.outcome-card,.notice{background:var(--surface);color:var(--ink);border-color:var(--line)}
-.outcome-card h3{color:var(--accent)}
-.tag-list li,.source-note{background:var(--surface-soft);color:var(--ink)}
-.credit-card{background:var(--accent);color:#fff}
-.module-tile{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.facts-grid span,.detail-grid dt,.tile-main small{color:var(--muted-dark)}
+.component-card,.outcome-card,.notice,.module-tile,.study-module-cell,.study-data-grid,.detail-data-grid{background:var(--surface);color:var(--ink)}
+.component-card,.outcome-card,.notice,.module-tile,.study-grid-scroll,.detail-data-grid{border-color:var(--line)}
+.outcome-card h3,.tile-credits,.tile-arrow,.reading-list a,.study-module-cell a{color:var(--accent)}
+.tag-list li,.source-note,.study-semester-title,.study-semester-total,.study-overall-label,.study-overall-total{background:var(--surface-soft);color:var(--ink)}
+.credit-card{background:var(--accent);color:var(--surface)}
+.tile-number{color:var(--accent-strong)}
 .module-tile:hover,.module-tile[aria-current="page"]{border-color:var(--accent)}
-.tile-number{color:var(--accent-strong)}.tile-main small{color:var(--muted-dark)}
-.tile-credits,.tile-arrow,.reading-list a{color:var(--accent)}
-.study-grid-scroll,.detail-data-grid{border-color:var(--line)}
-.study-data-grid,.detail-data-grid{background:var(--surface);color:var(--ink)}
 .study-grid-cell,.detail-grid-cell{border-color:var(--line-light)}
-.study-grid-header,.detail-grid-header{background:var(--accent)!important;color:#fff}
-.study-semester-title,.study-semester-total,.study-overall-label,.study-overall-total{background:var(--surface-soft);color:var(--ink)}
-.study-module-cell{background:var(--surface);color:var(--ink)}
-.study-module-cell a{color:var(--accent)}
+.study-grid-header,.detail-grid-header{background:var(--accent)!important;color:var(--surface)}
 .detail-grid-cell:nth-child(n){background:var(--surface)}
-.assessment-grid .detail-grid-header{background:var(--accent)!important}
-.study-table-footnote{color:var(--muted)}
 @media print{
   body{background:#fff;color:var(--ink)}
   .site-header,.site-footer{background:#fff;color:var(--ink)}
