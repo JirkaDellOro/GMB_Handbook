@@ -31,10 +31,10 @@
 .study-table-footnote { margin: 12px 2px 0; color: var(--muted); font-size: 12px; }
 
 /* Module detail data grids */
+.detail-grid-scroll { width: 100%; overflow-x: auto; border-radius: 8px; }
 .detail-data-grid {
   display: grid;
   width: 100%;
-  overflow-x: auto;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -71,7 +71,8 @@
 .assessment-grid .detail-grid-cell { border-bottom: 1px solid var(--line); }
 .assessment-grid .detail-grid-header { background: #eaf0f2 !important; }
 @media print {
-  .detail-data-grid { overflow: visible; min-width: 0; }
+  .detail-grid-scroll { overflow: visible; }
+  .detail-data-grid { min-width: 0; }
   .component-grid { grid-template-columns: 1.35fr repeat(5, 1fr) .6fr; }
   .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
 }
