@@ -38,8 +38,8 @@
   text-decoration: none; text-align: center; font-family: Manrope, sans-serif;
   transition: transform .14s ease, box-shadow .14s ease;
 }
-.curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px #100b1080; }
-.curriculum-module:focus-visible { outline: 3px solid #f3b6e7; outline-offset: 3px; z-index: 2; }
+.curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
+.curriculum-module:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; z-index: 2; }
 .curriculum-module-title { font-size: clamp(13px, 1.3vw, 20px); line-height: 1.2; font-weight: 800; }
 .curriculum-module-meta { position: absolute; right: 10px; bottom: 6px; font-size: 13px; line-height: 1; font-weight: 800; }
 .curriculum-project { background: var(--accent); color: var(--surface); }
