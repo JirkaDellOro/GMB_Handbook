@@ -21,3 +21,5 @@
 .study-table .module-continuation-row td { border-top: 0; }
 .study-table .overall-row th { background: #eaf0f2; font-weight: 800; }
 .study-table .overall-row th:last-child { text-align: right; }
+
+.study-table-footnote { margin: 12px 2px 0; color: var(--muted); font-size: 12px; }
