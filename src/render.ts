@@ -97,7 +97,7 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
   scroll.append(layout);
   target.append(scroll);
   const legend = el('p', 'curriculum-legend');
-  legend.textContent = 'Blocknummer des Moduls   x.y   Leistungspunkte nach ECTS';
+  legend.textContent = 'Legend: x.y = position in the sequence of modules . creditpoints (ECTS)';
   target.append(legend);
 }
 
@@ -172,7 +172,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
             component?.credit_points ?? '—'
           ];
           for (const value of values) {
-            const cell = el('div', 'study-grid-cell', value);
+            const cell = el('div', 'study-grid-cell', <string>value);
             grid.append(cell);
           }
         }
