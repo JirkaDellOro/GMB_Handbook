@@ -89,3 +89,28 @@
   bottom: 4px;
   /* font-size: 10px; */
 }
+
+
+/* Curriculum overview: grey canvas, white modules, dark project modules */
+.curriculum-layout,
+.curriculum-grid { background: var(--surface-soft); }
+.curriculum-headings { background: var(--surface); }
+.curriculum-module { background: var(--surface); color: var(--ink); }
+.curriculum-project {
+  background: var(--ink);
+  color: hsl(0 0% 100%);
+}
+.curriculum-project .curriculum-module-meta { color: hsl(0 0% 100%); }
+
+/* Study tables 2 and 3: white headings, uniform grey module data area */
+.study-data-grid { background: var(--surface-soft); }
+.study-grid-cell { background: var(--surface-soft); }
+.study-grid-header,
+.study-semester-title,
+.study-semester-total,
+.study-overall-label,
+.study-overall-total { background: var(--surface); }
+.study-module-cell { background: var(--surface-soft); }
+.study-grid-cell:not(.study-grid-header):not(.study-semester-title):not(.study-semester-total):not(.study-overall-label):not(.study-overall-total) {
+  background: var(--surface-soft);
+}
