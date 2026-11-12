@@ -167,7 +167,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
         moduleCell.style.gridRow = `span ${components.length}`;
         grid.append(moduleCell);
         for (const component of components) {
-          const componentName = component ? `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim() : '—';
+          const componentName = component?.name ?? '—';
           const values = [
             componentName,
             component?.course_type ?? '—',
