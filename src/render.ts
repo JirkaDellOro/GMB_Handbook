@@ -102,75 +102,32 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
 }
 
 
-type StudyTableRow = { name: string; type: string; hours: string; graded: string; nonGraded: string; credits: string };
-type StudyTableModule = { id: string; title: string; credits: number; rows: StudyTableRow[] };
-type StudyTableSemester = { semester: number; credits: number; modules: StudyTableModule[] };
+type StudyTableRange = { number: 2 | 3; firstSemester: number; lastSemester: number; heading: string };
 
-const studyTableData: StudyTableSemester[] = [
-  { semester: 1, credits: 30, modules: [
-    { id: 'code1', title: 'Code 1', credits: 6, rows: [{ name: 'Code 1', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'theory1', title: 'Theory 1', credits: 6, rows: [{ name: 'Computer Science and HCI Theory', type: 'V/S', hours: '4', graded: '1sbK', nonGraded: '1R', credits: '6' }] },
-    { id: 'stem1', title: 'STEM 1', credits: 6, rows: [
-      { name: 'STEM 1 Seminar', type: 'S', hours: '3', graded: '1K', nonGraded: '', credits: '4' },
-      { name: 'STEM 1 Practical', type: 'P', hours: '1', graded: '', nonGraded: '1sbA', credits: '2' }
-    ] },
-    { id: 'visual1', title: 'Visual 1', credits: 6, rows: [{ name: 'Visual 1', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project1', title: 'Project 1', credits: 6, rows: [{ name: 'Entry Project - No Code', type: 'W', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 2, credits: 30, modules: [
-    { id: 'code2', title: 'Code 2', credits: 6, rows: [{ name: 'Code 2', type: 'S/P', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'theory2', title: 'Theory 2', credits: 6, rows: [
-      { name: 'Theory 2 - Game Design', type: 'S/P', hours: '2', graded: '1sbK', nonGraded: '', credits: '3' },
-      { name: 'Theory 2 - Data Driven Game Design', type: 'S', hours: '2', graded: '1KO', nonGraded: '', credits: '3' }
-    ] },
-    { id: 'sound1', title: 'Sound 1', credits: 6, rows: [{ name: 'Sound 1 - Basics of sound and music design', type: 'S', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'visual2', title: 'Visual 2', credits: 6, rows: [{ name: 'Visual 2 - Game Asset Creation', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project2', title: 'Project 2', credits: 6, rows: [{ name: 'Project 2 - Physical Game', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 3, credits: 30, modules: [
-    { id: 'code3', title: 'Code 3', credits: 6, rows: [{ name: 'Code 3 - Realtime Computer Graphics', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'sound2', title: 'Sound 2', credits: 6, rows: [{ name: 'Sound 2 - Concepts and techniques in interactive and immersive audio design', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'stem2', title: 'STEM 2', credits: 6, rows: [{ name: 'STEM 2', type: 'S', hours: '4', graded: '1sbK, 1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'visual3', title: 'Visual 3', credits: 6, rows: [{ name: 'Visual 3 - Game Character Design and Animation', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project3', title: 'Project 3', credits: 6, rows: [{ name: 'Project 3 - Intermediate Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 4, credits: 30, modules: [
-    { id: 'code4', title: 'Code 4', credits: 6, rows: [{ name: 'Code 4', type: 'S/P', hours: '4', graded: '1K', nonGraded: '', credits: '6' }] },
-    { id: 'theory3', title: 'Theory 3', credits: 6, rows: [{ name: 'Theory 3', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'business1', title: 'Business 1', credits: 6, rows: [{ name: 'Business 1', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'stem3', title: 'STEM 3', credits: 6, rows: [{ name: 'STEM 3 - Physical Computing', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project4', title: 'Project 4', credits: 6, rows: [{ name: 'Project 4 - Advanced Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 5, credits: 30, modules: [
-    { id: 'internship', title: 'Internship', credits: 30, rows: [
-      { name: 'Internship', type: '', hours: '', graded: '', nonGraded: '1sbA', credits: '28' },
-      { name: 'Seminar Internship', type: 'S', hours: '1', graded: '', nonGraded: '1R', credits: '2' }
-    ] }
-  ] },
-  { semester: 6, credits: 30, modules: [
-    { id: 'elective1', title: 'Elective 1', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'elective2', title: 'Elective 2', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'business2', title: 'Business 2', credits: 6, rows: [{ name: 'Business 2', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'project5', title: 'Project 5', credits: 12, rows: [{ name: 'Project 5 - Complex Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '12' }] }
-  ] },
-  { semester: 7, credits: 30, modules: [
-    { id: 'elective3', title: 'Elective 3', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'elective4', title: 'Elective 4', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'thesis', title: 'Thesis', credits: 18, rows: [
-      { name: 'Bachelor thesis', type: '', hours: '', graded: '1T', nonGraded: '', credits: '12' },
-      { name: 'Thesis Seminar', type: 'S', hours: '2', graded: '', nonGraded: '1PN', credits: '6' }
-    ] }
-  ] }
+const studyTableRanges = [
+  { number: 2, firstSemester: 1, lastSemester: 2, heading: 'Foundation Studies' },
+  { number: 3, firstSemester: 3, lastSemester: 7, heading: 'Advanced Studies' }
 ];
 
-export function renderStudyTables(target: HTMLElement): void {
+function componentAssessments(module, component, graded) {
+  const componentName = `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim();
+  return (module.assessment ?? [])
+    .filter(item => item.component === componentName && item.graded_assessment === graded)
+    .map(item => item.code).filter(Boolean).join(', ');
+}
+
+function contactHoursSws(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  const match = String(value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+  return match ? match[1].replace(',', '.') : String(value);
+}
+
+export function renderStudyTables(target, modules) {
   target.replaceChildren();
-  for (const [tableNumber, semesters, heading] of [
-    [2, studyTableData.slice(0, 2), 'Foundation Studies'],
-    [3, studyTableData.slice(2), 'Advanced Studies']
-  ] as [number, StudyTableSemester[], string][]) {
+  const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
+  for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
-    appendText(sectionNode, 'h2', `Table ${tableNumber}: Games & Immersive Media B.A. (${tableNumber === 2 ? '1-2' : '3-7'} ${heading} Curricular Semester)`);
+    appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
     const scroll = el('div', 'table-scroll');
     const table = el('table', 'study-table');
     const thead = el('thead');
@@ -179,55 +136,62 @@ export function renderStudyTables(target: HTMLElement): void {
     thead.append(header);
     table.append(thead);
     const body = el('tbody');
-    for (const semester of semesters) {
+    const semesterModules = new Map();
+    for (const module of orderedModules) {
+      const semester = Number(module.semester);
+      if (!Number.isInteger(semester) || semester < range.firstSemester || semester > range.lastSemester) continue;
+      const group = semesterModules.get(semester) ?? [];
+      group.push(module);
+      semesterModules.set(semester, group);
+    }
+    for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
+      const semesterItems = semesterModules.get(semester) ?? [];
+      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
       const semesterRow = el('tr', 'semester-row');
-      const semesterCell = el('th', undefined, `${semester.semester}. Curricular Semester`);
+      const semesterCell = el('th', undefined, `${semester}. Curricular Semester`);
       semesterCell.colSpan = 6;
       semesterRow.append(semesterCell);
-      const total = el('th', undefined, String(semester.credits));
+      const total = el('th', undefined, String(semesterCredits));
       total.className = 'semester-total';
       semesterRow.append(total);
       body.append(semesterRow);
-      for (const module of semester.modules) {
-        module.rows.forEach((item, index) => {
+      for (const module of semesterItems) {
+        const components = module.components?.length ? module.components : [undefined];
+        components.forEach((component, index) => {
           const row = el('tr', index === 0 ? 'module-first-row' : 'module-continuation-row');
           if (index === 0) {
             const moduleCell = el('th', 'module-group');
-            const moduleLink = el('a', undefined, `${module.title} (${module.credits} credits)`);
+            const moduleLink = el('a', undefined, `${module.title} (${module.credits ?? '—'} credits)`);
             moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
             moduleCell.append(moduleLink);
-            moduleCell.rowSpan = module.rows.length;
+            moduleCell.rowSpan = components.length;
             row.append(moduleCell);
           }
-          appendText(row, 'td', item.name);
-          appendText(row, 'td', item.type);
-          appendText(row, 'td', item.hours);
-          appendText(row, 'td', item.graded);
-          appendText(row, 'td', item.nonGraded);
-          appendText(row, 'td', item.credits);
+          const componentName = component ? `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim() : '—';
+          appendText(row, 'td', componentName);
+          appendText(row, 'td', component?.course_type);
+          appendText(row, 'td', contactHoursSws(component?.contact_hours));
+          appendText(row, 'td', component ? componentAssessments(module, component, true) : undefined);
+          appendText(row, 'td', component ? componentAssessments(module, component, false) : undefined);
+          appendText(row, 'td', component?.credit_points);
           body.append(row);
         });
       }
     }
-    if (tableNumber === 3) {
-      const overall = el('tr', 'overall-row');
-      const label = el('th', undefined, 'Overall'); label.colSpan = 6; overall.append(label);
-      overall.append(el('th', undefined, '150'));
-      body.append(overall);
-    } else {
-      const overall = el('tr', 'overall-row');
-      const label = el('th', undefined, 'Overall'); label.colSpan = 6; overall.append(label);
-      overall.append(el('th', undefined, '60'));
-      body.append(overall);
-    }
+    const overallCredits = orderedModules.filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
+      .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+    const overall = el('tr', 'overall-row');
+    const label = el('th', undefined, 'Overall');
+    label.colSpan = 6;
+    overall.append(label);
+    overall.append(el('th', undefined, String(overallCredits)));
+    body.append(overall);
     table.append(body);
     scroll.append(table);
     sectionNode.append(scroll);
-    if (tableNumber === 3) appendText(sectionNode, 'p', '(1) The total of the graded assessment is only passed if all multiple component assessments are graded at least “adequate” (4,0). In case of failure, only the failed component assessments must or may be repeated.', 'study-table-footnote');
     target.append(sectionNode);
   }
 }
-
 
 export function renderModuleTile(module: ModuleData): HTMLAnchorElement {
   const link = el('a', 'module-tile');
