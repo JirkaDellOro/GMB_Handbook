@@ -100,63 +100,6 @@ export function renderCurriculum(target, modules, curriculum) {
     target.append(legend);
 }
 
-const studyTableData: StudyTableSemester[] = [
-  { semester: 1, credits: 30, modules: [
-    { id: 'code1', title: 'Code 1', credits: 6, rows: [{ name: 'Code 1', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'theory1', title: 'Theory 1', credits: 6, rows: [{ name: 'Computer Science and HCI Theory', type: 'V/S', hours: '4', graded: '1sbK', nonGraded: '1R', credits: '6' }] },
-    { id: 'stem1', title: 'STEM 1', credits: 6, rows: [
-      { name: 'STEM 1 Seminar', type: 'S', hours: '3', graded: '1K', nonGraded: '', credits: '4' },
-      { name: 'STEM 1 Practical', type: 'P', hours: '1', graded: '', nonGraded: '1sbA', credits: '2' }
-    ] },
-    { id: 'visual1', title: 'Visual 1', credits: 6, rows: [{ name: 'Visual 1', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project1', title: 'Project 1', credits: 6, rows: [{ name: 'Entry Project - No Code', type: 'W', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 2, credits: 30, modules: [
-    { id: 'code2', title: 'Code 2', credits: 6, rows: [{ name: 'Code 2', type: 'S/P', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'theory2', title: 'Theory 2', credits: 6, rows: [
-      { name: 'Theory 2 - Game Design', type: 'S/P', hours: '2', graded: '1sbK', nonGraded: '', credits: '3' },
-      { name: 'Theory 2 - Data Driven Game Design', type: 'S', hours: '2', graded: '1KO', nonGraded: '', credits: '3' }
-    ] },
-    { id: 'sound1', title: 'Sound 1', credits: 6, rows: [{ name: 'Sound 1 - Basics of sound and music design', type: 'S', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'visual2', title: 'Visual 2', credits: 6, rows: [{ name: 'Visual 2 - Game Asset Creation', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project2', title: 'Project 2', credits: 6, rows: [{ name: 'Project 2 - Physical Game', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 3, credits: 30, modules: [
-    { id: 'code3', title: 'Code 3', credits: 6, rows: [{ name: 'Code 3 - Realtime Computer Graphics', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'sound2', title: 'Sound 2', credits: 6, rows: [{ name: 'Sound 2 - Concepts and techniques in interactive and immersive audio design', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'stem2', title: 'STEM 2', credits: 6, rows: [{ name: 'STEM 2', type: 'S', hours: '4', graded: '1sbK, 1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'visual3', title: 'Visual 3', credits: 6, rows: [{ name: 'Visual 3 - Game Character Design and Animation', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project3', title: 'Project 3', credits: 6, rows: [{ name: 'Project 3 - Intermediate Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 4, credits: 30, modules: [
-    { id: 'code4', title: 'Code 4', credits: 6, rows: [{ name: 'Code 4', type: 'S/P', hours: '4', graded: '1K', nonGraded: '', credits: '6' }] },
-    { id: 'theory3', title: 'Theory 3', credits: 6, rows: [{ name: 'Theory 3', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'business1', title: 'Business 1', credits: 6, rows: [{ name: 'Business 1', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'stem3', title: 'STEM 3', credits: 6, rows: [{ name: 'STEM 3 - Physical Computing', type: 'S/P', hours: '4', graded: '1sbA', nonGraded: '', credits: '6' }] },
-    { id: 'project4', title: 'Project 4', credits: 6, rows: [{ name: 'Project 4 - Advanced Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '6' }] }
-  ] },
-  { semester: 5, credits: 30, modules: [
-    { id: 'internship', title: 'Internship', credits: 30, rows: [
-      { name: 'Internship', type: '', hours: '', graded: '', nonGraded: '1sbA', credits: '28' },
-      { name: 'Seminar Internship', type: 'S', hours: '1', graded: '', nonGraded: '1R', credits: '2' }
-    ] }
-  ] },
-  { semester: 6, credits: 30, modules: [
-    { id: 'elective1', title: 'Elective 1', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'elective2', title: 'Elective 2', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'business2', title: 'Business 2', credits: 6, rows: [{ name: 'Business 2', type: 'S', hours: '4', graded: '1sbK', nonGraded: '', credits: '6' }] },
-    { id: 'project5', title: 'Project 5', credits: 12, rows: [{ name: 'Project 5 - Complex Digital Project', type: 'W', hours: '3', graded: '1A', nonGraded: '', credits: '12' }] }
-  ] },
-  { semester: 7, credits: 30, modules: [
-    { id: 'elective3', title: 'Elective 3', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'elective4', title: 'Elective 4', credits: 6, rows: [{ name: 'Elective Course (WPM) see (5)', type: '', hours: '', graded: 'PL', nonGraded: 'SL', credits: '6' }] },
-    { id: 'thesis', title: 'Thesis', credits: 18, rows: [
-      { name: 'Bachelor thesis', type: '', hours: '', graded: '1T', nonGraded: '', credits: '12' },
-      { name: 'Thesis Seminar', type: 'S', hours: '2', graded: '', nonGraded: '1PN', credits: '6' }
-    ] }
-  ] }
-];
-
 const studyTableRanges = [
   { number: 2, firstSemester: 1, lastSemester: 2, heading: 'Foundation Studies' },
   { number: 3, firstSemester: 3, lastSemester: 7, heading: 'Advanced Studies' }
