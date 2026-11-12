@@ -20,7 +20,7 @@ async function start() {
             const modules = await Promise.all([...new Set(semesters.flatMap(semester => semester.modules))].map(loadModule));
             renderCurriculum(curriculumTarget, modules, curriculum);
             if (overviewTarget)
-                renderModuleOverview(overviewTarget, modules);
+                renderStudyTables(overviewTarget, modules);
             return;
         }
         if (listTarget) {
