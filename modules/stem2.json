@@ -131,7 +131,12 @@
     {
       "component": "a)",
       "names": [
-        "Prof. Dr. Thomas Schneider",
+        "Prof. Dr. Thomas Schneider"
+      ]
+    },
+    {
+      "component": "b)",
+      "names": [
         "Prof. Dr. Uwe Hahne"
       ]
     }
