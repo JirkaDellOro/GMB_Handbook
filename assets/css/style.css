@@ -63,6 +63,7 @@
   min-width: 760px;
 }
 
+.component-grid .detail-grid-cell:not(.detail-grid-header),
 .assessment-grid .detail-grid-cell:not(.detail-grid-header) { background: var(--gray); }
 
 @media print {
