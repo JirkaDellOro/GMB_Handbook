@@ -73,9 +73,14 @@
 }
 
 
-/* Component content panel */
+/* Shared content panels */
+.component-card,
+.outcome-card,
 .component-content-panel {
-  border-radius: 8px;
+  background: var(--gray);
+  border: 1px solid var(--line);
+}
+.component-content-panel {
   border-radius: 8px;
   padding: 20px 22px;
 }
