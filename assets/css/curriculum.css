@@ -1,128 +1,131 @@
-/* Homepage curriculum graphic */
-.home-page { background: var(--page-bg); }
-.home-page .site-header { background: var(--surface); border-bottom: 1px solid var(--line); color: var(--ink); }
-.home-page .brand { color: var(--ink); }
-.home-page .brand small { color: var(--muted); }
-.home-page .site-header nav a { color: var(--blue); }
+/* Homepage and curriculum overview */
+.home-page { background: var(--white); }
+.home-page .site-header,
+.home-page .site-footer { background: var(--white); }
+.home-page .site-header { border-bottom: 1px solid var(--line); color: var(--dark); }
+.home-page .brand { color: var(--dark); }
+.home-page .brand small,
+.home-page .site-footer { color: var(--muted); }
+.home-page .site-header nav a,
+.home-page .listing-heading .eyebrow { color: var(--green); }
 .home-page .page-shell { max-width: 1600px; padding-top: 28px; }
-.home-page .listing-heading { padding: 10px 0 24px; color: var(--ink); }
+.home-page .listing-heading { padding: 10px 0 24px; color: var(--dark); }
 .home-page .listing-heading h1 { font-size: clamp(30px, 4vw, 48px); }
-.home-page .listing-heading > p:last-child { color: var(--muted); margin-bottom: 0; }
-.home-page .listing-heading .eyebrow { color: var(--blue); }
-.home-page .site-footer { background: var(--surface); color: var(--muted); border-top-color: var(--line); }
+.home-page .listing-heading > p:last-child { margin-bottom: 0; }
+.home-page .site-footer { border-top: 1px solid var(--line); }
+
 .curriculum-scroll { width: 100%; overflow-x: auto; padding-bottom: 4px; }
 .curriculum-layout { min-width: 980px; }
-.curriculum-headings, .curriculum-grid {
+.curriculum-headings,
+.curriculum-grid {
   display: grid;
   grid-template-columns: 34px repeat(8, minmax(0, 1fr)) 38px;
   column-gap: 10px;
 }
-.curriculum-headings { margin-bottom: 8px; align-items: end; }
+.curriculum-headings { display: none; margin-bottom: 8px; align-items: end; }
 .curriculum-column-heading {
-  color: var(--blue); text-align: center; font: 700 13px/1.2 Manrope, sans-serif;
-  letter-spacing: .02em; padding: 0 2px 4px;
+  padding: 0 2px 4px;
+  color: var(--green);
+  text-align: center;
+  font: 700 13px/1.2 Manrope, sans-serif;
+  letter-spacing: .02em;
 }
 .curriculum-grid {
   grid-template-rows: repeat(7, minmax(86px, 1fr));
   row-gap: 10px;
   padding-block: 12px;
   position: relative;
+  background: var(--gray);
 }
 .curriculum-semester {
-  color: var(--ink); font: 500 32px/1 Manrope, sans-serif;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark);
+  font: 500 32px/1 Manrope, sans-serif;
 }
 .curriculum-module {
-  position: relative; display: flex; align-items: center; justify-content: center;
-  min-width: 0; min-height: 0; padding: 12px 10px 22px;
-  border-radius: 4px; background: var(--surface-soft); color: var(--ink);
-  text-decoration: none; text-align: center; font-family: Manrope, sans-serif;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 12px 10px 22px;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--dark);
+  text-decoration: none;
+  text-align: center;
+  font-family: Manrope, sans-serif;
   transition: transform .14s ease, box-shadow .14s ease;
 }
 .curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
-.curriculum-module:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; z-index: 2; }
+.curriculum-module:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; z-index: 2; }
 .curriculum-module-title { font-size: clamp(13px, 1.3vw, 20px); line-height: 1.2; font-weight: 800; }
-.curriculum-module-meta { position: absolute; right: 10px; bottom: 6px; font-size: 13px; line-height: 1; font-weight: 800; }
-.curriculum-project { background: var(--accent); color: var(--ink); }
-.curriculum-project .curriculum-module-meta { color: var(--ink); }
+.curriculum-module-meta {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 800;
+}
+.curriculum-project { background: var(--green); color: var(--white); }
+.curriculum-project .curriculum-module-meta { color: var(--white); }
 .curriculum-internship { padding: 12px; }
 .curriculum-internship .curriculum-module-title { font-size: 20px; }
 .curriculum-stage {
-  color: var(--ink); border-left: 3px solid var(--ink); position: relative;
-  writing-mode: vertical-rl; text-orientation: mixed;
-  display: flex; align-items: center; justify-content: center;
-  font: 700 17px/1 Manrope, sans-serif; letter-spacing: .02em;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 3px solid var(--dark);
+  color: var(--dark);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font: 700 17px/1 Manrope, sans-serif;
+  letter-spacing: .02em;
 }
-.curriculum-stage::before, .curriculum-stage::after {
-  content: ''; position: absolute; left: -3px; width: 14px; height: 3px; background: var(--ink);
+.curriculum-stage::before,
+.curriculum-stage::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  width: 14px;
+  height: 3px;
+  background: var(--dark);
 }
 .curriculum-stage::before { top: 0; }
 .curriculum-stage::after { bottom: 0; }
-.curriculum-legend { color: var(--ink); text-align: center; font-size: 14px; font-weight: 700; margin: 24px 0 8px; }
-@media (max-width: 700px) {
-  .home-page .site-header { align-items: flex-start; gap: 18px; flex-direction: column; }
-  .home-page .page-shell { padding: 22px 14px 48px; }
-  .curriculum-headings, .curriculum-grid { column-gap: 7px; }
-  .curriculum-grid { row-gap: 7px; grid-template-rows: repeat(7, minmax(78px, 1fr)); }
-  .curriculum-semester { font-size: 25px; }
-  .curriculum-module { padding-left: 5px; padding-right: 5px; }
-  .curriculum-module-meta { right: 5px; font-size: 11px; }
-  .curriculum-column-heading { font-size: 11px; }
-  .curriculum-stage { font-size: 14px; }
+.curriculum-legend {
+  margin: 24px 0 8px;
+  color: var(--dark);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
 }
 
-/* Multiple modules in one semester/subject cell (e.g. Electives) */
+/* Multiple modules share one curriculum cell */
 .curriculum-module-cell {
   display: grid;
   gap: 8px;
   min-width: 0;
   min-height: 0;
 }
-.curriculum-module-cell > .curriculum-module {
-  padding: 4px 4px 4px;
-}
-.curriculum-module-cell .curriculum-module-title {
-  /* font-size: clamp(10px, 1vw, 14px); */
-  line-height: 1.1;
-}
-.curriculum-module-cell .curriculum-module-meta {
-  right: 7px;
-  bottom: 4px;
-  /* font-size: 10px; */
-}
+.curriculum-module-cell > .curriculum-module { padding: 4px; }
+.curriculum-module-cell .curriculum-module-title { line-height: 1.1; }
+.curriculum-module-cell .curriculum-module-meta { right: 7px; bottom: 4px; }
 
-
-/* Curriculum overview: grey canvas, white modules, dark project modules */
-.curriculum-layout,
-.curriculum-grid { background: var(--surface-soft); }
-.curriculum-headings { background: var(--surface); }
-.curriculum-module { background: var(--surface); color: var(--ink); }
-.curriculum-project {
-  background: var(--ink);
-  color: hsl(0 0% 100%);
-}
-.curriculum-project .curriculum-module-meta { color: hsl(0 0% 100%); }
-
-/* Study tables 2 and 3: white headings, uniform grey module data area */
-.study-data-grid { background: var(--surface-soft); }
-.study-grid-cell { background: var(--surface-soft); }
-.study-grid-header,
-.study-semester-title,
-.study-overall-label,
-.study-overall-total { background: var(--surface); }
-.study-semester-total { background: #458152; color: #ffffff; }
-.study-module-cell { background: var(--surface-soft); }
-.study-grid-cell:not(.study-grid-header):not(.study-semester-title):not(.study-semester-total):not(.study-overall-label):not(.study-overall-total) {
-  background: var(--surface-soft);
-}
-
-
-/* Final overview adjustments */
-.curriculum-headings { display: none; }
-.curriculum-project {
-  background: hsl(130 30.3% 38.82%);
-  color: hsl(0 0% 100%);
-}
-.curriculum-project .curriculum-module-meta {
-  color: hsl(0 0% 100%);
+@media (max-width: 700px) {
+  .home-page .site-header { align-items: flex-start; gap: 18px; flex-direction: column; }
+  .home-page .page-shell { padding: 22px 14px 48px; }
+  .curriculum-headings,
+  .curriculum-grid { column-gap: 7px; }
+  .curriculum-grid { row-gap: 7px; grid-template-rows: repeat(7, minmax(78px, 1fr)); }
+  .curriculum-semester { font-size: 25px; }
+  .curriculum-module { padding-left: 5px; padding-right: 5px; }
+  .curriculum-module-meta { right: 5px; font-size: 11px; }
+  .curriculum-column-heading { font-size: 11px; }
+  .curriculum-stage { font-size: 14px; }
 }
