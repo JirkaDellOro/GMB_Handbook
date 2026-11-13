@@ -130,7 +130,6 @@ function contactHoursSws(value: NonNullable<ModuleData['components']>[number]['c
 export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): void {
   target.replaceChildren();
   const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
-  const columns = ['Module', 'Module component', 'Type of course', 'No. contact hours per week', 'Graded assessment', 'Non-graded assessment', 'Credit points'];
   for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
     appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
@@ -183,11 +182,12 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
     const overallCredits = orderedModules
       .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
       .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+    const overallGrid = el('div', 'study-data-grid study-overall-grid');
     const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
     overall.style.gridColumn = 'span 6';
-    grid.append(overall);
-    grid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
-    gridScroll.append(grid);
+    overallGrid.append(overall);
+    overallGrid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
+    gridScroll.append(overallGrid);
     sectionNode.append(gridScroll);
     target.append(sectionNode);
   }
