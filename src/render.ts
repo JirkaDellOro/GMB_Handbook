@@ -130,17 +130,9 @@ function contactHoursSws(value: NonNullable<ModuleData['components']>[number]['c
 export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): void {
   target.replaceChildren();
   const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
-  const columns = ['Module', 'Module component', 'Type of course', 'No. contact hours per week', 'Graded assessment', 'Non-graded assessment', 'Credit points'];
   for (const range of studyTableRanges) {
     const sectionNode = el('section', 'study-table-section');
     appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
-    const gridScroll = el('div', 'study-grid-scroll');
-    const grid = el('div', 'study-data-grid');
-    grid.setAttribute('aria-label', `Table ${range.number}: ${range.heading}`);
-    for (const title of columns) {
-      const cell = el('div', 'study-grid-cell study-grid-header', title);
-      grid.append(cell);
-    }
     const semesterModules = new Map<number, ModuleData[]>();
     for (const module of orderedModules) {
       const semester = Number(module.semester);
@@ -149,15 +141,15 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
       group.push(module);
       semesterModules.set(semester, group);
     }
+    const gridScroll = el('div', 'study-grid-scroll study-semester-list');
     for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
       const semesterItems = semesterModules.get(semester) ?? [];
-      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
-      const semesterTitle = el('div', 'study-grid-cell study-semester-title', `${semester}. Curricular Semester`);
-      semesterTitle.style.gridColumn = 'span 6';
-      grid.append(semesterTitle);
-      const semesterTotal = el('div', 'study-grid-cell study-semester-total', String(semesterCredits));
-      semesterTotal.setAttribute('aria-label', `${semester} semester credit points`);
-      grid.append(semesterTotal);
+      const semesterCard = el('section', 'study-semester-card');
+      const grid = el('div', 'study-data-grid');
+      grid.setAttribute('aria-label', `Table ${range.number}: ${semester}. Curricular Semester`);
+      for (const title of ['Modules', 'Component', 'Type', 'Hours', 'Graded', 'Non-Graded', 'CP']) {
+        grid.append(el('div', 'study-grid-cell study-grid-header', title));
+      }
       for (const module of semesterItems) {
         const components = module.components?.length ? module.components : [undefined];
         const moduleCell = el('div', 'study-grid-cell study-module-cell');
@@ -167,30 +159,34 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
         moduleCell.style.gridRow = `span ${components.length}`;
         grid.append(moduleCell);
         for (const component of components) {
-          const componentName = component?.name ?? '—';
           const values = [
-            componentName,
+            component?.name ?? '—',
             component?.course_type ?? '—',
             contactHoursSws(component?.contact_hours),
             component ? componentAssessments(module, component, true) || '—' : '—',
             component ? componentAssessments(module, component, false) || '—' : '—',
             component?.credit_points ?? '—'
           ];
-          for (const value of values) {
-            const cell = el('div', 'study-grid-cell', <string>value);
-            grid.append(cell);
-          }
+          for (const value of values) grid.append(el('div', 'study-grid-cell', <string>value));
         }
       }
+      semesterCard.append(grid);
+      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      const semesterTotal = el('div', 'study-semester-total');
+      semesterTotal.append(el('span', 'study-semester-label', `${semester}. Curricular Semester`));
+      semesterTotal.append(el('span', 'study-semester-credits', String(semesterCredits)));
+      semesterCard.append(semesterTotal);
+      gridScroll.append(semesterCard);
     }
     const overallCredits = orderedModules
       .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
       .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+    const overallGrid = el('div', 'study-data-grid study-overall-grid');
     const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
     overall.style.gridColumn = 'span 6';
-    grid.append(overall);
-    grid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
-    gridScroll.append(grid);
+    overallGrid.append(overall);
+    overallGrid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
+    gridScroll.append(overallGrid);
     sectionNode.append(gridScroll);
     target.append(sectionNode);
   }
@@ -288,6 +284,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   outcomes.append(outcomeGrid);
 
   const content = section('Individual Component Content', article);
+  content.classList.add('component-content-panel');
   for (const item of module.individual_component_content ?? []) {
     if (item.component) appendText(content, 'h3', componentReference(module, item.component));
     addList(content, item.items, 'tag-list');

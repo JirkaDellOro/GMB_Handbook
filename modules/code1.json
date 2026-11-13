@@ -17,7 +17,7 @@
       "contact_hours": "4 SWS / 45h",
       "self_study_hours": 135,
       "class_size": 35,
-      "course_type": "S",
+      "course_type": "S/P",
       "credit_points": 6
     }
   ],
@@ -77,7 +77,7 @@
     {
       "component": "a)",
       "items": [
-        "Seminar"
+        "Seminar / Practical"
       ]
     }
   ],
