@@ -178,11 +178,12 @@ export function renderStudyTables(target, modules) {
         const overallCredits = orderedModules
             .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
             .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+        const overallGrid = el('div', 'study-data-grid study-overall-grid');
         const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
         overall.style.gridColumn = 'span 6';
-        grid.append(overall);
-        grid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
-        gridScroll.append(grid);
+        overallGrid.append(overall);
+        overallGrid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
+        gridScroll.append(overallGrid);
         sectionNode.append(gridScroll);
         target.append(sectionNode);
     }
