@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 :root {
-  --var(--white): #ffffff;
+  --white: #ffffff;
   --gray: #ededed;
   --dark: #202126;
-  --green: var(--green);
+  --green: #458152;
   --muted: #6a6b70;
   --muted-strong: #47484f;
   --line: #dbdbdb;
