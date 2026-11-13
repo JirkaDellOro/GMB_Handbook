@@ -107,9 +107,9 @@
 .study-grid-cell { background: var(--surface-soft); }
 .study-grid-header,
 .study-semester-title,
-.study-semester-total,
 .study-overall-label,
 .study-overall-total { background: var(--surface); }
+.study-semester-total { background: #458152; color: #ffffff; }
 .study-module-cell { background: var(--surface-soft); }
 .study-grid-cell:not(.study-grid-header):not(.study-semester-title):not(.study-semester-total):not(.study-overall-label):not(.study-overall-total) {
   background: var(--surface-soft);
