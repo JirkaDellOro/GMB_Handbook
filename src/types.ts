@@ -41,7 +41,6 @@ export interface ModuleData {
   responsible_person?: string | null;
   lecturers?: Lecturer[];
   reading_list?: ReadingItem[];
-  extraction_note?: string;
 }
 
 export interface SemesterGroup {

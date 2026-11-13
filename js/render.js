@@ -338,8 +338,6 @@ export function renderModuleDetail(target, module) {
     for (const item of module.reading_list ?? [])
         appendText(readingList, 'li', item.reference);
     reading.append(readingList);
-    if (module.extraction_note)
-        appendText(article, 'p', module.extraction_note, 'source-note');
     target.append(article);
 }
 export function renderError(target, title, message) {
