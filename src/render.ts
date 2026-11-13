@@ -172,7 +172,9 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
       }
       semesterCard.append(grid);
       const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
-      const semesterTotal = el('div', 'study-semester-total', `${semester}. Curricular Semester · Creditpoints: ${semesterCredits}`);
+      const semesterTotal = el('div', 'study-semester-total');
+      semesterTotal.append(el('span', 'study-semester-label', `${semester}. Curricular Semester`));
+      semesterTotal.append(el('span', 'study-semester-credits', String(semesterCredits)));
       semesterCard.append(semesterTotal);
       gridScroll.append(semesterCard);
     }
