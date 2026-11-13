@@ -43,7 +43,7 @@ export function renderCurriculum(target, modules, curriculum) {
         grid.append(row);
     }
     for (const stageData of curriculum.studyStages) {
-        const stage = el('aside', undefined, stageData.title);
+        const stage = el('h2', undefined, stageData.title);
         const firstRow = 8 - stageData.lastSemester;
         const rowSpan = stageData.lastSemester - stageData.firstSemester + 1;
         stage.style.gridColumn = String(curriculum.columns.length + 2);
@@ -84,7 +84,7 @@ export function renderCurriculum(target, modules, curriculum) {
                 link.style.gridColumn = cellData.gridColumn;
                 link.style.gridRow = String(cellData.row);
             }
-            appendText(link, 'strong', module.title);
+            appendText(link, 'span', module.title);
             if (style !== 'internship') {
                 const blockLabel = block === null ? '–' : String(block);
                 appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`);
@@ -191,7 +191,7 @@ export function renderModuleTile(module) {
     link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
     appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'));
     const main = el('span');
-    appendText(main, 'strong', module.title);
+    appendText(main, 'span', module.title);
     appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
     link.append(main);
     appendText(link, 'span', `${module.credits ?? '—'} ECTS`);
@@ -220,7 +220,7 @@ export function renderModuleDetail(target, module) {
     appendText(headingCopy, 'p', `Module code: ${module.module_code || '—'}`, 'module-code');
     heading.append(headingCopy);
     const credit = el('div', 'credit-card');
-    appendText(credit, 'strong', module.credits ?? '—');
+    appendText(credit, 'span', module.credits ?? '—');
     appendText(credit, 'span', 'ECTS');
     heading.append(credit);
     article.append(heading);
@@ -234,7 +234,7 @@ export function renderModuleDetail(target, module) {
     for (const [label, value] of factValues) {
         const cell = el('div');
         appendText(cell, 'span', label);
-        appendText(cell, 'strong', value);
+        appendText(cell, 'span', value);
         facts.append(cell);
     }
     article.append(facts);
@@ -322,13 +322,13 @@ export function renderModuleDetail(target, module) {
     addList(applicability, module.applicability);
     const people = section('Person responsible for Module and Lecturers', article);
     const responsible = el('p');
-    const label = el('strong', undefined, 'Person responsible for module: ');
+    const label = el('span', undefined, 'Person responsible for module: ');
     responsible.append(label, document.createTextNode(module.responsible_person || '—'));
     people.append(responsible);
     for (const item of module.lecturers ?? []) {
         const p = el('p');
         if (item.component)
-            p.append(el('strong', undefined, componentReference(module, item.component)), document.createElement('br'));
+            p.append(el('span', undefined, componentReference(module, item.component)), document.createElement('br'));
         p.append(document.createTextNode(item.names?.join(', ') || '—'));
         people.append(p);
     }
