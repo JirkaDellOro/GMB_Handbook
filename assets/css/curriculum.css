@@ -66,9 +66,9 @@
   font-weight: 800;
 }
 .curriculum-project { background: var(--green); color: var(--white); }
-.curriculum-project .curriculum-module > span { color: var(--white); }
+.curriculum-project > span { color: var(--white); }
 .curriculum-internship { padding: 12px; }
-.curriculum-internship .curriculum-module > strong { font-size: var(--font-xl); }
+.curriculum-internship > strong { font-size: var(--font-xl); }
 .curriculum-stage {
   position: relative;
   display: flex;
