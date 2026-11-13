@@ -84,10 +84,10 @@ export function renderCurriculum(target, modules, curriculum) {
                 link.style.gridColumn = cellData.gridColumn;
                 link.style.gridRow = String(cellData.row);
             }
-            appendText(link, 'strong', module.title, 'curriculum-module-title');
+            appendText(link, 'strong', module.title);
             if (style !== 'internship') {
                 const blockLabel = block === null ? '–' : String(block);
-                appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`, 'curriculum-module-meta');
+                appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`);
             }
             container.append(link);
         }
@@ -95,7 +95,7 @@ export function renderCurriculum(target, modules, curriculum) {
     layout.append(grid);
     scroll.append(layout);
     target.append(scroll);
-    const legend = el('p', 'curriculum-legend');
+    const legend = el('p');
     legend.textContent = 'Legend: x.y = position in the sequence of modules . creditpoints (ECTS)';
     target.append(legend);
 }
@@ -143,11 +143,11 @@ export function renderStudyTables(target, modules) {
             const grid = el('div', 'study-data-grid');
             grid.setAttribute('aria-label', `Table ${range.number}: ${semester}. Curricular Semester`);
             for (const title of ['Modules', 'Component', 'Type', 'Hours', 'Graded', 'Non-Graded', 'CP']) {
-                grid.append(el('div', 'study-grid-cell study-grid-header', title));
+                grid.append(el('header', undefined, title));
             }
             for (const module of semesterItems) {
                 const components = module.components?.length ? module.components : [undefined];
-                const moduleCell = el('div', 'study-grid-cell study-module-cell');
+                const moduleCell = el('div', 'study-module-cell');
                 const moduleLink = el('a', undefined, module.title);
                 moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
                 moduleCell.append(moduleLink);
@@ -163,7 +163,7 @@ export function renderStudyTables(target, modules) {
                         component?.credit_points ?? '—'
                     ];
                     for (const value of values)
-                        grid.append(el('div', 'study-grid-cell', value));
+                        grid.append(el('div', undefined, value));
                 }
             }
             semesterCard.append(grid);
@@ -178,10 +178,10 @@ export function renderStudyTables(target, modules) {
             .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
             .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
         const overallGrid = el('div', 'study-data-grid study-overall-grid');
-        const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
+        const overall = el('div', 'study-overall-label', 'Overall');
         overall.style.gridColumn = 'span 6';
         overallGrid.append(overall);
-        overallGrid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
+        overallGrid.append(el('div', 'study-overall-total', String(overallCredits)));
         gridScroll.append(overallGrid);
         sectionNode.append(gridScroll);
         target.append(sectionNode);
@@ -190,13 +190,13 @@ export function renderStudyTables(target, modules) {
 export function renderModuleTile(module) {
     const link = el('a', 'module-tile');
     link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
-    appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'), 'tile-number');
+    appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'));
     const main = el('span', 'tile-main');
     appendText(main, 'strong', module.title);
     appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
     link.append(main);
-    appendText(link, 'span', `${module.credits ?? '—'} ECTS`, 'tile-credits');
-    appendText(link, 'span', '↗', 'tile-arrow');
+    appendText(link, 'span', `${module.credits ?? '—'} ECTS`);
+    appendText(link, 'span', '↗');
     return link;
 }
 export async function renderModuleList(target, semesters, loadModule) {
@@ -243,7 +243,7 @@ export function renderModuleDetail(target, module) {
     const componentGrid = el('div', 'detail-data-grid component-grid');
     componentGrid.setAttribute('role', 'table');
     for (const heading of ['Component', 'Course type', 'Language', 'Contact hours', 'Self-study', 'Class size', 'ECTS']) {
-        const cell = el('div', 'detail-grid-cell detail-grid-header', heading);
+        const cell = el('header', undefined, heading);
         cell.setAttribute('role', 'columnheader');
         componentGrid.append(cell);
     }
@@ -255,7 +255,7 @@ export function renderModuleDetail(target, module) {
             component.class_size, component.credit_points
         ];
         for (const value of values) {
-            const cell = el('div', 'detail-grid-cell');
+            const cell = el('div');
             cell.setAttribute('role', 'cell');
             appendText(cell, 'span', value);
             componentGrid.append(cell);
@@ -269,7 +269,7 @@ export function renderModuleDetail(target, module) {
         appendText(outcomes, 'p', module.learning_outcomes_intro);
     const outcomeGrid = el('div', 'outcome-grid');
     for (const outcome of module.learning_outcomes ?? []) {
-        const card = el('div', 'outcome-card');
+        const card = el('div');
         appendText(card, 'h3', outcome.category);
         addList(card, outcome.items);
         outcomeGrid.append(card);
@@ -280,7 +280,7 @@ export function renderModuleDetail(target, module) {
     for (const item of module.individual_component_content ?? []) {
         if (item.component)
             appendText(content, 'h3', componentReference(module, item.component));
-        addList(content, item.items, 'tag-list');
+        addList(content, item.items);
     }
     const twoCol = el('section', 'two-column-sections');
     for (const [title, items] of [['Teaching Methods', module.teaching_methods], ['Prerequisites', module.prerequisites]]) {
@@ -298,7 +298,7 @@ export function renderModuleDetail(target, module) {
     const assessmentGrid = el('div', 'detail-data-grid assessment-grid');
     assessmentGrid.setAttribute('role', 'table');
     for (const heading of ['Component', 'Code', 'Assessment', 'Grading', 'ECTS']) {
-        const cell = el('div', 'detail-grid-cell detail-grid-header', heading);
+        const cell = el('header', undefined, heading);
         cell.setAttribute('role', 'columnheader');
         assessmentGrid.append(cell);
     }
@@ -309,7 +309,7 @@ export function renderModuleDetail(target, module) {
             item.credits
         ];
         for (const value of values) {
-            const cell = el('div', 'detail-grid-cell');
+            const cell = el('div');
             cell.setAttribute('role', 'cell');
             appendText(cell, 'span', value);
             assessmentGrid.append(cell);
