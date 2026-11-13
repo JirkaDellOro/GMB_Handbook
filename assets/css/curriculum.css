@@ -114,3 +114,14 @@
 .study-grid-cell:not(.study-grid-header):not(.study-semester-title):not(.study-semester-total):not(.study-overall-label):not(.study-overall-total) {
   background: var(--surface-soft);
 }
+
+
+/* Final overview adjustments */
+.curriculum-headings { display: none; }
+.curriculum-project {
+  background: hsl(130 30.3% 38.82%);
+  color: hsl(0 0% 100%);
+}
+.curriculum-project .curriculum-module-meta {
+  color: hsl(0 0% 100%);
+}
