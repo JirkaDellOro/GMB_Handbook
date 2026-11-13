@@ -120,6 +120,6 @@
   .curriculum-semester { font-size: var(--font-mobile-semester); }
   .curriculum-module { padding-left: 5px; padding-right: 5px; }
   .curriculum-module-meta { right: 5px; font-size: var(--font-xs); }
-  .curriculum-column-heading { font-size: 11px; }
+  .curriculum-column-heading { font-size: var(--font-xs); }
   .curriculum-stage { font-size: var(--font-mobile-stage); }
 }
