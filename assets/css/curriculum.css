@@ -1,13 +1,7 @@
 /* Homepage and curriculum overview */
 .home-page { background: var(--white); }
-.home-page .site-header,
-.home-page .site-footer { background: var(--white); }
+.home-page .site-header { background: var(--white); }
 .home-page .site-header { border-bottom: 1px solid var(--line); color: var(--dark); }
-.home-page .brand { color: var(--dark); }
-.home-page .brand small,
-.home-page .site-footer { color: var(--muted); }
-.home-page .site-header nav a,
-.home-page .listing-heading .eyebrow { color: var(--green); }
 .home-page .page-shell { max-width: 1600px; padding-top: 28px; }
 .home-page .listing-heading { padding: 10px 0 24px; color: var(--dark); }
 .home-page .listing-heading h1 { font-size: clamp(30px, 4vw, 48px); }
