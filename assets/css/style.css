@@ -13,7 +13,6 @@
 .study-grid-scroll { width: 100%; overflow-x: auto; border: 0; border-radius: 0; }
 .study-semester-list { display: grid; gap: 16px; }
 .study-semester-card { min-width: 1050px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-soft); }
-.study-semester-title { margin: 0; padding: 14px 16px; background: var(--surface-soft); color: var(--ink); font-weight: 700; }
 .study-data-grid {
   display: grid;
   grid-template-columns: minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
