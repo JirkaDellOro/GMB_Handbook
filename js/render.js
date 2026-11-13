@@ -123,7 +123,6 @@ function contactHoursSws(value) {
 export function renderStudyTables(target, modules) {
     target.replaceChildren();
     const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
-    const columns = ['Module', 'Module component', 'Type of course', 'No. contact hours per week', 'Graded assessment', 'Non-graded assessment', 'Credit points'];
     for (const range of studyTableRanges) {
         const sectionNode = el('section');
         appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
@@ -136,7 +135,7 @@ export function renderStudyTables(target, modules) {
             group.push(module);
             semesterModules.set(semester, group);
         }
-        const gridScroll = el('div', 'study-grid-scroll study-semester-list');
+        const gridScroll = el('div', 'study-grid-scroll');
         for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
             const semesterItems = semesterModules.get(semester) ?? [];
             const semesterCard = el('section');
@@ -177,7 +176,7 @@ export function renderStudyTables(target, modules) {
         const overallCredits = orderedModules
             .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
             .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
-        const overallGrid = el('div', 'study-data-grid study-overall-grid');
+        const overallGrid = el('div', 'study-data-grid');
         const overall = el('div', undefined, 'Overall');
         overall.style.gridColumn = 'span 6';
         overallGrid.append(overall);
@@ -191,7 +190,7 @@ export function renderModuleTile(module) {
     const link = el('a', 'module-tile');
     link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
     appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'));
-    const main = el('span', 'tile-main');
+    const main = el('span');
     appendText(main, 'strong', module.title);
     appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
     link.append(main);
@@ -210,7 +209,7 @@ export async function renderModuleList(target, semesters, loadModule) {
 }
 export function renderModuleDetail(target, module) {
     target.replaceChildren();
-    const article = el('article', 'module-page');
+    const article = el('article');
     const back = el('a', 'back-link', '← All modules');
     back.href = './modules.html';
     article.append(back);
