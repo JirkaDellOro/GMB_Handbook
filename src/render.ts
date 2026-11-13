@@ -195,7 +195,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
 export function renderModuleTile(module: ModuleData): HTMLAnchorElement {
   const link = el('a', 'module-tile');
   link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
-  appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'), 'tile-number');
+  appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'));
   const main = el('span', 'tile-main');
   appendText(main, 'strong', module.title);
   appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
