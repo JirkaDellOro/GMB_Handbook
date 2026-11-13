@@ -140,7 +140,6 @@ export function renderStudyTables(target, modules) {
         for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
             const semesterItems = semesterModules.get(semester) ?? [];
             const semesterCard = el('section', 'study-semester-card');
-            appendText(semesterCard, 'h3', `${semester}. Curricular Semester`, 'study-semester-title');
             const grid = el('div', 'study-data-grid');
             grid.setAttribute('aria-label', `Table ${range.number}: ${semester}. Curricular Semester`);
             for (const title of ['Modules', 'Component', 'Type', 'Hours', 'Graded', 'Non-Graded', 'CP']) {
@@ -169,7 +168,7 @@ export function renderStudyTables(target, modules) {
             }
             semesterCard.append(grid);
             const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
-            const semesterTotal = el('div', 'study-semester-total', `Creditpoints: ${semesterCredits}`);
+            const semesterTotal = el('div', 'study-semester-total', `${semester}. Curricular Semester · Creditpoints: ${semesterCredits}`);
             semesterCard.append(semesterTotal);
             gridScroll.append(semesterCard);
         }
