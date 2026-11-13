@@ -56,8 +56,8 @@
 }
 .curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
 .curriculum-module:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; z-index: 2; }
-.curriculum-module-title { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 800; }
-.curriculum-module-meta {
+.curriculum-module > strong { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 800; }
+.curriculum-module > span {
   position: absolute;
   right: 10px;
   bottom: 6px;
@@ -66,9 +66,9 @@
   font-weight: 800;
 }
 .curriculum-project { background: var(--green); color: var(--white); }
-.curriculum-project .curriculum-module-meta { color: var(--white); }
+.curriculum-project .curriculum-module > span { color: var(--white); }
 .curriculum-internship { padding: 12px; }
-.curriculum-internship .curriculum-module-title { font-size: var(--font-xl); }
+.curriculum-internship .curriculum-module > strong { font-size: var(--font-xl); }
 .curriculum-stage {
   position: relative;
   display: flex;
@@ -92,7 +92,7 @@
 }
 .curriculum-stage::before { top: 0; }
 .curriculum-stage::after { bottom: 0; }
-.curriculum-legend {
+#curriculum-grid > p {
   margin: 24px 0 8px;
   color: var(--dark);
   text-align: center;
@@ -108,8 +108,8 @@
   min-height: 0;
 }
 .curriculum-module-cell > .curriculum-module { padding: 4px; }
-.curriculum-module-cell .curriculum-module-title { line-height: 1.1; }
-.curriculum-module-cell .curriculum-module-meta { right: 7px; bottom: 4px; }
+.curriculum-module-cell .curriculum-module > strong { line-height: 1.1; }
+.curriculum-module-cell .curriculum-module > span { right: 7px; bottom: 4px; }
 
 @media (max-width: 700px) {
   .home-page .site-header { align-items: flex-start; gap: 18px; flex-direction: column; }
@@ -119,7 +119,7 @@
   .curriculum-grid { row-gap: 7px; grid-template-rows: repeat(7, minmax(78px, 1fr)); }
   .curriculum-semester { font-size: var(--font-mobile-semester); }
   .curriculum-module { padding-left: 5px; padding-right: 5px; }
-  .curriculum-module-meta { right: 5px; font-size: var(--font-xs); }
+  .curriculum-module > span { right: 5px; font-size: var(--font-xs); }
   .curriculum-column-heading { font-size: var(--font-xs); }
   .curriculum-stage { font-size: var(--font-mobile-stage); }
 }
