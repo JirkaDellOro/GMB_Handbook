@@ -144,7 +144,6 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
     const gridScroll = el('div', 'study-grid-scroll study-semester-list');
     for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
       const semesterItems = semesterModules.get(semester) ?? [];
-      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
       const semesterCard = el('section', 'study-semester-card');
       appendText(semesterCard, 'h3', `${semester}. Curricular Semester`, 'study-semester-title');
       const grid = el('div', 'study-data-grid');
@@ -172,11 +171,10 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
           for (const value of values) grid.append(el('div', 'study-grid-cell', <string>value));
         }
       }
-      const semesterTotalLabel = el('div', 'study-grid-cell study-semester-total', 'Semester total');
-      semesterTotalLabel.style.gridColumn = 'span 6';
-      grid.append(semesterTotalLabel);
-      grid.append(el('div', 'study-grid-cell study-semester-total', String(semesterCredits)));
       semesterCard.append(grid);
+      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      const semesterTotal = el('div', 'study-semester-total', `Creditpoints: ${semesterCredits}`);
+      semesterCard.append(semesterTotal);
       gridScroll.append(semesterCard);
     }
     const overallCredits = orderedModules
