@@ -243,6 +243,7 @@
   .study-data-grid > header, .detail-data-grid > header { color: #000; background: #eee; }
   .study-data-grid > div, .detail-data-grid > div { background: #fff; }
   .study-semester-total { background: #8922A0; color: #fff; }
+  #module-details .module-detail-semester { margin: 0; }
   #module-details .module-detail-semester > h2 { display: none; }
   #module-details .module-detail-entry {
     break-inside: avoid;
