@@ -53,7 +53,7 @@ function attachPrintControl(): void {
 
   button.addEventListener("click", () => {
     const previousStates = panels.map(_panel => _panel.open);
-    panels.forEach(panel => panel.open = true);
+    panels.forEach(_panel => _panel.open = true);
     window.addEventListener("afterprint", () => {
       panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
     }, { once: true });
@@ -82,7 +82,7 @@ async function showProgramme(_elements: AppElements): Promise<void> {
   if (_elements.detailView) _elements.detailView.hidden = true;
   if (!_elements.curriculumTarget) return;
   const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
-  const references = [...new Set(semesters.flatMap(semester => semester.modules))];
+  const references = [...new Set(semesters.flatMap(_semester => _semester.modules))];
   const modules = await Promise.all(references.map(loadModule));
   renderCurriculum(_elements.curriculumTarget, modules, curriculum);
   attachCurriculumPanel(_elements, modules);
