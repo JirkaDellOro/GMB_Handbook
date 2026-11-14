@@ -1,6 +1,7 @@
 import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderModuleList, renderStudyTables } from "./render.js";
 import { loadSpecifics } from "./specifics.js";
+import type { ModuleData, SemesterGroup } from "./types.js";
 
 interface AppElements {
   curriculumView: HTMLElement | null;
@@ -50,8 +51,10 @@ function getElements(): AppElements {
 }
 
 function attachSpecificsPanel(_elements: AppElements): void {
-  if (!_elements.specificsPanel || !_elements.specificsTarget) return;
-  renderWhenOpened(_elements.specificsPanel, () => void loadSpecifics(_elements.specificsTarget!));
+  const panel = _elements.specificsPanel;
+  const target = _elements.specificsTarget;
+  if (!panel || !target) return;
+  renderWhenOpened(panel, () => void loadSpecifics(target));
 }
 
 async function showModuleDetail(_reference: string, _elements: AppElements): Promise<void> {
@@ -85,17 +88,20 @@ async function showProgramme(_elements: AppElements): Promise<void> {
   attachDetailsPanel(_elements, semesters, modules);
 }
 
-function attachCurriculumPanel(_elements: AppElements, _modules: Awaited<ReturnType<typeof loadModule>>[]): void {
-  if (!_elements.curriculumPanel || !_elements.overviewTarget) return;
-  renderWhenOpened(_elements.curriculumPanel, () => renderStudyTables(_elements.overviewTarget!, _modules));
+function attachCurriculumPanel(_elements: AppElements, _modules: ModuleData[]): void {
+  const panel = _elements.curriculumPanel;
+  const target = _elements.overviewTarget;
+  if (!panel || !target) return;
+  renderWhenOpened(panel, () => renderStudyTables(target, _modules));
 }
 
 function attachDetailsPanel(
-  _elements: AppElements, _semesters: Awaited<ReturnType<typeof loadManifest>>,
-  _modules: Awaited<ReturnType<typeof loadModule>>[]
+  _elements: AppElements, _semesters: SemesterGroup[], _modules: ModuleData[]
 ): void {
-  if (!_elements.detailsPanel || !_elements.detailsTarget) return;
-  renderWhenOpened(_elements.detailsPanel, () => renderModuleDetails(_elements.detailsTarget!, _semesters, _modules));
+  const panel = _elements.detailsPanel;
+  const target = _elements.detailsTarget;
+  if (!panel || !target) return;
+  renderWhenOpened(panel, () => renderModuleDetails(target, _semesters, _modules));
 }
 
 function renderPageError(_error: unknown, _moduleRef: string | null, _view: string, _elements: AppElements): void {
