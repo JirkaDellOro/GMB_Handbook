@@ -3,20 +3,20 @@ let manifestPromise: Promise<SemesterGroup[]> | undefined;
 let curriculumPromise: Promise<CurriculumData> | undefined;
 const moduleCache = new Map<string, Promise<ModuleData>>();
 export function loadManifest(): Promise<SemesterGroup[]> {
-  if (!manifestPromise) manifestPromise = fetch("./manifest.json").then(checkResponse).then(response => response.json() as Promise<SemesterGroup[]>);
+  if (!manifestPromise) manifestPromise = fetch("./manifest.json").then(checkResponse).then(_response => _response.json() as Promise<SemesterGroup[]>);
   return manifestPromise;
 }
 export function loadCurriculum(): Promise<CurriculumData> {
-  if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(response => response.json() as Promise<CurriculumData>);
+  if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(_response => _response.json() as Promise<CurriculumData>);
   return curriculumPromise;
 }
 export function loadModule(_reference: string): Promise<ModuleData> {
   if (!isValidModuleReference(_reference)) return Promise.reject(new Error("Invalid module _reference."));
   if (!moduleCache.has(_reference)) {
-    moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json() as Promise<ModuleData>).then(module => {
+    moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(_response => _response.json() as Promise<ModuleData>).then(_module => {
       const expectedId = _reference.split("/").pop()?.replace(".json", "");
-      if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
-      return { ...module, sourceRef: _reference };
+      if (_module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
+      return { ..._module, sourceRef: _reference };
     }));
   }
   return moduleCache.get(_reference)!;
