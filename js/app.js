@@ -39,7 +39,7 @@ function attachSpecificsPanel(_elements) {
     const target = _elements.specificsTarget;
     if (!panel || !target)
         return;
-    renderWhenOpened(panel, () => void loadSpecifics(target));
+    renderWhenOpened(panel, () => void loadSpecifics(target, "./specifics.json", "h2"));
 }
 async function showModuleDetail(_reference, _elements) {
     if (_elements.detailView)
