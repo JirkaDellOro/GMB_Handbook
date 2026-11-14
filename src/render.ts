@@ -2,7 +2,7 @@ import type { CurriculumData, ModuleData, SemesterGroup } from "./types.js";
 
 function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
   const node = document.createElement(_tag);
-  if (_className) node._className = _className;
+  if (_className) node.className = _className;
   if (_text !== undefined) node.textContent = _text;
   return node;
 }
@@ -56,7 +56,7 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
     entries: { module: ModuleData; semester: number; block: number | null; style: string }[];
   }>();
   for (const module of _modules) {
-    const position = _curriculum._modules[module.sourceRef ?? module.id];
+    const position = _curriculum.modules[module.sourceRef ?? module.id];
     if (!position) continue;
     const semester = Number(module.semester);
     const column = _curriculum.columns.indexOf(position.column);
@@ -112,13 +112,13 @@ const studyTableRanges = [
 
 function componentReference(_module: ModuleData, _label?: string): string | undefined {
   if (!_label) return undefined;
-  const component = _module.components?.find(item => item._label === _label);
-  return component ? `${component._label} ${component.name ?? ""}`.trim() : _label;
+  const component = _module.components?.find(item => item.label === _label);
+  return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
 }
 
 function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
   return (_module.assessment ?? [])
-    .filter(item => item._component === _component.label && item.graded_assessment === _graded)
+    .filter(item => item.component === _component.label && item.graded_assessment === _graded)
     .map(item => item.code).filter(Boolean).join(", ");
 }
 
@@ -241,7 +241,7 @@ export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGr
   for (const semester of _semesters) {
     const group = createElement("section", "module-detail-semester");
     appendText(group, "h2", semester.title);
-    for (const reference of semester._modules) {
+    for (const reference of semester.modules) {
       const module = modulesByReference.get(reference);
       if (!module) continue;
       const entry = createElement("div", "module-detail-entry");
