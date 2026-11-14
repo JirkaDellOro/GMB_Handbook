@@ -1,15 +1,16 @@
-import { loadCurriculum, loadManifest, loadModule } from './modules.js';
-import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from './render.js';
+import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
+import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from "./render.js";
+void start();
 async function start() {
-    const curriculumTarget = document.querySelector('#curriculum-grid');
-    const overviewTarget = document.querySelector('#module-overview');
-    const listTarget = document.querySelector('#module-list');
-    const detailTarget = document.querySelector('#module-detail');
+    const curriculumTarget = document.querySelector("#curriculum-grid");
+    const overviewTarget = document.querySelector("#module-overview");
+    const listTarget = document.querySelector("#module-list");
+    const detailTarget = document.querySelector("#module-detail");
     try {
         if (detailTarget) {
-            const id = new URLSearchParams(window.location.search).get('id') ?? '';
+            const id = new URLSearchParams(window.location.search).get("id") ?? "";
             if (!id)
-                throw new Error('No module ID was provided in the URL.');
+                throw new Error("No module ID was provided in the URL.");
             const module = await loadModule(id);
             document.title = `${module.title} · Games & Immersive Media – Module Handbook`;
             renderModuleDetail(detailTarget, module);
@@ -31,11 +32,10 @@ async function start() {
     catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         if (detailTarget)
-            renderError(detailTarget, 'Module not found', message);
+            renderError(detailTarget, "Module not found", message);
         if (curriculumTarget)
-            renderError(curriculumTarget, 'Study structure could not be loaded', message);
+            renderError(curriculumTarget, "Study structure could not be loaded", message);
         if (listTarget)
-            renderError(listTarget, 'Modules could not be loaded', message);
+            renderError(listTarget, "Modules could not be loaded", message);
     }
 }
-void start();
