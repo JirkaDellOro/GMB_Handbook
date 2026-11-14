@@ -135,3 +135,103 @@
 .back-link,
 .reading-list a,
 #module-detail > article .eyebrow { color: var(--study); }
+
+
+/* Responsive refinements for phones */
+@media (max-width: 700px) {
+  .site-header { padding: 14px 18px; }
+  .brand { gap: 10px; }
+  .brand img { width: 104px; }
+  .site-header nav { display: flex; flex-wrap: wrap; gap: 8px 18px; }
+  .page-shell { width: 100%; min-width: 0; }
+  .listing-heading h1 { font-size: clamp(30px, 9vw, 42px); overflow-wrap: anywhere; }
+  .module-heading { align-items: flex-start; }
+  .module-heading h1 { overflow-wrap: anywhere; }
+  .facts-grid { gap: 0; }
+  .facts-grid div { min-width: 0; padding: 13px 12px; overflow-wrap: anywhere; }
+  .component-content-panel { padding: 16px; }
+  .content-section { min-width: 0; }
+  .module-tile > span:nth-child(2) { min-width: 0; }
+  .module-tile > span:nth-last-child(2) { white-space: normal; text-align: right; }
+  .programme-hero img { object-position: center; }
+}
+@media (max-width: 420px) {
+  .brand img { width: 88px; }
+  .site-header nav { gap: 6px 14px; }
+  .site-header nav a { font-size: var(--font-compact); }
+  .facts-grid div { padding: 11px 9px; }
+  .facts-grid div > span:last-child { font-size: var(--font-small); }
+  .module-tile { align-items: flex-start; gap: 9px; padding: 13px 10px; }
+  .module-tile > span:nth-last-child(2) { max-width: 78px; }
+}
+
+/* Print layout for the complete module handbook */
+@page { size: A4 portrait; margin: 15mm 14mm 17mm; }
+@media print {
+  html, body { background: #fff !important; color: #000 !important; font-size: 9pt; }
+  body { line-height: 1.35; }
+  .site-header { min-height: 0; padding: 0 0 7mm; border-bottom: 1px solid #777; }
+  .site-header nav, .site-footer, .back-link { display: none !important; }
+  .brand { gap: 8mm; color: #000; }
+  .brand img { width: 32mm; max-height: 15mm; object-fit: contain; }
+  .brand small { font-size: 7pt; }
+  .page-shell { width: 100%; max-width: none; margin: 0; padding: 7mm 0 0; }
+  .listing-heading { padding: 0 0 5mm; }
+  .listing-heading h1 { font-size: 23pt; }
+  .listing-heading > p { margin: 1mm 0; }
+  a { color: inherit !important; text-decoration: none !important; }
+  .programme-hero { height: 35mm; margin-bottom: 5mm; }
+  .programme-hero img { object-fit: cover; }
+  .programme-accordion { display: block; margin: 0; }
+  .programme-accordion > details { display: block; margin: 0 0 7mm; border: 0; background: #fff; }
+  .programme-accordion > details > summary { display: none !important; }
+  .programme-accordion > details > :not(summary) { display: block !important; padding: 0 !important; }
+  .programme-accordion > details > div { break-inside: auto; }
+  .curriculum-table-heading,
+  #module-overview > section > h2 { margin: 5mm 0 2mm; font-size: 12pt; }
+  .curriculum-scroll, .study-grid-scroll, .detail-grid-scroll { overflow: visible !important; }
+  .curriculum-layout { min-width: 0; width: 100%; }
+  .curriculum-headings, .curriculum-grid { grid-template-columns: 7mm repeat(8, minmax(0, 1fr)) 8mm; column-gap: 1mm; }
+  .curriculum-grid { grid-template-rows: repeat(7, minmax(14mm, auto)); row-gap: 1mm; padding: 2mm 0; }
+  .curriculum-grid > output { font-size: 10pt; }
+  .curriculum-grid > h2 { font-size: 7pt; }
+  .curriculum-module { padding: 2mm 1mm 4mm; border: .2mm solid #bbb; }
+  .curriculum-module > span:first-child { font-size: 6.5pt; }
+  .curriculum-module:not(.curriculum-internship) > span:last-child { right: 1mm; bottom: 1mm; font-size: 6pt; }
+  .curriculum-module-cell { gap: .5mm; }
+  .curriculum-module-cell > .curriculum-module { padding: 1mm; }
+  .curriculum-module-cell .curriculum-module > span:first-child { font-size: 5.5pt; }
+  #module-overview > section { margin: 0 0 5mm; break-inside: auto; }
+  .study-grid-scroll:has(> section) { display: block; }
+  .study-grid-scroll > section { min-width: 0; width: 100%; margin-bottom: 2mm; border-radius: 0; break-inside: auto; }
+  .study-data-grid { grid-template-columns: 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; font-size: 6.5pt; line-height: 1.2; }
+  .study-data-grid > header, .study-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
+  .study-semester-total { padding: 1.2mm 2mm; font-size: 7pt; }
+  .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
+  .detail-data-grid > header, .detail-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
+  .component-grid { grid-template-columns: 1.35fr repeat(5, 1fr) .6fr; }
+  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+  #module-details .module-detail-semester { margin: 0 0 5mm; }
+  #module-details .module-detail-semester > h2 { margin: 0 0 3mm; padding-bottom: 2mm; font-size: 16pt; break-after: avoid; }
+  #module-details .module-detail-entry { padding: 3mm 0 5mm; break-inside: auto; }
+  #module-details article { max-width: none; margin: 0; }
+  #module-detail > article { max-width: none; }
+  .module-heading { padding: 0 0 3mm; break-after: avoid; }
+  .module-heading h1 { font-size: 20pt; }
+  .facts-grid { grid-template-columns: repeat(4, 1fr); margin: 3mm 0 5mm; }
+  .facts-grid div { padding: 2mm; }
+  .facts-grid span { font-size: 6pt; }
+  .facts-grid div > span:last-child { font-size: 8pt; }
+  .content-section { margin: 0 0 5mm; break-inside: auto; }
+  .content-section h2, #module-overview > section h2 { font-size: 11pt; margin: 0 0 2mm; break-after: avoid; }
+  .content-section h3 { font-size: 9pt; margin: 3mm 0 1mm; break-after: avoid; }
+  .content-section p, .content-section li { color: #000; }
+  .outcome-grid { gap: 2mm; }
+  .outcome-grid > div { padding: 2mm; break-inside: avoid; }
+  .two-column-sections { gap: 5mm; }
+  .component-content-panel { padding: 3mm; }
+  .reading-list li { margin-bottom: 1mm; }
+  .site-header, .listing-heading, .curriculum-table-heading, .module-heading, .content-section h2 { break-after: avoid; }
+  .curriculum-module, .module-tile { box-shadow: none !important; transform: none !important; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
