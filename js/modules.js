@@ -21,7 +21,7 @@ export function loadModule(reference) {
     return moduleCache.get(reference);
 }
 function isValidModuleReference(reference) {
-    return /^(?:modules\/[a-z0-9]+\.json|\.\/[a-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[a-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
+    return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
 }
 function checkResponse(response) {
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
