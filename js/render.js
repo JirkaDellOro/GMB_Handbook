@@ -237,115 +237,168 @@ function appendComponentContent(_parent, _module, _items) {
     }
 }
 
-export function renderModuleDetail(target, module) {
-    target.replaceChildren();
-    const article = el('article');
-    const back = el('a', 'back-link', '← All modules');
-    back.href = './modules.html';
-    article.append(back);
-    const heading = el('div', 'module-heading');
-    const headingCopy = el('div');
-    appendText(headingCopy, 'p', `Required module · Semester ${module.semester ?? '—'}`, 'eyebrow');
-    appendText(headingCopy, 'h1', module.title);
-    appendText(headingCopy, 'p', `Module code: ${module.module_code || '—'}`, 'module-code');
-    heading.append(headingCopy);
-    const credit = el('div', 'credit-card');
-    appendText(credit, 'span', module.credits ?? '—');
-    appendText(credit, 'span', 'ECTS');
-    heading.append(credit);
-    article.append(heading);
-    const facts = el('section', 'facts-grid');
-    facts.setAttribute('aria-label', 'Module information');
-    const factValues = [
-        ['Workload', module.workload_hours === null || module.workload_hours === undefined ? '—' : `${module.workload_hours} h`],
-        ['Semester', module.semester], ['Frequency', module.frequency],
-        ['Duration', module.duration === null || module.duration === undefined ? '—' : `${module.duration} semester`]
-    ];
-    for (const [label, value] of factValues) {
-        const cell = el('div');
-        appendText(cell, 'span', label);
-        appendText(cell, 'span', value);
-        facts.append(cell);
-    }
-    article.append(facts);
-    appendDetailGridSection(
-        article,
-        "Course Components",
-        "component-grid",
-        ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"],
-        (module.components ?? []).map(component => [
-            `${component.label ? `${component.label} ` : ""}${component.name ?? ""}`.trim(),
-            component.course_type,
-            component.language?.join(" / "),
-            component.contact_hours,
-            component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`,
-            component.class_size,
-            component.credit_points
-        ])
-    );
-    const outcomes = section('Module Learning Outcomes', article);
-    if (module.learning_outcomes_intro)
-        appendText(outcomes, 'p', module.learning_outcomes_intro);
-    const outcomeGrid = el('div', 'outcome-grid');
-    for (const outcome of module.learning_outcomes ?? []) {
-        const card = el('div');
-        appendText(card, 'h3', outcome.category);
-        addList(card, outcome.items);
-        outcomeGrid.append(card);
-    }
-    outcomes.append(outcomeGrid);
-    const content = section('Individual Component Content', article);
-    content.classList.add('component-content-panel');
-    appendComponentContent(content, module, module.individual_component_content ?? []);
-    const twoCol = el('section', 'two-column-sections');
-    for (const [title, items] of [['Teaching Methods', module.teaching_methods], ['Prerequisites', module.prerequisites]]) {
-        const block = el('div', 'content-section');
-        appendText(block, 'h2', title);
-        appendComponentContent(block, module, items ?? []);
-        twoCol.append(block);
-    }
-    article.append(twoCol);
-    appendDetailGridSection(
-        article,
-        "Methods of Assessment",
-        "assessment-grid",
-        ["Component", "Code", "Assessment", "Grading", "ECTS"],
-        (module.assessment ?? []).map(item => [
-            componentReference(module, item.component),
-            item.code,
-            item.description,
-            item.graded_assessment === null || item.graded_assessment === undefined
-                ? undefined
-                : item.graded_assessment ? "Graded" : "Non-graded",
-            item.credits
-        ])
-    );
-    const applicability = section('Applicability of Module', article);
-    appendText(applicability, 'p', 'Required module in:');
-    addList(applicability, module.applicability);
-    const people = section('Person responsible for Module and Lecturers', article);
-    const responsible = el('p');
-    const label = el('span', undefined, 'Person responsible for module: ');
-    responsible.append(label, document.createTextNode(module.responsible_person || '—'));
-    people.append(responsible);
-    for (const item of module.lecturers ?? []) {
-        const p = el('p');
-        if (item.component)
-            p.append(el('span', undefined, componentReference(module, item.component)), document.createElement('br'));
-        p.append(document.createTextNode(item.names?.join(', ') || '—'));
-        people.append(p);
-    }
-    const reading = section('Reading List', article);
-    const readingList = el('ul', 'reading-list');
-    for (const item of module.reading_list ?? [])
-        appendText(readingList, 'li', item.reference);
-    reading.append(readingList);
-    target.append(article);
+export function renderModuleDetail(_target, _module) {
+    _target.replaceChildren();
+    const article = el("article");
+    appendModuleHeader(article, _module);
+    renderCourseComponents(article, _module);
+    renderLearningOutcomes(article, _module);
+    renderComponentContent(article, _module);
+    renderAssessments(article, _module);
+    renderApplicability(article, _module);
+    renderPeople(article, _module);
+    renderReadingList(article, _module);
+    _target.append(article);
 }
+
 export function renderError(target, title, message) {
     target.replaceChildren();
     const box = el('div', 'notice');
     appendText(box, 'h1', title);
     appendText(box, 'p', message);
     target.append(box);
+}
+
+
+function appendModuleHeader(_article, _module) {
+    const back = el("a", "back-link", "← All modules");
+    back.href = "./modules.html";
+    _article.append(back, createModuleHeading(_module), createModuleFacts(_module));
+}
+function createModuleHeading(_module) {
+    const heading = el("div", "module-heading");
+    const copy = el("div");
+    appendText(copy, "p", `Required module · Semester ${_module.semester ?? "—"}`, "eyebrow");
+    appendText(copy, "h1", _module.title);
+    appendText(copy, "p", `Module code: ${_module.module_code || "—"}`, "module-code");
+    heading.append(copy, createCreditCard(_module));
+    return heading;
+}
+function createCreditCard(_module) {
+    const credit = el("div", "credit-card");
+    appendText(credit, "span", _module.credits ?? "—");
+    appendText(credit, "span", "ECTS");
+    return credit;
+}
+function createModuleFacts(_module) {
+    const facts = el("section", "facts-grid");
+    facts.setAttribute("aria-label", "Module information");
+    const values = [
+        ["Workload", _module.workload_hours == null ? "—" : `${_module.workload_hours} h`],
+        ["Semester", _module.semester],
+        ["Frequency", _module.frequency],
+        ["Duration", _module.duration == null ? "—" : `${_module.duration} semester`]
+    ];
+    for (const [label, value] of values) {
+        const cell = el("div");
+        appendText(cell, "span", label);
+        appendText(cell, "span", value);
+        facts.append(cell);
+    }
+    return facts;
+}
+function renderCourseComponents(_article, _module) {
+    appendDetailGridSection(_article, "Course Components", "component-grid", ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"], (_module.components ?? []).map(_component => [
+        `${_component.label ? `${_component.label} ` : ""}${_component.name ?? ""}`.trim(),
+        _component.course_type, _component.language?.join(" / "), _component.contact_hours,
+        _component.self_study_hours === undefined ? undefined : `${_component.self_study_hours} h`,
+        _component.class_size, _component.credit_points
+    ]));
+}
+function renderLearningOutcomes(_article, _module) {
+    const outcomes = section("Module Learning Outcomes", _article);
+    if (_module.learning_outcomes_intro)
+        appendText(outcomes, "p", _module.learning_outcomes_intro);
+    const grid = el("div", "outcome-grid");
+    for (const outcome of _module.learning_outcomes ?? [])
+        grid.append(createOutcomeCard(outcome));
+    outcomes.append(grid);
+}
+function createOutcomeCard(_outcome) {
+    const card = el("div");
+    appendText(card, "h3", _outcome.category);
+    addList(card, _outcome.items);
+    return card;
+}
+function renderComponentContent(_article, _module) {
+    const content = section("Individual Component Content", _article);
+    content.classList.add("component-content-panel");
+    appendComponentContent(content, _module, _module.individual_component_content ?? []);
+    const columns = el("section", "two-column-sections");
+    columns.append(
+        createComponentTextSection("Teaching Methods", _module, _module.teaching_methods ?? []),
+        createComponentTextSection("Prerequisites", _module, _module.prerequisites ?? [])
+    );
+    _article.append(columns);
+}
+function createComponentTextSection(_title, _module, _items) {
+    const block = el("div", "content-section");
+    appendText(block, "h2", _title);
+    appendComponentContent(block, _module, _items);
+    return block;
+}
+function renderAssessments(_article, _module) {
+    appendDetailGridSection(_article, "Methods of Assessment", "assessment-grid", ["Component", "Code", "Assessment", "Grading", "ECTS"], (_module.assessment ?? []).map(_item => [
+        componentReference(_module, _item.component), _item.code, _item.description,
+        _item.graded_assessment == null ? undefined : _item.graded_assessment ? "Graded" : "Non-graded",
+        _item.credits
+    ]));
+}
+function renderApplicability(_article, _module) {
+    const content = section("Applicability of Module", _article);
+    appendText(content, "p", "Required module in:");
+    addList(content, _module.applicability);
+}
+function renderPeople(_article, _module) {
+    const people = section("Person responsible for Module and Lecturers", _article);
+    const responsible = el("p");
+    responsible.append(el("span", undefined, "Person responsible for module: "));
+    responsible.append(document.createTextNode(_module.responsible_person || "—"));
+    people.append(responsible);
+    for (const lecturer of _module.lecturers ?? [])
+        appendLecturer(people, _module, lecturer);
+}
+function appendLecturer(_parent, _module, _lecturer) {
+    const paragraph = el("p");
+    if (_lecturer.component) {
+        appendText(paragraph, "span", componentReference(_module, _lecturer.component));
+        paragraph.append(document.createElement("br"));
+    }
+    paragraph.append(document.createTextNode(_lecturer.names?.join(", ") || "—"));
+    _parent.append(paragraph);
+}
+function renderReadingList(_article, _module) {
+    const reading = section("Reading List", _article);
+    const list = el("ul", "reading-list");
+    for (const item of _module.reading_list ?? [])
+        appendText(list, "li", item.reference);
+    reading.append(list);
+}
+function appendDetailGridSection(_parent, _title, _className, _headers, _rows) {
+    const content = section(_title, _parent);
+    const grid = el("div", `detail-data-grid ${_className}`);
+    grid.setAttribute("role", "table");
+    for (const title of _headers) {
+        const cell = el("header", undefined, title);
+        cell.setAttribute("role", "columnheader");
+        grid.append(cell);
+    }
+    for (const row of _rows) {
+        for (const value of row) {
+            const cell = el("div");
+            cell.setAttribute("role", "cell");
+            appendText(cell, "span", value);
+            grid.append(cell);
+        }
+    }
+    const scroll = el("div", "detail-grid-scroll");
+    scroll.append(grid);
+    content.append(scroll);
+}
+function appendComponentContent(_parent, _module, _items) {
+    for (const item of _items) {
+        if (item.component)
+            appendText(_parent, "h3", componentReference(_module, item.component));
+        addList(_parent, item.items);
+    }
 }
