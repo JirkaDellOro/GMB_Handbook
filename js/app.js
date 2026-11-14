@@ -105,15 +105,4 @@ function renderPageError(_error, _moduleRef, _view, _elements) {
     if (_elements.listTarget && _view === "modules")
         renderError(_elements.listTarget, "Modules could not be loaded", message);
 }
-function renderWhenOpened(_panel, _render) {
-    let rendered = false;
-    const renderOnce = () => {
-        if (!_panel.open || rendered)
-            return;
-        rendered = true;
-        _render();
-    };
-    _panel.addEventListener("toggle", renderOnce);
-    renderOnce();
-}
 void start();
