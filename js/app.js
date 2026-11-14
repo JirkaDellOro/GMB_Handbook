@@ -38,10 +38,10 @@ function attachPrintControl() {
     button.addEventListener("click", () => {
         const previousStates = panels.map(panel => panel.open);
         panels.forEach(panel => panel.open = true);
-        window.print();
         window.addEventListener("afterprint", () => {
             panels.forEach((panel, index) => panel.open = previousStates[index]);
         }, { once: true });
+        window.print();
     });
     window.addEventListener("beforeprint", scaleModulesForPrint);
     window.addEventListener("afterprint", restoreModulePrintScale);
