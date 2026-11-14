@@ -213,7 +213,7 @@
   .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
   #module-details .module-detail-semester { margin: 0 0 5mm; }
   #module-details .module-detail-semester > h2 { margin: 0 0 3mm; padding-bottom: 2mm; font-size: 16pt; break-after: avoid; }
-  #module-details .module-detail-entry { padding: 3mm 0 5mm; break-inside: auto; }
+  #module-details .module-detail-entry { padding: 3mm 0 5mm; break-inside: avoid-page; }
   #module-details article { max-width: none; margin: 0; }
   #module-detail > article { max-width: none; }
   .module-heading { padding: 0 0 3mm; break-after: avoid; }
