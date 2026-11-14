@@ -12,7 +12,7 @@ export function loadCurriculum() {
 export function loadModule(_reference) {
     if (!isValidModuleReference(_reference)) return Promise.reject(new Error("Invalid module _reference."));
     if (!moduleCache.has(_reference)) {
-        moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json()).then(_module => {
+        moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(_response => _response.json()).then(_module => {
             const expectedId = _reference.split("/").pop()?.replace(".json", "");
             if (_module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
             return { ..._module, sourceRef: _reference };
