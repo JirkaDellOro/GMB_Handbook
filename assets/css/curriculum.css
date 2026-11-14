@@ -8,6 +8,7 @@
 .home-page .listing-heading > p:last-child { margin-bottom: 0; }
 .home-page .site-footer { border-top: 1px solid var(--line); }
 
+.curriculum-table-heading { margin: 28px 0 14px; font-size: var(--font-section); }
 .curriculum-scroll { width: 100%; overflow-x: auto; padding-bottom: 4px; }
 .curriculum-layout { min-width: 980px; }
 .curriculum-headings,
@@ -57,7 +58,7 @@
 .curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
 .curriculum-module:focus-visible { outline: 3px solid var(--study); outline-offset: 3px; z-index: 2; }
 .curriculum-module > span:first-child { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 700; }
-.curriculum-module > span:last-child {
+.curriculum-module:not(.curriculum-internship) > span:last-child {
   position: absolute;
   right: 10px;
   bottom: 6px;
@@ -71,6 +72,8 @@
 .curriculum-internship > span:first-child { font-size: var(--font-xl); }
 .curriculum-grid > h2 {
   position: relative;
+  background: var(--study);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +92,7 @@
   left: -3px;
   width: 14px;
   height: 3px;
-  background: var(--dark);
+  background: var(--white);
 }
 .curriculum-grid > h2::before { top: 0; }
 .curriculum-grid > h2::after { bottom: 0; }
