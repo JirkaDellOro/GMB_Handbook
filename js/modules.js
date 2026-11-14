@@ -2,7 +2,7 @@ let manifestPromise;
 let curriculumPromise;
 const moduleCache = new Map();
 export function loadManifest() {
-    if (!manifestPromise) manifestPromise = fetch("./manifest.json").then(checkResponse).then(response => response.json());
+    if (!manifestPromise) manifestPromise = fetch("./manifest.json").then(checkResponse).then(_response => _response.json());
     return manifestPromise;
 }
 export function loadCurriculum() {
@@ -12,10 +12,10 @@ export function loadCurriculum() {
 export function loadModule(_reference) {
     if (!isValidModuleReference(_reference)) return Promise.reject(new Error("Invalid module _reference."));
     if (!moduleCache.has(_reference)) {
-        moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json()).then(module => {
+        moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json()).then(_module => {
             const expectedId = _reference.split("/").pop()?.replace(".json", "");
-            if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
-            return { ...module, sourceRef: _reference };
+            if (_module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
+            return { ..._module, sourceRef: _reference };
         }));
     }
     return moduleCache.get(_reference);
