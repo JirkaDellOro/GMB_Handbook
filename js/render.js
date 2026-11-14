@@ -12,11 +12,11 @@ function appendText(parent, tag, text, className) {
     parent.append(node);
     return node;
 }
-function addList(parent, items = [], className) {
-    const ul = el('ul', className);
-    for (const item of items)
-        appendText(ul, 'li', item);
-    parent.append(ul);
+function addList(_parent, _items = []) {
+    const list = el("ul");
+    for (const item of _items)
+        appendText(list, "li", item);
+    _parent.append(list);
 }
 function section(title, parent) {
     const node = el('section', 'content-section');
