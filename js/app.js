@@ -36,10 +36,10 @@ function attachPrintControl() {
     if (!button || panels.length === 0)
         return;
     button.addEventListener("click", () => {
-        const previousStates = panels.map(panel => panel.open);
-        panels.forEach(panel => panel.open = true);
+        const previousStates = panels.map(_panel => _panel.open);
+        panels.forEach(_panel => _panel.open = true);
         window.addEventListener("afterprint", () => {
-            panels.forEach((panel, index) => panel.open = previousStates[index]);
+            panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
         }, { once: true });
         window.print();
     });
@@ -70,7 +70,7 @@ async function showProgramme(_elements) {
     if (!_elements.curriculumTarget)
         return;
     const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
-    const references = [...new Set(semesters.flatMap(semester => semester.modules))];
+    const references = [...new Set(semesters.flatMap(_semester => _semester.modules))];
     const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(_elements.curriculumTarget, modules, curriculum);
     attachCurriculumPanel(_elements, modules);
