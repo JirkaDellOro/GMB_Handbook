@@ -29,20 +29,20 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
   const scroll = el('div', 'curriculum-scroll');
   const layout = el('div', 'curriculum-layout');
   const headings = el('div', 'curriculum-headings');
-  headings.append(el('span', 'curriculum-heading-spacer'));
-  for (const name of curriculum.columns) appendText(headings, 'span', name, 'curriculum-column-heading');
-  headings.append(el('span', 'curriculum-heading-spacer'));
+  headings.append(el('span'));
+  for (const name of curriculum.columns) appendText(headings, 'span', name);
+  headings.append(el('span'));
   layout.append(headings);
   const grid = el('div', 'curriculum-grid');
   grid.setAttribute('aria-label', 'Module structure by semester and subject area');
   for (let semester = 7; semester >= 1; semester--) {
-    const row = el('span', 'curriculum-semester', String(semester));
+    const row = el('output', undefined, String(semester));
     row.style.gridColumn = '1';
     row.style.gridRow = String(8 - semester);
     grid.append(row);
   }
   for (const stageData of curriculum.studyStages) {
-    const stage = el('span', 'curriculum-stage', stageData.title);
+    const stage = el('h2', undefined, stageData.title);
     const firstRow = 8 - stageData.lastSemester;
     const rowSpan = stageData.lastSemester - stageData.firstSemester + 1;
     stage.style.gridColumn = String(curriculum.columns.length + 2);
@@ -85,10 +85,10 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
         link.style.gridColumn = cellData.gridColumn;
         link.style.gridRow = String(cellData.row);
       }
-      appendText(link, 'strong', module.title, 'curriculum-module-title');
+      appendText(link, 'span', module.title);
       if (style !== 'internship') {
         const blockLabel = block === null ? '–' : String(block);
-        appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`, 'curriculum-module-meta');
+        appendText(link, 'span', `${blockLabel}.${module.credits ?? '—'}`);
       }
       container.append(link);
     }
@@ -96,7 +96,7 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
   layout.append(grid);
   scroll.append(layout);
   target.append(scroll);
-  const legend = el('p', 'curriculum-legend');
+  const legend = el('p');
   legend.textContent = 'Legend: x.y = position in the sequence of modules . creditpoints (ECTS)';
   target.append(legend);
 }
@@ -131,7 +131,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
   target.replaceChildren();
   const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
   for (const range of studyTableRanges) {
-    const sectionNode = el('section', 'study-table-section');
+    const sectionNode = el('section');
     appendText(sectionNode, 'h2', `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
     const semesterModules = new Map<number, ModuleData[]>();
     for (const module of orderedModules) {
@@ -141,18 +141,18 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
       group.push(module);
       semesterModules.set(semester, group);
     }
-    const gridScroll = el('div', 'study-grid-scroll study-semester-list');
+    const gridScroll = el('div', 'study-grid-scroll');
     for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
       const semesterItems = semesterModules.get(semester) ?? [];
-      const semesterCard = el('section', 'study-semester-card');
+      const semesterCard = el('section');
       const grid = el('div', 'study-data-grid');
       grid.setAttribute('aria-label', `Table ${range.number}: ${semester}. Curricular Semester`);
       for (const title of ['Modules', 'Component', 'Type', 'Hours', 'Graded', 'Non-Graded', 'CP']) {
-        grid.append(el('div', 'study-grid-cell study-grid-header', title));
+        grid.append(el('header', undefined, title));
       }
       for (const module of semesterItems) {
         const components = module.components?.length ? module.components : [undefined];
-        const moduleCell = el('div', 'study-grid-cell study-module-cell');
+        const moduleCell = el('div');
         const moduleLink = el('a', undefined, module.title);
         moduleLink.href = `./module.html?id=${encodeURIComponent(module.id)}`;
         moduleCell.append(moduleLink);
@@ -167,25 +167,25 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
             component ? componentAssessments(module, component, false) || '—' : '—',
             component?.credit_points ?? '—'
           ];
-          for (const value of values) grid.append(el('div', 'study-grid-cell', <string>value));
+          for (const value of values) grid.append(el('div', undefined, <string>value));
         }
       }
       semesterCard.append(grid);
       const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
       const semesterTotal = el('div', 'study-semester-total');
-      semesterTotal.append(el('span', 'study-semester-label', `${semester}. Curricular Semester`));
-      semesterTotal.append(el('span', 'study-semester-credits', String(semesterCredits)));
+      semesterTotal.append(el('span', undefined, `${semester}. Curricular Semester`));
+      semesterTotal.append(el('span', undefined, String(semesterCredits)));
       semesterCard.append(semesterTotal);
       gridScroll.append(semesterCard);
     }
     const overallCredits = orderedModules
       .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
       .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
-    const overallGrid = el('div', 'study-data-grid study-overall-grid');
-    const overall = el('div', 'study-grid-cell study-overall-label', 'Overall');
+    const overallGrid = el('div', 'study-data-grid');
+    const overall = el('div', undefined, 'Overall');
     overall.style.gridColumn = 'span 6';
     overallGrid.append(overall);
-    overallGrid.append(el('div', 'study-grid-cell study-overall-total', String(overallCredits)));
+    overallGrid.append(el('div', undefined, String(overallCredits)));
     gridScroll.append(overallGrid);
     sectionNode.append(gridScroll);
     target.append(sectionNode);
@@ -195,13 +195,13 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
 export function renderModuleTile(module: ModuleData): HTMLAnchorElement {
   const link = el('a', 'module-tile');
   link.href = `./module.html?id=${encodeURIComponent(module.id)}`;
-  appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'), 'tile-number');
-  const main = el('span', 'tile-main');
-  appendText(main, 'strong', module.title);
+  appendText(link, 'span', String(module.semester ?? '').padStart(2, '0'));
+  const main = el('span');
+  appendText(main, 'span', module.title);
   appendText(main, 'small', `Semester ${module.semester ?? '—'} · Required module`);
   link.append(main);
-  appendText(link, 'span', `${module.credits ?? '—'} ECTS`, 'tile-credits');
-  appendText(link, 'span', '↗', 'tile-arrow');
+  appendText(link, 'span', `${module.credits ?? '—'} ECTS`);
+  appendText(link, 'span', '↗');
   return link;
 }
 
@@ -220,7 +220,7 @@ export async function renderModuleList(
 
 export function renderModuleDetail(target: HTMLElement, module: ModuleData): void {
   target.replaceChildren();
-  const article = el('article', 'module-page');
+  const article = el('article');
   const back = el('a', 'back-link', '← All modules');
   back.href = './modules.html';
   article.append(back);
@@ -232,7 +232,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   appendText(headingCopy, 'p', `Module code: ${module.module_code || '—'}`, 'module-code');
   heading.append(headingCopy);
   const credit = el('div', 'credit-card');
-  appendText(credit, 'strong', module.credits ?? '—');
+  appendText(credit, 'span', module.credits ?? '—');
   appendText(credit, 'span', 'ECTS');
   heading.append(credit);
   article.append(heading);
@@ -245,7 +245,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
     ['Duration', module.duration === null || module.duration === undefined ? '—' : `${module.duration} semester`]
   ];
   for (const [label, value] of factValues) {
-    const cell = el('div'); appendText(cell, 'span', label); appendText(cell, 'strong', value); facts.append(cell);
+    const cell = el('div'); appendText(cell, 'span', label); appendText(cell, 'span', value); facts.append(cell);
   }
   article.append(facts);
 
@@ -253,7 +253,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   const componentGrid = el('div', 'detail-data-grid component-grid');
   componentGrid.setAttribute('role', 'table');
   for (const heading of ['Component', 'Course type', 'Language', 'Contact hours', 'Self-study', 'Class size', 'ECTS']) {
-    const cell = el('div', 'detail-grid-cell detail-grid-header', heading);
+    const cell = el('header', undefined, heading);
     cell.setAttribute('role', 'columnheader');
     componentGrid.append(cell);
   }
@@ -265,7 +265,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
       component.class_size, component.credit_points
     ];
     for (const value of values) {
-      const cell = el('div', 'detail-grid-cell');
+      const cell = el('div');
       cell.setAttribute('role', 'cell');
       appendText(cell, 'span', value);
       componentGrid.append(cell);
@@ -279,7 +279,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   if (module.learning_outcomes_intro) appendText(outcomes, 'p', module.learning_outcomes_intro);
   const outcomeGrid = el('div', 'outcome-grid');
   for (const outcome of module.learning_outcomes ?? []) {
-    const card = el('div', 'outcome-card'); appendText(card, 'h3', outcome.category); addList(card, outcome.items); outcomeGrid.append(card);
+    const card = el('div'); appendText(card, 'h3', outcome.category); addList(card, outcome.items); outcomeGrid.append(card);
   }
   outcomes.append(outcomeGrid);
 
@@ -287,7 +287,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   content.classList.add('component-content-panel');
   for (const item of module.individual_component_content ?? []) {
     if (item.component) appendText(content, 'h3', componentReference(module, item.component));
-    addList(content, item.items, 'tag-list');
+    addList(content, item.items);
   }
 
   const twoCol = el('section', 'two-column-sections');
@@ -302,7 +302,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   const assessmentGrid = el('div', 'detail-data-grid assessment-grid');
   assessmentGrid.setAttribute('role', 'table');
   for (const heading of ['Component', 'Code', 'Assessment', 'Grading', 'ECTS']) {
-    const cell = el('div', 'detail-grid-cell detail-grid-header', heading);
+    const cell = el('header', undefined, heading);
     cell.setAttribute('role', 'columnheader');
     assessmentGrid.append(cell);
   }
@@ -313,7 +313,7 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
       item.credits
     ];
     for (const value of values) {
-      const cell = el('div', 'detail-grid-cell');
+      const cell = el('div');
       cell.setAttribute('role', 'cell');
       appendText(cell, 'span', value);
       assessmentGrid.append(cell);
@@ -327,9 +327,9 @@ export function renderModuleDetail(target: HTMLElement, module: ModuleData): voi
   appendText(applicability, 'p', 'Required module in:'); addList(applicability, module.applicability);
 
   const people = section('Person responsible for Module and Lecturers', article);
-  const responsible = el('p'); const label = el('strong', undefined, 'Person responsible for module: '); responsible.append(label, document.createTextNode(module.responsible_person || '—')); people.append(responsible);
+  const responsible = el('p'); const label = el('span', undefined, 'Person responsible for module: '); responsible.append(label, document.createTextNode(module.responsible_person || '—')); people.append(responsible);
   for (const item of module.lecturers ?? []) {
-    const p = el('p'); if (item.component) p.append(el('strong', undefined, componentReference(module, item.component)), document.createElement('br'));
+    const p = el('p'); if (item.component) p.append(el('span', undefined, componentReference(module, item.component)), document.createElement('br'));
     p.append(document.createTextNode(item.names?.join(', ') || '—')); people.append(p);
   }
 
