@@ -26,7 +26,7 @@ function section(title: string, parent: HTMLElement): HTMLElement {
 
 export function renderCurriculum(target: HTMLElement, modules: ModuleData[], curriculum: CurriculumData): void {
   target.replaceChildren();
-  appendText(target, "h2", "Table 1: Games & Immersive Media B.A. (Curricular Structure)", "curriculum-table-heading");
+  appendText(target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
   const scroll = createElement("div", "curriculum-scroll");
   const layout = createElement("div", "curriculum-layout");
   const headings = createElement("div", "curriculum-headings");
@@ -220,10 +220,10 @@ export async function renderModuleList(
 }
 
 
-export function renderModuleDetail(_target: HTMLElement, _module: ModuleData): void {
+export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _showBackLink = true): void {
   _target.replaceChildren();
   const article = createElement("article");
-  appendModuleHeader(article, _module);
+  appendModuleHeader(article, _module, _showBackLink);
   renderCourseComponents(article, _module);
   renderLearningOutcomes(article, _module);
   renderComponentContent(article, _module);
@@ -234,15 +234,36 @@ export function renderModuleDetail(_target: HTMLElement, _module: ModuleData): v
   _target.append(article);
 }
 
+export function renderModuleDetails(target: HTMLElement, semesters: SemesterGroup[], modules: ModuleData[]): void {
+  target.replaceChildren();
+  const modulesByReference = new Map<string, ModuleData>();
+  for (const module of modules) modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
+  for (const semester of semesters) {
+    const group = createElement("section", "module-detail-semester");
+    appendText(group, "h2", semester.title);
+    for (const reference of semester.modules) {
+      const module = modulesByReference.get(reference);
+      if (!module) continue;
+      const entry = createElement("div", "module-detail-entry");
+      renderModuleDetail(entry, module, false);
+      group.append(entry);
+    }
+    target.append(group);
+  }
+}
+
 export function renderError(target: HTMLElement, title: string, message: string): void {
   target.replaceChildren();
   const box = createElement("div", "notice"); appendText(box, "h1", title); appendText(box, "p", message); target.append(box);
 }
 
-function appendModuleHeader(_article: HTMLElement, _module: ModuleData): void {
-  const back = createElement("a", "back-link", "← All modules");
-  back.href = "./index.html?view=modules";
-  _article.append(back, createModuleHeading(_module), createModuleFacts(_module));
+function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {
+  if (_showBackLink) {
+    const back = createElement("a", "back-link", "← All modules");
+    back.href = "./index.html?view=modules";
+    _article.append(back);
+  }
+  _article.append(createModuleHeading(_module), createModuleFacts(_module));
 }
 
 function createModuleHeading(_module: ModuleData): HTMLElement {

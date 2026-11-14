@@ -1,4 +1,6 @@
 /* Homepage and curriculum overview */
+.programme-hero { height: clamp(170px, 24vw, 320px); overflow: hidden; background: var(--gray); }
+.programme-hero img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .home-page { background: var(--white); }
 .home-page .site-header { background: var(--white); }
 .home-page .site-header { border-bottom: 1px solid var(--line); color: var(--dark); }
@@ -125,4 +127,90 @@
   .curriculum-module > span:last-child { right: 5px; font-size: var(--font-xs); }
   .curriculum-headings > span:not(:first-child):not(:last-child) { font-size: var(--font-xs); }
   .curriculum-grid > h2 { font-size: var(--font-mobile-stage); }
+}
+
+/* Programme page accordion */
+.programme-accordion {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.programme-accordion > details {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.programme-accordion > details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 88px;
+  padding: 22px 28px;
+  background: var(--white);
+  color: var(--dark);
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--font-section-title);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+}
+.programme-accordion > details > summary::-webkit-details-marker { display: none; }
+.programme-accordion > details > summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  background:
+    linear-gradient(var(--study), var(--study)) center / 100% 2px no-repeat,
+    linear-gradient(var(--study), var(--study)) center / 2px 100% no-repeat;
+  transform: rotate(0deg);
+  transition: transform .25s ease;
+}
+.programme-accordion > details[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+.programme-accordion > details[open] > summary::after { transform: rotate(45deg); }
+.programme-accordion > details > summary:hover { color: var(--study); }
+.programme-accordion > details > summary:focus-visible {
+  outline: 3px solid var(--study);
+  outline-offset: 3px;
+}
+.programme-accordion > details > div { padding: 28px 28px 34px; }
+#module-overview > section { margin: 0 0 48px; }
+#module-overview > section:last-child { margin-bottom: 0; }
+#module-details .module-detail-semester { margin: 0 0 48px; }
+#module-details .module-detail-semester > h2 {
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--font-section-title);
+}
+#module-details .module-detail-entry {
+  padding: 18px 0 38px;
+  border-bottom: 1px solid var(--line);
+}
+#module-details .module-detail-entry:last-child { border-bottom: 0; }
+#module-details article { max-width: 900px; margin: 0 auto; }
+
+@media (max-width: 700px) {
+  .programme-accordion { gap: 10px; }
+  .programme-accordion > details > summary {
+    min-height: 76px;
+    padding: 18px 20px;
+    font-size: var(--font-xl);
+  }
+  .programme-hero { height: clamp(150px, 42vw, 230px); }
+  .programme-accordion > details > summary::after { width: 23px; height: 23px; }
+  .programme-accordion > details > div { padding: 22px 18px 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .programme-accordion > details > summary::after { transition: none; }
+}
+@media print {
+  .programme-accordion > details > summary { display: none; }
+  .programme-accordion > details > :not(summary) { display: block !important; }
+  .programme-accordion { display: block; }
+  .programme-accordion > details { border: 0; break-inside: auto; }
+  .programme-accordion > details > div { padding: 0; }
 }
