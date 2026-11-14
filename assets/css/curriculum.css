@@ -126,3 +126,72 @@
   .curriculum-headings > span:not(:first-child):not(:last-child) { font-size: var(--font-xs); }
   .curriculum-grid > h2 { font-size: var(--font-mobile-stage); }
 }
+
+/* Programme page accordion */
+.programme-accordion {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+.programme-accordion > details {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.programme-accordion > details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 20px;
+  background: var(--gray);
+  color: var(--dark);
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--font-large);
+  font-weight: 700;
+}
+.programme-accordion > details > summary::-webkit-details-marker { display: none; }
+.programme-accordion > details > summary::after {
+  content: "+";
+  color: var(--study);
+  font-size: var(--font-section);
+  line-height: 1;
+}
+.programme-accordion > details[open] > summary {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+.programme-accordion > details[open] > summary::after { content: "−"; }
+.programme-accordion > details > summary:hover { color: var(--study); }
+.programme-accordion > details > summary:focus-visible {
+  outline: 3px solid var(--study);
+  outline-offset: 3px;
+}
+.programme-accordion > details > div { padding: 22px 20px 28px; }
+#module-overview > section { margin: 0 0 48px; }
+#module-overview > section:last-child { margin-bottom: 0; }
+#module-details .module-detail-semester { margin: 0 0 48px; }
+#module-details .module-detail-semester > h2 {
+  margin: 0 0 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: var(--font-section-title);
+}
+#module-details .module-detail-entry {
+  padding: 18px 0 38px;
+  border-bottom: 1px solid var(--line);
+}
+#module-details .module-detail-entry:last-child { border-bottom: 0; }
+#module-details article { max-width: 900px; margin: 0 auto; }
+
+@media (max-width: 700px) {
+  .programme-accordion > details > summary { padding: 14px 16px; }
+  .programme-accordion > details > div { padding: 18px 14px 22px; }
+}
+@media print {
+  .programme-accordion > details > summary { display: none; }
+  .programme-accordion > details > :not(summary) { display: block !important; }
+  .programme-accordion { display: block; }
+  .programme-accordion > details { border: 0; break-inside: auto; }
+  .programme-accordion > details > div { padding: 0; }
+}
