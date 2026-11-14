@@ -181,7 +181,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]):
     }
     const overallCredits = orderedModules
       .filter(_module => Number(_module.semester) >= range.firstSemester && Number(_module.semester) <= range.lastSemester)
-      .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      .reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
     const overallGrid = createElement("div", "study-data-grid");
     const overall = createElement("div", undefined, "Overall");
     overall.style.gridColumn = "span 6";
