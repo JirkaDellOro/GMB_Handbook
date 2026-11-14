@@ -207,6 +207,36 @@ export async function renderModuleList(target, semesters, loadModule) {
             group.append(renderModuleTile(module));
     }
 }
+
+function appendDetailGridSection(_parent, _title, _className, _headers, _rows) {
+    const content = section(_title, _parent);
+    const grid = el("div", `detail-data-grid ${_className}`);
+    grid.setAttribute("role", "table");
+    for (const title of _headers) {
+        const cell = el("header", undefined, title);
+        cell.setAttribute("role", "columnheader");
+        grid.append(cell);
+    }
+    for (const row of _rows) {
+        for (const value of row) {
+            const cell = el("div");
+            cell.setAttribute("role", "cell");
+            appendText(cell, "span", value);
+            grid.append(cell);
+        }
+    }
+    const scroll = el("div", "detail-grid-scroll");
+    scroll.append(grid);
+    content.append(scroll);
+}
+function appendComponentContent(_parent, _module, _items) {
+    for (const item of _items) {
+        if (item.component)
+            appendText(_parent, "h3", componentReference(_module, item.component));
+        addList(_parent, item.items);
+    }
+}
+
 export function renderModuleDetail(target, module) {
     target.replaceChildren();
     const article = el('article');
@@ -238,31 +268,21 @@ export function renderModuleDetail(target, module) {
         facts.append(cell);
     }
     article.append(facts);
-    const components = section('Course Components', article);
-    const componentGrid = el('div', 'detail-data-grid component-grid');
-    componentGrid.setAttribute('role', 'table');
-    for (const heading of ['Component', 'Course type', 'Language', 'Contact hours', 'Self-study', 'Class size', 'ECTS']) {
-        const cell = el('header', undefined, heading);
-        cell.setAttribute('role', 'columnheader');
-        componentGrid.append(cell);
-    }
-    for (const component of module.components ?? []) {
-        const values = [
-            `${component.label ? `${component.label} ` : ''}${component.name ?? ''}`.trim(),
-            component.course_type, component.language?.join(' / '), component.contact_hours,
+    appendDetailGridSection(
+        article,
+        "Course Components",
+        "component-grid",
+        ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"],
+        (module.components ?? []).map(component => [
+            `${component.label ? `${component.label} ` : ""}${component.name ?? ""}`.trim(),
+            component.course_type,
+            component.language?.join(" / "),
+            component.contact_hours,
             component.self_study_hours === undefined ? undefined : `${component.self_study_hours} h`,
-            component.class_size, component.credit_points
-        ];
-        for (const value of values) {
-            const cell = el('div');
-            cell.setAttribute('role', 'cell');
-            appendText(cell, 'span', value);
-            componentGrid.append(cell);
-        }
-    }
-    const componentScroll = el('div', 'detail-grid-scroll');
-    componentScroll.append(componentGrid);
-    components.append(componentScroll);
+            component.class_size,
+            component.credit_points
+        ])
+    );
     const outcomes = section('Module Learning Outcomes', article);
     if (module.learning_outcomes_intro)
         appendText(outcomes, 'p', module.learning_outcomes_intro);
@@ -276,47 +296,30 @@ export function renderModuleDetail(target, module) {
     outcomes.append(outcomeGrid);
     const content = section('Individual Component Content', article);
     content.classList.add('component-content-panel');
-    for (const item of module.individual_component_content ?? []) {
-        if (item.component)
-            appendText(content, 'h3', componentReference(module, item.component));
-        addList(content, item.items);
-    }
+    appendComponentContent(content, module, module.individual_component_content ?? []);
     const twoCol = el('section', 'two-column-sections');
     for (const [title, items] of [['Teaching Methods', module.teaching_methods], ['Prerequisites', module.prerequisites]]) {
         const block = el('div', 'content-section');
         appendText(block, 'h2', title);
-        for (const item of items ?? []) {
-            if (item.component)
-                appendText(block, 'h3', componentReference(module, item.component));
-            addList(block, item.items);
-        }
+        appendComponentContent(block, module, items ?? []);
         twoCol.append(block);
     }
     article.append(twoCol);
-    const assessment = section('Methods of Assessment', article);
-    const assessmentGrid = el('div', 'detail-data-grid assessment-grid');
-    assessmentGrid.setAttribute('role', 'table');
-    for (const heading of ['Component', 'Code', 'Assessment', 'Grading', 'ECTS']) {
-        const cell = el('header', undefined, heading);
-        cell.setAttribute('role', 'columnheader');
-        assessmentGrid.append(cell);
-    }
-    for (const item of module.assessment ?? []) {
-        const values = [
-            componentReference(module, item.component), item.code, item.description,
-            item.graded_assessment === null || item.graded_assessment === undefined ? undefined : item.graded_assessment ? 'Graded' : 'Non-graded',
+    appendDetailGridSection(
+        article,
+        "Methods of Assessment",
+        "assessment-grid",
+        ["Component", "Code", "Assessment", "Grading", "ECTS"],
+        (module.assessment ?? []).map(item => [
+            componentReference(module, item.component),
+            item.code,
+            item.description,
+            item.graded_assessment === null || item.graded_assessment === undefined
+                ? undefined
+                : item.graded_assessment ? "Graded" : "Non-graded",
             item.credits
-        ];
-        for (const value of values) {
-            const cell = el('div');
-            cell.setAttribute('role', 'cell');
-            appendText(cell, 'span', value);
-            assessmentGrid.append(cell);
-        }
-    }
-    const assessmentScroll = el('div', 'detail-grid-scroll');
-    assessmentScroll.append(assessmentGrid);
-    assessment.append(assessmentScroll);
+        ])
+    );
     const applicability = section('Applicability of Module', article);
     appendText(applicability, 'p', 'Required module in:');
     addList(applicability, module.applicability);
