@@ -19,9 +19,9 @@
 .curriculum-headings { display: none; margin-bottom: 8px; align-items: end; }
 .curriculum-headings > span:not(:first-child):not(:last-child) {
   padding: 0 2px 4px;
-  color: var(--green);
+  color: var(--study);
   text-align: center;
-  font: 700 var(--font-compact)/1.2 Manrope, sans-serif;
+  font: 700 var(--font-compact)/1.2 Poppins, sans-serif;
   letter-spacing: .02em;
 }
 .curriculum-grid {
@@ -36,7 +36,7 @@
   align-items: center;
   justify-content: center;
   color: var(--dark);
-  font: 500 var(--font-semester)/1 Manrope, sans-serif;
+  font: 500 var(--font-semester)/1 Poppins, sans-serif;
 }
 .curriculum-module {
   position: relative;
@@ -51,21 +51,21 @@
   color: var(--dark);
   text-decoration: none;
   text-align: center;
-  font-family: Manrope, sans-serif;
+  font-family: Poppins, sans-serif;
   transition: transform .14s ease, box-shadow .14s ease;
 }
 .curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
-.curriculum-module:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; z-index: 2; }
-.curriculum-module > span:first-child { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 800; }
+.curriculum-module:focus-visible { outline: 3px solid var(--study); outline-offset: 3px; z-index: 2; }
+.curriculum-module > span:first-child { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 700; }
 .curriculum-module > span:last-child {
   position: absolute;
   right: 10px;
   bottom: 6px;
   font-size: var(--font-compact);
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
 }
-.curriculum-project { background: var(--green); color: var(--white); }
+.curriculum-project { background: var(--study); color: var(--white); }
 .curriculum-project > span:last-child { color: var(--white); }
 .curriculum-internship { padding: 12px; }
 .curriculum-internship > span:first-child { font-size: var(--font-xl); }
@@ -79,7 +79,7 @@
   color: var(--dark);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font: 700 var(--font-medium)/1 Manrope, sans-serif;
+  font: 700 var(--font-medium)/1 Poppins, sans-serif;
   letter-spacing: .02em;
 }
 .curriculum-grid > h2::before,
