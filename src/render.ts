@@ -80,7 +80,7 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     for (const entry of cellData.entries) {
       const { module, semester, block, style } = entry;
       const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
-      link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? `modules/${module.id}.json`)}`;
+      link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
       link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
       if (!isStacked) {
         link.style.gridColumn = cellData.gridColumn;
@@ -155,7 +155,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
         const components = module.components?.length ? module.components : [undefined];
         const moduleCell = createElement("div");
         const moduleLink = createElement("a", undefined, module.title);
-        moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? `modules/${module.id}.json`)}`;
+        moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
         moduleCell.append(moduleLink);
         moduleCell.style.gridRow = `span ${components.length}`;
         grid.append(moduleCell);
@@ -195,7 +195,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
 
 export function renderModuleTile(module: ModuleData): HTMLAnchorElement {
   const link = createElement("a", "module-tile");
-  link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? `modules/${module.id}.json`)}`;
+  link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
   appendText(link, "span", String(module.semester ?? "").padStart(2, "0"));
   const main = createElement("span");
   appendText(main, "span", module.title);
