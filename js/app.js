@@ -46,22 +46,25 @@ function attachPrintControl() {
     window.addEventListener("beforeprint", scaleModulesForPrint);
     window.addEventListener("afterprint", restoreModulePrintScale);
 }
-const modulePrintScales = new Map();
+const printScales = new Map();
 function scaleModulesForPrint() {
     const availableHeight = 255 * 96 / 25.4;
     for (const entry of document.querySelectorAll("#module-details .module-detail-entry")) {
         const article = entry.querySelector("article");
-        if (!article)
-            continue;
-        modulePrintScales.set(article, article.style.zoom);
-        const scale = Math.min(1, availableHeight / entry.scrollHeight);
-        article.style.zoom = String(scale);
+        if (article)
+            scaleForPrint(article, entry.scrollHeight, availableHeight);
     }
+    for (const table of document.querySelectorAll("#module-overview > section"))
+        scaleForPrint(table, table.scrollHeight, availableHeight);
+}
+function scaleForPrint(_element, _height, _availableHeight) {
+    printScales.set(_element, _element.style.zoom);
+    _element.style.zoom = String(Math.min(1, _availableHeight / _height));
 }
 function restoreModulePrintScale() {
-    for (const [article, zoom] of modulePrintScales)
-        article.style.zoom = zoom;
-    modulePrintScales.clear();
+    for (const [element, zoom] of printScales)
+        element.style.zoom = zoom;
+    printScales.clear();
 }
 function attachSpecificsPanel(_elements) {
     const panel = _elements.specificsPanel;
