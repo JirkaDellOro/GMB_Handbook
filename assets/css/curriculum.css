@@ -208,6 +208,7 @@
   .programme-accordion > details > summary::after { transition: none; }
 }
 @media print {
+  .programme-accordion > details:not([open]) { display: none !important; }
   .programme-accordion > details > summary { display: none; }
   .programme-accordion > details > :not(summary) { display: block !important; }
   .programme-accordion { display: block; }
