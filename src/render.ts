@@ -112,14 +112,14 @@ const studyTableRanges = [
 
 function componentReference(_module: ModuleData, _label?: string): string | undefined {
   if (!_label) return undefined;
-  const component = _module.components?.find(item => item.label === _label);
+  const component = _module.components?.find(_item => _item.label === _label);
   return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
 }
 
 function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
   return (_module.assessment ?? [])
-    .filter(item => item.component === _component.label && item.graded_assessment === _graded)
-    .map(item => item.code).filter(Boolean).join(", ");
+    .filter(_item => _item.component === _component.label && _item.graded_assessment === _graded)
+    .map(_item => _item.code).filter(Boolean).join(", ");
 }
 
 function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
@@ -130,7 +130,7 @@ function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["
 
 export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]): void {
   _target.replaceChildren();
-  const orderedModules = [..._modules].sort((a, b) => Number(a.semester) - Number(b.semester));
+  const orderedModules = [..._modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
   for (const range of studyTableRanges) {
     const sectionNode = createElement("section");
     appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
@@ -172,7 +172,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]):
         }
       }
       semesterCard.append(grid);
-      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      const semesterCredits = semesterItems.reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
       const semesterTotal = createElement("div", "study-semester-total");
       semesterTotal.append(createElement("span", undefined, `${semester}. Curricular Semester`));
       semesterTotal.append(createElement("span", undefined, String(semesterCredits)));
@@ -180,7 +180,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]):
       gridScroll.append(semesterCard);
     }
     const overallCredits = orderedModules
-      .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
+      .filter(_module => Number(_module.semester) >= range.firstSemester && Number(_module.semester) <= range.lastSemester)
       .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
     const overallGrid = createElement("div", "study-data-grid");
     const overall = createElement("div", undefined, "Overall");
@@ -209,12 +209,12 @@ export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
 export async function renderModuleList(
   _target: HTMLElement,
   _semesters: SemesterGroup[],
-  _loadModule: (id: string) => Promise<ModuleData>
+  _loadModule: (_moduleReference: string) => Promise<ModuleData>
 ): Promise<void> {
   _target.replaceChildren();
   for (const semester of _semesters) {
     const group = section(semester.title, _target);
-    const modules = await Promise.all(semester.modules.map(id => _loadModule(id)));
+    const modules = await Promise.all(semester.modules.map(_moduleReference => _loadModule(_moduleReference)));
     for (const module of modules) group.append(renderModuleTile(module));
   }
 }
