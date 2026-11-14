@@ -12,10 +12,10 @@ function appendText(parent: HTMLElement, tag: keyof HTMLElementTagNameMap, text?
   parent.append(node);
   return node;
 }
-function addList(parent: HTMLElement, items: string[] = [], className?: string): void {
-  const ul = el('ul', className);
-  for (const item of items) appendText(ul, 'li', item);
-  parent.append(ul);
+function addList(_parent: HTMLElement, _items: string[] = []): void {
+  const list = el("ul");
+  for (const item of _items) appendText(list, "li", item);
+  _parent.append(list);
 }
 function section(title: string, parent: HTMLElement): HTMLElement {
   const node = el('section', 'content-section');
