@@ -168,6 +168,7 @@
 /* Print layout for the complete module handbook */
 @page { size: A4 portrait; margin: 15mm 14mm 17mm; }
 @media print {
+  .programme-accordion > details:not([open]) { display: none !important; }
   html, body { background: #fff !important; color: #000 !important; font-size: 9pt; }
   body { line-height: 1.35; }
   .site-header { min-height: 0; padding: 0 0 7mm; border-bottom: 1px solid #777; }
