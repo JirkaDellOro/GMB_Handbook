@@ -5,9 +5,9 @@ function createElement(_tag, _className, _text) {
   return element;
 }
 
-function createParagraph(_paragraph) {
+function createParagraph(_paragraph, _number) {
   const item = createElement("section", "specific-paragraph");
-  const number = createElement("span", "specific-number", `(${_paragraph.number})`);
+  const number = createElement("span", "specific-number", `(${_number})`);
   const content = createElement("div", "specific-copy");
   content.append(createElement("p", undefined, _paragraph.text));
   if (_paragraph.items) content.append(createSubparagraphs(_paragraph.items));
@@ -20,7 +20,6 @@ function createSubparagraphs(_items) {
   list.type = "a";
   for (const item of _items) {
     const entry = createElement("li");
-    entry.value = item.letter.charCodeAt(0) - 96;
     entry.append(createElement("p", undefined, item.text));
     list.append(entry);
   }
@@ -34,9 +33,9 @@ function renderSpecifics(_target, _data) {
   heading.append(createElement("h1", undefined, _data.title));
   heading.append(createElement("p", "specifics-programme", _data.programme));
   const content = createElement("div", "specifics-content");
-  for (const paragraph of _data.paragraphs) content.append(createParagraph(paragraph));
-  const footer = createElement("p", "specifics-last-change", _data.lastChange);
-  _target.append(heading, content, footer);
+  _data.paragraphs.forEach((paragraph, index) => content.append(createParagraph(paragraph, index + 1)));
+  _target.append(heading, content);
+  if (_data.lastChange) _target.append(createElement("p", "specifics-last-change", _data.lastChange));
 }
 
 async function loadSpecifics() {
