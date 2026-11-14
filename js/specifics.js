@@ -26,11 +26,11 @@ function createSubparagraphs(_items) {
     }
     return list;
 }
-function renderSpecifics(_target, _data) {
+function renderSpecifics(_target, _data, _headingTag) {
     _target.replaceChildren();
     const heading = createElement("header", "specifics-heading");
     heading.append(createElement("p", "eyebrow", _data.section));
-    heading.append(createElement("h1", undefined, _data.title));
+    heading.append(createElement(_headingTag, undefined, _data.title));
     heading.append(createElement("p", "specifics-programme", _data.programme));
     const content = createElement("div", "specifics-content");
     _data.paragraphs.forEach((paragraph, index) => content.append(createParagraph(paragraph, index + 1)));
@@ -38,12 +38,12 @@ function renderSpecifics(_target, _data) {
     if (_data.lastChange)
         _target.append(createElement("p", "specifics-last-change", _data.lastChange));
 }
-export async function loadSpecifics(_target, _reference = "./specifics.json") {
+export async function loadSpecifics(_target, _reference = "./specifics.json", _headingTag = "h1") {
     try {
         const response = await fetch(_reference);
         if (!response.ok)
             throw new Error(`HTTP ${response.status}`);
-        renderSpecifics(_target, await response.json());
+        renderSpecifics(_target, await response.json(), _headingTag);
     }
     catch (error) {
         const message = error instanceof Error ? error.message : String(error);
