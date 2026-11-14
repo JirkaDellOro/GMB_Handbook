@@ -1,7 +1,7 @@
 function createElement(_tag, _className, _text) {
     const node = document.createElement(_tag);
     if (_className)
-        node._className = _className;
+        node.className = _className;
     if (_text !== undefined)
         node.textContent = _text;
     return node;
@@ -53,7 +53,7 @@ export function renderCurriculum(_target, _modules, _curriculum) {
     }
     const cells = new Map();
     for (const module of _modules) {
-        const position = _curriculum._modules[module.sourceRef ?? module.id];
+        const position = _curriculum.modules[module.sourceRef ?? module.id];
         if (!position)
             continue;
         const semester = Number(module.semester);
@@ -107,12 +107,12 @@ const studyTableRanges = [
 function componentReference(_module, _label) {
     if (!_label)
         return undefined;
-    const component = _module.components?.find(item => item._label === _label);
-    return component ? `${component._label} ${component.name ?? ""}`.trim() : _label;
+    const component = _module.components?.find(item => item.label === _label);
+    return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
 }
 function componentAssessments(_module, _component, _graded) {
     return (_module.assessment ?? [])
-        .filter(item => item._component === _component.label && item.graded_assessment === _graded)
+        .filter(item => item.component === _component.label && item.graded_assessment === _graded)
         .map(item => item.code).filter(Boolean).join(", ");
 }
 function contactHoursSws(_value) {
@@ -229,7 +229,7 @@ export function renderModuleDetails(_target, _semesters, _modules) {
     for (const semester of _semesters) {
         const group = createElement("section", "module-detail-semester");
         appendText(group, "h2", semester.title);
-        for (const reference of semester._modules) {
+        for (const reference of semester.modules) {
             const module = modulesByReference.get(reference);
             if (!module)
                 continue;
