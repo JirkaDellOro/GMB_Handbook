@@ -22,7 +22,7 @@ export function loadModule(reference: string): Promise<ModuleData> {
   return moduleCache.get(reference)!;
 }
 function isValidModuleReference(reference: string): boolean {
-  return /^(?:modules\/[a-z0-9]+\.json|\.\/[a-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[a-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
+  return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
 }
 function checkResponse(response: Response): Response {
   if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
