@@ -36,10 +36,10 @@ function attachPrintControl() {
     if (!button || panels.length === 0)
         return;
     button.addEventListener("click", () => {
-        const previousStates = panels.map(panel => panel.open);
+        const previousStates = panels.map(_panel => _panel.open);
         panels.forEach(panel => panel.open = true);
         window.addEventListener("afterprint", () => {
-            panels.forEach((panel, index) => panel.open = previousStates[index]);
+            panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
         }, { once: true });
         window.print();
     });
