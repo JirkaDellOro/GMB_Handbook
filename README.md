@@ -6,7 +6,7 @@ Shared static website for multiple study programmes. The application code, style
 
 - `index.html` – overview of available study programmes
 - `GMB/` – Games & Immersive Media programme data and entry point
-  - `index.html` – programme entry point; curriculum, module list and module details are rendered here
+  - `index.html` – programme entry point with expandable sections for Specifics, Overview (Table 1), Curriculum (Tables 2 and 3), and Details (all module descriptions); module descriptions are rendered when Details is first opened
   - `manifest.json` – semester groups and module references
   - `curriculum.json` – curriculum layout and module positions
   - `modules/*.json` – module data owned by this programme
