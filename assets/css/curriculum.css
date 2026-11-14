@@ -72,8 +72,8 @@
 .curriculum-internship > span:first-child { font-size: var(--font-xl); }
 .curriculum-grid > h2 {
   position: relative;
-  background: var(--study);
-  color: var(--white);
+  background: var(--gray);
+  color: var(--dark);
   display: flex;
   align-items: center;
   justify-content: center;

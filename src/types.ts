@@ -23,6 +23,7 @@ export interface ReadingItem { component?: string; reference?: string }
 
 export interface ModuleData {
   id: string;
+  sourceRef?: string;
   title: string;
   module_code?: string | null;
   semester?: number | string | null;
