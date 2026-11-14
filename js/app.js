@@ -39,7 +39,7 @@ function attachSpecificsPanel(_elements) {
     const target = _elements.specificsTarget;
     if (!panel || !target)
         return;
-    renderWhenOpened(panel, () => void loadSpecifics(target, "./specifics.json", "h2"));
+    void loadSpecifics(target, "./specifics.json", "h2");
 }
 async function showModuleDetail(_reference, _elements) {
     if (_elements.detailView)
@@ -86,14 +86,14 @@ function attachCurriculumPanel(_elements, _modules) {
     const target = _elements.overviewTarget;
     if (!panel || !target)
         return;
-    renderWhenOpened(panel, () => renderStudyTables(target, _modules));
+    renderStudyTables(target, _modules);
 }
 function attachDetailsPanel(_elements, _semesters, _modules) {
     const panel = _elements.detailsPanel;
     const target = _elements.detailsTarget;
     if (!panel || !target)
         return;
-    renderWhenOpened(panel, () => renderModuleDetails(target, _semesters, _modules));
+    renderModuleDetails(target, _semesters, _modules);
 }
 function renderPageError(_error, _moduleRef, _view, _elements) {
     const message = _error instanceof Error ? _error.message : String(_error);
