@@ -250,16 +250,10 @@ function createModuleHeading(_module: ModuleData): HTMLElement {
   appendText(copy, "p", `Required module · Semester ${_module.semester ?? "—"}`, "eyebrow");
   appendText(copy, "h1", _module.title);
   appendText(copy, "p", `Module code: ${_module.module_code || "—"}`, "module-code");
-  heading.append(copy, createCreditCard(_module));
+  heading.append(copy);
   return heading;
 }
 
-function createCreditCard(_module: ModuleData): HTMLElement {
-  const credit = el("div", "credit-card");
-  appendText(credit, "span", _module.credits ?? "—");
-  appendText(credit, "span", "ECTS");
-  return credit;
-}
 
 function createModuleFacts(_module: ModuleData): HTMLElement {
   const facts = el("section", "facts-grid");
