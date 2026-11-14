@@ -56,7 +56,7 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     entries: { module: ModuleData; semester: number; block: number | null; style: string }[];
   }>();
   for (const module of modules) {
-    const position = curriculum.modules[module.id];
+    const position = curriculum.modules[module.sourceRef ?? module.id];
     if (!position) continue;
     const semester = Number(module.semester);
     const column = curriculum.columns.indexOf(position.column);
