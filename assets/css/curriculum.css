@@ -214,3 +214,34 @@
   .programme-accordion > details { border: 0; break-inside: auto; }
   .programme-accordion > details > div { padding: 0; }
 }
+
+
+/* Phone layout: keep accordion controls and content comfortably tappable */
+@media (max-width: 700px) {
+  .programme-hero { height: clamp(145px, 40vw, 220px); }
+  .programme-accordion > details > summary { gap: 14px; }
+  .programme-accordion > details > div { overflow-wrap: anywhere; }
+  .curriculum-scroll { overscroll-behavior-x: contain; }
+}
+@media (max-width: 420px) {
+  .programme-accordion > details > summary { min-height: 68px; padding: 16px; }
+  .programme-accordion > details > summary::after { width: 20px; height: 20px; }
+}
+
+/* The handbook is printed as one continuous document */
+@media print {
+  .home-page .page-shell { max-width: none; padding-top: 0; }
+  .home-page .listing-heading { padding-top: 0; }
+  .home-page .programme-hero { height: 32mm; }
+  .programme-accordion > details { page-break-inside: auto; }
+  .programme-accordion > details > div { padding: 0 !important; }
+  .curriculum-grid { background: #fff; }
+  .curriculum-grid > h2 { background: #fff; }
+  .curriculum-module { background: #fff; color: #000; }
+  .curriculum-project { background: #8922A0; color: #fff; }
+  .study-data-grid, .detail-data-grid { border-radius: 0; }
+  .study-data-grid > header, .detail-data-grid > header { color: #000; background: #eee; }
+  .study-data-grid > div, .detail-data-grid > div { background: #fff; }
+  .study-semester-total { background: #8922A0; color: #fff; }
+  #module-details .module-detail-entry { break-inside: auto; }
+}
