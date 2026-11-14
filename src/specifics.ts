@@ -45,11 +45,11 @@ function createSubparagraphs(_items: SpecificSubparagraph[]): HTMLOListElement {
   return list;
 }
 
-function renderSpecifics(_target: HTMLElement, _data: SpecificsData): void {
+function renderSpecifics(_target: HTMLElement, _data: SpecificsData, _headingTag: "h1" | "h2"): void {
   _target.replaceChildren();
   const heading = createElement("header", "specifics-heading");
   heading.append(createElement("p", "eyebrow", _data.section));
-  heading.append(createElement("h1", undefined, _data.title));
+  heading.append(createElement(_headingTag, undefined, _data.title));
   heading.append(createElement("p", "specifics-programme", _data.programme));
   const content = createElement("div", "specifics-content");
   _data.paragraphs.forEach((paragraph, index) => content.append(createParagraph(paragraph, index + 1)));
@@ -58,12 +58,12 @@ function renderSpecifics(_target: HTMLElement, _data: SpecificsData): void {
 }
 
 export async function loadSpecifics(
-  _target: HTMLElement, _reference = "./specifics.json"
+  _target: HTMLElement, _reference = "./specifics.json", _headingTag: "h1" | "h2" = "h1"
 ): Promise<void> {
   try {
     const response = await fetch(_reference);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    renderSpecifics(_target, await response.json() as SpecificsData);
+    renderSpecifics(_target, await response.json() as SpecificsData, _headingTag);
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     _target.replaceChildren(createElement("p", "notice", `Programme specifics could not be loaded: ${message}`));
