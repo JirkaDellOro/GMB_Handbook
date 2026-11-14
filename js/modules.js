@@ -9,21 +9,21 @@ export function loadCurriculum() {
     if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(response => response.json());
     return curriculumPromise;
 }
-export function loadModule(reference) {
-    if (!isValidModuleReference(reference)) return Promise.reject(new Error("Invalid module reference."));
-    if (!moduleCache.has(reference)) {
-        moduleCache.set(reference, fetch(reference).then(checkResponse).then(response => response.json()).then(module => {
-            const expectedId = reference.split("/").pop()?.replace(".json", "");
-            if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${reference}.`);
-            return { ...module, sourceRef: reference };
+export function loadModule(_reference) {
+    if (!isValidModuleReference(_reference)) return Promise.reject(new Error("Invalid module _reference."));
+    if (!moduleCache.has(_reference)) {
+        moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json()).then(module => {
+            const expectedId = _reference.split("/").pop()?.replace(".json", "");
+            if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
+            return { ...module, sourceRef: _reference };
         }));
     }
-    return moduleCache.get(reference);
+    return moduleCache.get(_reference);
 }
-function isValidModuleReference(reference) {
-    return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
+function isValidModuleReference(_reference) {
+    return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(_reference);
 }
-function checkResponse(response) {
-    if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    return response;
+function checkResponse(_response) {
+    if (!_response.ok) throw new Error(`HTTP ${_response.status}: ${_response.statusText}`);
+    return _response;
 }
