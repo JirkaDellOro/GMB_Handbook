@@ -6,6 +6,7 @@ async function start() {
     const moduleRef = parameters.get("module");
     const view = parameters.get("view") ?? "curriculum";
     const elements = getElements();
+    attachPrintControl();
     attachSpecificsPanel(elements);
     try {
         if (moduleRef)
@@ -33,6 +34,20 @@ function getElements() {
         listTarget: document.querySelector("#module-list"),
         detailTarget: document.querySelector("#module-detail")
     };
+}
+function attachPrintControl() {
+    const button = document.querySelector("#print-all");
+    const panels = [...document.querySelectorAll("#curriculum-view .programme-accordion > details")];
+    if (!button || panels.length === 0)
+        return;
+    button.addEventListener("click", () => {
+        const previousStates = panels.map(panel => panel.open);
+        panels.forEach(panel => panel.open = true);
+        window.addEventListener("afterprint", () => {
+            panels.forEach((panel, index) => panel.open = previousStates[index]);
+        }, { once: true });
+        window.print();
+    });
 }
 function attachSpecificsPanel(_elements) {
     const panel = _elements.specificsPanel;
