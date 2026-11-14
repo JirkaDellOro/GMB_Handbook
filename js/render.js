@@ -250,7 +250,8 @@ export function renderError(target, title, message) {
 function appendModuleHeader(_article, _module, _showBackLink) {
     if (_showBackLink) {
         const back = createElement("a", "back-link", "← All modules");
-        back.href = "./index.html?view=modules";
+        back.href = "./index.html";
+        back.textContent = "← Programme overview";
         _article.append(back);
     }
     _article.append(createModuleHeading(_module), createModuleFacts(_module));
