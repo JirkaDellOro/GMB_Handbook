@@ -53,7 +53,7 @@ export function renderCurriculum(target, modules, curriculum) {
     }
     const cells = new Map();
     for (const module of modules) {
-        const position = curriculum.modules[module.id];
+        const position = curriculum.modules[module.sourceRef ?? module.id];
         if (!position)
             continue;
         const semester = Number(module.semester);
