@@ -33,7 +33,7 @@ function renderSpecifics(_target, _data, _headingTag) {
     heading.append(createElement(_headingTag, undefined, _data.title));
     heading.append(createElement("p", "specifics-programme", _data.programme));
     const content = createElement("div", "specifics-content");
-    _data.paragraphs.forEach((_paragraph, _index) => content.append(createParagraph(_paragraph, _index + 1)));
+    _data.paragraphs.forEach((paragraph, index) => content.append(createParagraph(paragraph, index + 1)));
     _target.append(heading, content);
     if (_data.lastChange)
         _target.append(createElement("p", "specifics-last-change", _data.lastChange));
