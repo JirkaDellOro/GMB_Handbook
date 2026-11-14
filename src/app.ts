@@ -1,18 +1,18 @@
-import { loadCurriculum, loadManifest, loadModule } from './modules.js';
-import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from './render.js';
+import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
+import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from "./render.js";
 
 void start();
 
 async function start(): Promise<void> {
-  const curriculumTarget = document.querySelector<HTMLElement>('#curriculum-grid');
-  const overviewTarget = document.querySelector<HTMLElement>('#module-overview');
-  const listTarget = document.querySelector<HTMLElement>('#module-list');
-  const detailTarget = document.querySelector<HTMLElement>('#module-detail');
+  const curriculumTarget = document.querySelector<HTMLElement>("#curriculum-grid");
+  const overviewTarget = document.querySelector<HTMLElement>("#module-overview");
+  const listTarget = document.querySelector<HTMLElement>("#module-list");
+  const detailTarget = document.querySelector<HTMLElement>("#module-detail");
 
   try {
     if (detailTarget) {
-      const id = new URLSearchParams(window.location.search).get('id') ?? '';
-      if (!id) throw new Error('No module ID was provided in the URL.');
+      const id = new URLSearchParams(window.location.search).get("id") ?? "";
+      if (!id) throw new Error("No module ID was provided in the URL.");
       const module = await loadModule(id);
       document.title = `${module.title} · Games & Immersive Media – Module Handbook`;
       renderModuleDetail(detailTarget, module);
@@ -35,8 +35,8 @@ async function start(): Promise<void> {
     }
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    if (detailTarget) renderError(detailTarget, 'Module not found', message);
-    if (curriculumTarget) renderError(curriculumTarget, 'Study structure could not be loaded', message);
-    if (listTarget) renderError(listTarget, 'Modules could not be loaded', message);
+    if (detailTarget) renderError(detailTarget, "Module not found", message);
+    if (curriculumTarget) renderError(curriculumTarget, "Study structure could not be loaded", message);
+    if (listTarget) renderError(listTarget, "Modules could not be loaded", message);
   }
 }
