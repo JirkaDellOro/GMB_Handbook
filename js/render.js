@@ -346,24 +346,35 @@ function renderReadingList(_article, _module) {
 }
 function appendDetailGridSection(_parent, _title, _className, _headers, _rows) {
     const content = section(_title, _parent);
+    const scroll = el("div", "detail-grid-scroll");
+    scroll.append(createDetailGrid(_className, _headers, _rows));
+    content.append(scroll);
+}
+function createDetailGrid(_className, _headers, _rows) {
     const grid = el("div", `detail-data-grid ${_className}`);
     grid.setAttribute("role", "table");
+    appendDetailGridHeaders(grid, _headers);
+    appendDetailGridRows(grid, _rows);
+    return grid;
+}
+function appendDetailGridHeaders(_grid, _headers) {
     for (const title of _headers) {
         const cell = el("header", undefined, title);
         cell.setAttribute("role", "columnheader");
-        grid.append(cell);
+        _grid.append(cell);
     }
+}
+function appendDetailGridRows(_grid, _rows) {
     for (const row of _rows) {
-        for (const value of row) {
-            const cell = el("div");
-            cell.setAttribute("role", "cell");
-            appendText(cell, "span", value);
-            grid.append(cell);
-        }
+        for (const value of row)
+            appendDetailGridCell(_grid, value);
     }
-    const scroll = el("div", "detail-grid-scroll");
-    scroll.append(grid);
-    content.append(scroll);
+}
+function appendDetailGridCell(_grid, _value) {
+    const cell = el("div");
+    cell.setAttribute("role", "cell");
+    appendText(cell, "span", _value);
+    _grid.append(cell);
 }
 function appendComponentContent(_parent, _module, _items) {
     for (const item of _items) {
