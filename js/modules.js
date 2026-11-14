@@ -6,7 +6,7 @@ export function loadManifest() {
     return manifestPromise;
 }
 export function loadCurriculum() {
-    if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(response => response.json());
+    if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(_response => _response.json());
     return curriculumPromise;
 }
 export function loadModule(_reference) {
