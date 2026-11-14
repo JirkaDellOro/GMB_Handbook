@@ -1,15 +1,15 @@
-function createElement(tag, className, text) {
-    const node = document.createElement(tag);
-    if (className)
-        node.className = className;
-    if (text !== undefined)
-        node.textContent = text;
+function createElement(_tag, _className, _text) {
+    const node = document.createElement(_tag);
+    if (_className)
+        node.className = _className;
+    if (_text !== undefined)
+        node.textContent = _text;
     return node;
 }
-function appendText(parent, tag, text, className) {
-    const value = text === null || text === undefined || text === "" ? "—" : String(text);
-    const node = createElement(tag, className, value);
-    parent.append(node);
+function appendText(_parent, _tag, _text, _className) {
+    const value = _text === null || _text === undefined || _text === "" ? "—" : String(_text);
+    const node = createElement(_tag, _className, value);
+    _parent.append(node);
     return node;
 }
 function addList(_parent, _items = []) {
@@ -18,20 +18,20 @@ function addList(_parent, _items = []) {
         appendText(list, "li", item);
     _parent.append(list);
 }
-function section(title, parent) {
+function section(_title, _parent) {
     const node = createElement("section", "content-section");
-    appendText(node, "h2", title);
-    parent.append(node);
+    appendText(node, "h2", _title);
+    _parent.append(node);
     return node;
 }
-export function renderCurriculum(target, modules, curriculum) {
-    target.replaceChildren();
-    appendText(target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
+export function renderCurriculum(_target, _modules, _curriculum) {
+    _target.replaceChildren();
+    appendText(_target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
     const scroll = createElement("div", "curriculum-scroll");
     const layout = createElement("div", "curriculum-layout");
     const headings = createElement("div", "curriculum-headings");
     headings.append(createElement("span"));
-    for (const name of curriculum.columns)
+    for (const name of _curriculum.columns)
         appendText(headings, "span", name);
     headings.append(createElement("span"));
     layout.append(headings);
@@ -43,21 +43,21 @@ export function renderCurriculum(target, modules, curriculum) {
         row.style.gridRow = String(8 - semester);
         grid.append(row);
     }
-    for (const stageData of curriculum.studyStages) {
+    for (const stageData of _curriculum.studyStages) {
         const stage = createElement("h2", undefined, stageData.title);
         const firstRow = 8 - stageData.lastSemester;
         const rowSpan = stageData.lastSemester - stageData.firstSemester + 1;
-        stage.style.gridColumn = String(curriculum.columns.length + 2);
+        stage.style.gridColumn = String(_curriculum.columns.length + 2);
         stage.style.gridRow = `${firstRow} / span ${rowSpan}`;
         grid.append(stage);
     }
     const cells = new Map();
-    for (const module of modules) {
-        const position = curriculum.modules[module.sourceRef ?? module.id];
+    for (const module of _modules) {
+        const position = _curriculum.modules[module.sourceRef ?? module.id];
         if (!position)
             continue;
         const semester = Number(module.semester);
-        const column = curriculum.columns.indexOf(position.column);
+        const column = _curriculum.columns.indexOf(position.column);
         if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0)
             continue;
         const row = 8 - semester;
@@ -78,7 +78,7 @@ export function renderCurriculum(target, modules, curriculum) {
         }
         for (const entry of cellData.entries) {
             const { module, semester, block, style } = entry;
-            const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
+            const link = createElement("a", `curriculum-module${style ? ` _curriculum-${style}` : ""}`);
             link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
             link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
             if (!isStacked) {
@@ -95,34 +95,34 @@ export function renderCurriculum(target, modules, curriculum) {
     }
     layout.append(grid);
     scroll.append(layout);
-    target.append(scroll);
+    _target.append(scroll);
     const legend = createElement("p");
     legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-    target.append(legend);
+    _target.append(legend);
 }
 const studyTableRanges = [
     { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
     { number: 3, firstSemester: 3, lastSemester: 7, heading: "Advanced Studies" }
 ];
-function componentReference(module, label) {
-    if (!label)
+function componentReference(_module, _label) {
+    if (!_label)
         return undefined;
-    const component = module.components?.find(item => item.label === label);
-    return component ? `${component.label} ${component.name ?? ""}`.trim() : label;
+    const component = _module.components?.find(item => item.label === _label);
+    return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
 }
-function componentAssessments(module, component, graded) {
-    return (module.assessment ?? [])
-        .filter(item => item.component === component.label && item.graded_assessment === graded)
+function componentAssessments(_module, _component, _graded) {
+    return (_module.assessment ?? [])
+        .filter(item => item.component === _component.label && item.graded_assessment === _graded)
         .map(item => item.code).filter(Boolean).join(", ");
 }
-function contactHoursSws(value) {
-    if (value === null || value === undefined || value === "")
+function contactHoursSws(_value) {
+    if (_value === null || _value === undefined || _value === "")
         return "—";
-    const match = String(value).match(/^\s*(\d+(?:[.,]\d+)?)/);
-    return match ? match[1].replace(",", ".") : String(value);
+    const match = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+    return match ? match[1].replace(",", ".") : String(_value);
 }
-export function renderStudyTables(target, modules) {
-    target.replaceChildren();
+export function renderStudyTables(_target, _modules) {
+    _target.replaceChildren();
     const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
     for (const range of studyTableRanges) {
         const sectionNode = createElement("section");
@@ -184,26 +184,26 @@ export function renderStudyTables(target, modules) {
         overallGrid.append(createElement("div", undefined, String(overallCredits)));
         gridScroll.append(overallGrid);
         sectionNode.append(gridScroll);
-        target.append(sectionNode);
+        _target.append(sectionNode);
     }
 }
-export function renderModuleTile(module) {
+export function renderModuleTile(_module) {
     const link = createElement("a", "module-tile");
-    link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
-    appendText(link, "span", String(module.semester ?? "").padStart(2, "0"));
+    link.href = `./index.html?module=${encodeURIComponent(_module.sourceRef ?? ("modules/" + _module.id + ".json"))}`;
+    appendText(link, "span", String(_module.semester ?? "").padStart(2, "0"));
     const main = createElement("span");
-    appendText(main, "span", module.title);
-    appendText(main, "small", `Semester ${module.semester ?? "—"} · Required module`);
+    appendText(main, "span", _module.title);
+    appendText(main, "small", `Semester ${_module.semester ?? "—"} · Required module`);
     link.append(main);
-    appendText(link, "span", `${module.credits ?? "—"} ECTS`);
+    appendText(link, "span", `${_module.credits ?? "—"} ECTS`);
     appendText(link, "span", "↗");
     return link;
 }
-export async function renderModuleList(target, semesters, loadModule) {
-    target.replaceChildren();
-    for (const semester of semesters) {
-        const group = section(semester.title, target);
-        const modules = await Promise.all(semester.modules.map(id => loadModule(id)));
+export async function renderModuleList(_target, _semesters, _loadModule) {
+    _target.replaceChildren();
+    for (const semester of _semesters) {
+        const group = section(semester.title, _target);
+        const modules = await Promise.all(semester.modules.map(id => _loadModule(id)));
         for (const module of modules)
             group.append(renderModuleTile(module));
     }
@@ -221,12 +221,12 @@ export function renderModuleDetail(_target, _module, _showBackLink = true) {
     renderReadingList(article, _module);
     _target.append(article);
 }
-export function renderModuleDetails(target, semesters, modules) {
-    target.replaceChildren();
+export function renderModuleDetails(_target, _semesters, _modules) {
+    _target.replaceChildren();
     const modulesByReference = new Map();
-    for (const module of modules)
+    for (const module of _modules)
         modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
-    for (const semester of semesters) {
+    for (const semester of _semesters) {
         const group = createElement("section", "module-detail-semester");
         appendText(group, "h2", semester.title);
         for (const reference of semester.modules) {
@@ -237,15 +237,15 @@ export function renderModuleDetails(target, semesters, modules) {
             renderModuleDetail(entry, module, false);
             group.append(entry);
         }
-        target.append(group);
+        _target.append(group);
     }
 }
-export function renderError(target, title, message) {
-    target.replaceChildren();
+export function renderError(_target, _title, _message) {
+    _target.replaceChildren();
     const box = createElement("div", "notice");
-    appendText(box, "h1", title);
-    appendText(box, "p", message);
-    target.append(box);
+    appendText(box, "h1", _title);
+    appendText(box, "p", _message);
+    _target.append(box);
 }
 function appendModuleHeader(_article, _module, _showBackLink) {
     if (_showBackLink) {
