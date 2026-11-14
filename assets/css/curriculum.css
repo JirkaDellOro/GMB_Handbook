@@ -252,7 +252,8 @@
     border: 0;
   }
   #module-details .module-detail-semester:last-child .module-detail-entry:last-child { break-after: auto; }
-  #overview-panel { break-after: page; }
+  #overview-panel { break-before: page; break-after: page; }
+  #details-panel { break-before: page; }
   #curriculum-panel > div > section {
     break-inside: avoid;
     break-after: page;
