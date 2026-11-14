@@ -10,21 +10,21 @@ export function loadCurriculum(): Promise<CurriculumData> {
   if (!curriculumPromise) curriculumPromise = fetch("./curriculum.json").then(checkResponse).then(response => response.json() as Promise<CurriculumData>);
   return curriculumPromise;
 }
-export function loadModule(reference: string): Promise<ModuleData> {
-  if (!isValidModuleReference(reference)) return Promise.reject(new Error("Invalid module reference."));
-  if (!moduleCache.has(reference)) {
-    moduleCache.set(reference, fetch(reference).then(checkResponse).then(response => response.json() as Promise<ModuleData>).then(module => {
-      const expectedId = reference.split("/").pop()?.replace(".json", "");
-      if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${reference}.`);
-      return { ...module, sourceRef: reference };
+export function loadModule(_reference: string): Promise<ModuleData> {
+  if (!isValidModuleReference(_reference)) return Promise.reject(new Error("Invalid module reference."));
+  if (!moduleCache.has(_reference)) {
+    moduleCache.set(_reference, fetch(_reference).then(checkResponse).then(response => response.json() as Promise<ModuleData>).then(module => {
+      const expectedId = _reference.split("/").pop()?.replace(".json", "");
+      if (module.id !== expectedId) throw new Error(`Module ID mismatch in ${_reference}.`);
+      return { ...module, sourceRef: _reference };
     }));
   }
-  return moduleCache.get(reference)!;
+  return moduleCache.get(_reference)!;
 }
-function isValidModuleReference(reference: string): boolean {
-  return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(reference);
+function isValidModuleReference(_reference: string): boolean {
+  return /^(?:modules\/[a-z0-9]+\.json|\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json|\.\.\/[A-Za-z0-9_-]+\/modules\/[a-z0-9]+\.json)$/.test(_reference);
 }
-function checkResponse(response: Response): Response {
-  if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-  return response;
+function checkResponse(_response: Response): Response {
+  if (!_response.ok) throw new Error(`HTTP ${_response.status}: ${_response.statusText}`);
+  return _response;
 }
