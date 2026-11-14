@@ -25,11 +25,7 @@
       "items": [
         {
           "letter": "a",
-          "text": "A total of four elective modules (Elective 1-4) must be completed during the advanced level studies, which specifically deepen the topics of the GMB programme. The Faculty Business, Design & Media offers regularly in-depth elective modules and individual classes / courses."
-        },
-        {
-          "letter": "b",
-          "text": "Courses offered outside the Faculty Digital Media can also be recognised if approved by the Dean of Studies."
+          "text": "A total of four elective modules (Elective 1-4) must be completed during the advanced level studies, which specifically deepen the topics of the GMB programme. The faculties offer regularly in-depth elective modules and individual classes / courses."
         },
         {
           "letter": "c",
@@ -48,8 +44,10 @@
     {
       "number": "7",
       "text": "The courses required for successful completion of the programme and the associated non-graded and graded assessments are found in Table 2 for the foundation level studies and in Table 3 for the advanced level studies. Table 1 shows an overview of the module structure."
+    },
+    {
+      "number": "7",
+      "text": "Restrictions, modifications and extensions to the General Study and Examination Regulations of Hochschule Furtwangen may apply for this programme. The documentation is available at the office of Student Affairs and the Dean of Study."
     }
-  ],
-  "lastChange": "Last Change : 07.02.2024 - SPO Version 10 (As of 13.12.2023)",
-  "sourcePage": 3
+  ]
 }
