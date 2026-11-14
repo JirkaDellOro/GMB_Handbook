@@ -26,7 +26,7 @@ function section(title: string, parent: HTMLElement): HTMLElement {
 
 export function renderCurriculum(target: HTMLElement, modules: ModuleData[], curriculum: CurriculumData): void {
   target.replaceChildren();
-  appendText(target, 'h2', 'Table 1: Games & Immersive Media B.A. (Curricular Structure)', 'curriculum-table-heading');
+  appendText(target, 'h2', 'Table 1: Module Structure', 'curriculum-table-heading');
   const scroll = el('div', 'curriculum-scroll');
   const layout = el('div', 'curriculum-layout');
   const headings = el('div', 'curriculum-headings');
