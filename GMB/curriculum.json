@@ -1,37 +1,146 @@
 {
-  "columns": ["Visual", "Sound", "Theory", "STEM", "Code", "Business", "Electives", "Projects"],
+  "columns": [
+    "Visual",
+    "Sound",
+    "Theory",
+    "STEM",
+    "Code",
+    "Business",
+    "Electives",
+    "Projects"
+  ],
   "studyStages": [
-    { "title": "Advanced Studies", "firstSemester": 3, "lastSemester": 7 },
-    { "title": "Foundation Studies", "firstSemester": 1, "lastSemester": 2 }
+    {
+      "title": "Advanced Studies",
+      "firstSemester": 3,
+      "lastSemester": 7
+    },
+    {
+      "title": "Foundation Studies",
+      "firstSemester": 1,
+      "lastSemester": 2
+    }
   ],
   "modules": {
-    "visual1": { "column": "Visual", "block": 3 },
-    "visual2": { "column": "Visual", "block": 1 },
-    "visual3": { "column": "Visual", "block": 2 },
-    "sound1": { "column": "Sound", "block": 3 },
-    "sound2": { "column": "Sound", "block": 1 },
-    "theory1": { "column": "Theory", "block": 2 },
-    "theory2": { "column": "Theory", "block": 4 },
-    "theory3": { "column": "Theory", "block": 2 },
-    "stem1": { "column": "STEM", "block": null },
-    "stem2": { "column": "STEM", "block": 3 },
-    "stem3": { "column": "STEM", "block": 3 },
-    "code1": { "column": "Code", "block": 4 },
-    "code2": { "column": "Code", "block": 2 },
-    "code3": { "column": "Code", "block": 4 },
-    "code4": { "column": "Code", "block": 1 },
-    "business1": { "column": "Business", "block": 4 },
-    "business2": { "column": "Business", "block": null },
-    "elective1": { "column": "Electives", "block": null },
-    "elective2": { "column": "Electives", "block": null },
-    "elective3": { "column": "Electives", "block": null },
-    "elective4": { "column": "Electives", "block": null },
-    "project1": { "column": "Projects", "block": 1, "style": "project" },
-    "project2": { "column": "Projects", "block": 5, "style": "project" },
-    "project3": { "column": "Projects", "block": 5, "style": "project" },
-    "project4": { "column": "Projects", "block": 5, "style": "project" },
-    "project5": { "column": "Projects", "block": null, "style": "project" },
-    "thesis": { "column": "Projects", "block": null, "style": "project" },
-    "internship": { "column": "Visual", "block": null, "style": "internship", "span": 8 }
+    "modules/visual1.json": {
+      "column": "Visual",
+      "block": 3
+    },
+    "modules/visual2.json": {
+      "column": "Visual",
+      "block": 1
+    },
+    "modules/visual3.json": {
+      "column": "Visual",
+      "block": 2
+    },
+    "modules/sound1.json": {
+      "column": "Sound",
+      "block": 3
+    },
+    "modules/sound2.json": {
+      "column": "Sound",
+      "block": 1
+    },
+    "modules/theory1.json": {
+      "column": "Theory",
+      "block": 2
+    },
+    "modules/theory2.json": {
+      "column": "Theory",
+      "block": 4
+    },
+    "modules/theory3.json": {
+      "column": "Theory",
+      "block": 2
+    },
+    "modules/stem1.json": {
+      "column": "STEM",
+      "block": null
+    },
+    "modules/stem2.json": {
+      "column": "STEM",
+      "block": 3
+    },
+    "modules/stem3.json": {
+      "column": "STEM",
+      "block": 3
+    },
+    "modules/code1.json": {
+      "column": "Code",
+      "block": 4
+    },
+    "modules/code2.json": {
+      "column": "Code",
+      "block": 2
+    },
+    "modules/code3.json": {
+      "column": "Code",
+      "block": 4
+    },
+    "modules/code4.json": {
+      "column": "Code",
+      "block": 1
+    },
+    "modules/business1.json": {
+      "column": "Business",
+      "block": 4
+    },
+    "modules/business2.json": {
+      "column": "Business",
+      "block": null
+    },
+    "modules/elective1.json": {
+      "column": "Electives",
+      "block": null
+    },
+    "modules/elective2.json": {
+      "column": "Electives",
+      "block": null
+    },
+    "modules/elective3.json": {
+      "column": "Electives",
+      "block": null
+    },
+    "modules/elective4.json": {
+      "column": "Electives",
+      "block": null
+    },
+    "modules/project1.json": {
+      "column": "Projects",
+      "block": 1,
+      "style": "project"
+    },
+    "modules/project2.json": {
+      "column": "Projects",
+      "block": 5,
+      "style": "project"
+    },
+    "modules/project3.json": {
+      "column": "Projects",
+      "block": 5,
+      "style": "project"
+    },
+    "modules/project4.json": {
+      "column": "Projects",
+      "block": 5,
+      "style": "project"
+    },
+    "modules/project5.json": {
+      "column": "Projects",
+      "block": null,
+      "style": "project"
+    },
+    "modules/thesis.json": {
+      "column": "Projects",
+      "block": null,
+      "style": "project"
+    },
+    "modules/internship.json": {
+      "column": "Visual",
+      "block": null,
+      "style": "internship",
+      "span": 8
+    }
   }
 }
