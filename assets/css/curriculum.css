@@ -1,4 +1,6 @@
 /* Homepage and curriculum overview */
+.programme-hero { height: clamp(170px, 24vw, 320px); overflow: hidden; background: var(--gray); }
+.programme-hero img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; }
 .home-page { background: var(--white); }
 .home-page .site-header { background: var(--white); }
 .home-page .site-header { border-bottom: 1px solid var(--line); color: var(--dark); }
@@ -155,10 +157,13 @@
 }
 .programme-accordion > details > summary::-webkit-details-marker { display: none; }
 .programme-accordion > details > summary::after {
-  content: "+";
+  content: "";
   flex: 0 0 auto;
-  color: var(--study);
-  font: 400 34px/1 Poppins, sans-serif;
+  width: 26px;
+  height: 26px;
+  background:
+    linear-gradient(var(--study), var(--study)) center / 100% 2px no-repeat,
+    linear-gradient(var(--study), var(--study)) center / 2px 100% no-repeat;
   transform: rotate(0deg);
   transition: transform .25s ease;
 }
@@ -195,7 +200,8 @@
     padding: 18px 20px;
     font-size: var(--font-xl);
   }
-  .programme-accordion > details > summary::after { font-size: 30px; }
+  .programme-hero { height: clamp(150px, 42vw, 230px); }
+  .programme-accordion > details > summary::after { width: 23px; height: 23px; }
   .programme-accordion > details > div { padding: 22px 18px 26px; }
 }
 @media (prefers-reduced-motion: reduce) {
