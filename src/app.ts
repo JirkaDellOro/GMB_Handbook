@@ -1,6 +1,8 @@
 import { loadCurriculum, loadManifest, loadModule } from './modules.js';
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from './render.js';
 
+void start();
+
 async function start(): Promise<void> {
   const curriculumTarget = document.querySelector<HTMLElement>('#curriculum-grid');
   const overviewTarget = document.querySelector<HTMLElement>('#module-overview');
@@ -38,5 +40,3 @@ async function start(): Promise<void> {
     if (listTarget) renderError(listTarget, 'Modules could not be loaded', message);
   }
 }
-
-void start();
