@@ -219,45 +219,6 @@ export async function renderModuleList(
 }
 
 
-function appendDetailGridSection(
-  _parent: HTMLElement,
-  _title: string,
-  _className: string,
-  _headers: string[],
-  _rows: unknown[][]
-): void {
-  const content = section(_title, _parent);
-  const grid = el("div", `detail-data-grid ${_className}`);
-  grid.setAttribute("role", "table");
-  for (const title of _headers) {
-    const cell = el("header", undefined, title);
-    cell.setAttribute("role", "columnheader");
-    grid.append(cell);
-  }
-  for (const row of _rows) {
-    for (const value of row) {
-      const cell = el("div");
-      cell.setAttribute("role", "cell");
-      appendText(cell, "span", value);
-      grid.append(cell);
-    }
-  }
-  const scroll = el("div", "detail-grid-scroll");
-  scroll.append(grid);
-  content.append(scroll);
-}
-
-function appendComponentContent(
-  _parent: HTMLElement,
-  _module: ModuleData,
-  _items: NonNullable<ModuleData["individual_component_content"]>
-): void {
-  for (const item of _items) {
-    if (item.component) appendText(_parent, "h3", componentReference(_module, item.component));
-    addList(_parent, item.items);
-  }
-}
-
 export function renderModuleDetail(_target: HTMLElement, _module: ModuleData): void {
   _target.replaceChildren();
   const article = el("article");
@@ -276,7 +237,6 @@ export function renderError(target: HTMLElement, title: string, message: string)
   target.replaceChildren();
   const box = el('div', 'notice'); appendText(box, 'h1', title); appendText(box, 'p', message); target.append(box);
 }
-
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData): void {
   const back = el("a", "back-link", "← All modules");
