@@ -78,8 +78,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  border-left: 3px solid var(--dark);
-  color: var(--dark);
+  border-left: 3px solid var(--white);
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font: 700 var(--font-medium)/1 Poppins, sans-serif;
