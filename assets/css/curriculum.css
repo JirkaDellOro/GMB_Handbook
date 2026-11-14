@@ -243,5 +243,23 @@
   .study-data-grid > header, .detail-data-grid > header { color: #000; background: #eee; }
   .study-data-grid > div, .detail-data-grid > div { background: #fff; }
   .study-semester-total { background: #8922A0; color: #fff; }
-  #module-details .module-detail-entry { break-inside: auto; }
+  #module-details .module-detail-semester > h2 { display: none; }
+  #module-details .module-detail-entry {
+    break-inside: avoid;
+    break-after: page;
+    padding: 0;
+    border: 0;
+  }
+  #module-details .module-detail-semester:last-child .module-detail-entry:last-child { break-after: auto; }
+  #overview-panel { break-after: page; }
+  #curriculum-panel > div > section {
+    break-inside: avoid;
+    break-after: page;
+    margin: 0;
+  }
+  #curriculum-panel > div > section:last-child { break-after: auto; }
+  #module-details .module-detail-entry > article {
+    max-width: none;
+    transform-origin: top left;
+  }
 }
