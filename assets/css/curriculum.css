@@ -130,7 +130,7 @@
 /* Programme page accordion */
 .programme-accordion {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   margin-bottom: 48px;
 }
 .programme-accordion > details {
@@ -141,33 +141,37 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
-  padding: 16px 20px;
-  background: var(--gray);
+  gap: 24px;
+  min-height: 88px;
+  padding: 22px 28px;
+  background: var(--white);
   color: var(--dark);
   cursor: pointer;
   list-style: none;
-  font-size: var(--font-large);
+  font-size: var(--font-section-title);
   font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.2;
 }
 .programme-accordion > details > summary::-webkit-details-marker { display: none; }
 .programme-accordion > details > summary::after {
   content: "+";
+  flex: 0 0 auto;
   color: var(--study);
-  font-size: var(--font-section);
-  line-height: 1;
+  font: 400 34px/1 Poppins, sans-serif;
+  transform: rotate(0deg);
+  transition: transform .25s ease;
 }
 .programme-accordion > details[open] > summary {
-  background: var(--white);
   border-bottom: 1px solid var(--line);
 }
-.programme-accordion > details[open] > summary::after { content: "−"; }
+.programme-accordion > details[open] > summary::after { transform: rotate(45deg); }
 .programme-accordion > details > summary:hover { color: var(--study); }
 .programme-accordion > details > summary:focus-visible {
   outline: 3px solid var(--study);
   outline-offset: 3px;
 }
-.programme-accordion > details > div { padding: 22px 20px 28px; }
+.programme-accordion > details > div { padding: 28px 28px 34px; }
 #module-overview > section { margin: 0 0 48px; }
 #module-overview > section:last-child { margin-bottom: 0; }
 #module-details .module-detail-semester { margin: 0 0 48px; }
@@ -185,8 +189,17 @@
 #module-details article { max-width: 900px; margin: 0 auto; }
 
 @media (max-width: 700px) {
-  .programme-accordion > details > summary { padding: 14px 16px; }
-  .programme-accordion > details > div { padding: 18px 14px 22px; }
+  .programme-accordion { gap: 10px; }
+  .programme-accordion > details > summary {
+    min-height: 76px;
+    padding: 18px 20px;
+    font-size: var(--font-xl);
+  }
+  .programme-accordion > details > summary::after { font-size: 30px; }
+  .programme-accordion > details > div { padding: 22px 18px 26px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .programme-accordion > details > summary::after { transition: none; }
 }
 @media print {
   .programme-accordion > details > summary { display: none; }
