@@ -1,5 +1,6 @@
 import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
-import { renderCurriculum, renderError, renderModuleDetail, renderModuleList, renderStudyTables } from "./render.js";
+import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderModuleList, renderStudyTables } from "./render.js";
+import { loadSpecifics } from "./specifics.js";
 
 async function start(): Promise<void> {
   const parameters = new URLSearchParams(window.location.search);
@@ -9,9 +10,19 @@ async function start(): Promise<void> {
   const listView = document.querySelector<HTMLElement>("#module-list-view");
   const detailView = document.querySelector<HTMLElement>("#module-detail-view");
   const curriculumTarget = document.querySelector<HTMLElement>("#curriculum-grid");
+  const curriculumPanel = document.querySelector<HTMLDetailsElement>("#curriculum-panel");
+  const detailsPanel = document.querySelector<HTMLDetailsElement>("#details-panel");
+  const specificsPanel = document.querySelector<HTMLDetailsElement>("#specifics-panel");
+  const specificsTarget = document.querySelector<HTMLElement>("#specifics-content");
   const overviewTarget = document.querySelector<HTMLElement>("#module-overview");
+  const detailsTarget = document.querySelector<HTMLElement>("#module-details");
   const listTarget = document.querySelector<HTMLElement>("#module-list");
   const detailTarget = document.querySelector<HTMLElement>("#module-detail");
+
+  if (specificsPanel && specificsTarget) {
+    renderWhenOpened(specificsPanel, () => void loadSpecifics(specificsTarget));
+  }
+
   try {
     if (moduleRef) {
       if (detailView) detailView.hidden = false;
@@ -35,16 +46,37 @@ async function start(): Promise<void> {
     if (listView) listView.hidden = true;
     if (detailView) detailView.hidden = true;
     if (!curriculumTarget) return;
+
     const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
-    const refs = [...new Set(semesters.flatMap(semester => semester.modules))];
-    const modules = await Promise.all(refs.map(loadModule));
+    const references = [...new Set(semesters.flatMap(semester => semester.modules))];
+    const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(curriculumTarget, modules, curriculum);
-    if (overviewTarget) renderStudyTables(overviewTarget, modules);
+
+    if (curriculumPanel && overviewTarget) {
+      renderWhenOpened(curriculumPanel, () => renderStudyTables(overviewTarget, modules));
+    }
+    if (detailsPanel && detailsTarget) {
+      renderWhenOpened(detailsPanel, () => renderModuleDetails(detailsTarget, semesters, modules));
+    }
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     if (detailTarget && moduleRef) renderError(detailTarget, "Module not found", message);
-    if (curriculumTarget && !moduleRef && view !== "modules") renderError(curriculumTarget, "Study structure could not be loaded", message);
+    if (curriculumTarget && !moduleRef && view !== "modules") {
+      renderError(curriculumTarget, "Study structure could not be loaded", message);
+    }
     if (listTarget && view === "modules") renderError(listTarget, "Modules could not be loaded", message);
   }
 }
+
+function renderWhenOpened(_panel: HTMLDetailsElement, _render: () => void): void {
+  let rendered = false;
+  const renderOnce = (): void => {
+    if (!_panel.open || rendered) return;
+    rendered = true;
+    _render();
+  };
+  _panel.addEventListener("toggle", renderOnce);
+  renderOnce();
+}
+
 void start();
