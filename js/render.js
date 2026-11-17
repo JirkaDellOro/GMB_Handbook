@@ -123,7 +123,7 @@ function contactHoursSws(_value) {
 }
 export function renderStudyTables(_target, _modules) {
     _target.replaceChildren();
-    const orderedModules = [...modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
+    const orderedModules = [..._modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
     for (const range of studyTableRanges) {
         const sectionNode = createElement("section");
         appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
