@@ -1,15 +1,15 @@
 import type { CurriculumData, ModuleData, SemesterGroup } from "./types.js";
 
-function createElement<K extends keyof HTMLElementTagNameMap>(tag: K, className?: string, text?: string): HTMLElementTagNameMap[K] {
-  const node = document.createElement(tag);
-  if (className) node.className = className;
-  if (text !== undefined) node.textContent = text;
+function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
+  const node = document.createElement(_tag);
+  if (_className) node.className = _className;
+  if (_text !== undefined) node.textContent = _text;
   return node;
 }
-function appendText(parent: HTMLElement, tag: keyof HTMLElementTagNameMap, text?: unknown, className?: string): HTMLElement {
-  const value = text === null || text === undefined || text === "" ? "—" : String(text);
-  const node = createElement(tag, className, value);
-  parent.append(node);
+function appendText(_parent: HTMLElement, _tag: keyof HTMLElementTagNameMap, _text?: unknown, _className?: string): HTMLElement {
+  const value = _text === null || _text === undefined || _text === "" ? "—" : String(_text);
+  const node = createElement(_tag, _className, value);
+  _parent.append(node);
   return node;
 }
 function addList(_parent: HTMLElement, _items: string[] = []): void {
@@ -17,21 +17,21 @@ function addList(_parent: HTMLElement, _items: string[] = []): void {
   for (const item of _items) appendText(list, "li", item);
   _parent.append(list);
 }
-function section(title: string, parent: HTMLElement): HTMLElement {
+function section(_title: string, _parent: HTMLElement): HTMLElement {
   const node = createElement("section", "content-section");
-  appendText(node, "h2", title);
-  parent.append(node);
+  appendText(node, "h2", _title);
+  _parent.append(node);
   return node;
 }
 
-export function renderCurriculum(target: HTMLElement, modules: ModuleData[], curriculum: CurriculumData): void {
-  target.replaceChildren();
-  appendText(target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
+export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _curriculum: CurriculumData): void {
+  _target.replaceChildren();
+  appendText(_target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
   const scroll = createElement("div", "curriculum-scroll");
   const layout = createElement("div", "curriculum-layout");
   const headings = createElement("div", "curriculum-headings");
   headings.append(createElement("span"));
-  for (const name of curriculum.columns) appendText(headings, "span", name);
+  for (const name of _curriculum.columns) appendText(headings, "span", name);
   headings.append(createElement("span"));
   layout.append(headings);
   const grid = createElement("div", "curriculum-grid");
@@ -42,11 +42,11 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     row.style.gridRow = String(8 - semester);
     grid.append(row);
   }
-  for (const stageData of curriculum.studyStages) {
+  for (const stageData of _curriculum.studyStages) {
     const stage = createElement("h2", undefined, stageData.title);
     const firstRow = 8 - stageData.lastSemester;
     const rowSpan = stageData.lastSemester - stageData.firstSemester + 1;
-    stage.style.gridColumn = String(curriculum.columns.length + 2);
+    stage.style.gridColumn = String(_curriculum.columns.length + 2);
     stage.style.gridRow = `${firstRow} / span ${rowSpan}`;
     grid.append(stage);
   }
@@ -55,11 +55,11 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
     gridColumn: string;
     entries: { module: ModuleData; semester: number; block: number | null; style: string }[];
   }>();
-  for (const module of modules) {
-    const position = curriculum.modules[module.sourceRef ?? module.id];
+  for (const module of _modules) {
+    const position = _curriculum.modules[module.sourceRef ?? module.id];
     if (!position) continue;
     const semester = Number(module.semester);
-    const column = curriculum.columns.indexOf(position.column);
+    const column = _curriculum.columns.indexOf(position.column);
     if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
     const row = 8 - semester;
     const gridColumn = position.span ? `${column + 2} / span ${position.span}` : String(column + 2);
@@ -96,10 +96,10 @@ export function renderCurriculum(target: HTMLElement, modules: ModuleData[], cur
   }
   layout.append(grid);
   scroll.append(layout);
-  target.append(scroll);
+  _target.append(scroll);
   const legend = createElement("p");
   legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-  target.append(legend);
+  _target.append(legend);
 }
 
 
@@ -110,27 +110,27 @@ const studyTableRanges = [
   { number: 3, firstSemester: 3, lastSemester: 7, heading: "Advanced Studies" }
 ];
 
-function componentReference(module: ModuleData, label?: string): string | undefined {
-  if (!label) return undefined;
-  const component = module.components?.find(item => item.label === label);
-  return component ? `${component.label} ${component.name ?? ""}`.trim() : label;
+function componentReference(_module: ModuleData, _label?: string): string | undefined {
+  if (!_label) return undefined;
+  const component = _module.components?.find(_item => _item.label === _label);
+  return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
 }
 
-function componentAssessments(module: ModuleData, component: NonNullable<ModuleData["components"]>[number], graded: boolean): string {
-  return (module.assessment ?? [])
-    .filter(item => item.component === component.label && item.graded_assessment === graded)
-    .map(item => item.code).filter(Boolean).join(", ");
+function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
+  return (_module.assessment ?? [])
+    .filter(_item => _item.component === _component.label && _item.graded_assessment === _graded)
+    .map(_item => _item.code).filter(Boolean).join(", ");
 }
 
-function contactHoursSws(value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
-  if (value === null || value === undefined || value === "") return "—";
-  const match = String(value).match(/^\s*(\d+(?:[.,]\d+)?)/);
-  return match ? match[1].replace(",", ".") : String(value);
+function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
+  if (_value === null || _value === undefined || _value === "") return "—";
+  const match = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+  return match ? match[1].replace(",", ".") : String(_value);
 }
 
-export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): void {
-  target.replaceChildren();
-  const orderedModules = [...modules].sort((a, b) => Number(a.semester) - Number(b.semester));
+export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]): void {
+  _target.replaceChildren();
+  const orderedModules = [...modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
   for (const range of studyTableRanges) {
     const sectionNode = createElement("section");
     appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
@@ -172,7 +172,7 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
         }
       }
       semesterCard.append(grid);
-      const semesterCredits = semesterItems.reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      const semesterCredits = semesterItems.reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
       const semesterTotal = createElement("div", "study-semester-total");
       semesterTotal.append(createElement("span", undefined, `${semester}. Curricular Semester`));
       semesterTotal.append(createElement("span", undefined, String(semesterCredits)));
@@ -180,8 +180,8 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
       gridScroll.append(semesterCard);
     }
     const overallCredits = orderedModules
-      .filter(module => Number(module.semester) >= range.firstSemester && Number(module.semester) <= range.lastSemester)
-      .reduce((sum, module) => sum + (Number(module.credits) || 0), 0);
+      .filter(_module => Number(_module.semester) >= range.firstSemester && Number(_module.semester) <= range.lastSemester)
+      .reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
     const overallGrid = createElement("div", "study-data-grid");
     const overall = createElement("div", undefined, "Overall");
     overall.style.gridColumn = "span 6";
@@ -189,32 +189,32 @@ export function renderStudyTables(target: HTMLElement, modules: ModuleData[]): v
     overallGrid.append(createElement("div", undefined, String(overallCredits)));
     gridScroll.append(overallGrid);
     sectionNode.append(gridScroll);
-    target.append(sectionNode);
+    _target.append(sectionNode);
   }
 }
 
-export function renderModuleTile(module: ModuleData): HTMLAnchorElement {
+export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
   const link = createElement("a", "module-tile");
-  link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
-  appendText(link, "span", String(module.semester ?? "").padStart(2, "0"));
+  link.href = `./index.html?module=${encodeURIComponent(_module.sourceRef ?? ("modules/" + _module.id + ".json"))}`;
+  appendText(link, "span", String(_module.semester ?? "").padStart(2, "0"));
   const main = createElement("span");
-  appendText(main, "span", module.title);
-  appendText(main, "small", `Semester ${module.semester ?? "—"} · Required module`);
+  appendText(main, "span", _module.title);
+  appendText(main, "small", `Semester ${_module.semester ?? "—"} · Required module`);
   link.append(main);
-  appendText(link, "span", `${module.credits ?? "—"} ECTS`);
+  appendText(link, "span", `${_module.credits ?? "—"} ECTS`);
   appendText(link, "span", "↗");
   return link;
 }
 
 export async function renderModuleList(
-  target: HTMLElement,
-  semesters: SemesterGroup[],
-  loadModule: (id: string) => Promise<ModuleData>
+  _target: HTMLElement,
+  _semesters: SemesterGroup[],
+  __loadModule: (_moduleReference: string) => Promise<ModuleData>
 ): Promise<void> {
-  target.replaceChildren();
-  for (const semester of semesters) {
-    const group = section(semester.title, target);
-    const modules = await Promise.all(semester.modules.map(id => loadModule(id)));
+  _target.replaceChildren();
+  for (const semester of _semesters) {
+    const group = section(semester.title, _target);
+    const modules = await Promise.all(semester.modules.map(_moduleReference => _loadModule(_moduleReference)));
     for (const module of modules) group.append(renderModuleTile(module));
   }
 }
@@ -234,11 +234,11 @@ export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _s
   _target.append(article);
 }
 
-export function renderModuleDetails(target: HTMLElement, semesters: SemesterGroup[], modules: ModuleData[]): void {
-  target.replaceChildren();
+export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGroup[], _modules: ModuleData[]): void {
+  _target.replaceChildren();
   const modulesByReference = new Map<string, ModuleData>();
-  for (const module of modules) modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
-  for (const semester of semesters) {
+  for (const module of _modules) modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
+  for (const semester of _semesters) {
     const group = createElement("section", "module-detail-semester");
     appendText(group, "h2", semester.title);
     for (const reference of semester.modules) {
@@ -248,13 +248,13 @@ export function renderModuleDetails(target: HTMLElement, semesters: SemesterGrou
       renderModuleDetail(entry, module, false);
       group.append(entry);
     }
-    target.append(group);
+    _target.append(group);
   }
 }
 
-export function renderError(target: HTMLElement, title: string, message: string): void {
-  target.replaceChildren();
-  const box = createElement("div", "notice"); appendText(box, "h1", title); appendText(box, "p", message); target.append(box);
+export function renderError(_target: HTMLElement, _title: string, _message: string): void {
+  _target.replaceChildren();
+  const box = createElement("div", "notice"); appendText(box, "h1", _title); appendText(box, "p", _message); _target.append(box);
 }
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {
