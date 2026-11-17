@@ -130,7 +130,7 @@ function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["
 
 export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]): void {
   _target.replaceChildren();
-  const orderedModules = [...modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
+  const orderedModules = [..._modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
   for (const range of studyTableRanges) {
     const sectionNode = createElement("section");
     appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
@@ -209,7 +209,7 @@ export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
 export async function renderModuleList(
   _target: HTMLElement,
   _semesters: SemesterGroup[],
-  __loadModule: (_moduleReference: string) => Promise<ModuleData>
+  _loadModule: (_moduleReference: string) => Promise<ModuleData>
 ): Promise<void> {
   _target.replaceChildren();
   for (const semester of _semesters) {
