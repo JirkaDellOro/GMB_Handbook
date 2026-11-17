@@ -1,0 +1,202 @@
+{
+  "id": "theory2",
+  "title": "Theory 2",
+  "module_code": "DM-2024-2872",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Theory 2 - Game Design",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "2 SWS / 22.5h",
+      "self_study_hours": 67.5,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Theory 2 - Game Theory",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "2 SWS / 22.5h",
+      "self_study_hours": 67.5,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "have basic command of probability concepts and fundamental concepts of mathematical game theory",
+        "know the history and taxonomies of digital games."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand how games can be modelled mathematically and how their rules influence outcomes and strategies.",
+        "understand the fundamental theories of games and play."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply concepts of probability and game theory to analyse game mechanics and determine player strategies.",
+        "apply their knowledge and comprehension to create a credible game design."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse selected games using probabilistic, combinatorial, and strategic game-theoretical methods.",
+        "analyse game ideas and deduct patterns and rules usable for game design."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create a game design document using a variety of techniques."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate game mechanics and player strategies using mathematical methods.",
+        "evaluate games and interactive applications with scientific methods."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Game Studies",
+        "Design Methodologies",
+        "Psychology of play",
+        "History",
+        "Taxonomies",
+        "Documentation (GDD)",
+        "Design methods and graphs"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "Foundations of combinatorics and probability",
+        "Random variables, probability distributions, and expected values",
+        "Stochastic models and applications to game design",
+        "Combinatorial game theory and winning strategies",
+        "Mathematical analysis of selected games",
+        "Strategic games, payoff matrices, and player strategies",
+        "Mixed strategies and Nash equilibria",
+        "Applications to game mechanics, balancing, and design"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "none"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 2,
+      "description": "Written Exam during semester (sbK)"
+    },
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": false,
+      "credits": 1,
+      "description": "Practical Assignment during semester (sbA)"
+    },
+    {
+      "component": "b)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Written Exam during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Jirka Dell´Oro-Friedl"
+      ]
+    },
+    {
+      "component": "b)",
+      "names": [
+        "Prof. Dr. Ekkehard Batzies"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Schell, Jesse: The Art of Game Design: A Book of Lenses (3rd Edition), Taylor & Francis, 2019, ISBN: 1138632058"
+    },
+    {
+      "component": "a)",
+      "reference": "Fritz, Jürgen: Das Spiel verstehen: Eine Einführung in Theorie und Bedeutung (Grundlagentexte Soziale Berufe), Beltz Juventa, 2004, ISBN: 3779919419"
+    },
+    {
+      "component": "a)",
+      "reference": "Huizinga, Johan: Homo Ludens, Taylor & Francis, 1949, ISBN: 9781315824161"
+    },
+    {
+      "component": "a)",
+      "reference": "Caillois, Roger (Author); Barash, Meyer (Translator): Man, play, and games, University of Illinois Press, 2001, ISBN: 978-0252070334"
+    },
+    {
+      "component": "a)",
+      "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518"
+    },
+    {
+      "component": "b)",
+      "reference": "Bewersdorff, Jörg: Glück, Logik und Bluff: Mathematik im Spiel – Methoden, Ergebnisse, und Grenzen (7th Edition), Springer Spektrum Wiesbaden, 2018, ISBN: 978-3-658-21764-8"
+    }
+  ]
+}

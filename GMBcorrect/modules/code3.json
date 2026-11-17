@@ -1,0 +1,132 @@
+{
+  "id": "code3",
+  "title": "Code 3",
+  "module_code": "DM-2024-2889",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Code 3 - Realtime Computer Graphics",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "recognize software design patterns.",
+        "understand the structure of a real-time computer graphics pipeline and the interaction of modern interfaces and current GPUs."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand the factors influencing the performance of an application.",
+        "recognize and formulate the requirements for high-performance real-time computer graphics applications."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply common software design patterns.",
+        "develop solution-oriented concepts for a complex problem in the context of programming."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "get an overview of the architecture of a real-time media application.",
+        "evaluate the interaction of additional APIs in their own real-time computer graphics application."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "integrate further APIs for visualization and audio in the own code.",
+        "implement interactive real-time visualizations in appropriate tools."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine the own term paper and plan improvements/optimizations."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Realtime Computer Graphics",
+        "Shader",
+        "Game Engine Software Architecture",
+        "Computation Performance",
+        "Advanced Audio-visuals"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Practical Assignment during semester (sbA)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Dr. Uwe Hahne",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Uwe Hahne",
+        "Prof. Christoph Müller"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Akenine-Möller, Tomas; Haines, Eric; Hoffman Naty: Real-time Rendering, Fourth Edition, A K Peters/ CRC Press, 2018, ISBN: 9781138627000"
+    },
+    {
+      "component": "a)",
+      "reference": "McGuire, Morgan: The Graphics Codex, Edition 2.17, Casual Effects, 2021 – online at https://graphicscodex.com"
+    },
+    {
+      "component": "a)",
+      "reference": "Gregory, Jason: Game Engine Architecture, Third Edition, Taylor & Francis, 2018, ISBN: 1138035459 – online at https://www.gameenginebook.com/"
+    }
+  ]
+}

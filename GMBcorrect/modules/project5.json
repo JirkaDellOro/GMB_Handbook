@@ -1,0 +1,117 @@
+{
+  "id": "project5",
+  "title": "Project 5",
+  "module_code": "DM-2024-2899",
+  "semester": 6,
+  "workload_hours": 360,
+  "credits": 12,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Project 5 - Complex Digital Project",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "6 SWS / 67.5h",
+      "self_study_hours": 292.5,
+      "class_size": 35,
+      "course_type": "W",
+      "credit_points": 12
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "gain experience working professionally on a project in a team."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand professional project management including economic considerations."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "can apply the skills and knowledge acquired in the other modules so far."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "can analyse and detect interesting technical and economic opportunities of an immersive media application or game."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "can professionally design, create and present an interactive, immersive application or game."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "can evaluate application e.g., by conducting user tests and recommend improvements."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Professional design and creation of a complex interactive application",
+        "Practical application of various skills acquired in previous modules",
+        "Consideration and calculation of professional publishing, marketing, monetization, quality assurance",
+        "Practice professional workflow"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Project"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1A",
+      "graded_assessment": true,
+      "credits": 12,
+      "description": "Practical Assignment (A)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Dean of Studies GMB",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "All professors of the faculty"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Depending on subject of study and task."
+    }
+  ]
+}

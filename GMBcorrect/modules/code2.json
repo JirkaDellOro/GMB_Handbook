@@ -1,0 +1,134 @@
+{
+  "id": "code2",
+  "title": "Code 2",
+  "module_code": "DM-2024-2870",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Code 2",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points":5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know basics of a graphic design language (UML)."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand common patterns and techniques for real-time applications in three dimensions."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "create experimental prototypes of games and interactive applications using a game engine and its integrated development environment."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse simple problems in interactive three-dimensional environments."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create object- and component-oriented designs for interactive applications."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate and improve their coded creations."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Software Design",
+        "Object Orientation",
+        "3D-Scenegraph",
+        "Game Patterns & Techniques",
+        "Component Entities"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar / Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Written Exam during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Jirka Dell´Oro-Friedl"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Kecher, Christoph; Hoffmann-Elbern, Ralf; Will, Thorsten: UML 2.5, Rheinwerk Computing, 2021, ISBN: 978-3-8362-8447-9"
+    },
+    {
+      "component": "a)",
+      "reference": "Nystrom, Robert: Game Programming Patterns, Genever Benning, 2014, ISBN: 0990582906 – online at https://gameprogrammingpatterns.com/contents.html"
+    },
+    {
+      "component": "a)",
+      "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/"
+    },
+    {
+      "component": "a)",
+      "reference": "Dell'Oro-Friedl, Jirka: Code2-Inverted, Github 2026, https://jirkadelloro.github.io/Code-Inverted/X01_Appendix/Booklet.pdf"
+    },
+    {
+      "component": "a)",
+      "reference": "Santamaria, Paula: TypeScript Gamified, Selfpublished 2026, https://paulasantamaria.gumroad.com/l/typescript-gamified"
+    }
+  ]
+}

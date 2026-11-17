@@ -1,0 +1,139 @@
+{
+  "id": "theory1",
+  "title": "Theory 1",
+  "module_code": "DM-2023-2810",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Computer Science and HCI Theory",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "V/S",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "have basic knowledge in HCI including cognition and perception, UCD and UCD Process.",
+        "have basic knowledge on computer hardware, concepts and history of computer science."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand concepts in computer science like computer architecture, bits & bytes.",
+        "understand user-centred, psychological and HCI concepts."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply computer science concepts.",
+        "apply user-centred design, UI design concepts."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse programs / code for concepts.",
+        "analyse user interfaces for patterns and interaction concepts"
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "design and create interactions and user interfaces.",
+        "realize basic algorithms / programs."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate user interfaces using heuristics and design principles.",
+        "evaluate code for programming principles."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Why computer science?",
+        "Current research and technology",
+        "History of the computer",
+        "Technology hardware, von NeumannComputer",
+        "Science basics: Bits & Bytes, pixels",
+        "Boolean logic",
+        "Perception (Visual, auditive and haptic), including colours",
+        "Cognition and memory, HCI topics",
+        "User-centred design and user-centred design process"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Lecture (V) / Seminar (S)"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Written Exam during semester (sbK)"
+    },
+    {
+      "component": "a)",
+      "code": "1R",
+      "graded_assessment": false,
+      "credits": 2,
+      "description": "Presentation with documentation (R)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Dr. Thomas Schlegel",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Thomas Schlegel",
+        "Prof. Niv Shpigel",
+        "Prof. Dr. Norbert Schnell",
+        "Prof. Christoph Müller",
+        "Prof. Jirka Dell'Oro-Friedl"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Will be given in lecture as applicable"
+    }
+  ]
+}

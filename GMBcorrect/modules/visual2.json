@@ -1,0 +1,125 @@
+{
+  "id": "visual2",
+  "title": "Visual 2",
+  "module_code": "DM-2024-2873",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Visual 2 - Game Asset Creation",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "understand the connection between light, material and colouring in 3D modelling.",
+        "know appropriate 3D modelling techniques for different types of geometry."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "recognize material settings for emulating given representation forms.",
+        "recognize suitable 3D modelling techniques for concrete requirements."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "create complex materials including textures for use in real-time 3D applications.",
+        "create 3D models for use in real-time 3D environments."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "assess the applicability of publicly available techniques and approaches to 3D asset generation for specific problems."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "develop novel approaches and processes for complex tasks in 3D asset generation."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine their own semester work in the context of what they have learned."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "3D Modelling, Box Modelling, Sculpting",
+        "Poly Modelling / Polygon Flow, Retopology Materials, Lights and Texturing",
+        "UV Unwrapping, Texture Painting, Normal Mapping",
+        "Light and Material",
+        "Character, from Concept Art to 3D-Primitive Block-Out",
+        "From Models to Assets",
+        "Modelling for Realtime Engines",
+        "Materials for Realtime Engines",
+        "Colour theory and practical application"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "Completion of Visual 1"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Practical Assignment during semester (sbA)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Christoph Müller",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Christoph Müller"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Baechler, Oscar; Greer, Xury: Blender 3D By Example: A project-based guide to learning the latest Blender 3D, EEVEE rendering engine, and Grease Pencil, 2nd Edition, Packt Publishing, 2020, ISBN: 978-1789612561"
+    }
+  ]
+}

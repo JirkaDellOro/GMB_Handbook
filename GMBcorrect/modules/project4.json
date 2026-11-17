@@ -1,0 +1,119 @@
+{
+  "id": "project4",
+  "title": "Project 4",
+  "module_code": "DM-2024-2893",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 10,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Project 4 - Advanced Digital Project",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "6 SWS / 67.5h",
+      "self_study_hours": 112.5,
+      "class_size": 35,
+      "course_type": "W",
+      "credit_points": 10
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "gain experience working on a project in a team."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand agile project management."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply the skills and knowledge acquired in the other modules so far."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse and detect interesting opportunities for the implementation of advanced technologies."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "design, create and present an advanced digital prototype of an interactive, immersive application and game."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate their prototype e.g., by conducting user tests and recommended improvements."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Design and creation of an advanced interactive application",
+        "Practical application of various skills acquired in previous modules",
+        "Implementation of advanced technologies e.g., AR/VR, spatial audio/video, tangible interfaces",
+        "Team and project management",
+        "Practise visualisation, documentation, communication, presentation",
+        "Work with digital material to create advanced prototypes"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Project"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "none"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1A",
+      "graded_assessment": true,
+      "credits": 10,
+      "description": "Practical Assignment (A)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Dean of Studies GMB",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "All professors of the faculty"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Depending on subject of study and task."
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "id": "code4",
+  "title": "Code 4",
+  "module_code": "DM-2024-2895",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Code 4",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know algorithms for game AI."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "choose the right algorithm for a specific scenario."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "implement basic algorithms for game AI."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse the existing algorithms for patterns and use cases."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "combine multiple algorithms or patterns to create sophisticated systems for specific purposes."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate AI with a data-driven approach to incorporate feedback and improvements."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Game AI: Finite Automata und Behaviour Trees, Agents, Search Problems, Uninformed Search, Informed Search (A* and Heuristics)",
+        "Adversarial Search and Games I: Minimax,",
+        "Alpha-beta Pruning Adversarial Search and Games II: Expect Imax, MCTSReinforcement Learning",
+        "Network: Relational and NoSQL databases,",
+        "Optional: Dedicated Game server: Architectures, APIs",
+        "Networking Multiplayer-Game server:",
+        "Online: Client Server /P2P /MMOG Architectures and Protocols",
+        "Local: LAN/WLAN",
+        "Dedicated MMOG@home: NAT, DDNS, STUN Cloud Gaming over public networks (Shadow/Blade/Google)"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "none"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Written Examination during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 10)"
+  ],
+  "responsible_person": "Prof. Nikolaus Hottong",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Nikolaus Hottong",
+        "Prof. Dr. Stephanie Heintz"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Russell, Stuart; Norvig, Peter: Artificial Intelligence: A Modern Approach, Pearson, 2021, ISBN: 1292401133"
+    }
+  ]
+}
