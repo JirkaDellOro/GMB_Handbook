@@ -69,7 +69,7 @@
         "Prozessorarchitekturen: von Neumann und Harvard, RISC und CISC",
         "Besonderheiten von C in der maschinennahen Programmierung",
         "Grundlagen von Assemblersprachen",
-        "vektorisierter Interrupt, Unterprogramme und Stack 53"
+        "vektorisierter Interrupt, Unterprogramme und Stack"
       ]
     }
   ],

@@ -13,6 +13,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "78.75",
       "class_size": 75
@@ -64,6 +65,21 @@
         "die Ergebnisse ihrer Arbeit sowie die dabei gewonnenen Erkenntnisse auf das Wesentliche reduzieren und präsentieren.",
         "ihr Fachwissen und ihre Erfahrungen systematisch nutzen, um Lösungsstrategien für komplexe Fragestellungen zu entwickeln.",
         "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, um geeignete Schwerpunkte für das weitere Studium und die Bachelorarbeit auszuwählen sowie um konkrete Vorstellungen für ihre spätere Berufswahl zu entwickeln."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Die Studierenden werden in die organisatorischen und administrativen Belange des Praktischen Studiensemesters eingeführt.",
+        "Die Studierenden werden von erfahrenen Personen angeleitet und übernehmen anspruchsvolle Tätigkeiten, vorzugsweise der integrativen Art, in einem einschlägigen Unternehmen. Die Tätigkeiten entsprechen der fachlichen Ausrichtung des Studiengangs und sind so definiert, dass die Studierenden an den für Informatiker typischen Aufgaben mitwirken können."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Seminar"
       ]
     }
   ],

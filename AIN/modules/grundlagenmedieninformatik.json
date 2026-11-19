@@ -19,7 +19,7 @@
     },
     {
       "label": "b)",
-      "name": "Grundlagen der Medieninformatik,",
+      "name": "Grundlagen der Medieninformatik",
       "language": [
         "Deutsch"
       ],
@@ -68,7 +68,7 @@
         "Technische Grundlagen: Digitale Signalverarbeitung, Sampling, Quantisierung, Bild- und Audiodaten",
         "Gestalterische Grundlagen: Farbmodelle, Farbräume, Farbwahrnehmung",
         "Theoretische Grundlagen: Informations- und Kommunikationstheorie, Kodierung, Kompression",
-        "Anwendungsgebiete der Medieninformatik: Computer Graphics, Computer Vision, Bildverarbeitung, Audioverarbeitung, Multimedia-Systeme Einführung in spezifische Software-Tools und Programmiersprachen für Medieninformatiker und deren Anwendung an praktischen Beispielen 24"
+        "Anwendungsgebiete der Medieninformatik: Computer Graphics, Computer Vision, Bildverarbeitung, Audioverarbeitung, Multimedia-Systeme Einführung in spezifische Software-Tools und Programmiersprachen für Medieninformatiker und deren Anwendung an praktischen Beispielen"
       ]
     }
   ],

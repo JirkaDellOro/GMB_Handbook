@@ -13,6 +13,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
       "class_size": 30
@@ -23,6 +24,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
       "class_size": 15
@@ -59,6 +61,14 @@
         "Komponenten-Bibliotheken für Web-Anwendungen",
         "Persistenzframeworks",
         "Backend-Technologien im Bereich IoT: MQTT, Time-Series-Datenbanken Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
       ]
     }
   ],

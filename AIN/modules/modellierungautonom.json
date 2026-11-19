@@ -19,7 +19,7 @@
     },
     {
       "label": "b)",
-      "name": "Modellierung Autonomer Systeme,",
+      "name": "Modellierung Autonomer Systeme",
       "language": [
         "Deutsch"
       ],
@@ -59,11 +59,12 @@
   "individual_component_content": [
     {
       "items": [
+        "Dieser Kurs bietet eine Einführung in das Robot Operating System (ROS), einschließlich vieler verfügbarer Tools, die üblicherweise in der Robotik verwendet werden. Anhand verschiedener Beispiele soll der Kurs einen guten Ausgangspunkt für die Arbeit mit Robotern bieten. Sie lernen, wie man Software einschließlich Simulation erstellt, Sensoren und Aktoren miteinander verbindet und Steuerungsalgorithmen integriert.",
         "ROS2-Architektur: Master, nodes, topics, messages, services, parameters und actions",
         "Console commands: Navigation und Analyse von ROS2 System und catkin workspace",
         "ROS2-packages erzeugen: Struktur, launch-files, und best practices",
         "ROS2-Python client library (rospy): Eigene ROS2 Python Programme erstellen",
-        "Simulating mit ROS2: Gazebo simulator, robot models (URDF) und simulation environments (SDF) Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet. 35"
+        "Simulating mit ROS2: Gazebo simulator, robot models (URDF) und simulation environments (SDF) Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
       ]
     }
   ],

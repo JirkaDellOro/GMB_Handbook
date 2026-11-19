@@ -13,6 +13,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "Pr",
       "contact_hours": "0 h",
       "self_study_hours": "180",
       "class_size": 75
@@ -47,6 +48,27 @@
       "category": "Synthese",
       "items": [
         "das erworbene Wissen auf ähnlich gelagerte Fragestellungen anwenden (Fähigkeit zum Wissenstransfer)."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es erfolgt eine intensive Auseinandersetzung mit neuesten Entwicklungen auf dem Gebiet der Informatik bzw. mit einem der Schwerpunktthemen des Studiengangs Informatik."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Prüfung"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Gleichzeitige Anfertigung einer Bachelorarbeit"
       ]
     }
   ],

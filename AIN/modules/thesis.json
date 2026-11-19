@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "78.75",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -25,7 +27,8 @@
       ],
       "contact_hours": "0 h",
       "self_study_hours": "360",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 12
     },
     {
       "label": "c)",
@@ -33,9 +36,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "78.75",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -61,27 +66,49 @@
       ]
     }
   ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es wird eine wissenschaftliche Arbeit zu einem einschlägigen aktuellen Thema angefertigt. Die Arbeit soll Ergebnisse oder Erkenntnisse zu aktuellen Fragestellungen, im Wesentlichen Fragen aus der Praxis der Informatik, enthalten."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Seminar",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Das Seminar „Einführung in das Thesis-Semester“ muss ein Semester vor Antritt der Bachelorarbeit absolviert werden. Sonstige Teilnahmevoraussetzungen: siehe den Allgemeinen Teil der Studien- und Prüfungsordnung der Hochschule"
+      ]
+    }
+  ],
   "assessment": [
     {
       "component": "a)",
+      "code": "1sbKO",
       "description": "1sbKO (Kolloquium)",
       "graded_assessment": false,
-      "credits": 3,
-      "code": "1sbKO"
+      "credits": 3
     },
     {
       "component": "b)",
+      "code": "1T",
       "description": "1T (Thesis)",
       "graded_assessment": true,
-      "credits": 12,
-      "code": "1T"
+      "credits": 12
     },
     {
       "component": "c)",
+      "code": "1sbPN",
       "description": "1sbPN (Präsentation)",
       "graded_assessment": true,
-      "credits": 3,
-      "code": "1sbPN"
+      "credits": 3
     }
   ],
   "applicability": [

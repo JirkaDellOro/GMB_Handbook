@@ -19,7 +19,7 @@
     },
     {
       "label": "b)",
-      "name": "Algorithmen und Datenstrukturen,",
+      "name": "Algorithmen und Datenstrukturen",
       "language": [
         "Deutsch"
       ],
@@ -60,7 +60,7 @@
         "Laufzeiten von Algorithmen und ihre Größenordnung",
         "Stacks und Queues",
         "Divide-and-Conquer-Verfahren, Sortierverfahren",
-        "Baumstrukturen und Hashtabellen Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet. 4"
+        "Baumstrukturen und Hashtabellen Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
       ]
     }
   ],

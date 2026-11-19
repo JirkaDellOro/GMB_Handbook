@@ -13,13 +13,14 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
       "class_size": 60
     },
     {
       "label": "b)",
-      "name": "Objektorientierte Programmierung,",
+      "name": "Objektorientierte Programmierung",
       "language": [
         "Deutsch"
       ],
@@ -62,6 +63,13 @@
         "Anwendungen der Standardbibliothek.",
         "Templates, insbesondere Collections und Smart-Pointer",
         "Vererbung, Mehrfachvererbung, Virtuelle Funktionen und Polymorphie Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung"
       ]
     }
   ],

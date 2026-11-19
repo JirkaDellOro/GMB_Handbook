@@ -68,7 +68,7 @@
         "Optimierungsverfahren von linearen Zielfunktionen unter linearen Nebenbedingungen (Simplex)",
         "Optimierungsverfahren von nichtlinearen (z.B. konvexen) Zielfunktionen unter Nebenbedingungen (Gradientenverfahren, Lagrangesche Multiplikatorenregel)",
         "Anwendungsbeispiele: Optimale Parameteranpassung",
-        "Funktionale Sicherheit, z.B. in Netzwerken oder in der Robotik 60"
+        "Funktionale Sicherheit, z.B. in Netzwerken oder in der Robotik"
       ]
     }
   ],

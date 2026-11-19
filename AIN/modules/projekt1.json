@@ -13,6 +13,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "W",
       "contact_hours": "0 h",
       "self_study_hours": "120",
       "class_size": 60
@@ -23,6 +24,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "48.75",
       "class_size": 60
@@ -52,6 +54,21 @@
       "items": [
         "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, so dass sie geeignete Schwerpunkte für das restliche Studium setzen und sich auf geeignete Stellen im Praxissemester bewerben können.",
         "die Ergebnisse ihrer Arbeit auf das Wesentliche reduzieren, präsentieren und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es wird eine praktische Arbeit zu einer einschlägigen, in der Regel von einem Unternehmen der regionalen Wirtschaft vorgegebenen, praktischen Aufgabenstellung aus den Bereichen Software-Engineering, Applied Artificial Intelligence oder Medieninformatik angefertigt. Die Studierenden arbeiten im Team. Das Ziel liegt (auch) darin, dass die erarbeitete Problemlösung beim „Themensteller“ zum Einsatz kommt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Workshop",
+        "Seminar"
       ]
     }
   ],
