@@ -183,24 +183,6 @@ function appendCurriculumLegend(_target: HTMLElement): void {
 
 
 
-function componentReference(_module: ModuleData, _label?: string): string | undefined {
-  if (!_label) return undefined;
-  const component: ModuleComponent | undefined = _module.components?.find((_item: ModuleComponent): boolean => _item.label === _label);
-  return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
-}
-
-function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
-  return (_module.assessment ?? [])
-    .filter((_item: Assessment): boolean => _item.component === _component.label && _item.graded_assessment === _graded)
-    .map((_item: Assessment): string | null | undefined => _item.code).filter(Boolean).join(", ");
-}
-
-function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
-  if (_value === null || _value === undefined || _value === "") return "—";
-  const match: RegExpMatchArray | null = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
-  return match ? match[1].replace(",", ".") : String(_value);
-}
-
 export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], _curriculum?: CurriculumData): void {
   const ranges: StudyTableRange[] = _curriculum?.studyTables ?? studyTableRanges;
   const semesterModules: Map<number, ModuleData[]> = createSemesterModuleMap(_modules, _curriculum);
@@ -695,4 +677,22 @@ function section(_title: string, _parent: HTMLElement): HTMLElement {
   appendText(node, "h2", _title);
   _parent.append(node);
   return node;
+}
+
+function componentReference(_module: ModuleData, _label?: string): string | undefined {
+  if (!_label) return undefined;
+  const component: ModuleComponent | undefined = _module.components?.find((_item: ModuleComponent): boolean => _item.label === _label);
+  return component ? `${component.label} ${component.name ?? ""}`.trim() : _label;
+}
+
+function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
+  return (_module.assessment ?? [])
+    .filter((_item: Assessment): boolean => _item.component === _component.label && _item.graded_assessment === _graded)
+    .map((_item: Assessment): string | null | undefined => _item.code).filter(Boolean).join(", ");
+}
+
+function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
+  if (_value === null || _value === undefined || _value === "") return "—";
+  const match: RegExpMatchArray | null = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+  return match ? match[1].replace(",", ".") : String(_value);
 }
