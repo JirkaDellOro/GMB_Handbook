@@ -324,7 +324,7 @@ function appendStudyTableHeaders(_grid: HTMLElement, _hasBlocks: boolean): void 
 
 function appendStudyTableRows(_grid: HTMLElement, _entries: StudyTableEntry[], _hasBlocks: boolean): void {
   let gridRow: number = 2;
-  for (let index = 0; index < _entries.length;) {
+  for (let index: number = 0; index < _entries.length;) {
     const blockEntries: StudyTableEntry[] = collectBlockEntries(_entries, index);
     const blockNumber: number | undefined = blockEntries[0].moduleNumber;
     appendStudyBlockLabel(_grid, blockNumber, gridRow, blockEntries);
@@ -447,7 +447,7 @@ export async function renderModuleList(_target: HTMLElement, _semesters: Semeste
 }
 
 
-export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _showBackLink = true): void {
+export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _showBackLink: boolean = true): void {
   const article: HTMLElement = createElement("article");
   _target.replaceChildren();
   appendModuleHeader(article, _module, _showBackLink);
@@ -483,7 +483,10 @@ export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGr
 
 export function renderError(_target: HTMLElement, _title: string, _message: string): void {
   const box: HTMLDivElement = createElement("div", "notice");
-  _target.replaceChildren(); appendText(box, "h1", _title); appendText(box, "p", _message); _target.append(box);
+  _target.replaceChildren();
+  appendText(box, "h1", _title);
+  appendText(box, "p", _message);
+  _target.append(box);
 }
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {

@@ -2,7 +2,7 @@ import type { SpecificParagraph, SpecificSubparagraph, SpecificsData } from "./t
 
 const specificsCache: Map<string, Promise<SpecificsData>> = new Map<string, Promise<SpecificsData>>();
 
-export async function loadSpecifics(_target: HTMLElement, _reference = "./specifics.json", _headingTag: "h1" | "h2" = "h1"): Promise<void> {
+export async function loadSpecifics(_target: HTMLElement, _reference: string = "./specifics.json", _headingTag: "h1" | "h2" = "h1"): Promise<void> {
   try {
     const data: SpecificsData = await fetchSpecifics(_reference);
     renderSpecifics(_target, data, _headingTag);
