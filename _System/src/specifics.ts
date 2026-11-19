@@ -11,7 +11,7 @@ export async function loadSpecifics(_target: HTMLElement, _reference: string = "
   }
 }
 
-export async function loadProgrammeMetadata(_reference = "./specifics.json"): Promise<void> {
+export async function loadProgrammeMetadata(_reference: string = "./specifics.json"): Promise<void> {
   const data: SpecificsData = await fetchSpecifics(_reference);
   const programmeName: string = getProgrammeName(data.programme);
   const isSpecificsPage: boolean = document.body.classList.contains("specifics-page");
