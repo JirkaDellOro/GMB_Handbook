@@ -1,4 +1,4 @@
-import type { CurriculumCell, CurriculumData, CurriculumPlacement, DetailGridRows, DetailGridValue, ModuleComponent, ModuleData, SemesterGroup, StudyTableEntry, StudyTableRange } from "./types.js";
+import type { CurriculumCell, CurriculumData, CurriculumPlacement, DetailGridRows, DetailGridValue, ModuleComponent, ModuleData, SemesterGroup, StudyStage, StudyTableEntry, StudyTableRange } from "./types.js";
 
 function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
   const node: HTMLElementTagNameMap[K] = document.createElement(_tag);
@@ -14,7 +14,7 @@ function appendText(_parent: HTMLElement, _tag: keyof HTMLElementTagNameMap, _te
 }
 function addList(_parent: HTMLElement, _items: string[] = []): void {
   const list: HTMLUListElement = createElement("ul");
-  for (const item of _items) {
+  for (const item: string of _items) {
     appendText(list, "li", item);
   }
   _parent.append(list);
@@ -43,7 +43,7 @@ function createCurriculumHeadings(_columns: string[]): HTMLElement {
   const headings: HTMLDivElement = createElement("div", "curriculum-headings");
   headings.classList.add(`curriculum-columns-${_columns.length}`);
   headings.append(createElement("span"));
-  for (const name of _columns) {
+  for (const name: string of _columns) {
     appendText(headings, "span", name);
   }
   headings.append(createElement("span"));
@@ -61,7 +61,7 @@ function createCurriculumGrid(_modules: ModuleData[], _curriculum: CurriculumDat
 }
 
 function appendSemesterRows(_grid: HTMLElement): void {
-  for (let semester = 7; semester >= 1; semester--) {
+  for (let semester: number = 7; semester >= 1; semester--) {
     const row: HTMLOutputElement = createElement("output", undefined, String(semester));
     row.style.gridColumn = "1";
     row.style.gridRow = String(8 - semester);
@@ -70,7 +70,7 @@ function appendSemesterRows(_grid: HTMLElement): void {
 }
 
 function appendStudyStages(_grid: HTMLElement, _curriculum: CurriculumData): void {
-  for (const stageData of _curriculum.studyStages) {
+  for (const stageData: StudyStage of _curriculum.studyStages) {
     const stage: HTMLHeadingElement = createElement("h2", undefined, stageData.title);
     const firstRow: number = 8 - stageData.lastSemester;
     const rowSpan: number = stageData.lastSemester - stageData.firstSemester + 1;
@@ -82,7 +82,7 @@ function appendStudyStages(_grid: HTMLElement, _curriculum: CurriculumData): voi
 
 function createCurriculumCells(_modules: ModuleData[], _curriculum: CurriculumData): Map<string, CurriculumCell> {
   const cells: Map<string, CurriculumCell> = new Map<string, CurriculumCell>();
-  for (const module of _modules) {
+  for (const module: ModuleData of _modules) {
     const position: CurriculumData["modules"][string] | undefined = _curriculum.modules[module.sourceRef ?? module.id];
     if (!position) continue;
     const placements: CurriculumPlacement[] = position.placements ?? [position as CurriculumPlacement];
@@ -92,7 +92,7 @@ function createCurriculumCells(_modules: ModuleData[], _curriculum: CurriculumDa
 }
 
 function addModulePlacements(_cells: Map<string, CurriculumCell>, _module: ModuleData, _position: CurriculumData["modules"][string], _placements: CurriculumPlacement[], _columns: string[]): void {
-  for (const placement of _placements) {
+  for (const placement: CurriculumPlacement of _placements) {
     const semester: number = Number(placement.semester ?? _module.semester);
     const column: number = _columns.indexOf(placement.column);
     if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
@@ -117,7 +117,7 @@ function createCurriculumCellEntry(_module: ModuleData, _semester: number, _plac
 }
 
 function appendCurriculumCells(_grid: HTMLElement, _cells: Map<string, CurriculumCell>): void {
-  for (const cell of _cells.values()) {
+  for (const cell: CurriculumCell of _cells.values()) {
     if (isSpecializationCell(cell)) {
       _grid.append(createSpecializationCell(cell));
     } else {
@@ -135,7 +135,7 @@ function createSpecializationCell(_cell: CurriculumCell): HTMLElement {
   container.style.gridColumn = _cell.gridColumn;
   container.style.gridRow = String(_cell.row);
   container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].moduleNumber}`));
-  for (const entry of _cell.entries) {
+  for (const entry: CurriculumCell["entries"][number] of _cell.entries) {
     const link: HTMLAnchorElement = createElement("a", "curriculum-specialization-track", entry.track);
     link.href = createModuleUrl(entry.module);
     link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
@@ -232,16 +232,16 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], 
   const ranges: StudyTableRange[] = _curriculum?.studyTables ?? studyTableRanges;
   const semesterModules: Map<number, ModuleData[]> = createSemesterModuleMap(_modules, _curriculum);
   const semesterCredits: Map<number, number> = calculateSemesterCredits(semesterModules, _curriculum);
-  for (const range of ranges) {
+  for (const range: StudyTableRange of ranges) {
     _target.append(createStudyTableRange(range, semesterModules, semesterCredits, _curriculum));
   }
 }
 
 function createSemesterModuleMap(_modules: ModuleData[], _curriculum?: CurriculumData): Map<number, ModuleData[]> {
   const semesterModules: Map<number, ModuleData[]> = new Map<number, ModuleData[]>();
-  for (const module of _modules) {
+  for (const module: ModuleData of _modules) {
     const semesters: number[] = getModuleSemesters(module, _curriculum);
-    for (const semester of semesters) {
+    for (const semester: number of semesters) {
       if (!isValidSemester(semester)) continue;
       const group: ModuleData[] = semesterModules.get(semester) ?? [];
       group.push(module);
@@ -354,7 +354,7 @@ function appendStudyTableRows(_grid: HTMLElement, _entries: StudyTableEntry[], _
     const blockEntries: StudyTableEntry[] = collectBlockEntries(_entries, index);
     const blockNumber: number | undefined = blockEntries[0].moduleNumber;
     appendStudyBlockLabel(_grid, blockNumber, gridRow, blockEntries);
-    for (const entry of blockEntries) {
+    for (const entry: StudyTableEntry of blockEntries) {
       gridRow += appendStudyModule(_grid, entry, blockNumber, _hasBlocks, gridRow);
     }
     index += blockEntries.length;
@@ -403,7 +403,7 @@ function createStudyModuleCell(_entry: StudyTableEntry, _blockNumber: number | u
 }
 
 function appendStudyComponentRows(_grid: HTMLElement, _module: ModuleData, _components: (ModuleComponent | undefined)[], _hasBlocks: boolean, _gridRow: number): void {
-  for (let index = 0; index < _components.length; index++) {
+  for (let index: number = 0; index < _components.length; index++) {
     const values: DetailGridValue[] = createStudyComponentValues(_module, _components[index]);
     appendStudyComponentValues(_grid, values, _hasBlocks, _gridRow + index);
   }
@@ -462,10 +462,10 @@ export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
 
 export async function renderModuleList(_target: HTMLElement, _semesters: SemesterGroup[], _loadModule: (_moduleReference: string) => Promise<ModuleData>): Promise<void> {
   _target.replaceChildren();
-  for (const semester of _semesters) {
+  for (const semester: SemesterGroup of _semesters) {
     const group: HTMLElement = section(semester.title, _target);
     const modules: ModuleData[] = await Promise.all(semester.modules.map((_moduleReference: string): Promise<ModuleData> => _loadModule(_moduleReference)));
-    for (const module of modules) {
+    for (const module: ModuleData of modules) {
       group.append(renderModuleTile(module));
     }
   }
@@ -495,7 +495,7 @@ export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGr
   for (const semester of _semesters) {
     const group: HTMLElement = createElement("section", "module-detail-semester");
     appendText(group, "h2", semester.title);
-    for (const reference of semester.modules) {
+    for (const reference: string of semester.modules) {
       const module: ModuleData | undefined = modulesByReference.get(reference);
       if (!module) continue;
       const entry: HTMLDivElement = createElement("div", "module-detail-entry");
@@ -622,7 +622,7 @@ function renderPeople(_article: HTMLElement, _module: ModuleData): void {
   responsible.append(createElement("span", undefined, "Person responsible for module: "));
   responsible.append(document.createTextNode(_module.responsible_person || "—"));
   people.append(responsible);
-  for (const lecturer of _module.lecturers ?? []) {
+  for (const lecturer: NonNullable<ModuleData["lecturers"]>[number] of _module.lecturers ?? []) {
     appendLecturer(people, _module, lecturer);
   }
 }
@@ -640,7 +640,7 @@ function appendLecturer(_parent: HTMLElement, _module: ModuleData, _lecturer: No
 function renderReadingList(_article: HTMLElement, _module: ModuleData): void {
   const reading: HTMLElement = section("Reading List", _article);
   const list: HTMLUListElement = createElement("ul", "reading-list");
-  for (const item of _module.reading_list ?? []) {
+  for (const item: NonNullable<ModuleData["reading_list"]>[number] of _module.reading_list ?? []) {
     appendText(list, "li", item.reference);
   }
   reading.append(list);
@@ -662,7 +662,7 @@ function createDetailGrid(_className: string, _headers: string[], _rows: DetailG
 }
 
 function appendDetailGridHeaders(_grid: HTMLElement, _headers: string[]): void {
-  for (const title of _headers) {
+  for (const title: string of _headers) {
     const cell: HTMLElement = createElement("header", undefined, title);
     cell.setAttribute("role", "columnheader");
     _grid.append(cell);
@@ -670,8 +670,8 @@ function appendDetailGridHeaders(_grid: HTMLElement, _headers: string[]): void {
 }
 
 function appendDetailGridRows(_grid: HTMLElement, _rows: DetailGridRows): void {
-  for (const row of _rows) {
-    for (const value of row) {
+  for (const row: DetailGridValue[] of _rows) {
+    for (const value: DetailGridValue of row) {
       appendDetailGridCell(_grid, value);
     }
   }

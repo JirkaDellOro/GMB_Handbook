@@ -51,7 +51,7 @@ function renderSpecifics(_target: HTMLElement, _data: SpecificsData, _headingTag
   heading.append(createElement(_headingTag, undefined, _data.title));
   heading.append(createElement("p", "specifics-programme", _data.programme));
   const content: HTMLDivElement = createElement("div", "specifics-content");
-  _data.paragraphs.forEach((_paragraph, _index) => content.append(createParagraph(_paragraph, _index + 1)));
+  _data.paragraphs.forEach((_paragraph: SpecificParagraph, _index: number): void => content.append(createParagraph(_paragraph, _index + 1)));
   _target.append(heading, content);
   if (_data.lastChange) _target.append(createElement("p", "specifics-last-change", _data.lastChange));
 }
@@ -69,7 +69,7 @@ function createParagraph(_paragraph: SpecificParagraph, _number: number): HTMLEl
 function createSubparagraphs(_items: SpecificSubparagraph[]): HTMLOListElement {
   const list: HTMLOListElement = createElement("ol", "specific-subparagraphs");
   list.type = "a";
-  for (const item of _items) {
+  for (const item: SpecificSubparagraph of _items) {
     const entry: HTMLLIElement = createElement("li");
     entry.append(createElement("p", undefined, item.text));
     list.append(entry);

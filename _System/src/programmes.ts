@@ -44,7 +44,7 @@ async function createProgrammeCardData(_entry: ProgrammeEntry): Promise<Programm
 
 function renderProgrammes(_target: HTMLElement, _programmes: ProgrammeCardData[]): void {
   _target.replaceChildren();
-  for (const programme of _programmes) {
+  for (const programme: ProgrammeCardData of _programmes) {
     _target.append(createProgrammeCard(programme));
   }
 }

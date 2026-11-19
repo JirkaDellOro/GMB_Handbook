@@ -53,9 +53,9 @@ function attachPrintControl(): void {
 
   button.addEventListener("click", () => {
     const previousStates: boolean[] = panels.map((_panel: HTMLDetailsElement): boolean => _panel.open);
-    panels.forEach(_panel => _panel.open = true);
+    panels.forEach((_panel: HTMLDetailsElement): void => _panel.open = true);
     window.addEventListener("afterprint", () => {
-      panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
+      panels.forEach((_panel: HTMLDetailsElement, _index: number): void => _panel.open = previousStates[_index]);
     }, { once: true });
     window.print();
   });
