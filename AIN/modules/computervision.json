@@ -1,0 +1,80 @@
+{
+  "id": "computervision",
+  "title": "Computer Vision",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Computer Vision",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 45
+    },
+    {
+      "label": "b)",
+      "name": "Computer Vision, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Grundlagen der Computer Vision und Bildverarbeitung darlegen.",
+        "die grundsätzliche Funktionsweise von Computer Vision-Algorithmen erklären.",
+        "Grundlegende Konzepte von Deep Learning und dessen Anwendungen auf visuelle Daten beschreiben."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Bildverarbeitungstechniken zur Vorverarbeitung von Bilddaten nutzen.",
+        "Computer Vision für Aufgaben wie Segmentierung, Rekonstruktion und Objekterkennung einsetzen.",
+        "kreative Lösungen für praktische Probleme im Team finden und prototypisch implementieren."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "bestehende Bildverarbeitungsanwendungen kritisch untersuchen.",
+        "Ethische und gesellschaftliche Auswirkungen von Computer Vision-Systemen reflektieren."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "die Stärken und Schwächen von Bildverarbeitungsmethoden bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "die Bildentstehung in einer Kamera: Beleuchtung und Perspektive",
+        "Grundlagen digitaler und analoger Kameratechnik und entsprechender Übertragungsverfahren",
+        "wesentliche Einflussfaktoren auf Bildqualität, Abbildungsschärfe, Helligkeit, Auflösung und Wiederholrate",
+        "Farbräume und Farbraumtransformationen",
+        "lineare und nichtlineare Filter und Faltungsoperationen",
+        "Merkmale (Ecken, Kanten und Konturen) und Schwellwertoperationen",
+        "Eigenschaften von Regionen, Kanten und Konturen",
+        "morphologische Operationen auf Regionen",
+        "die Fouriertransformation und frequenzabhängige Filter 8"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

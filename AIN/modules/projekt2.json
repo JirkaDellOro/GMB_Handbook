@@ -1,0 +1,61 @@
+{
+  "id": "projekt2",
+  "title": "Projekt 2",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Projekt 2",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "0 h",
+      "self_study_hours": "120",
+      "class_size": 45
+    },
+    {
+      "label": "b)",
+      "name": "Projekt 2, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "48.75",
+      "class_size": 45
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die im Studium erworbenen Kenntnisse und Fähigkeiten mit praktischen Erfahrungen bereichern und damit ein besseres Verständnis für die Projektarbeit (Organisation, Methodik und soziale Komponente der Projektarbeit) entwickeln."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "den zur Durchführung eines Projekts notwendigen Informationsbedarf ermitteln und die erforderlichen Ergebnisse planvoll und methodengestützt erarbeiten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "im Team und innerhalb einer vorgegebenen Frist eine Lösung für eine einschlägige Aufgabenstellung aus der Praxis bearbeiten. Dabei werden sie die im bisherigen Verlauf des Studiums, insbesondere im Modul Projekt 1 erworbenen Kenntnisse angewandt und vertieft."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, so dass sie geeignete Schwerpunkte für die Thesis-Arbeit setzen können.",
+        "die Ergebnisse ihrer Arbeit auf das Wesentliche reduzieren, präsentieren und bewerten."
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

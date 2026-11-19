@@ -10,5 +10,11 @@
     "title": "Games & Immersive Media",
     "degree": "Bachelor of Arts · SPO Version 11",
     "path": "./GMBcorrect/index.html"
+  },
+  {
+    "code": "AIN",
+    "title": "Allgemeine Informatik",
+    "degree": "Bachelor of Science · SPO Version 14",
+    "path": "./AIN/index.html"
   }
 ]

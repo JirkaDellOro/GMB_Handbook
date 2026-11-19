@@ -1,0 +1,79 @@
+{
+  "id": "rechnerarchitektur",
+  "title": "Rechnerarchitektur und Betriebssysteme",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Rechnerarchitektur und",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 60
+    },
+    {
+      "label": "b)",
+      "name": "Rechnerarchitektur und",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die grundlegenden Eigenschaften und Komponenten eines Computers benennen.",
+        "die Speicherstrukturierung nach Code, Data, BSS, Stack und Heap erläutern.",
+        "gängige synchrone und asynchrone Kommunikationsprotokolle erklären.",
+        "Methoden und Aufgaben von Betriebssystemen verdeutlichen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "typische Probleme erkennen, die sich durch Nebenläufigkeit ergeben.",
+        "die Zusammenarbeit von Programmen und Betriebssystemen verstehen.",
+        "die Abarbeitung von normalen Befehlen, Interrupts und Ein-Ausgabe begreifen.",
+        "das Zusammenspiel von CPU, RAM, ROM, E/A und Kommunikationsbus durchschauen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Betriebssystemfunktionen anwenden.",
+        "die grundlegenden Ein-Ausgabe Elemente und Interrupt-Steuerung eines Computers effizient in einer Anwendung konfigurieren und in Betrieb nehmen.",
+        "Rechnerkomponenten etwa über I2C im Bereich der Kommunikation nutzen."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "wichtige Systemeigenschaften wie CPU- und interne Busarchitektur einschätzen und bewerten.",
+        "Betriebssysteme anhand grundlegender Charakteristika analysieren und kritisch beurteilen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Prozessorarchitekturen: von Neumann und Harvard, RISC und CISC",
+        "Besonderheiten von C in der maschinennahen Programmierung",
+        "Grundlagen von Assemblersprachen",
+        "vektorisierter Interrupt, Unterprogramme und Stack 53"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

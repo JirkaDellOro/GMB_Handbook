@@ -1,0 +1,90 @@
+{
+  "id": "thesis",
+  "title": "Thesis",
+  "semester": 7,
+  "workload_hours": 540,
+  "credits": 18,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Thesis Vorbereitungsseminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75
+    },
+    {
+      "label": "b)",
+      "name": "Bachelorarbeit",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "0 h",
+      "self_study_hours": "360",
+      "class_size": 75
+    },
+    {
+      "label": "c)",
+      "name": "Thesis Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "ein einschlägiges anwendungsorientiertes Thema der Informatik fachlich darstellen und beurteilen"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "den zur Bearbeitung notwendigen Informationsbedarf im Wesentlichen selbstständig ermitteln, einschlägige Quellen dafür identifizieren, die erforderlichen Informationen aus den Quellen extrahieren und Schlussfolgerungen daraus ziehen,",
+        "innerhalb einer vorgegebenen Frist das ausgewählte Thema wissenschaftlich und selbstständig bearbeiten,"
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "zu den von anderen Studierenden erarbeiteten Ergebnissen Stellung nehmen (im Rahmen des Seminars).",
+        "die wesentlichen Ergebnisse ihrer Arbeit begründen, auf das Wesentliche reduzieren und präsentieren.",
+        "ihr Wissen systematisch kombinieren, um Lösungsstrategien für komplexe fachliche Fragestellungen zu entwickeln und zu dokumentieren."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "description": "1sbKO (Kolloquium)",
+      "graded_assessment": false,
+      "credits": 3,
+      "code": "1sbKO"
+    },
+    {
+      "component": "b)",
+      "description": "1T (Thesis)",
+      "graded_assessment": true,
+      "credits": 12,
+      "code": "1T"
+    },
+    {
+      "component": "c)",
+      "description": "1sbPN (Präsentation)",
+      "graded_assessment": true,
+      "credits": 3,
+      "code": "1sbPN"
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "modellierungautonom",
+  "title": "Modellierung Autonomer Systeme",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Modellierung Autonomer Systeme",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "90",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Modellierung Autonomer Systeme,",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "45",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "ROS2-Komponenten und -Tools benennen und beschreiben"
+      ]
+    },
+    {
+      "category": "Verstehen",
+      "items": [
+        "ROS2-Programme in einer Simulation veranschaulichen und erklären"
+      ]
+    },
+    {
+      "category": "Anwenden",
+      "items": [
+        "ROS2-Kommunikation für die Steuerung eines Roboters gebrauchen",
+        "verschiedene Sensordaten für die Navigation im Raum nutzen",
+        "Jupyter Notebooks mit Python und ROS2 erstellen und erklären"
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ein ROS2-basiertes Programm für die autonome Navigation eines Roboters entwickeln und modifizieren"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "ROS2-Architektur: Master, nodes, topics, messages, services, parameters und actions",
+        "Console commands: Navigation und Analyse von ROS2 System und catkin workspace",
+        "ROS2-packages erzeugen: Struktur, launch-files, und best practices",
+        "ROS2-Python client library (rospy): Eigene ROS2 Python Programme erstellen",
+        "Simulating mit ROS2: Gazebo simulator, robot models (URDF) und simulation environments (SDF) Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet. 35"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

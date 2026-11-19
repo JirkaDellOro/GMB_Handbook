@@ -1,0 +1,68 @@
+{
+  "id": "fortgeschritteneprogrammierung",
+  "title": "Fortgeschrittene Programmierung für Medieninformatiker",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Fortgeschrittene Programmierung für",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Fortgeschrittene Programmierung für",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "wesentliche Technologien für den Bereich der Medienanwendungen benennen und deren Funktionsweise beschreiben."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "aktuelle Technologien bei der Entwicklung von Medienanwendungen einordnen und bewerten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "moderne Medienanwendungen mit modernen Technologien entwickeln.",
+        "zu einer gegebenen Aufgabenstellung geeignete Technologien auswählen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Frontend-Frameworks für Web-Anwendungen",
+        "Web-Komponenten",
+        "WebAssembly",
+        "Micro Frontends",
+        "Komponenten-Bibliotheken für Web-Anwendungen",
+        "Persistenzframeworks",
+        "Backend-Technologien im Bereich IoT: MQTT, Time-Series-Datenbanken Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt."
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

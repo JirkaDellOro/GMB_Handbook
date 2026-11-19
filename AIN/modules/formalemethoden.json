@@ -1,0 +1,70 @@
+{
+  "id": "formalemethoden",
+  "title": "Formale Methoden",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Formale Methoden",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 45
+    },
+    {
+      "label": "b)",
+      "name": "Formale Methoden, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "grundlegende formale Methoden der theoretischen Informatik benennen und ihre spezifischen Eigenschaften beschreiben.",
+        "verschiedene Berechnungskonzepte darstellen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die jeweiligen charakteristischen Eigenschaften der behandelten Automaten, Grammatiken und regulären Ausdrücke erklären und Zusammenhänge erläutern.",
+        "Gemeinsamkeiten und Unterschiede verschiedener Ansätze zur Berechenbarkeit wiedergeben und die Grenzen der Berechenbarkeit aufzeigen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ausgewählte formale Methoden aus dem Bereich der theoretischen Informatik anwenden – insbesondere im Bereich Compilerbau und der Modellierung von dynamischen Systemen – und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Alphabete, Wörter, Wortmengen, Wortfunktionen",
+        "Reguläre Ausdrücke",
+        "Endliche Automaten",
+        "Kellerautomaten",
+        "Grammatiken",
+        "Berechenbarkeit",
+        "Turing-Maschinen",
+        "Primitiv-rekursive und µ-rekursive Funktionen Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt."
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

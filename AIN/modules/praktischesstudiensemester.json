@@ -1,0 +1,73 @@
+{
+  "id": "praktischesstudiensemester",
+  "title": "Praktisches Studiensemester",
+  "semester": 5,
+  "workload_hours": 900,
+  "credits": 30,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Einführung Praktisches",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75
+    },
+    {
+      "label": "b)",
+      "name": "Praktisches Studiensemester",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "0 h",
+      "self_study_hours": "720",
+      "class_size": 75
+    },
+    {
+      "label": "c)",
+      "name": "Praktisches Studiensemester, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die im Studium erworbenen Kenntnisse und Fähigkeiten in einem IT-Unternehmen erproben und vertiefen sowie um die dort gewonnenen Erfahrungen ergänzen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "ein umfassendes Verständnis für die IT-Praxis (u. a. Struktur und Funktionsweise eines IT-Unternehmens) gewinnen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ihre Fähigkeiten einsetzen, um in einem Team gemeinsam und verantwortlich an Lösungen zu arbeiten."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "konkrete Vorstellungen über die möglichen Arbeitsfelder von Informatikerinnen und Informatikern entwickeln.",
+        "die Ergebnisse ihrer Arbeit sowie die dabei gewonnenen Erkenntnisse auf das Wesentliche reduzieren und präsentieren.",
+        "ihr Fachwissen und ihre Erfahrungen systematisch nutzen, um Lösungsstrategien für komplexe Fragestellungen zu entwickeln.",
+        "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, um geeignete Schwerpunkte für das weitere Studium und die Bachelorarbeit auszuwählen sowie um konkrete Vorstellungen für ihre spätere Berufswahl zu entwickeln."
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

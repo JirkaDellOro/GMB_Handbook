@@ -1,0 +1,84 @@
+{
+  "id": "maschinelleslernen",
+  "title": "Maschinelles Lernen",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Maschinelles Lernen",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 60
+    },
+    {
+      "label": "b)",
+      "name": "Maschinelles Lernen, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "grundlegende Begriffe, Paradigmen und Konzepte des maschinellen Lernens aufzählen und wiedergeben.",
+        "zentrale Modelle und Algorithmen nennen und erläutern.",
+        "Einsatzmöglichkeiten und Grenzen verschiedener ML-Ansätze aufzählen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Methodenevolution der letzten Jahrzehnte erläutern.",
+        "erklären, wann und warum bestimmte Algorithmen für unterschiedliche Problemstellungen geeignet sind.",
+        "die Relevanz von Rahmenparametern (z. B. Datenqualität, Feature-Auswahl, Modellkomplexität) erklären."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ML-Modellanalysen in Python (z. B. Jupyter Notebooks) mit etablierten Libraries anwenden.",
+        "geeignete Modelle und Hyperparameter auswählen und auf Aufgabenstellungen übertragen.",
+        "die Verfahren auf realitätsnahe Beispielprobleme und Datensätze anwenden."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "Modelle anhand relevanter Gütemaße analysieren und Unterschiede ableiten.",
+        "Stärken und Schwächen verschiedener Modelle aufdecken und Ursachen ermitteln.",
+        "Ergebnisse statistisch und anwendungsfallbezogen (z. B. soziologisch, ökonomisch) interpretieren."
+      ]
+    },
+    {
+      "category": "Synthese",
+      "items": [
+        "eigene Recherchen zu State-of-the-Art-Ansätzen durchführen und kombinieren.",
+        "mehrere Verfahren kombinieren und neue Lösungswege vorschlagen.",
+        "Ende-zu-Ende-ML-Pipelines entwickeln und konstruieren."
+      ]
+    },
+    {
+      "category": "Evaluation / Bewertung",
+      "items": [
+        "Entscheidungen hinsichtlich Modellarchitektur und Fine-Tuning beurteilen und reflektieren.",
+        "Alternativen abwägen und für konkrete Anwendungsfälle entscheiden.",
+        "ethische, ökonomische, rechtliche und gesellschaftliche Aspekte bewerten. 28"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

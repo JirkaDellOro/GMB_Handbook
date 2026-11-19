@@ -1,0 +1,82 @@
+{
+  "id": "mathe2",
+  "title": "Mathematik für Informatiker 2",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Mathematik für Informatiker 2",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 75
+    },
+    {
+      "label": "b)",
+      "name": "Mathematik für Informatiker 2, Übung",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "algebraische Strukturen mit algorithmischen Anwendungen in der Informatik benennen und diesen ihre Eigenschaften/Invarianten zuordnen.",
+        "Methoden und Verfahren der Mathematik in der Anwendung bei informationsverarbeitenden Aufgabenstellungen benennen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "Eigenschaften / Invarianten von algebraischen Strukturen mit algorithmischen Anwendungen der Informatik verstehen und berechnen.",
+        "mathematische Lösungsansätze für Problemstellungen aus der angewandten Informatik nachvollziehen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "algebraische Strukturen mit algorithmischen Anwendungen aus dem Bereich der Informatik anwenden und bewerten.",
+        "mathematische Verfahren auf konkrete Beispiele der Datenverarbeitung und -analyse anwenden.",
+        "mathematische Methoden zur optimalen Parameteranpassung einsetzen."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "mathematische Anforderungen und Lösungsansätze aus dem Bereich der Informatik darstellen und analysieren."
+      ]
+    },
+    {
+      "category": "Evaluation / Bewertung",
+      "items": [
+        "Ergebnisse mathematischer Lösungsansätze auf Fragestellungen aus der Informatik bewerten und interpretieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Angewandte Lineare Algebra (Orthogonalbasen, lineare Abbildungen und Matrizen, Kenngrößen von Matrizen, Matrizen im Umfeld der Statistik und Codierung und Datenanalyse)",
+        "Mathematische Strukturen (Algebraische Strukturen, Permutationen, Komplexe Zahlen, Restklassengruppen)",
+        "Methoden auf Basis diskreter Strukturen (Differentialrechnung mehrdimensionaler polynomialer Funktionen, mehrdimensionales Newton-Verfahren, Gradientenverfahren, Multivariate Analyse, Multidimensionale Skalierung)",
+        "Anwendungsbeispiele: Mathematische Grundlage für",
+        "Rendering",
+        "Bildverarbeitung (JPEG) 33"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

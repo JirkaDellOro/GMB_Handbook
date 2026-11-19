@@ -1,0 +1,28 @@
+{
+  "id": "wpm4",
+  "title": "Wahlpflichtmodul 4",
+  "semester": 6,
+  "credits": 6,
+  "workload_hours": 180,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "individual_component_content": [
+    {
+      "items": [
+        "Es dürfen ausschließlich Lehrveranstaltungen der Fakultät 1 oder anderer Fakultäten der Hochschule Furtwangen gewählt werden, die mit einer Prüfungsleistung abgeschlossen werden. Fakultätsexterne Lehrveranstaltungen bedürfen der Genehmigung durch den Studiendekan.",
+        "Die gewählten Lehrveranstaltungen müssen zusammen 6 Leistungspunkte umfassen."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "code": "PL",
+      "description": "Prüfungsleistung aus den gewählten Lehrveranstaltungen",
+      "graded_assessment": true,
+      "credits": 6
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

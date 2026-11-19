@@ -1,0 +1,76 @@
+{
+  "id": "opensource",
+  "title": "Open Source-basierte Softwareentwicklung",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Open Source-basierte",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Open Source-basierte",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "gängige Werkzeuge der verteilten Softwareentwicklung benennen.",
+        "eine Entwicklungsarchitektur skizzieren."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "werkzeugunabhängige Strukturen ableiten und auf andere Plattformen übertragen (z.B. Linux, Windows, Cloud- Dienste).",
+        "Werkzeuge evaluieren und diese in eigene Projekte integrieren."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ein Softwareprojekt mit aktuellen Open-Source-Werkzeugen einrichten.",
+        "Fehlerquellen und Konflikte in Softwareprojekten erkennen und beseitigen.",
+        "Softwareänderungen verwalten, kommunizieren und implementieren.",
+        "einen automatisierten Softwareerstellungsprozess planen und ausführen.",
+        "Teilaspekte über mehrere Wochen zu einer Systemlandschaft rekonstruieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Beschreibung der Systemlandschaft",
+        "Versionsverwaltung: zentral (subversion)",
+        "Versionsverwaltung: verteilt (git)",
+        "Build-Management (maven)",
+        "Softwaretests (junit, easymock, hamcrest)",
+        "Fehler- und Änderungmanagement (gitlab)",
+        "Continuous Integration (jenkins)",
+        "Continuous Delivery und DevOps (docker, puppet, vagrant)",
+        "Software Configuration Management (nexus)",
+        "Messung der Softwarequalität über den gesamten Lebenszyklus (Metriken, sonar, checkstyle) 39"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

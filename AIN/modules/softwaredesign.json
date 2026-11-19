@@ -1,0 +1,73 @@
+{
+  "id": "softwaredesign",
+  "title": "Software Design",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Software Design",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 60
+    },
+    {
+      "label": "b)",
+      "name": "Software Design, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "gängige Vorgehensmodelle für die ingenieurmäßige Entwicklung von Softwaresystemen und ihre Charakteristika wiedergeben.",
+        "Prozessschritte, Methoden und Techniken des Requirements Engineering wiedergeben.",
+        "Architekturstile und Architekturmuster wiedergeben.",
+        "Entwurfsmuster wiedergeben.",
+        "Prozessschritte, Methoden und Techniken der Qualitätssicherung für Softwaresysteme wiedergeben.",
+        "Methoden der Bereitstellung und Auslieferung der Softwaresysteme wiedergeben."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Prozessaktivitäten und Phasen der Softwareentwicklung erklären und voneinander abgrenzen.",
+        "gängige Vorgehensmodelle bezüglich ihrer Stärken, Schwächen und typischen Einsatzgebiete erklären.",
+        "die Bedeutung des Requirements Engineering bei der Erstellung von Softwaresystemen erklären und die prinzipiellen Aktivitäten sowie deren Zusammenspiel erläutern.",
+        "Architekturstile und Architekturmuster bezüglich ihrer Stärken, Schwächen und typischen Einsatzgebiete erklären.",
+        "die Rolle von Entwurfsmustern bei der technischen Realisierung von wiederkehrenden Entwurfsproblemen erklären und ihre typischen Einsatzbeispiele erläutern.",
+        "Prozessschritte, Methoden, Techniken der Qualitätssicherung für Softwaresysteme bezüglich ihrer Stärken, Schwächen und typischen Einsatzgebiete erklären.",
+        "Methoden der Integration, Bereitstellung und Auslieferung von Softwaresystemen erklären."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "geeignete Prozessschritte, Methoden, Techniken für die Entwicklung von Softwaresystemen anwenden.",
+        "Benutzer- und Systemanforderungen für eine gegebene Aufgabenstellung sammeln, analysieren, dokumentieren und validieren.",
+        "eine gegebene Aufgabenstellung mit geeigneten Architekturstilen und Architekturmustern modellieren und dokumentieren.",
+        "eine gegebene Aufgabenstellung mit geeigneten Entwurfsmustern zielgerichtet anwenden.",
+        "Qualität eines Softwaresystem durch Reviews und Testen sichern."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": []
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

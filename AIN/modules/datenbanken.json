@@ -1,0 +1,72 @@
+{
+  "id": "datenbanken",
+  "title": "Datenbanken",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Datenbanken",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 45
+    },
+    {
+      "label": "b)",
+      "name": "Datenbanken, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "self_study_hours": "45",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die Begriffe ‚Datenbankmanagementsystem‘ und ‚Datenbank‘ unterscheiden und erklären.",
+        "die vielfältigen Aufgaben und Eigenschaften eines Datenbankmanagementsystems beschreiben."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "den Zusammenhang zwischen der Datenbanktheorie und den mathematischen Grundlagen erklären.",
+        "einsehen, wann der Datenbestand einer Datenbank frei von Redundanzen und Inkonsistenzen ist."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "eine Datenbank selbstständig konzeptionell entwerfen.",
+        "den Entwurf einer Datenbank mit Hilfe eines relationalen Datenbankmanagementsystems praktisch umsetzen.",
+        "die Abfragesprache SQL praktisch nutzen, um den Bestand der Datenbank zu ändern und Informationen aus der Datenbank zu ermitteln."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Grundsätzliche Eigenschaften von Datenbanken",
+        "Architekturen von Datenbanksystemen",
+        "Das relationale Modell",
+        "Entity-Relationship-Diagramme",
+        "SQL Teil 1: Anlegen von Tabellen und Definieren von Integritätsbedingungen",
+        "SQL Teil 2: insert, update, delete",
+        "SQL Teil 3: Die select-Anweisung: Aggregate, Gruppierungen, Unterabfragen und Joins",
+        "Normalisierung Praktische Umsetzung und Vertiefung der Vorlesungsinhalte durch Bearbeitung von Übungsaufgaben und praxisnaher Fallbeispiele 14"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

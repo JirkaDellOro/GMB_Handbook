@@ -1,0 +1,88 @@
+{
+  "id": "hci",
+  "title": "Human-Computer Interaction",
+  "module_code": "DM-2024-2833",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Human-Computer Interaction, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "90",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Human-Computer Interaction, Projekt",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "45",
+      "class_size": 30
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "User Experience, Usability und User-Centered Design beschreiben und einordnen."
+      ]
+    },
+    {
+      "category": "Verstehen",
+      "items": [
+        "Nutzeranforderungen mit deren menschlichen Hintergründen, Kognition/Perzeption und Abläufe in der Gestaltung interaktiver Systeme verstehen."
+      ]
+    },
+    {
+      "category": "Anwenden",
+      "items": [
+        "Spezifizierte Anforderungen in Gestaltungslösungen und Prototypen interaktiver Systeme umsetzen."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "Anforderungen, Projektergebnisse, Prozesse, Systeme und Gestaltungslösungen / Prototypen analysieren."
+      ]
+    },
+    {
+      "category": "Synthese",
+      "items": [
+        "Analysen, Konzepte und Anforderungen in Interaktionslösungen umsetzen."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "Interaktionsgestaltung und Projektergebnisse systematisch evaluieren und Verbesserungen finden."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Grundlagen HCI und Usability/User Experience: Bedeutung, Geschichte, Entwicklung",
+        "HCI-spezifische Grundlagen Kognition und Perzeption",
+        "Usability und User Experience",
+        "Nutzerzentrierte Gestaltung und User-/Human-Centered Design Process",
+        "Kontextfaktoren und Nutzungskontext in der Interaktion",
+        "Software Engineering interaktiver Systeme",
+        "User Research / Benutzeranforderungen erheben",
+        "Interaktionsdesign mit Information, Metaphern und Navigation",
+        "Prototyping und Interaktionstechnologien 26"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

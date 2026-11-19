@@ -1,0 +1,78 @@
+{
+  "id": "grundlagenmedieninformatik",
+  "title": "Grundlagen der Medieninformatik",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Grundlagen der Medieninformatik",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "90",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Grundlagen der Medieninformatik,",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "45",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die grundlegenden Konzepte und Methoden der Medieninformatik, einschließlich der mathematischen, technischen, gestalterischen und theoretischen Aspekte, beschreiben und einordnen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Herausforderungen und Lösungsansätze bei der Entwicklung und Anwendung medieninformatikbezogener Systeme verstehen und bewerten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "grundlegende Verfahren und Techniken der Medieninformatik auf praktische Problemstellungen anwenden."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "bestehende medieninformatikbezogene Systeme und Algorithmen hinsichtlich ihrer Funktionsweise, Effizienz und Eignung für verschiedene Anwendungsbereiche untersuchen und erklären."
+      ]
+    },
+    {
+      "category": "Synthese",
+      "items": [
+        "einfachere medieninformatikbezogene Systeme entwerfen und implementieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Grundlagen der Medieninformatik: Definition, Geschichte, Entwicklung",
+        "Mathematische Grundlagen: Geometrische Transformationen, Fourier-Transformation, Nyquist-Theorem",
+        "Technische Grundlagen: Digitale Signalverarbeitung, Sampling, Quantisierung, Bild- und Audiodaten",
+        "Gestalterische Grundlagen: Farbmodelle, Farbräume, Farbwahrnehmung",
+        "Theoretische Grundlagen: Informations- und Kommunikationstheorie, Kodierung, Kompression",
+        "Anwendungsgebiete der Medieninformatik: Computer Graphics, Computer Vision, Bildverarbeitung, Audioverarbeitung, Multimedia-Systeme Einführung in spezifische Software-Tools und Programmiersprachen für Medieninformatiker und deren Anwendung an praktischen Beispielen 24"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

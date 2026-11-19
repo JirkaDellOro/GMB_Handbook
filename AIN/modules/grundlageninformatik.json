@@ -1,0 +1,72 @@
+{
+  "id": "grundlageninformatik",
+  "title": "Grundlagen der Informatik",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Grundlagen der Informatik",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 45
+    },
+    {
+      "label": "b)",
+      "name": "Grundlagen der Informatik, Übung",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die grundlegenden Konzepte wichtiger Teilgebiete der Informatik benennen und voneinander unterscheiden.",
+        "einen praxisnahen Überblick über den Aufbau ihres Studiengangs und die inhaltlichen Schwerpunkte der verschiedenen Vorlesungen erhalten, was ihnen die Orientierung innerhalb des Studiums erleichtert."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "verschiedene Arten und Eigenschaften von Software beurteilen.",
+        "einen Überblick über verschiedene Programmierungsparadigmen und Methoden (z. B. Compilierung, Interpretierung usw.), mit denen Programme in Maschinensprache umgewandelt werden, erhalten",
+        "Vorgehensmodelle zur Softwareentwicklung und die Notwendigkeit, Software-Engineering zu betreiben, kennenlernen",
+        "wesentliche Konzepte der Informationsverarbeitung erläutern und sich in relevanten Zahlensystemen orientieren.",
+        "ein Verständnis von Boolescher Algebra und deren Einsatz in der Informatik erhalten.",
+        "den prinzipiellen Aufbau moderner, vernetzter Computersysteme darstellen, wesentliche Hardware- Komponenten einordnen und deren Funktionsweise erklären.",
+        "grundlegende Aufgaben und Dienste moderner Betriebssysteme darstellen und erläutern.",
+        "zentrale Konzepte der Theoretischen Informatik und des Compilerbaus beschreiben und anwenden.",
+        "eine Einführung in KI mit einem Überblick über verschiedene Verfahren des maschinellen Lernens erhalten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Programmierungsparadigmen",
+        "Einführung in Software Engineering",
+        "Grundlagen der Informationsdarstellung und Zahlensysteme",
+        "Boolesche Algebra mit einer Einführung in Rechnertechnik",
+        "Einführung in Rechnerarchitektur",
+        "Betriebssysteme",
+        "Rechnernetze",
+        "Einführung in den Compilerbau",
+        "Einführung in die KI 22"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

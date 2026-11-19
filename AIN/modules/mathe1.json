@@ -1,0 +1,89 @@
+{
+  "id": "mathe1",
+  "title": "Mathematik für Informatiker 1",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Mathematik für Informatiker 1",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "class_size": 75
+    },
+    {
+      "label": "b)",
+      "name": "Mathematik für Informatiker 1, Übung",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "18.75",
+      "class_size": 15
+    },
+    {
+      "label": "c)",
+      "name": "Grundlagen der Mathematik, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "11.25 h",
+      "self_study_hours": "18.75",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "mathematische und logische Strukturen identifizieren.",
+        "spezifische Eigenschaften mathematischer Strukturen wiedergeben.",
+        "einige Anwendungsszenarien mathematischer Strukturen benennen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "typische Fragestellungen aus der Informatik in Aufgabenstellungen aus der Mathematik umformulieren.",
+        "Zusammenhänge zwischen mathematischen Objekten und Strukturen erklären.",
+        "exakte mathematische Beweise nachvollziehen.",
+        "grundlegende Merkmale mathematischer und logischer Systeme erkennen und beschreiben."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "praxisbezogene Problemstellungen durch mathematische und logische Strukturen modellieren.",
+        "etablierte Lösungsverfahren gebrauchen, um abstrakte und praxisnahe Aufgabenstellungen zu lösen."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "mathematische und logische Strukturen analysieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Grundlegende mathematische Strukturen (Zahlbereiche, Mengen, insbesondere Intervalle, Polynome, Funktionen)",
+        "Boolesche Algebra (Boolesche Axiome, Schaltalgebra, insbesondere minimale Formen, Aussagenlogik, Einführung in die Prädikatenlogik, Relationen, insbesondere Ordnungen und Äquivalenzrelationen)",
+        "Lineare Algebra (Lineare Gleichungssysteme, Lösungsverfahren, Vektorrechnung, Determinanten, Euklidsche Geometrie)",
+        "Mathematische Grundlagen der Künstlichen Intelligenz",
+        "Anwendungsbeispiele:",
+        "Grundlagen der Bildverarbeitung",
+        "Codes (Gray, CRC, QR)",
+        "Einfaches Perzeptronenverfahren 31"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

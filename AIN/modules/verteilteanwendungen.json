@@ -1,0 +1,84 @@
+{
+  "id": "verteilteanwendungen",
+  "title": "Verteilte Anwendungen",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Verteilte Anwendungen",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Verteilte Anwendungen, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die wesentlichen technologischen Grundlagen verteilter Medienanwendungen benennen.",
+        "die Teilbausteine verteilter Anwendungen einordnen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "nebenläufig programmieren.",
+        "Programme implementieren, die mit Hilfe des TCP/IP-Stacks miteinander kommunizieren."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Medieninhalt in Web-Anwendungen integrieren.",
+        "eine Web-basierte Anwendung inklusive Datenbankanbindung implementieren."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "bestehende Softwarearchitekturen bezüglich der relevanten Aspekte untersuchen."
+      ]
+    },
+    {
+      "category": "Evaluation/Bewertung",
+      "items": [
+        "Softwarearchitekturen für verteilte Medienanwendungen bzgl. ihres Einsatzes in bestimmten Anwendungsfeldern einordnen und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "nebenläufige Programmierung",
+        "elementare Netzwerkkommunikation zwischen Computerprogrammen (TCP/IP-Stack)",
+        "Services, Anwendungsprotokolle",
+        "Medieninhalte und Medienformate",
+        "Web-Anwendungen, Medieninhalte in Web-Anwendungen",
+        "Datenbankanbindung",
+        "Benutzerverwaltung in verteilten Anwendungen",
+        "REST-APIs",
+        "AJAX, Single-Page-Applications Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt. 66"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

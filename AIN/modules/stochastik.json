@@ -1,0 +1,78 @@
+{
+  "id": "stochastik",
+  "title": "Stochastik",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Stochastik",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30
+    },
+    {
+      "label": "b)",
+      "name": "Stochastik, Übung",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die Grundbegriffe der Wahrscheinlichkeitslehre und Statistik sicher verwenden.",
+        "verschiedene diskrete und kontinuierliche Modelle für Wahrscheinlichkeitsräume benennen und parametrisieren.",
+        "Kenngrößen von zufallsbehafteten Datensätzen angeben und einordnen.",
+        "iterative Verfahren zur Optimierung von Zielfunktionen (unter Nebenbedingungen) benennen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "grundlegenden Fragestellungen der Stochastik verstehen.",
+        "Kenngrößen von zufallsbehafteten Datensätzen und Wahrscheinlichkeitsverteilungen in Beziehung stellen.",
+        "die mathematischen Hintergründe von Optimierungsverfahren nachvollziehen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "zu gegebenen zufallsbehafteten Datensätze geeignete Modelle aufstellen und deren Parameter optimal belegen.",
+        "zufallsbehafteten Datensätze softwareunterstützt bearbeiten und auswerten.",
+        "Solver für Optimierungsprozesse anwenden.",
+        "optimierte Stichprobenversuche planen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Grundbegriffe der Wahrscheinlichkeitslehre (Ergebnis, Ereignis, Wahrscheinlichkeit mit Verteilungs- und Dichtefunktion, stochastische Unabhängigkeit)",
+        "Zentrale Ergebnisse zur Wahrscheinlichkeit (Zentraler Grenzwertsatz, Satz von Bayes, Gesetze großer Zahlen)",
+        "(ein- und mehrdimensionale) Zufallsgrößen und deren Invarianten (Erwartungswert, Varianz, Streuung)",
+        "Beziehungen zwischen Zufallsgrößen (Kovarianz, Korrelation, Varianz, Streuung)",
+        "Kenngrößen von Stichprobendatensätzen (Lage- und Streumaße)",
+        "Schätzverfahren: Punkt- und Bereichsschätzer für Modellparameter (Maximum-Likelihood, erwartungstreu, stabil)",
+        "Optimierungsverfahren von linearen Zielfunktionen unter linearen Nebenbedingungen (Simplex)",
+        "Optimierungsverfahren von nichtlinearen (z.B. konvexen) Zielfunktionen unter Nebenbedingungen (Gradientenverfahren, Lagrangesche Multiplikatorenregel)",
+        "Anwendungsbeispiele: Optimale Parameteranpassung",
+        "Funktionale Sicherheit, z.B. in Netzwerken oder in der Robotik 60"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

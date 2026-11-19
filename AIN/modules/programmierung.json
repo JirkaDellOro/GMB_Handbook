@@ -1,0 +1,77 @@
+{
+  "id": "programmierung",
+  "title": "Programmierung",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Programmierung",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 75
+    },
+    {
+      "label": "b)",
+      "name": "Programmierung, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 15
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "einfache Programme in der Programmiersprache Python unter Verwendung gängiger Sprachelemente erstellen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Bedeutung grundsätzlicher Begriffe wie Variable, Kontrollstruktur, Datentyp, Funktion, Parameter sowie Klasse erklären,",
+        "in Python geschriebene Programme lesen und verstehen,",
+        "das Prinzip der Objektorientierung verstehen und einfache Klassen umsetzen,"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "eigene Programme mit den behandelten Sprachelementen entwickeln,",
+        "existierende generative Sprachmodelle für die Erzeugung von Code einsetzen."
+      ]
+    },
+    {
+      "category": "Bewertung",
+      "items": [
+        "Möglichkeiten und Grenzen der Programmierung mit generativen Sprachmodellen bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "einfache Datentypen",
+        "zusammengesetzte Datentypen (Listen, Dictionaries)",
+        "Variablen, Ausdrücke und Wertzuweisungen",
+        "Funktionen, Parameter und Argumente",
+        "Kontrollstrukturen (bedingte Anweisungen, Schleifen)",
+        "Verwendung vordefinierter Klassen",
+        "Definition eigener Klassen",
+        "Einsatz generativer Sprachmodelle für die Programmierung Praktische Umsetzung und Vertiefung der Vorlesungsinhalte durch Bearbeitung von Übungsaufgaben und praxisnaher Fallbeispiele 45"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}
