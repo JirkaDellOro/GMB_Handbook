@@ -1,0 +1,111 @@
+{
+  "id": "projekt2",
+  "title": "Projekt 2",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Projekt 2",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "W",
+      "contact_hours": "0 h",
+      "self_study_hours": "120",
+      "class_size": 45,
+      "credit_points": 4
+    },
+    {
+      "label": "b)",
+      "name": "Projekt 2, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "S",
+      "contact_hours": "11.25 h",
+      "self_study_hours": "48.75",
+      "class_size": 45,
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die im Studium erworbenen Kenntnisse und Fähigkeiten mit praktischen Erfahrungen bereichern und damit ein besseres Verständnis für die Projektarbeit (Organisation, Methodik und soziale Komponente der Projektarbeit) entwickeln."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "den zur Durchführung eines Projekts notwendigen Informationsbedarf ermitteln und die erforderlichen Ergebnisse planvoll und methodengestützt erarbeiten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "im Team und innerhalb einer vorgegebenen Frist eine Lösung für eine einschlägige Aufgabenstellung aus der Praxis bearbeiten. Dabei werden sie die im bisherigen Verlauf des Studiums, insbesondere im Modul Projekt 1 erworbenen Kenntnisse angewandt und vertieft."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, so dass sie geeignete Schwerpunkte für die Thesis-Arbeit setzen können.",
+        "die Ergebnisse ihrer Arbeit auf das Wesentliche reduzieren, präsentieren und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es wird eine praktische Arbeit zu einer fortgeschrittenen, in der Regel von einem Unternehmen der regionalen Wirtschaft vorgegebenen, praktischen Aufgabenstellung aus den Bereichen Software-Engineering, Applied Artificial Intelligence oder Medieninformatik angefertigt. Die Studierenden arbeiten im Team. Das Ziel liegt (auch) darin, dass die erarbeitete Problemlösung beim „Themensteller“ zum Einsatz kommt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Workshop",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmieren, Software Engineering, Projekt 1"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 A",
+      "description": "1 A (Praktische Arbeit)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "code": "1 sbR",
+      "description": "1 sbR (Referat)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
+  ]
+}

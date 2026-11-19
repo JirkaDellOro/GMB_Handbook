@@ -26,37 +26,37 @@
     {
       "category": "Knowledge",
       "items": [
-        "know algorithms for game AI."
+        "know the foundations of multiplayer development, networks & protocols, webservers & databases"
       ]
     },
     {
       "category": "Comprehension",
       "items": [
-        "choose the right algorithm for a specific scenario."
+        "choose the right solution path for a specific application scenario."
       ]
     },
     {
       "category": "Practical Use",
       "items": [
-        "implement basic algorithms for game AI."
+        "apply basic concepts of web services and multiplayer networking."
       ]
     },
     {
       "category": "Analysis",
       "items": [
-        "analyse the existing algorithms for patterns and use cases."
+        "analyze network communication of multiuser applications."
       ]
     },
     {
       "category": "Synthesis",
       "items": [
-        "combine multiple algorithms or patterns to create sophisticated systems for specific purposes."
+        "combine clients, servers, databases and external services into working networked applications and multiplayer games."
       ]
     },
     {
       "category": "Evaluation",
       "items": [
-        "evaluate AI with a data-driven approach to incorporate feedback and improvements."
+        "evaluate multiuser applications in terms of performance and robustness."
       ]
     }
   ],
@@ -64,15 +64,18 @@
     {
       "component": "a)",
       "items": [
-        "Game AI: Finite Automata und Behaviour Trees, Agents, Search Problems, Uninformed Search, Informed Search (A* and Heuristics)",
-        "Adversarial Search and Games I: Minimax,",
-        "Alpha-beta Pruning Adversarial Search and Games II: Expect Imax, MCTSReinforcement Learning",
-        "Network: Relational and NoSQL databases,",
-        "Optional: Dedicated Game server: Architectures, APIs",
-        "Networking Multiplayer-Game server:",
-        "Online: Client Server /P2P /MMOG Architectures and Protocols",
-        "Local: LAN/WLAN",
-        "Dedicated MMOG@home: NAT, DDNS, STUN Cloud Gaming over public networks (Shadow/Blade/Google)"
+        "Multiplayer Developing Paradigms",
+        "Multiplayer Topologies & Genre-based Decisions",
+        "Foundations of MP-Programming",
+        "Timing & Tickrate in Gameengines vs. Gameserver",
+        "Massive Multiplayer Platform Services, Cloud Gaming",
+        "Internet: Foundations and Protocols",
+        "Network Analysis",
+        "Client-Server Communication & Web Servers",
+        "Relational Databases & NoSQL",
+        "WebSockets & Usecases: HTTP vs. WebSockets vs. WebRTC",
+        "Connecting Game Engines to Web Servers & External APIs",
+        "Server Authority & Web Security Aspects"
       ]
     }
   ],
@@ -102,7 +105,7 @@
     }
   ],
   "applicability": [
-    "Games & Immersive Media B.A. (SPO-Version: 10)"
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
   ],
   "responsible_person": "Prof. Nikolaus Hottong",
   "lecturers": [
@@ -117,7 +120,19 @@
   "reading_list": [
     {
       "component": "a)",
-      "reference": "Russell, Stuart; Norvig, Peter: Artificial Intelligence: A Modern Approach, Pearson, 2021, ISBN: 1292401133"
+      "reference": "Glazer, Josh; Madhav, Sanjay: Multiplayer Game Programming: Architecting Networked Games, O'Reilly, ISBN-13: 978-013-403430-0"
+    },
+    {
+      "component": "a)",
+      "reference": "Campos, Henrique; Lovato, Nathan: ESSENTIAL GUIDE TO CREATING MULTIPLAYER GAMES WITH GODOT 4.0: Harness the Power of Godot Engine's GDScript Network API to Connect Players in Multiplayer Games. 1st edition. Packt Publishing Ltd, 2024."
+    },
+    {
+      "component": "a)",
+      "reference": "Domdouzis, Konstantinos; Lake,Peter; Crowther, Paul: Concise Guide to Databases A Practical Introduction, Springer, 2025, ISSN 1863-7310 ISSN 2197-1781 (electronic), ISBN-13 978-3-030-42223-3, https: //doi.org/10.1007/978-3-030-42224-0"
+    },
+    {
+      "component": "a)",
+      "reference": "Further Literature on multiplaying, server and databases will be announced during the Course."
     }
   ]
 }

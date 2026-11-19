@@ -1,0 +1,119 @@
+{
+  "id": "project3",
+  "title": "Project 3",
+  "module_code": "DM-2024-2888",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 10,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Project 3 - Intermediate Digital Project",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "6 SWS / 67.5h",
+      "self_study_hours": 112.5,
+      "class_size": 35,
+      "course_type": "W",
+      "credit_points": 10
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "gain experience working on a project in a team."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand agile project management."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply the skills and knowledge acquired in the other modules so far."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse and detect interesting opportunities for human-computer-interaction within given constraints."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "design, create and present a simple digital prototype of an interactive, immersive application or game."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate their prototype e.g., by conducting user tests and recommend improvements."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Design and creation of a simple interactive application",
+        "Practical application of various skills acquired in previous modules",
+        "Implementation of graphics, sound, behaviour, animation, text",
+        "Team- and project management",
+        "Practice visualization, documentation, communication, presentation",
+        "Work with digital material to create prototypes"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Project"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1A",
+      "graded_assessment": true,
+      "credits": 10,
+      "description": "Practical Assignment (A)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Dean of Studies GMB",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "N.N."
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Depending on subject of study and task."
+    }
+  ]
+}

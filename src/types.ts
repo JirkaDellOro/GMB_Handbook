@@ -49,5 +49,23 @@ export interface SemesterGroup {
   modules: string[];
 }
 
-export interface CurriculumModulePosition { column: string; block: number | null; style?: 'project' | 'internship'; span?: number; }
-export interface CurriculumData { columns: string[]; studyStages: { title: string; firstSemester: number; lastSemester: number }[]; modules: Record<string, CurriculumModulePosition>; }
+export interface CurriculumPlacement {
+  column: string;
+  semester?: number;
+  block?: number | null;
+  style?: "project" | "internship";
+  span?: number;
+  track?: string;
+  moduleNumber?: number;
+}
+export interface CurriculumModulePosition extends Partial<CurriculumPlacement> {
+  placements?: CurriculumPlacement[];
+}
+export interface CurriculumData {
+  programmeName?: string;
+  tableHeadings?: { structure?: string; foundation?: string; advanced?: string };
+  studyTables?: { number: 2 | 3; firstSemester: number; lastSemester: number; heading: string }[];
+  columns: string[];
+  studyStages: { title: string; firstSemester: number; lastSemester: number }[];
+  modules: Record<string, CurriculumModulePosition>;
+}

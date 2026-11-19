@@ -1,0 +1,138 @@
+{
+  "id": "code4",
+  "title": "Code 4",
+  "module_code": "DM-2024-2895",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Code 4",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know the foundations of multiplayer development, networks & protocols, webservers & databases"
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "choose the right solution path for a specific application scenario."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply basic concepts of web services and multiplayer networking."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyze network communication of multiuser applications."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "combine clients, servers, databases and external services into working networked applications and multiplayer games."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate multiuser applications in terms of performance and robustness."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Multiplayer Developing Paradigms",
+        "Multiplayer Topologies & Genre-based Decisions",
+        "Foundations of MP-Programming",
+        "Timing & Tickrate in Gameengines vs. Gameserver",
+        "Massive Multiplayer Platform Services, Cloud Gaming",
+        "Internet: Foundations and Protocols",
+        "Network Analysis",
+        "Client-Server Communication & Web Servers",
+        "Relational Databases & NoSQL",
+        "WebSockets & Usecases: HTTP vs. WebSockets vs. WebRTC",
+        "Connecting Game Engines to Web Servers & External APIs",
+        "Server Authority & Web Security Aspects"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "none"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Written Examination during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Nikolaus Hottong",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Nikolaus Hottong",
+        "Prof. Dr. Stephanie Heintz"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Glazer, Josh; Madhav, Sanjay: Multiplayer Game Programming: Architecting Networked Games, O'Reilly, ISBN-13: 978-013-403430-0"
+    },
+    {
+      "component": "a)",
+      "reference": "Campos, Henrique; Lovato, Nathan: ESSENTIAL GUIDE TO CREATING MULTIPLAYER GAMES WITH GODOT 4.0: Harness the Power of Godot Engine's GDScript Network API to Connect Players in Multiplayer Games. 1st edition. Packt Publishing Ltd, 2024."
+    },
+    {
+      "component": "a)",
+      "reference": "Domdouzis, Konstantinos; Lake,Peter; Crowther, Paul: Concise Guide to Databases A Practical Introduction, Springer, 2025, ISSN 1863-7310 ISSN 2197-1781 (electronic), ISBN-13 978-3-030-42223-3, https: //doi.org/10.1007/978-3-030-42224-0"
+    },
+    {
+      "component": "a)",
+      "reference": "Further Literature on multiplaying, server and databases will be announced during the Course."
+    }
+  ]
+}

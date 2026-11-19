@@ -1,0 +1,120 @@
+{
+  "id": "business1",
+  "title": "Business 1",
+  "module_code": "DM-2024-2894",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Business 1",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know the fundamentals of business economics, project management, and community management."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand the dependencies between the various parts of a project and their implications."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "draft and assess business plans, act as a team leader to produce interactive and immersive applications."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse an immersive application at different stages of development."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "estimate and calculate the development costs of immersive applications."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "formatively evaluate efficiency, quality, and feasibility of a project."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Business Fundamentals",
+        "Game Theory of Cooperation and Contracts",
+        "Legal Forms and Business Models",
+        "Businessplans and Pitching",
+        "Project and Team Management",
+        "Basic Financial Calculations",
+        "Basic Community Management"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "none"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Written Exam during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Dr. Alexander Maier",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Alexander Maier"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Will be given in lecture as applicable."
+    }
+  ]
+}

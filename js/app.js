@@ -73,15 +73,15 @@ async function showProgramme(_elements) {
     const references = [...new Set(semesters.flatMap(_semester => _semester.modules))];
     const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(_elements.curriculumTarget, modules, curriculum);
-    attachCurriculumPanel(_elements, modules);
+    attachCurriculumPanel(_elements, modules, curriculum);
     attachDetailsPanel(_elements, semesters, modules);
 }
-function attachCurriculumPanel(_elements, _modules) {
+function attachCurriculumPanel(_elements, _modules, _curriculum) {
     const panel = _elements.curriculumPanel;
     const target = _elements.overviewTarget;
     if (!panel || !target)
         return;
-    renderStudyTables(target, _modules);
+    renderStudyTables(target, _modules, _curriculum);
 }
 function attachDetailsPanel(_elements, _semesters, _modules) {
     const panel = _elements.detailsPanel;

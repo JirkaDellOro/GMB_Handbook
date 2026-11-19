@@ -1,0 +1,114 @@
+{
+  "id": "business2",
+  "title": "Business 2",
+  "module_code": "DM-2024-2902",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Business 2",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 6
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "do advanced financial calculations used to create coherent cost budgets for development.",
+        "know the fundamentals of publishing and marketing in the gaming industry."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand the lifecycles of games and immersive media and how to manage them."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse game concepts with a focus on monetization and suggest best options."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create a business plan for a start-up based on a concept of a product to create."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate potential, earning power, and sustainability of start-ups and projects."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Advanced Financial Calculations",
+        "Entrepreneurship",
+        "Monetization",
+        "Advanced Community Management",
+        "Producing",
+        "Lifecycle Management"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 6,
+      "description": "Written Exam during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Dr. Alexander Maier",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Alexander Maier"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Will be given in lecture as applicable."
+    }
+  ]
+}

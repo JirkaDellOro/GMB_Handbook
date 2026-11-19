@@ -1,0 +1,140 @@
+{
+  "id": "softwareengineering",
+  "title": "Software Engineering",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Software Engineering",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 60,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Software Engineering, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die Methoden, Techniken und Werkzeuge zur systematischen Erstellung von Softwaresystemen, insbesondere in den Phasen Analyse und Entwurf, darlegen",
+        "verschiedene Formalismen und Elemente der Unified Modeling Language (UML) zur statischen und dynamischen Modellierung von Software beschreiben",
+        "die Rolle der Object Constraint Language (OCL) für die Spezifikation von Software erfassen und wichtige Sprachelemente der OCL erklären",
+        "ausgewählte Entwurfsmuster wiedergeben"
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Bedeutung eines systematischen Vorgehens zur effizienten Konzeption, Modellierung und Implementierung qualitativ hochwertiger Software verstehen",
+        "Stärken und Schwächen plangesteuerter und agiler Vorgehensmodelle gegenüberstellen",
+        "wichtige Ziele des Software Engineerings und Maßnahmen zu deren Erreichung erklären",
+        "die Einsatzmöglichkeiten von KI-Werkzeugen in den verschiedenen Entwicklungsphasen einschätzen",
+        "die charakteristischen Eigenschaften ausgewählter UML-Diagrammtypen zur Analyse und Entwurf von Software beurteilen",
+        "die Rolle von Software-Architekturen verstehen und zentrale Software-Architekturstile beschreiben"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "unterschiedliche Aspekte einer Anwendungsdomäne mit Hilfe eines UML-Werkzeugs modellieren",
+        "Werkzeuge zur Generierung von Artefakten wie etwa Programmcode nutzen",
+        "AI Chatbots für die Modellerstellung sinnvoll einsetzen",
+        "UML und OCL zur Modellierung ausgewählter Analyse- und Entwurfsmuster zielgerichtet verwenden",
+        "ausgewählte Entwurfsmuster einsetzen"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Herausforderungen bei der Softwareentwicklung",
+        "Ziele des Software Engineering",
+        "Zentrale Aktivitäten und grundlegende Vorgehensmodelle",
+        "Plangesteuertes vs. iterativ-inkrementelles Vorgehen",
+        "Agile Softwareentwicklung am Beispiel von Scrum",
+        "Modellierung von Anforderungen mit Use Case-Diagrammen",
+        "Objektorientierte Analyse und Entwurf mit UML",
+        "OCL im Kontext der Modellierung von Software",
+        "Transformation von Modellen in eine objektorientierte Zielsprache",
+        "Ausgewählte Entwurfsmuster",
+        "Software-Architekturen Anhand von Übungsaufgaben wird das in der Vorlesung erworbene Wissen semesterbegleitend vertieft und verfestigt. Dies umfasst insbesondere die Modellierung vorgegebener Anwendungsdomänen mit UML und OCL sowie dem Einsatz von Entwurfsmustern."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1 sbA",
+      "description": "1 sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Bernhard Hollunder",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Bernhard Hollunder"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "I. Sommerville. Modernes Software-Engineering - Entwurf und Entwicklung von Softwareprodukten, Pearson 2020"
+    },
+    {
+      "reference": "S. Kleuker. Grundkurs Software-Engineering mit UML: Der pragmatische Weg zu erfolgreichen Softwareprojekten, Springer Verlag 2025"
+    },
+    {
+      "reference": "P. Forbrig. Objektorientierte Softwareentwicklung mit UML, Hanser 2024"
+    },
+    {
+      "reference": "R. S. Wazlawick. Object-Oriented Analysis and Design for Information Systems: Modeling with BPMN, OCL, IFML, and Python, Morgan Kaufmann / Elsevier 2024"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "id": "projektmanagement",
+  "title": "Projektmanagement",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Projektmanagement",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 90,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Projektmanagement, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "S",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "grundlegende Begriffe, Rollen und Phasen des Projektmanagements benennen und deren typische Merkmale aufzählen.",
+        "zentrale Vorgehensmodelle (planbasiert, agil, hybrid) unterscheiden und deren charakteristische Elemente wiedergeben.",
+        "wesentliche Methoden, Artefakte und Werkzeuge des Projektmanagements aufzählen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Zusammenhänge zwischen Projektzielen, Vorgehensmodellen und Erfolgskriterien erläutern.",
+        "erklären, wie agile Werte und Prinzipien die Zusammenarbeit und Entscheidungsprozesse in Projekten beeinflussen.",
+        "die Bedeutung von Führung, Kommunikation und Motivation für den Projekterfolg beschreiben und in verschiedene Projektsituationen einordnen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "planbasierte und agile Methoden gezielt auf konkrete Projektszenarien anwenden und geeignete Vorgehensweisen auswählen.",
+        "Methoden der Projektdefinition, -planung und -steuerung (z. B. Zieldefinition, Netzplan, Burndown Chart) praktisch einsetzen.",
+        "KI-gestützte Werkzeuge zur Unterstützung der Planung, Kommunikation und Überwachung von Projekten nutzen."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "Projektverläufe, Risiken und Abweichungen systematisch analysieren und Handlungsoptionen ableiten.",
+        "Unterschiede und Wechselwirkungen zwischen planbasierten, agilen und hybriden Vorgehensmodellen kritisch bewerten.",
+        "Führungs- und Kommunikationsprobleme in Projekten erkennen und deren Ursachen strukturieren."
+      ]
+    },
+    {
+      "category": "Synthese",
+      "items": [
+        "eigene hybride Vorgehensmodelle entwerfen, die planbasierte und agile Elemente situationsgerecht kombinieren.",
+        "Verbesserungsvorschläge zur Optimierung von Projektmanagementprozessen unter Einsatz moderner Technologien, einschließlich KI, formulieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Einführung: Grundlagen und Begriffe",
+        "Vorgehensmodelle des Projektmanagements: planbasiert, agil, hybrid",
+        "Planbasiertes Projektmanagement: Phasen, ausgewählte Methoden und Techniken, kontinuierliche Aufgaben",
+        "Agiles Projektmanagement: Agile Werte, Scrum, Rollen, Artefakte, Events",
+        "Führung in Projekten",
+        "KI im Projektmanagement und Werkzeugunterstützung"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Kenntnisse im Software Engineering sind empfehlenswert."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1 sbR",
+      "description": "1 sbR (Referat)",
+      "graded_assessment": true,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Steffen Thiel",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Steffen Thiel"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "H. Timinger: Modernes Projektmanagement – Mit traditionellem, agilem und hybriden Vorgehen zum Erfolg, Wiley"
+    },
+    {
+      "reference": "W. Jakoby: Projektmanagement für Ingenieure – Ein praxisnahes Lehrbuch für den systematischen Projekterfolg., Springer 2021"
+    },
+    {
+      "reference": "A. Johannsen, A. Kramer, H. Kostal, E. Sadowicz: Basiswissen für Software-Projektmanager im klassischen und agilen Umfeld, dpunkt 2017"
+    },
+    {
+      "reference": "M. Geirhos: IT-Projektmanagement – Was wirklich funktioniert, und was nicht, Rheinwerk Computing 2016"
+    }
+  ]
+}

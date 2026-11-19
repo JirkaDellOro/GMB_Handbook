@@ -1,0 +1,135 @@
+{
+  "id": "datascience",
+  "title": "Data Science",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Data Science",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 60,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Data Science, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Definition von ‚Data Science‘ erläutern",
+        "die Einzelschritte der Datenanalyse erklären"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Daten mit Hilfe deskriptiver Statistik untersuchen",
+        "Maßnahmen ergreifen, um Daten zu bereinigen",
+        "Daten auf geeignete Weise visualisieren"
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "systematisch Methoden nutzen, um ein tiefes Verständnis für Daten zu entwickeln",
+        "mit Data Exploration arbeiten, um unbekannte Daten zu untersuchen",
+        "große Datenmengen geeignet zusammenfassen und veranschaulichen"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Data Frames für tabellarische Daten",
+        "Indexe auf Daten",
+        "Daten in mehrdimensionalen Arrays",
+        "Der Umgang mit fehlenden Daten",
+        "Ausreißer",
+        "Daten verknüpfen, kombinieren und umformen",
+        "Daten aggregieren und gruppieren",
+        "Zeitreihen und Querschnittsdaten",
+        "Kategorische Daten",
+        "Einfache Modellbildung und Vorhersagen",
+        "Einsatz von Künstlicher Intelligenz Praktische Übungen mit Python und den Bibliotheken NumPy, Pandas und Seaborn. Einsatz von Künstlicher Intelligenz. Anwendungsbeispiele anhand von praxisorientierten Datensätzen."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Mathematik für Informatiker 1"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Peter Schanbacher",
+  "lecturers": [
+    {
+      "names": [
+        "Peter Schanbacher"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "J. Grus, Einführung in Data Science: Grundprinzipien der Datenanalyse mit Python, O'Reilly, 2019"
+    },
+    {
+      "reference": "W. McKinney, Datenanalyse mit Python: Auswertung von Daten mit Pandas, NumPy und IPython, O'Reilly, 2018"
+    },
+    {
+      "reference": "J. VanderPlas, Python Data Science Handbook: Essential Tools for working with Data, O'Reilly, 2016"
+    },
+    {
+      "reference": "S. Lau, J. Gonzalez, D. Nolan, Learning Data Science, O'Reilly, 2023"
+    },
+    {
+      "reference": "Y. Vasiliev, Python for Data Science, No Starch Press, 2022"
+    }
+  ]
+}

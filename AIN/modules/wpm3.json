@@ -1,0 +1,28 @@
+{
+  "id": "wpm3",
+  "title": "Wahlpflichtmodul 3",
+  "semester": 6,
+  "credits": 6,
+  "workload_hours": 180,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "individual_component_content": [
+    {
+      "items": [
+        "Die Lehrveranstaltungen sind aus dem fachspezifischen Katalog zu wählen, den die Fakultät zu Semesterbeginn bekannt gibt.",
+        "Die gewählten Lehrveranstaltungen müssen zusammen 6 Leistungspunkte umfassen."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "code": "PL",
+      "description": "Prüfungsleistung aus den gewählten Lehrveranstaltungen",
+      "graded_assessment": true,
+      "credits": 6
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ]
+}

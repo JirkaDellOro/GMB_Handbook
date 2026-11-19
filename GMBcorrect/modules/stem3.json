@@ -1,0 +1,134 @@
+{
+  "id": "stem3",
+  "title": "STEM 3",
+  "module_code": "DM-2024-2896",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "STEM 3 - Physical Computing",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "distinguish between different actors and sensors (such as a camera).",
+        "understand how sensors (such as a camera), actors and a single-board computer (SBC) / microcontroller (MCU) are constructed and work."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand basic concepts of image processing.",
+        "understand a system of sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "run and test computer vision algorithms on a system.",
+        "connect sensors and actors to an SBC/MCU and put them into operation."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "derive prerequisites for the use of computer vision algorithms and other information processing methods.",
+        "understand requirements and challenges of systems consisting of sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "implement an application for system sensors, actors and SBC/MCU."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate an implemented application for a system consisting of sensors, actors and SBC/MCU with regard to its usability in practice."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Practical electronics and signal processing",
+        "Physical Computing",
+        "Computer Vision for Extended Reality (XR)",
+        "IoT, Tangible Interfaces"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Practical Assignment during semester (sbA)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Dr. Uwe Hahne",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Uwe Hahne",
+        "Prof. Dr. Ruxandra Lasowski"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Szeliski, Richard: Computer Vision: Algorithms and Applications (2nd Edition), Springer, 2022, ISBN: 3030343715 – online at https://szeliski.org/"
+    },
+    {
+      "component": "a)",
+      "reference": "Kuniavsky, Mike: Smart things: Ubiquitous Computing User Experience Design, Morgan Kaufmann, 2010, ISBN: 0123748992"
+    },
+    {
+      "component": "a)",
+      "reference": "O'Sullivan, Dan; Igoe, Tom: Physical Computing: Sensing and Controlling the Physical World with Computers, Course Technology, 2004, ISBN: 978-1592003464"
+    },
+    {
+      "component": "a)",
+      "reference": "Horowitz, Paul; Hill, Winfield: The Art of Electronics: The x Chapters, Cambridge University Press, 2020, ISBN: 1108499945"
+    }
+  ]
+}

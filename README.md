@@ -57,14 +57,16 @@ npx serve .
 
 Then open the local URL printed by the server.
 
-## Editing TypeScript
+## Build and validation
 
-Install TypeScript if necessary and compile after changing files in `src/`:
+The TypeScript compiler version is pinned in `package.json`. After changing files in `src/`, install the development dependency and run the complete check:
 
 ```sh
-npm install --save-dev typescript
-npx tsc -p tsconfig.json
+npm install
+npm run check
 ```
+
+The check compiles TypeScript into `js/`, runs the regression tests, and validates JSON syntax and module IDs. Missing component credit-point entries are reported as warnings rather than changed or treated as invalid content. The same checks run on pushes and pull requests through GitHub Actions.
 
 The generated files in `js/` are committed as well, so GitHub Pages can serve the site without a build pipeline. Keep `src/` and `js/` synchronized by compiling before publishing.
 

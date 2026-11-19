@@ -1,0 +1,88 @@
+{
+  "id": "projekt1",
+  "title": "Projekt 1",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Projekt 1",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "W",
+      "contact_hours": "0 h",
+      "self_study_hours": "120",
+      "class_size": 60
+    },
+    {
+      "label": "b)",
+      "name": "Projekt 1, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "S",
+      "contact_hours": "11.25 h",
+      "self_study_hours": "48.75",
+      "class_size": 60
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die im Studium erworbenen Kenntnisse und Fähigkeiten mit praktischen Erfahrungen bereichern und damit ein besseres Verständnis für die Projektarbeit (Organisation, Methodik und soziale Komponente der Projektarbeit) entwickeln."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "den zur Durchführung eines Projekts notwendigen Informationsbedarf ermitteln und die erforderlichen Ergebnisse erarbeiten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "im Team und innerhalb einer vorgegebenen Frist eine Lösung für eine einschlägige Aufgabenstellung aus der Praxis bearbeiten (dabei werden sie die im bisherigen Verlauf des Studiums erworbenen Kenntnisse angewandt und vertieft)."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, so dass sie geeignete Schwerpunkte für das restliche Studium setzen und sich auf geeignete Stellen im Praxissemester bewerben können.",
+        "die Ergebnisse ihrer Arbeit auf das Wesentliche reduzieren, präsentieren und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es wird eine praktische Arbeit zu einer einschlägigen, in der Regel von einem Unternehmen der regionalen Wirtschaft vorgegebenen, praktischen Aufgabenstellung aus den Bereichen Software-Engineering, Applied Artificial Intelligence oder Medieninformatik angefertigt. Die Studierenden arbeiten im Team. Das Ziel liegt (auch) darin, dass die erarbeitete Problemlösung beim „Themensteller“ zum Einsatz kommt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Workshop",
+        "Seminar",
+        "Prüfungsleistung: 1 A (Praktische Arbeit) (4 LP)",
+        "Studienleistung: 1 sbR (Referat) (2 LP)"
+      ]
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
+  ]
+}

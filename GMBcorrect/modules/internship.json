@@ -1,0 +1,162 @@
+{
+  "id": "internship",
+  "title": "Internship",
+  "module_code": "DM-2024-2898",
+  "semester": 5,
+  "workload_hours": 900,
+  "credits": 30,
+  "frequency": "WiSe/SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Internship",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "0 SWS / 0h",
+      "self_study_hours": 840,
+      "class_size": 1,
+      "course_type": null,
+      "credit_points": 28
+    },
+    {
+      "label": "b)",
+      "name": "Seminar Internship",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "2 SWS / 22.5h",
+      "self_study_hours": 37.5,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "better assess their own areas of interest and skills through practical experience in everyday working life."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "gain a deeper understanding of work processes and team structures in companies in their future field of work."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "describe and evaluate the experiences and insights gained."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "assess their own knowledge and level of training in the context of a professional activity and identify potential for improvement."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "incorporate acquired practical qualifications into the tasks of the degree programme and underpin them theoretically."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "better assess their own strengths and weaknesses and plan their further studies accordingly."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Depends on degree programme and employer"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "Self-critical reflection of activities and acquired knowledge in the context of professional activity"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Internship"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": false,
+      "credits": 28,
+      "description": "Practical Assignment during semester (sbA)"
+    },
+    {
+      "component": "b)",
+      "code": "1R",
+      "graded_assessment": false,
+      "credits": 2,
+      "description": "Presentation with documentation (R)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Dean of Studies GMB",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "All professors of the faculty"
+      ]
+    },
+    {
+      "component": "b)",
+      "names": [
+        "Prof. Jirka Dell´Oro-Friedl"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "None"
+    },
+    {
+      "component": "b)",
+      "reference": "Will be given in lecture as applicable."
+    }
+  ]
+}

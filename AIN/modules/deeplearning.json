@@ -1,0 +1,137 @@
+{
+  "id": "deeplearning",
+  "title": "Deep Learning",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Deep Learning",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Deep Learning, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Verständnis",
+      "items": [
+        "mathematische Konzepte von Deep Learning (DL) verstehen",
+        "die Funktionsweise bestehender DL-Anwendungen erläutern"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Rohdaten analysieren und vorbereiten",
+        "Tensorflow und Pytorch Bibliotheken anwenden",
+        "DL-Anwendungen auf der Basis geeigneter Frameworks erstellen"
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "DL auf einen Datensatz oder ein gegebenes Problem anwenden und die Ergebnisse bewerten",
+        "DL-Methoden und -Systeme im Hinblick auf ihre Tauglichkeit für ein gegebenes Problem evaluieren",
+        "DL- Algorithmen aus aktuellen Veröffentlichungen analysieren"
+      ]
+    },
+    {
+      "category": "Evaluation / Bewertung",
+      "items": [
+        "problemspezifischen Voraussetzungen zur Anwendung von DL einschätzen",
+        "DL Modelle mit Hilfe von Explainable AI bewerten"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Biologische und künstliche Neuronale Netze",
+        "Deep Learning Frameworks (Tensorflow und PyTorch)",
+        "Feed-Forward Neuronale Netze (FNN)",
+        "Deep Neuronal Networks (DNN) und Data Augmentation",
+        "Convolutional Neural Networks (CNN)",
+        "Recurrent Neuronal Networks (RNN) und Long Short-Term Memory (LSTM)",
+        "Attention Mechanismen",
+        "Deep Learning Architekturen",
+        "Deep Reinforcement Learning (DRL)",
+        "Hyperparameter Optimierung",
+        "Autoencoder",
+        "Tools für Explainable AI Praktische Übungen mit Python, Tensorflow und PyTorch, Anwendungsbeispiele aus Robotik, Medizin und Musik"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Mathematik für Informatiker 1 und 2"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Maja Temerinac-Ott",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Maja Temerinac-Ott"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "I. Goodfellow, Y. Bengio: Deep Learning (Adaptive Computation and Machine Learning series), The MIT Press ,2016"
+    },
+    {
+      "reference": "J. Papa, Pytorch Pocket Reference: Building and Deploying Deep Learning Models, O'Reilly, 2021"
+    },
+    {
+      "reference": "G. Aurelien, Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, O'Reilly UK Ltd.; 3rd ed Edition, 2022"
+    }
+  ]
+}

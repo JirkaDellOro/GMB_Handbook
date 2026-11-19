@@ -1,0 +1,140 @@
+{
+  "id": "computervision",
+  "title": "Computer Vision",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Computer Vision",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 45,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Computer Vision, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Grundlagen der Computer Vision und Bildverarbeitung darlegen.",
+        "die grundsätzliche Funktionsweise von Computer Vision-Algorithmen erklären.",
+        "Grundlegende Konzepte von Deep Learning und dessen Anwendungen auf visuelle Daten beschreiben."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Bildverarbeitungstechniken zur Vorverarbeitung von Bilddaten nutzen.",
+        "Computer Vision für Aufgaben wie Segmentierung, Rekonstruktion und Objekterkennung einsetzen.",
+        "kreative Lösungen für praktische Probleme im Team finden und prototypisch implementieren."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "bestehende Bildverarbeitungsanwendungen kritisch untersuchen.",
+        "Ethische und gesellschaftliche Auswirkungen von Computer Vision-Systemen reflektieren."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "die Stärken und Schwächen von Bildverarbeitungsmethoden bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "die Bildentstehung in einer Kamera: Beleuchtung und Perspektive",
+        "Grundlagen digitaler und analoger Kameratechnik und entsprechender Übertragungsverfahren",
+        "wesentliche Einflussfaktoren auf Bildqualität, Abbildungsschärfe, Helligkeit, Auflösung und Wiederholrate",
+        "Farbräume und Farbraumtransformationen",
+        "lineare und nichtlineare Filter und Faltungsoperationen",
+        "Merkmale (Ecken, Kanten und Konturen) und Schwellwertoperationen",
+        "Eigenschaften von Regionen, Kanten und Konturen",
+        "morphologische Operationen auf Regionen",
+        "die Fouriertransformation und frequenzabhängige Filter",
+        "Kamerakalibrierung in monokularen und binokularen Problemstellungen",
+        "Stereo-Rekonstruktion",
+        "Neuronale Architekturen für Computer Vision",
+        "Bewegungserkennung in Videos Durchführung praktischer Übungen mit Java sowie Python und etablierten Computer Vision Bibliotheken (z. B. scikit- image, OpenCV, torchvision). Anwendung des Erlernten anhand realitätsnaher Datensätze und praxisorientierter Aufgabenstellungen."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Mathematik für Informatiker 1 und 2"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Maja Temerinac-Ott",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Maja Temerinac-Ott"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Szeliski: Computer Vision: Algorithms And Applications, Springer, 2022"
+    },
+    {
+      "reference": "B. Jähne: Digitale Bildverarbeitung und Bildgewinnung, Springer Vieweg, 2024"
+    },
+    {
+      "reference": "W. Burger and M. Burger: Digital Image Processing: An Algorithmic Introduction (Texts in Computer Science), Springer, 2022"
+    },
+    {
+      "reference": "A. Torralba, P. Isola and W. T. Freeman: Foundations of Computer Vision, MIT Press, 2024"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "id": "visual3",
+  "title": "Visual 3",
+  "module_code": "DM-2024-2890",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Visual 3 - Game Character Animation",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S/P",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know animation techniques and their fields of application.",
+        "understand the differences between real-time and offline-rendered animation."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "recognize suitable animation technology for specific specifications.",
+        "understand the application of VFX in real-time environments."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "create complex character animation phases for non-linear playback in real-time environments."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse conceptual specifications for animation applications and break them down into sub-requirements."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "synthesize complex animation scenarios for real-time applications from individual results."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "critically examine their own semester work in the context of what they have learned."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "3D-Animation (Realtime), Non-linear animation, Animation State-machines, Animation Blending",
+        "Character Animation, Rigging Forward / Inverse Kinematics",
+        "Walk Cycles",
+        "From Models to Assets",
+        "Visual Design 2D Animation VFX in Realtime"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar, Practical"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "Completion of Visual 2"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbA",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Practical Assignment during semester (sbA)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Christoph Müller",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Christoph Müller",
+        "Prof. Niv Shpigel"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Williams, Richard: The Animator's Survival Kit: A Manual of Methods, Principles and Formulas for Classical, Computer, Games, Stop Motion and Internet Animators, Farrar, Straus and Giroux, 2012, ISBN: 978-0865478978"
+    },
+    {
+      "component": "a)",
+      "reference": "Osipa, Jason: Stop Staring: Facial Modeling and Animation Done Right (3rd Edition), Sybex, 2010, ISBN: 0470609907"
+    },
+    {
+      "component": "a)",
+      "reference": "Totten, Chris: Game Character Creation with Blender and Unity, Sybex, 2012, ISBN: 1118172728"
+    }
+  ]
+}

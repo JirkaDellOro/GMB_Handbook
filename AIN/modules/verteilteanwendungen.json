@@ -1,0 +1,140 @@
+{
+  "id": "verteilteanwendungen",
+  "title": "Verteilte Anwendungen",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Verteilte Anwendungen",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Verteilte Anwendungen, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die wesentlichen technologischen Grundlagen verteilter Medienanwendungen benennen.",
+        "die Teilbausteine verteilter Anwendungen einordnen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "nebenläufig programmieren.",
+        "Programme implementieren, die mit Hilfe des TCP/IP-Stacks miteinander kommunizieren."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Medieninhalt in Web-Anwendungen integrieren.",
+        "eine Web-basierte Anwendung inklusive Datenbankanbindung implementieren."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "bestehende Softwarearchitekturen bezüglich der relevanten Aspekte untersuchen."
+      ]
+    },
+    {
+      "category": "Evaluation/Bewertung",
+      "items": [
+        "Softwarearchitekturen für verteilte Medienanwendungen bzgl. ihres Einsatzes in bestimmten Anwendungsfeldern einordnen und bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "nebenläufige Programmierung",
+        "elementare Netzwerkkommunikation zwischen Computerprogrammen (TCP/IP-Stack)",
+        "Services, Anwendungsprotokolle",
+        "Medieninhalte und Medienformate",
+        "Web-Anwendungen, Medieninhalte in Web-Anwendungen",
+        "Datenbankanbindung",
+        "Benutzerverwaltung in verteilten Anwendungen",
+        "REST-APIs",
+        "AJAX, Single-Page-Applications Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Dirk Eisenbiegler",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Dirk Eisenbiegler"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "M. Broy: Logische und Methodische Grundlagen der Entwicklung verteilter Systeme, Springer Vieweg 2023"
+    },
+    {
+      "reference": "M. Inden: Persistenzlösungen und REST-Services, Dpunkt 2016"
+    },
+    {
+      "reference": "R. Öchsle: Parallele und verteilte Anwendungen in Java, Carl Hanser 2022"
+    },
+    {
+      "reference": "F. Müller-Hofmann: Programmierung von verteilten Systemen und Webanwendungen mit Java EE, Springer Vieweg 2015"
+    }
+  ]
+}

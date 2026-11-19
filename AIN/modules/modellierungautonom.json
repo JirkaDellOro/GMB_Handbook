@@ -1,0 +1,125 @@
+{
+  "id": "modellierungautonom",
+  "title": "Modellierung Autonomer Systeme",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Modellierung Autonomer Systeme",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "90",
+      "class_size": 30,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Modellierung Autonomer Systeme",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "45",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "ROS2-Komponenten und -Tools benennen und beschreiben"
+      ]
+    },
+    {
+      "category": "Verstehen",
+      "items": [
+        "ROS2-Programme in einer Simulation veranschaulichen und erklären"
+      ]
+    },
+    {
+      "category": "Anwenden",
+      "items": [
+        "ROS2-Kommunikation für die Steuerung eines Roboters gebrauchen",
+        "verschiedene Sensordaten für die Navigation im Raum nutzen",
+        "Jupyter Notebooks mit Python und ROS2 erstellen und erklären"
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ein ROS2-basiertes Programm für die autonome Navigation eines Roboters entwickeln und modifizieren"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Dieser Kurs bietet eine Einführung in das Robot Operating System (ROS), einschließlich vieler verfügbarer Tools, die üblicherweise in der Robotik verwendet werden. Anhand verschiedener Beispiele soll der Kurs einen guten Ausgangspunkt für die Arbeit mit Robotern bieten. Sie lernen, wie man Software einschließlich Simulation erstellt, Sensoren und Aktoren miteinander verbindet und Steuerungsalgorithmen integriert.",
+        "ROS2-Architektur: Master, nodes, topics, messages, services, parameters und actions",
+        "Console commands: Navigation und Analyse von ROS2 System und catkin workspace",
+        "ROS2-packages erzeugen: Struktur, launch-files, und best practices",
+        "ROS2-Python client library (rospy): Eigene ROS2 Python Programme erstellen",
+        "Simulating mit ROS2: Gazebo simulator, robot models (URDF) und simulation environments (SDF) Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Computernetze"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1 sbA",
+      "description": "1 sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Maja Temerinac-Ott",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Maja Temerinac-Ott"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "F. M. Rico: A Concise Introduction to Robot Programming with ROS2, Chapman and Hall/CRC, 2022"
+    },
+    {
+      "reference": "M. Quigley: Programming Robots with ROS: A Practical Introduction to the Robot Operating System (Englisch), O‘Reilly 2015"
+    }
+  ]
+}

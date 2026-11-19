@@ -1,0 +1,96 @@
+{
+  "id": "ausgewaehltefragen",
+  "title": "Ausgewählte Fragen der Informatik",
+  "semester": 7,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Ausgewählte Fragen der Informatik",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "Pr",
+      "contact_hours": "0 h",
+      "self_study_hours": "180",
+      "class_size": 75,
+      "credit_points": 6
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "übergreifende Fragen über die im Studium, insbesondere im Hauptstudium, erlernten Prinzipien, Konzepte, Methoden und Techniken erörtern"
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "ihr Fachwissen und ihr wissenschaftliches Urteilsvermögen nutzen, um komplexe übergreifende Fragestellungen darzustellen,"
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "die Fragestellungen in ihren Kernpunkten sowie wechselseitigen Zusammenhängen bearbeiten."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "ihr im Studium erworbenes Fachwissen und ihre Projekterfahrungen systematisch kombinieren, um Lösungsstrategien und -alternativen für die Fragestellungen zu entwickeln, zu begründen und vorzutragen."
+      ]
+    },
+    {
+      "category": "Synthese",
+      "items": [
+        "das erworbene Wissen auf ähnlich gelagerte Fragestellungen anwenden (Fähigkeit zum Wissenstransfer)."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Es erfolgt eine intensive Auseinandersetzung mit neuesten Entwicklungen auf dem Gebiet der Informatik bzw. mit einem der Schwerpunktthemen des Studiengangs Informatik."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Prüfung"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Gleichzeitige Anfertigung einer Bachelorarbeit"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1M",
+      "description": "1M (Mündliche Prüfung)",
+      "graded_assessment": true,
+      "credits": 6
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,365 @@
+{
+  "programmeName": "Allgemeine Informatik B.Sc.",
+  "tableHeadings": {
+    "structure": "Table 1: Module Structure",
+    "foundation": "Table 2: Allgemeine Informatik B.Sc. (1-2 Foundation Studies Curricular Semester)",
+    "advanced": "Table 3: Allgemeine Informatik B.Sc. (3-7 Advanced Studies Curricular Semester)"
+  },
+  "studyTables": [
+    {
+      "number": 2,
+      "firstSemester": 1,
+      "lastSemester": 2,
+      "heading": "Foundation Studies"
+    },
+    {
+      "number": 3,
+      "firstSemester": 3,
+      "lastSemester": 7,
+      "heading": "Advanced Studies"
+    }
+  ],
+  "columns": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "studyStages": [
+    {
+      "title": "Advanced Studies",
+      "firstSemester": 3,
+      "lastSemester": 7
+    },
+    {
+      "title": "Foundation Studies",
+      "firstSemester": 1,
+      "lastSemester": 2
+    }
+  ],
+  "modules": {
+    "modules/grundlageninformatik.json": {
+      "placements": [
+        {
+          "semester": 1,
+          "column": "1"
+        }
+      ]
+    },
+    "modules/datenbanken.json": {
+      "placements": [
+        {
+          "semester": 1,
+          "column": "2"
+        }
+      ]
+    },
+    "modules/programmierung.json": {
+      "placements": [
+        {
+          "semester": 1,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/mathe1.json": {
+      "placements": [
+        {
+          "semester": 1,
+          "column": "4"
+        }
+      ]
+    },
+    "modules/studienkompetenzen.json": {
+      "placements": [
+        {
+          "semester": 1,
+          "column": "5"
+        }
+      ]
+    },
+    "modules/rechnerarchitektur.json": {
+      "placements": [
+        {
+          "semester": 2,
+          "column": "1"
+        }
+      ]
+    },
+    "modules/computernetze.json": {
+      "placements": [
+        {
+          "semester": 2,
+          "column": "2"
+        }
+      ]
+    },
+    "modules/algorithmen.json": {
+      "placements": [
+        {
+          "semester": 2,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/mathe2.json": {
+      "placements": [
+        {
+          "semester": 2,
+          "column": "4"
+        }
+      ]
+    },
+    "modules/datascience.json": {
+      "placements": [
+        {
+          "semester": 2,
+          "column": "5"
+        }
+      ]
+    },
+    "modules/softwareengineering.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/computervision.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "4"
+        }
+      ]
+    },
+    "modules/maschinelleslernen.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "5"
+        }
+      ]
+    },
+    "modules/wpm1.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "2"
+        }
+      ]
+    },
+    "modules/softwaredesign.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/projektmanagement.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "4"
+        }
+      ]
+    },
+    "modules/projekt1.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "5",
+          "style": "project"
+        }
+      ]
+    },
+    "modules/praktischesstudiensemester.json": {
+      "placements": [
+        {
+          "semester": 5,
+          "column": "1",
+          "span": 5,
+          "style": "internship"
+        }
+      ]
+    },
+    "modules/wpm2.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "2"
+        }
+      ]
+    },
+    "modules/wpm3.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/wpm4.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "4"
+        }
+      ]
+    },
+    "modules/projekt2.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "5",
+          "style": "project"
+        }
+      ]
+    },
+    "modules/wpm5.json": {
+      "placements": [
+        {
+          "semester": 7,
+          "column": "2"
+        }
+      ]
+    },
+    "modules/ausgewaehltefragen.json": {
+      "placements": [
+        {
+          "semester": 7,
+          "column": "3"
+        }
+      ]
+    },
+    "modules/thesis.json": {
+      "placements": [
+        {
+          "semester": 7,
+          "column": "4",
+          "style": "project",
+          "span": 2
+        }
+      ]
+    },
+    "modules/oop.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "1",
+          "moduleNumber": 1,
+          "track": "SWE"
+        }
+      ]
+    },
+    "modules/stochastik.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "1",
+          "moduleNumber": 1,
+          "track": "AAI"
+        }
+      ]
+    },
+    "modules/grundlagenmedieninformatik.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "1",
+          "moduleNumber": 1,
+          "track": "MIN"
+        }
+      ]
+    },
+    "modules/formalemethoden.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "2",
+          "moduleNumber": 2,
+          "track": "SWE"
+        },
+        {
+          "semester": 6,
+          "column": "1",
+          "moduleNumber": 4,
+          "track": "AAI"
+        }
+      ]
+    },
+    "modules/deeplearning.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "2",
+          "moduleNumber": 2,
+          "track": "AAI"
+        }
+      ]
+    },
+    "modules/verteilteanwendungen.json": {
+      "placements": [
+        {
+          "semester": 3,
+          "column": "2",
+          "moduleNumber": 2,
+          "track": "MIN"
+        }
+      ]
+    },
+    "modules/opensource.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "1",
+          "moduleNumber": 3,
+          "track": "SWE"
+        }
+      ]
+    },
+    "modules/modellierungautonom.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "1",
+          "moduleNumber": 3,
+          "track": "AAI"
+        }
+      ]
+    },
+    "modules/hci.json": {
+      "placements": [
+        {
+          "semester": 4,
+          "column": "1",
+          "moduleNumber": 3,
+          "track": "MIN"
+        }
+      ]
+    },
+    "modules/iotplattformen.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "1",
+          "moduleNumber": 4,
+          "track": "SWE"
+        }
+      ]
+    },
+    "modules/fortgeschritteneprogrammierung.json": {
+      "placements": [
+        {
+          "semester": 6,
+          "column": "1",
+          "moduleNumber": 4,
+          "track": "MIN"
+        }
+      ]
+    }
+  }
+}

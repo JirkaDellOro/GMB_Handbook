@@ -1,0 +1,126 @@
+{
+  "id": "algorithmen",
+  "title": "Algorithmen und Datenstrukturen",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Algorithmen und Datenstrukturen",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 45,
+      "credit_points": 4
+    },
+    {
+      "label": "b)",
+      "name": "Algorithmen und Datenstrukturen",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 15,
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "wichtige Konzepte der objektorientierten Programmierung anhand von Implementierungsbeispielen in der Sprache Java erklären.",
+        "Entwurfstechniken für effiziente Algorithmen und Datenstrukturen erläutern.",
+        "die Eigenschaften grundlegender Datenstrukturen, wie etwa Heaps und Suchbäume darstellen und jeweils typische Einsatzgebiete benennen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Eigenschaften der gelernten Datenstrukturen erkennen und ihren Nutzen verstehen.",
+        "Java Übersetzungs- und Laufzeit-Fehlermeldungen interpretieren und ihre Ursachen ermitteln."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "die gelernten Verfahren und Datenstrukturen einsetzen, etwa im Bereich IT-Sicherheit, KI-Anwendungen, Software-Engineering oder Robotik.",
+        "effiziente Software entwerfen und objektorientiert in Java unter Verwendung des Collection-Frameworks implementieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Einführung in die objektorientierte Programmierung mit Java",
+        "Vererbung, Polymorphie, Interfaces, generische Programmierung, Collections",
+        "Laufzeiten von Algorithmen und ihre Größenordnung",
+        "Stacks und Queues",
+        "Divide-and-Conquer-Verfahren, Sortierverfahren",
+        "Baumstrukturen und Hashtabellen Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Lothar Piepmeyer",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Lothar Piepmeyer"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "G. Krüger: Handbuch der Java-Programmierung, Addison-Wesley 2011"
+    },
+    {
+      "reference": "R. Kühnel Die Java 2 Fibel, Addison-Wesley 1999"
+    },
+    {
+      "reference": "R. Sedgewick, K. Wayne: Algorithmen und Datenstrukturen, Pearson 2014"
+    },
+    {
+      "reference": "G. Saake, K.-U. Sattler: Algorithmen und Datenstrukturen, dpunkt 2020"
+    }
+  ]
+}

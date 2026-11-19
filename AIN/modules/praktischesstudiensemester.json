@@ -1,0 +1,124 @@
+{
+  "id": "praktischesstudiensemester",
+  "title": "Praktisches Studiensemester",
+  "semester": 5,
+  "workload_hours": 900,
+  "credits": 30,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Einführung Praktisches",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "S",
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Praktisches Studiensemester",
+      "language": [
+        "Deutsch"
+      ],
+      "contact_hours": "0 h",
+      "self_study_hours": "720",
+      "class_size": 75,
+      "credit_points": 24
+    },
+    {
+      "label": "c)",
+      "name": "Praktisches Studiensemester, Seminar",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "S",
+      "contact_hours": "11.25 h",
+      "self_study_hours": "78.75",
+      "class_size": 75
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die im Studium erworbenen Kenntnisse und Fähigkeiten in einem IT-Unternehmen erproben und vertiefen sowie um die dort gewonnenen Erfahrungen ergänzen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "ein umfassendes Verständnis für die IT-Praxis (u. a. Struktur und Funktionsweise eines IT-Unternehmens) gewinnen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ihre Fähigkeiten einsetzen, um in einem Team gemeinsam und verantwortlich an Lösungen zu arbeiten."
+      ]
+    },
+    {
+      "category": "Analyse",
+      "items": [
+        "konkrete Vorstellungen über die möglichen Arbeitsfelder von Informatikerinnen und Informatikern entwickeln.",
+        "die Ergebnisse ihrer Arbeit sowie die dabei gewonnenen Erkenntnisse auf das Wesentliche reduzieren und präsentieren.",
+        "ihr Fachwissen und ihre Erfahrungen systematisch nutzen, um Lösungsstrategien für komplexe Fragestellungen zu entwickeln.",
+        "ihre individuellen Interessen und Fähigkeiten weiterentwickeln, um geeignete Schwerpunkte für das weitere Studium und die Bachelorarbeit auszuwählen sowie um konkrete Vorstellungen für ihre spätere Berufswahl zu entwickeln."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Die Studierenden werden in die organisatorischen und administrativen Belange des Praktischen Studiensemesters eingeführt.",
+        "Die Studierenden werden von erfahrenen Personen angeleitet und übernehmen anspruchsvolle Tätigkeiten, vorzugsweise der integrativen Art, in einem einschlägigen Unternehmen. Die Tätigkeiten entsprechen der fachlichen Ausrichtung des Studiengangs und sind so definiert, dass die Studierenden an den für Informatiker typischen Aufgaben mitwirken können."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Seminar",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Abgeschlossenes Grundstudium (bei Antritt des Praktischen Studiensemesters). Das Seminar \"Einführung in das Praktische Studiensemester“ muss ein Semester vor Antritt des Praktischen Studiensemesters absolviert werden. Um ein qualifizierendes Praxissemester zu ermöglichen, dürfen vor Antritt des Praktischen Studiensemesters nur bis zu zwei Module im Umfang von bis zu 12 Leistungspunkten offen sein. Bei Fragen wenden Sie sich bitte an den Studiendekan."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbKO",
+      "description": "1sbKO (Kolloquium)",
+      "graded_assessment": false,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1sbA",
+      "description": "1sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 24
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Naresh Nayak",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Naresh Nayak"
+      ]
+    }
+  ]
+}

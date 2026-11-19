@@ -1,0 +1,135 @@
+{
+  "id": "opensource",
+  "title": "Open Source-basierte Softwareentwicklung",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Open Source-basierte Softwareentwicklung",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Open Source-basierte Softwareentwicklung, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "gängige Werkzeuge der verteilten Softwareentwicklung benennen.",
+        "eine Entwicklungsarchitektur skizzieren."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "werkzeugunabhängige Strukturen ableiten und auf andere Plattformen übertragen (z.B. Linux, Windows, Cloud- Dienste).",
+        "Werkzeuge evaluieren und diese in eigene Projekte integrieren."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "ein Softwareprojekt mit aktuellen Open-Source-Werkzeugen einrichten.",
+        "Fehlerquellen und Konflikte in Softwareprojekten erkennen und beseitigen.",
+        "Softwareänderungen verwalten, kommunizieren und implementieren.",
+        "einen automatisierten Softwareerstellungsprozess planen und ausführen.",
+        "Teilaspekte über mehrere Wochen zu einer Systemlandschaft rekonstruieren."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Beschreibung der Systemlandschaft",
+        "Versionsverwaltung: zentral (subversion)",
+        "Versionsverwaltung: verteilt (git)",
+        "Build-Management (maven)",
+        "Softwaretests (junit, easymock, hamcrest)",
+        "Fehler- und Änderungmanagement (gitlab)",
+        "Continuous Integration (jenkins)",
+        "Continuous Delivery und DevOps (docker, puppet, vagrant)",
+        "Software Configuration Management (nexus)",
+        "Messung der Softwarequalität über den gesamten Lebenszyklus (Metriken, sonar, checkstyle) Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Stefan Betermieux",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Stefan Betermieux"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "S. Chin: DevOps Tools for Java Developers, O'Reilly 2021"
+    },
+    {
+      "reference": "J. Abildskov: Practical Git, Apress 2020"
+    },
+    {
+      "reference": "G. O'Regan: Concise Guide to Software Testing, Springer 2019"
+    },
+    {
+      "reference": "M. Chaudhary: CMMI for Development : Implementation Guide, Apress 2017"
+    },
+    {
+      "reference": "P. P. Dingare: CI/CD Pipeline Using Jenkins Unleashed, Apress 2022"
+    }
+  ]
+}

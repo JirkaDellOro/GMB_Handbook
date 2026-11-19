@@ -1,0 +1,90 @@
+{
+  "id": "elective2",
+  "title": "Elective 2",
+  "module_code": "DM-2024-2901",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Elective Course (WPM) see (5)",
+      "language": [
+        "German",
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": null,
+      "credit_points": 6
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "",
+      "items": [
+        "Depending on the elective course (WPM)"
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Depending on the elective course (WPM)"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Depending on the elective course (WPM)"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "Depending on the elective course (WPM)"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "PL",
+      "graded_assessment": true,
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
+    },
+    {
+      "component": "a)",
+      "code": "SL",
+      "graded_assessment": false,
+      "credits": null,
+      "description": "Depending on the elective course (WPM)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Academics Vice Dean",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": []
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Depending on the elective course (WPM)"
+    }
+  ]
+}

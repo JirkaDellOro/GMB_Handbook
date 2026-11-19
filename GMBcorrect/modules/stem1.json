@@ -1,0 +1,175 @@
+{
+  "id": "stem1",
+  "title": "STEM 1",
+  "module_code": "DM-2023-2809",
+  "semester": 1,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "SoSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "STEM 1 Seminar",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "3 SWS / 33.75h",
+      "self_study_hours": 90,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "STEM 1 Practical",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "1 SWS / 11.25h",
+      "self_study_hours": 45,
+      "class_size": 20,
+      "course_type": "P",
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "reliably reproduce standard 2D representations of 3D objects.",
+        "know how to articulate geometric questions precisely using the appropriate technical terms."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "recognise, understand and reproduce, meaningful connections and proof elements or derivations in the field of geometry and the mapping of three-dimensional objects on two-dimensional planes."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply techniques of vector calculus and matrix algebra to geometrical problems and to questions of the position and representation of spatial objects."
+      ]
+    },
+    {
+      "category": "Analysis",
+      "items": [
+        "analyse geometric problems in the plane and space, while selecting the appropriate tools from those provided."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "recognise and exploit common structures and patterns in different mathematical areas.",
+        "present an overview of a suitable delimited model relevant to computer graphics or computer vision."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "weigh up different procedures (e.g., for linking affine or projective transformations) in terms of clarity and effort."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Coordinates of Points and Vectors, Change of Coordinate Frames",
+        "Systems of Linear Equations",
+        "Metric Spaces: Distances, Lengths, Angles",
+        "Matrices, Linear and Affine Transformations",
+        "Homogeneous Coordinates",
+        "Parallel, Axonometric and Orthographic Projections",
+        "Linear Perspective: Image Construction using Desargues' Theorem",
+        "Points at Infinity and Vanishing Points",
+        "Projection Matrices: Unified Approach"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "All contents of course a) are applied and practised."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "Workshop / Math Lab"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    },
+    {
+      "component": "b)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1K",
+      "graded_assessment": true,
+      "credits": 3,
+      "description": "Written Examination (K)"
+    },
+    {
+      "component": "b)",
+      "code": "1sbaL",
+      "graded_assessment": false,
+      "credits": 2,
+      "description": "Structured Assignments during semester (sbaL)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Dr. Thomas Schneider",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "Prof. Dr. Thomas Schneider"
+      ]
+    },
+    {
+      "component": "b)",
+      "names": [
+        "Prof. Dr. Thomas Schneider"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Anton, Howard; Rorres, Chris; Kaul, Anton: Elementary Linear Algebra: Applications Version (12th Edition), Wiley, 2019, ISBN: 1119282365"
+    },
+    {
+      "component": "a)",
+      "reference": "Lengyel, Eric: Mathematics for 3D Game Programming and Computer Graphics (3rd Edition), Cengage Learning PTR, 2011, ISBN: 1435458869"
+    },
+    {
+      "component": "b)",
+      "reference": "See course a)"
+    }
+  ]
+}

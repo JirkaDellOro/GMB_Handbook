@@ -1,0 +1,65 @@
+[
+  {
+    "title": "Semester 1",
+    "modules": [
+      "modules/project1.json",
+      "modules/visual1.json",
+      "modules/theory1.json",
+      "modules/code1.json",
+      "modules/stem1.json"
+    ]
+  },
+  {
+    "title": "Semester 2",
+    "modules": [
+      "modules/visual2.json",
+      "modules/code2.json",
+      "modules/sound1.json",
+      "modules/theory2.json",
+      "modules/project2.json"
+    ]
+  },
+  {
+    "title": "Semester 3",
+    "modules": [
+      "modules/sound2.json",
+      "modules/code3.json",
+      "modules/stem2.json",
+      "modules/visual3.json",
+      "modules/project3.json"
+    ]
+  },
+  {
+    "title": "Semester 4",
+    "modules": [
+      "modules/code4.json",
+      "modules/theory3.json",
+      "modules/business1.json",
+      "modules/stem3.json",
+      "modules/project4.json"
+    ]
+  },
+  {
+    "title": "Semester 5",
+    "modules": [
+      "modules/internship.json"
+    ]
+  },
+  {
+    "title": "Semester 6",
+    "modules": [
+      "modules/project5.json",
+      "modules/business2.json",
+      "modules/elective2.json",
+      "modules/elective1.json"
+    ]
+  },
+  {
+    "title": "Semester 7",
+    "modules": [
+      "modules/elective4.json",
+      "modules/elective3.json",
+      "modules/thesis.json"
+    ]
+  }
+]

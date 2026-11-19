@@ -1,0 +1,121 @@
+{
+  "id": "fortgeschritteneprogrammierung",
+  "title": "Fortgeschrittene Programmierung für Medieninformatiker",
+  "semester": 6,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Fortgeschrittene Programmierung für",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 30,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Fortgeschrittene Programmierung für",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "wesentliche Technologien für den Bereich der Medienanwendungen benennen und deren Funktionsweise beschreiben."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "aktuelle Technologien bei der Entwicklung von Medienanwendungen einordnen und bewerten."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "moderne Medienanwendungen mit modernen Technologien entwickeln.",
+        "zu einer gegebenen Aufgabenstellung geeignete Technologien auswählen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Frontend-Frameworks für Web-Anwendungen",
+        "Web-Komponenten",
+        "WebAssembly",
+        "Micro Frontends",
+        "Komponenten-Bibliotheken für Web-Anwendungen",
+        "Persistenzframeworks",
+        "Backend-Technologien im Bereich IoT: MQTT, Time-Series-Datenbanken Anhand von Übungsaufgaben werden die in der Vorlesung behandelten Methoden und Verfahren geübt."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Dirk Eisenbiegler",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Dirk Eisenbiegler"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "M. Inden: Persistenzlösungen und REST-Services, Dpunkt 2016"
+    },
+    {
+      "reference": "M. Geers: Micro Frontends in Action, Manning 2020"
+    },
+    {
+      "reference": "B. Sletten: WebAssembly: The Definitive Guide: Safe, Fast, and Portable Code, O'Reilly 2021"
+    }
+  ]
+}

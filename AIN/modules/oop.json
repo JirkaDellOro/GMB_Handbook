@@ -1,0 +1,124 @@
+{
+  "id": "oop",
+  "title": "Objektorientierte Programmierung",
+  "semester": 3,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Objektorientierte Programmierung",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 60,
+      "credit_points": 3
+    },
+    {
+      "label": "b)",
+      "name": "Objektorientierte Programmierung",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "67.5",
+      "class_size": 15,
+      "credit_points": 3
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "die Konzepte der objektorientierten Programmierung detailliert erklären.",
+        "den Prozess der Objekterzeugung und Objektzerstörung im Kontext der Speicherverwaltung beschreiben.",
+        "den Unterschied zwischen Objektgleichheit und Objektidentität darlegen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "die Syntax einer objektorientierten Programmiersprache verstehen.",
+        "aufgrund ihrer detailreichen Kenntnis von C++ und Java auch andere objektorientierte Programmiersprachen bewerten.",
+        "Komplexe Probleme erfassen, die mit der Mehrfachvererbung einhergehen."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "neue Entwicklungen objektorientierter Programmiersprachen einordnen und nutzen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Wiederholung und Vertiefung der aus C und Java übernommenen Sprachelemente",
+        "Klassen und Objekte",
+        "Konstruktor, Destruktor, Kopierkonstruktor und Speicherverwaltung",
+        "Überladung von Operatoren",
+        "Anwendungen der Standardbibliothek.",
+        "Templates, insbesondere Collections und Smart-Pointer",
+        "Vererbung, Mehrfachvererbung, Virtuelle Funktionen und Polymorphie Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Algorithmen und Datenstrukturen"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Lothar Piepmeyer",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Lothar Piepmeyer"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Grimm: C++ – kurz & gut: Aktuell zu C++17, O'Reilly 2018"
+    },
+    {
+      "reference": "S. Meyers: Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14, O'Reilly 2014"
+    },
+    {
+      "reference": "B. Stroustrup: Eine Tour durch C++: Der praktische Leitfaden für modernes C++, mitp Professional 2023"
+    }
+  ]
+}

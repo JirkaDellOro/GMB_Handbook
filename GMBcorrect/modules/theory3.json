@@ -1,0 +1,149 @@
+{
+  "id": "theory3",
+  "title": "Theory 3",
+  "module_code": "DM-2024-2897",
+  "semester": 4,
+  "workload_hours": 180,
+  "credits": 5,
+  "frequency": "WiSe",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Theory 3",
+      "language": [
+        "English"
+      ],
+      "contact_hours": "4 SWS / 45h",
+      "self_study_hours": 135,
+      "class_size": 35,
+      "course_type": "S",
+      "credit_points": 5
+    }
+  ],
+  "learning_outcomes_intro": "After successfully completing the module, students will be able to",
+  "learning_outcomes": [
+    {
+      "category": "Knowledge",
+      "items": [
+        "know the fundamentals of user experience design."
+      ]
+    },
+    {
+      "category": "Comprehension",
+      "items": [
+        "understand the fundamental theories and best practices of narrative-, level- and mission-design."
+      ]
+    },
+    {
+      "category": "Practical Use",
+      "items": [
+        "apply their knowledge and comprehension to design experiences within a predesigned framework."
+      ]
+    },
+    {
+      "category": "Synthesis",
+      "items": [
+        "create innovative ways of narrative- and mission design."
+      ]
+    },
+    {
+      "category": "Evaluation",
+      "items": [
+        "evaluate their designs with e.g., user tests."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "component": "a)",
+      "items": [
+        "Level Design",
+        "Mission Design",
+        "Narrative Design",
+        "Storytelling",
+        "Environmental",
+        "UX-Design"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "component": "a)",
+      "items": [
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "component": "a)",
+      "items": [
+        "None"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbK",
+      "graded_assessment": true,
+      "credits": 5,
+      "description": "Written Exam during semester (sbK)"
+    }
+  ],
+  "applicability": [
+    "Games & Immersive Media B.A. (SPO-Version: 11)"
+  ],
+  "responsible_person": "Prof. Jirka Dell´Oro-Friedl",
+  "lecturers": [
+    {
+      "component": "a)",
+      "names": [
+        "N.N."
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "component": "a)",
+      "reference": "Schell, Jesse: The Art of Game Design: A Book of Lenses (3rd Edition), Taylor & Francis, 2019, ISBN: 1138632058"
+    },
+    {
+      "component": "a)",
+      "reference": "Juul, Jesper: Half-Real: Video Games between Real Rules and Fictional Worlds, The MIT Press, 2011, ISBN: 9780262516518"
+    },
+    {
+      "component": "a)",
+      "reference": "Vogler, Christopher: The Writer's Journey: Mythic Structure for Writers (3rd Edition), Michael Wiese Productions, 2007, ISBN: 978-1615931705"
+    },
+    {
+      "component": "a)",
+      "reference": "Solarski, Chris: Interactive Stories and Video Game Art: A Storytelling Framework for Game Design, Taylor & Francis, 2017, ISBN: 978-1498781503"
+    },
+    {
+      "component": "a)",
+      "reference": "McRae, Edwin: Narrative Design for Writers: An industry guide to writing for video games, Fiction Engine Limited, 2020, ISBN: 978-0473518820"
+    },
+    {
+      "component": "a)",
+      "reference": "Totten, Christopher W.: An Architectural Approach to Level Design (2nd Edition), A K Peters, 2019, ISBN: 978-0815361367"
+    },
+    {
+      "component": "a)",
+      "reference": "Totten, Christopher W.: Level Design: Processes and Experiences, A K Peters/CRC Press, 2017, ISBN: 978-1138628809"
+    },
+    {
+      "component": "a)",
+      "reference": "Kremers, Rudolf: Level Design: Concept, Theory and Practice, A K Peters, 2009, ISBN: 978-1568813387"
+    },
+    {
+      "component": "a)",
+      "reference": "Rusch, Doris C.: Making Deep Games: Designing Games with Meaning and Purpose, Routledge, 2017, ISBN: 978-1138812130"
+    },
+    {
+      "component": "a)",
+      "reference": "Isbister, Katherine: How Games Move Us: Emotion by Design (Playful Thinking), MIT Press, 2016, ISBN: 978-0262034265"
+    }
+  ]
+}

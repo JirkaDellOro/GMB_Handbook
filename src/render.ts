@@ -1,4 +1,4 @@
-import type { CurriculumData, ModuleData, SemesterGroup } from "./types.js";
+import type { CurriculumData, CurriculumPlacement, ModuleData, SemesterGroup } from "./types.js";
 
 function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
   const node = document.createElement(_tag);
@@ -26,15 +26,19 @@ function section(_title: string, _parent: HTMLElement): HTMLElement {
 
 export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _curriculum: CurriculumData): void {
   _target.replaceChildren();
-  appendText(_target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
+  appendText(_target, "h2", _curriculum.tableHeadings?.structure ?? "Table 1: Module Structure", "curriculum-table-heading");
   const scroll = createElement("div", "curriculum-scroll");
   const layout = createElement("div", "curriculum-layout");
+  layout.style.width = "100%";
+  const columnTemplate = `34px repeat(${_curriculum.columns.length}, minmax(0, 1fr)) 38px`;
   const headings = createElement("div", "curriculum-headings");
+  headings.style.gridTemplateColumns = columnTemplate;
   headings.append(createElement("span"));
   for (const name of _curriculum.columns) appendText(headings, "span", name);
   headings.append(createElement("span"));
   layout.append(headings);
   const grid = createElement("div", "curriculum-grid");
+  grid.style.gridTemplateColumns = columnTemplate;
   grid.setAttribute("aria-label", "Module structure by semester and subject area");
   for (let semester = 7; semester >= 1; semester--) {
     const row = createElement("output", undefined, String(semester));
@@ -53,22 +57,44 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
   const cells = new Map<string, {
     row: number;
     gridColumn: string;
-    entries: { module: ModuleData; semester: number; block: number | null; style: string }[];
+    entries: { module: ModuleData; semester: number; block?: number | null; style: string; track?: string; moduleNumber?: number }[];
   }>();
   for (const module of _modules) {
     const position = _curriculum.modules[module.sourceRef ?? module.id];
     if (!position) continue;
-    const semester = Number(module.semester);
-    const column = _curriculum.columns.indexOf(position.column);
-    if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
-    const row = 8 - semester;
-    const gridColumn = position.span ? `${column + 2} / span ${position.span}` : String(column + 2);
-    const key = `${row}:${gridColumn}`;
-    const cell = cells.get(key) ?? { row, gridColumn, entries: [] };
-    cell.entries.push({ module, semester, block: position.block, style: position.style ?? "" });
-    cells.set(key, cell);
+    const placements = position.placements ?? [position as CurriculumPlacement];
+    for (const placement of placements) {
+      const semester = Number(placement.semester ?? module.semester);
+      const column = _curriculum.columns.indexOf(placement.column);
+      if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
+      const row = 8 - semester;
+      const gridColumn = placement.span ? `${column + 2} / span ${placement.span}` : String(column + 2);
+      const key = `${row}:${gridColumn}`;
+      const cell = cells.get(key) ?? { row, gridColumn, entries: [] };
+      cell.entries.push({ module, semester, block: placement.block, style: placement.style ?? position.style ?? "", track: placement.track, moduleNumber: placement.moduleNumber });
+      cells.set(key, cell);
+    }
   }
+  const hasBlockInfo = Object.values(_curriculum.modules).some(position =>
+    position.block !== undefined || position.placements?.some(placement => placement.block !== undefined)
+  );
   for (const cellData of cells.values()) {
+    const isSpecializationBlock = cellData.entries.length > 1 &&
+      cellData.entries.every(entry => entry.moduleNumber !== undefined && Boolean(entry.track));
+    if (isSpecializationBlock) {
+      const container = createElement("div", "curriculum-specialization");
+      container.style.gridColumn = cellData.gridColumn;
+      container.style.gridRow = String(cellData.row);
+      container.append(createElement("strong", undefined, `Vertiefungsmodul ${cellData.entries[0].moduleNumber}`));
+      for (const entry of cellData.entries) {
+        const link = createElement("a", "curriculum-specialization-track", entry.track);
+        link.href = `./index.html?module=${encodeURIComponent(entry.module.sourceRef ?? ("modules/" + entry.module.id + ".json"))}`;
+        link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
+        container.append(link);
+      }
+      grid.append(container);
+      continue;
+    }
     const isStacked = cellData.entries.length > 1;
     const container = isStacked ? createElement("div", "curriculum-module-cell") : grid;
     if (isStacked) {
@@ -78,7 +104,7 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
       grid.append(container);
     }
     for (const entry of cellData.entries) {
-      const { module, semester, block, style } = entry;
+      const { module, semester, block, style, track, moduleNumber } = entry;
       const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
       link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
       link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
@@ -87,7 +113,8 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
         link.style.gridRow = String(cellData.row);
       }
       appendText(link, "span", module.title);
-      if (style !== "internship") {
+      if (track || moduleNumber) appendText(link, "small", [moduleNumber ? `Vertiefungsmodul ${moduleNumber}` : "", track ?? ""].filter(Boolean).join(" · "));
+      if (block !== undefined && style !== "internship") {
         const blockLabel = block === null ? "–" : String(block);
         appendText(link, "span", `${blockLabel}.${module.credits ?? "—"}`);
       }
@@ -97,9 +124,11 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
   layout.append(grid);
   scroll.append(layout);
   _target.append(scroll);
-  const legend = createElement("p");
-  legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-  _target.append(legend);
+  if (hasBlockInfo) {
+    const legend = createElement("p");
+    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
+    _target.append(legend);
+  }
 }
 
 
@@ -128,68 +157,102 @@ function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["
   return match ? match[1].replace(",", ".") : String(_value);
 }
 
-export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[]): void {
+export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], _curriculum?: CurriculumData): void {
   _target.replaceChildren();
-  const orderedModules = [...modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
-  for (const range of studyTableRanges) {
-    const sectionNode = createElement("section");
-    appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
-    const semesterModules = new Map<number, ModuleData[]>();
-    for (const module of orderedModules) {
-      const semester = Number(module.semester);
-      if (!Number.isInteger(semester) || semester < range.firstSemester || semester > range.lastSemester) continue;
+  const ranges = _curriculum?.studyTables ?? studyTableRanges;
+  const programmeName = _curriculum?.programmeName ?? "Games & Immersive Media B.A.";
+  const semesterModules = new Map<number, ModuleData[]>();
+  for (const module of _modules) {
+    const position = _curriculum?.modules[module.sourceRef ?? module.id];
+    const placements = position?.placements ?? (position ? [position as CurriculumPlacement] : []);
+    const semesters = placements.length ? [...new Set(placements.map(_placement => Number(_placement.semester ?? module.semester)))] : [Number(module.semester)];
+    for (const semester of semesters) {
+      if (!Number.isInteger(semester) || semester < 1 || semester > 7) continue;
       const group = semesterModules.get(semester) ?? [];
-      group.push(module);
-      semesterModules.set(semester, group);
+      group.push(module); semesterModules.set(semester, group);
     }
+  }
+  const semesterCredits = new Map<number, number>();
+  for (const [semester, modules] of semesterModules) {
+    const counted = new Set<string>(); let total = 0;
+    for (const module of modules) {
+      const position = _curriculum?.modules[module.sourceRef ?? module.id];
+      const placement = position?.placements?.find(_item => Number(_item.semester ?? module.semester) === semester);
+      const group = placement?.moduleNumber ? `choice-${placement.moduleNumber}` : module.id;
+      if (counted.has(group)) continue;
+      counted.add(group); total += Number(module.credits) || 0;
+    }
+    semesterCredits.set(semester, total);
+  }
+  for (const range of ranges) {
+    const sectionNode = createElement("section");
+    const configuredHeading = range.number === 2 ? _curriculum?.tableHeadings?.foundation : _curriculum?.tableHeadings?.advanced;
+    appendText(sectionNode, "h2", configuredHeading ?? `Table ${range.number}: ${programmeName} (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
     const gridScroll = createElement("div", "study-grid-scroll");
     for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
       const semesterItems = semesterModules.get(semester) ?? [];
+      const entries = semesterItems.map(module => {
+        const position = _curriculum?.modules[module.sourceRef ?? module.id];
+        const placement = position?.placements?.find(_item => Number(_item.semester ?? module.semester) === semester);
+        return { module, moduleNumber: placement?.moduleNumber, track: placement?.track };
+      });
+      const hasBlocks = entries.some(_entry => _entry.moduleNumber !== undefined);
       const semesterCard = createElement("section");
-      const grid = createElement("div", "study-data-grid");
+      const grid = createElement("div", hasBlocks ? "study-data-grid study-data-grid--blocks" : "study-data-grid");
       grid.setAttribute("aria-label", `Table ${range.number}: ${semester}. Curricular Semester`);
-      for (const title of ["Modules", "Component", "Type", "Hours", "Graded", "Non-Graded", "CP"]) {
-        grid.append(createElement("header", undefined, title));
+      const headings = ["Modules", "Component", "Type", "Hours", "Graded", "Non-Graded", "CP"];
+      if (hasBlocks) {
+        const spacer = createElement("header"); spacer.style.gridColumn = "1"; spacer.style.gridRow = "1"; grid.append(spacer);
       }
-      for (const module of semesterItems) {
-        const components = module.components?.length ? module.components : [undefined];
-        const moduleCell = createElement("div");
-        const moduleLink = createElement("a", undefined, module.title);
-        moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
-        moduleCell.append(moduleLink);
-        moduleCell.style.gridRow = `span ${components.length}`;
-        grid.append(moduleCell);
-        for (const component of components) {
-          const values = [
-            component?.name ?? "—",
-            component?.course_type ?? "—",
-            contactHoursSws(component?.contact_hours),
-            component ? componentAssessments(module, component, true) || "—" : "—",
-            component ? componentAssessments(module, component, false) || "—" : "—",
-            component?.credit_points ?? "—"
-          ];
-          for (const value of values) grid.append(createElement("div", undefined, <string>value));
+      headings.forEach((title, index) => {
+        const header = createElement("header", undefined, title);
+        header.style.gridColumn = String(index + (hasBlocks ? 2 : 1)); header.style.gridRow = "1"; grid.append(header);
+      });
+      let gridRow = 2;
+      for (let index = 0; index < entries.length;) {
+        const entry = entries[index], blockNumber = entry.moduleNumber;
+        let blockEntries = [entry];
+        if (blockNumber !== undefined) {
+          let next = index + 1;
+          while (next < entries.length && entries[next].moduleNumber === blockNumber) { blockEntries.push(entries[next]); next++; }
         }
+        const blockRowCount = blockEntries.reduce((_count, _entry) => _count + Math.max(1, _entry.module.components?.length ?? 0), 0);
+        if (blockNumber !== undefined) {
+          const label = createElement("div", "study-block-label", `Vertiefungsmodul ${blockNumber} · 6 CP`);
+          label.style.gridColumn = "1"; label.style.gridRow = `${gridRow} / span ${blockRowCount}`; grid.append(label);
+        }
+        for (const blockEntry of blockEntries) {
+          const { module, track } = blockEntry;
+          const components = module.components?.length ? module.components : [undefined];
+          const moduleCell = createElement("div", blockNumber !== undefined ? "study-block-module" : "");
+          const moduleLink = createElement("a", undefined, track ? `${track}: ${module.title}` : module.title);
+              moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
+          moduleCell.append(moduleLink);
+          moduleCell.style.gridColumn = hasBlocks ? (blockNumber !== undefined ? "2" : "1 / span 2") : "1";
+          moduleCell.style.gridRow = `${gridRow} / span ${components.length}`; grid.append(moduleCell);
+          for (let componentIndex = 0; componentIndex < components.length; componentIndex++) {
+            const component = components[componentIndex];
+            const values = [component?.name ?? "—", component?.course_type ?? "—", contactHoursSws(component?.contact_hours), component ? componentAssessments(module, component, true) || "—" : "—", component ? componentAssessments(module, component, false) || "—" : "—", component?.credit_points ?? "—"];
+            values.forEach((value, valueIndex) => {
+              const cell = createElement("div", undefined, String(value));
+              cell.style.gridColumn = String(valueIndex + (hasBlocks ? 3 : 2)); cell.style.gridRow = String(gridRow + componentIndex); grid.append(cell);
+            });
+          }
+          gridRow += components.length;
+        }
+        index += blockEntries.length;
       }
       semesterCard.append(grid);
-      const semesterCredits = semesterItems.reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
       const semesterTotal = createElement("div", "study-semester-total");
       semesterTotal.append(createElement("span", undefined, `${semester}. Curricular Semester`));
-      semesterTotal.append(createElement("span", undefined, String(semesterCredits)));
-      semesterCard.append(semesterTotal);
-      gridScroll.append(semesterCard);
+      semesterTotal.append(createElement("span", undefined, String(semesterCredits.get(semester) ?? 0)));
+      semesterCard.append(semesterTotal); gridScroll.append(semesterCard);
     }
-    const overallCredits = orderedModules
-      .filter(_module => Number(_module.semester) >= range.firstSemester && Number(_module.semester) <= range.lastSemester)
-      .reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
+    const overallCredits = [...semesterCredits.entries()].filter(([semester]) => semester >= range.firstSemester && semester <= range.lastSemester).reduce((_total, [_semester, _credits]) => _total + _credits, 0);
     const overallGrid = createElement("div", "study-data-grid");
-    const overall = createElement("div", undefined, "Overall");
-    overall.style.gridColumn = "span 6";
-    overallGrid.append(overall);
-    overallGrid.append(createElement("div", undefined, String(overallCredits)));
-    gridScroll.append(overallGrid);
-    sectionNode.append(gridScroll);
-    _target.append(sectionNode);
+    const overall = createElement("div", undefined, "Overall"); overall.style.gridColumn = "span 6";
+    overallGrid.append(overall); overallGrid.append(createElement("div", undefined, String(overallCredits)));
+    gridScroll.append(overallGrid); sectionNode.append(gridScroll); _target.append(sectionNode);
   }
 }
 
@@ -209,7 +272,7 @@ export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
 export async function renderModuleList(
   _target: HTMLElement,
   _semesters: SemesterGroup[],
-  __loadModule: (_moduleReference: string) => Promise<ModuleData>
+  _loadModule: (_moduleReference: string) => Promise<ModuleData>
 ): Promise<void> {
   _target.replaceChildren();
   for (const semester of _semesters) {
@@ -259,8 +322,8 @@ export function renderError(_target: HTMLElement, _title: string, _message: stri
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {
   if (_showBackLink) {
-    const back = createElement("a", "back-link", "← All modules");
-    back.href = "./index.html?view=modules";
+    const back = createElement("a", "back-link", "← Programme overview");
+    back.href = "./index.html";
     _article.append(back);
   }
   _article.append(createModuleHeading(_module), createModuleFacts(_module));

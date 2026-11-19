@@ -1,0 +1,136 @@
+{
+  "id": "computernetze",
+  "title": "Computernetze",
+  "semester": 2,
+  "workload_hours": 180,
+  "credits": 6,
+  "frequency": "Jedes Semester",
+  "duration": 1,
+  "components": [
+    {
+      "label": "a)",
+      "name": "Computernetze",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "V",
+      "contact_hours": "45 h",
+      "self_study_hours": "75",
+      "class_size": 75,
+      "credit_points": 4
+    },
+    {
+      "label": "b)",
+      "name": "Computernetze, Praktikum",
+      "language": [
+        "Deutsch"
+      ],
+      "course_type": "P",
+      "contact_hours": "22.5 h",
+      "self_study_hours": "37.5",
+      "class_size": 15,
+      "credit_points": 2
+    }
+  ],
+  "learning_outcomes": [
+    {
+      "category": "Wissen",
+      "items": [
+        "Konzepte, Technologien und die Integration von Computernetz-Infrastrukturen beschreiben.",
+        "Dienste und Protokolle von Computernetzen im Lokalen und Weitverkehrs-Bereich erläutern.",
+        "Kommunikationsarchitekturen und Netztopologien darstellen.",
+        "grundlegende Begriffe und Konzepte der IT-Sicherheit benennen."
+      ]
+    },
+    {
+      "category": "Verständnis",
+      "items": [
+        "Entwurf, Umsetzung und Betrieb von Computernetz-Infrastrukturen mitgestalten.",
+        "Computernetze für konkrete Anwendungsszenarien konzipieren.",
+        "die Herausforderungen und Lösungsansätze für die Sicherheit vernetzter Computer erklären."
+      ]
+    },
+    {
+      "category": "Anwendung",
+      "items": [
+        "Zusammenhänge der globalen Vernetzung und die heute de facto bestehende Abhängigkeit jedes größeren. Unternehmens von der Informations- und Kommunikationstechnik einordnen."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Computernetze und Referenzmodelle",
+        "TCP/IP-Protokollsuite, IPv4 und IPv6 basiert",
+        "LAN/WAN-Netz-Topologien",
+        "Internetworking/Routing",
+        "Infrastrukturen mobiler Netze (WLAN, Bluetooth, UMTS/LTE/5G)",
+        "Software Defined Networking (SDN)",
+        "Voice over IP-Infrastrukturen",
+        "Dienste in Kommunikationsnetzen (z.B. Verzeichnisdienste, Netzwerkmanagement, Security-Dienste)",
+        "KI-Einsatz für effiziente, skalierbare, und sichere Netz-Infrastrukturen Case Studies über Computer-Netzwerk-Infrastrukturen"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
+  "applicability": [
+    "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Achim Karduck",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Achim Karduck"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Schreiner: Computernetze, Hanser 2023"
+    },
+    {
+      "reference": "J. Scherff: Computernetzwerke, Vieweg 2021"
+    },
+    {
+      "reference": "W. Riggert, R. Lübben: Rechnernetze, Hanser 2025"
+    },
+    {
+      "reference": "A. Badach, E. Hoffmann: Technik der IP Netze - Grundlagen der IPv4- und IPv6 Kommunikation, Hanser 2023"
+    },
+    {
+      "reference": "A. Badach, E. Hoffmann: Zukunft der IP-Netze - Virtualisierte, software-definierte, intelligente Systemlösungen und"
+    },
+    {
+      "reference": "anwendungen, Hanser 2026"
+    }
+  ]
+}
