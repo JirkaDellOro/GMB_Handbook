@@ -50,6 +50,23 @@
 .study-data-grid {
   display: grid;
   grid-template-columns: minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
+}
+.study-data-grid--blocks {
+  grid-template-columns: 30px minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
+}
+.study-block-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 4px !important;
+  border-right: 1px solid var(--line);
+  background: var(--white);
+  color: var(--study);
+  font-weight: 700;
+  text-align: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
   width: 100%;
   background: var(--gray);
   font-size: inherit;
@@ -206,6 +223,8 @@
   .study-grid-scroll:has(> section) { display: block; }
   .study-grid-scroll > section { min-width: 0; width: 100%; margin-bottom: 2mm; border-radius: 0; break-inside: auto; }
   .study-data-grid { grid-template-columns: 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; font-size: 6.5pt; line-height: 1.2; }
+  .study-data-grid--blocks { grid-template-columns: 5mm 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; }
+  .study-block-label { padding: 1mm .5mm !important; font-size: 6pt; }
   .study-data-grid > header, .study-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
   .study-semester-total { padding: 1.2mm 2mm; font-size: 7pt; }
   .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
