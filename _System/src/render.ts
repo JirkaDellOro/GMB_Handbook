@@ -1,30 +1,9 @@
 import type { Assessment, CurriculumCell, CurriculumData, CurriculumModulePosition, CurriculumPlacement, DetailGridRows, DetailGridValue, ModuleComponent, ModuleData, SemesterGroup, StudyStage, StudyTableEntry, StudyTableRange } from "./types.js";
 
-function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
-  const node: HTMLElementTagNameMap[K] = document.createElement(_tag);
-  if (_className) node.className = _className;
-  if (_text !== undefined) node.textContent = _text;
-  return node;
-}
-function appendText(_parent: HTMLElement, _tag: keyof HTMLElementTagNameMap, _text?: DetailGridValue, _className?: string): HTMLElement {
-  const value: string = _text === null || _text === undefined || _text === "" ? "—" : String(_text);
-  const node: HTMLElement = createElement(_tag, _className, value);
-  _parent.append(node);
-  return node;
-}
-function addList(_parent: HTMLElement, _items: string[] = []): void {
-  const list: HTMLUListElement = createElement("ul");
-  _items.forEach((item: string): void => {
-    appendText(list, "li", item);
-  });
-  _parent.append(list);
-}
-function section(_title: string, _parent: HTMLElement): HTMLElement {
-  const node: HTMLElement = createElement("section", "content-section");
-  appendText(node, "h2", _title);
-  _parent.append(node);
-  return node;
-}
+const studyTableRanges: StudyTableRange[] = [
+  { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
+  { number: 3, firstSemester: 3, lastSemester: 7, heading: "Advanced Studies" }
+];
 
 export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _curriculum: CurriculumData): void {
   const scroll: HTMLDivElement = createElement("div", "curriculum-scroll");
@@ -203,11 +182,6 @@ function appendCurriculumLegend(_target: HTMLElement): void {
 
 
 
-
-const studyTableRanges: StudyTableRange[] = [
-  { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
-  { number: 3, firstSemester: 3, lastSemester: 7, heading: "Advanced Studies" }
-];
 
 function componentReference(_module: ModuleData, _label?: string): string | undefined {
   if (!_label) return undefined;
@@ -692,4 +666,30 @@ function appendComponentContent(_parent: HTMLElement, _module: ModuleData, _item
     if (item.component) appendText(_parent, "h3", componentReference(_module, item.component));
     addList(_parent, item.items);
   });
+}
+
+function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
+  const node: HTMLElementTagNameMap[K] = document.createElement(_tag);
+  if (_className) node.className = _className;
+  if (_text !== undefined) node.textContent = _text;
+  return node;
+}
+function appendText(_parent: HTMLElement, _tag: keyof HTMLElementTagNameMap, _text?: DetailGridValue, _className?: string): HTMLElement {
+  const value: string = _text === null || _text === undefined || _text === "" ? "—" : String(_text);
+  const node: HTMLElement = createElement(_tag, _className, value);
+  _parent.append(node);
+  return node;
+}
+function addList(_parent: HTMLElement, _items: string[] = []): void {
+  const list: HTMLUListElement = createElement("ul");
+  _items.forEach((item: string): void => {
+    appendText(list, "li", item);
+  });
+  _parent.append(list);
+}
+function section(_title: string, _parent: HTMLElement): HTMLElement {
+  const node: HTMLElement = createElement("section", "content-section");
+  appendText(node, "h2", _title);
+  _parent.append(node);
+  return node;
 }
