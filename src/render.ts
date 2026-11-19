@@ -226,8 +226,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], 
           const components = module.components?.length ? module.components : [undefined];
           const moduleCell = createElement("div", blockNumber !== undefined ? "study-block-module" : "");
           const moduleLink = createElement("a", undefined, track ? `${track}: ${module.title}` : module.title);
-          moduleLink.setAttribute("lang", "de");
-          moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
+              moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
           moduleCell.append(moduleLink);
           moduleCell.style.gridColumn = hasBlocks ? (blockNumber !== undefined ? "2" : "1 / span 2") : "1";
           moduleCell.style.gridRow = `${gridRow} / span ${components.length}`; grid.append(moduleCell);
