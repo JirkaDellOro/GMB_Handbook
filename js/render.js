@@ -218,7 +218,7 @@ export function renderStudyTables(_target, _modules, _curriculum) {
             const semesterTotal = createElement("div", "study-semester-total");
             semesterTotal.append(createElement("span", undefined, `${semester}. Curricular Semester`));
             semesterTotal.append(createElement("span", undefined, String(semesterCredits.get(semester) ?? 0)));
-            semesterCard.append(grid); semesterCard.append(semesterTotal); gridScroll.append(semesterCard);
+            semesterCard.append(semesterTotal); gridScroll.append(semesterCard);
         }
         const overallCredits = [...semesterCredits.entries()].filter(([semester]) => semester >= range.firstSemester && semester <= range.lastSemester).reduce((_total, [_semester, _credits]) => _total + _credits, 0);
         const overallGrid = createElement("div", "study-data-grid");
