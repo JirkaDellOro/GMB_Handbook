@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -64,7 +68,56 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Bernhard Hollunder",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Bernhard Hollunder"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "G. Vossen, K.-U. Witt: Grundkurs Theoretische Informatik: Eine anwendungsbezogene Einführung - Für Studierende in allen Informatik-Studiengängen. Springer 2016"
+    },
+    {
+      "reference": "U. Kastens, H. Kleine-Büning: Modellierung: Grundlagen und formale Methoden. Hanser 2021"
+    },
+    {
+      "reference": "P. Sander, W. Stucky, R. Herschel: Automaten, Sprachen, Berechenbarkeit; Grundkurs angewandte Informatik, Teubner 1995"
+    }
   ]
 }

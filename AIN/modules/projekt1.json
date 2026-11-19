@@ -68,11 +68,21 @@
     {
       "items": [
         "Workshop",
-        "Seminar"
+        "Seminar",
+        "Prüfungsleistung: 1 A (Praktische Arbeit) (4 LP)",
+        "Studienleistung: 1 sbR (Referat) (2 LP)"
       ]
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
   ]
 }

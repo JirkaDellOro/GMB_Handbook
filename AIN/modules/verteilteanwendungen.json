@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -78,7 +82,59 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Dirk Eisenbiegler",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Dirk Eisenbiegler"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "M. Broy: Logische und Methodische Grundlagen der Entwicklung verteilter Systeme, Springer Vieweg 2023"
+    },
+    {
+      "reference": "M. Inden: Persistenzlösungen und REST-Services, Dpunkt 2016"
+    },
+    {
+      "reference": "R. Öchsle: Parallele und verteilte Anwendungen in Java, Carl Hanser 2022"
+    },
+    {
+      "reference": "F. Müller-Hofmann: Programmierung von verteilten Systemen und Webanwendungen mit Java EE, Springer Vieweg 2015"
+    }
   ]
 }

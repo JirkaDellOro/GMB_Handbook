@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 2
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 4
     }
   ],
   "learning_outcomes": [
@@ -71,7 +75,56 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 2
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 4
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Ralf Gerlich",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Ralf Gerlich"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "N. Ceder: The Quick Python Book, Manning 2018"
+    },
+    {
+      "reference": "M. Inden: Python lernen – kurz & gut, O'Reilly 2023"
+    },
+    {
+      "reference": "M. Kofler: Python: Der ideale Python-Einstieg für Informatikstudium, Ausbildung und Beruf, Rheinwerk 2021"
+    }
   ]
 }

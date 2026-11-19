@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 60
+      "class_size": 60,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -64,10 +68,90 @@
     },
     {
       "category": "Analyse",
-      "items": []
+      "items": [
+        "eine gegebene Aufgabenstellung für die Entwicklung eines Softwaresystems für jeden Prozessschritt analysieren."
+      ]
+    },
+    {
+      "category": "Evaluation/Bewertung",
+      "items": [
+        "verschiedene Vorgehensmodelle hinsichtlich ihrer Gemeinsamkeiten, Unterschiede, Stärken, Schwächen und typischen Einsatzgebiete bewerten.",
+        "verschiedene Architekturstile und Architekturmuster hinsichtlich ihrer Stärken, Schwächen und typischen Einsatzgebiete bewerten."
+      ]
+    }
+  ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Plangesteuerte Vorgehensmodelle und Prozesse: Wasserfall, V-Modell (XT)",
+        "Agile Vorgehensmodelle und Prozesse: Scrum, Extreme Programming",
+        "Requirements Engineering: Ermittlung, Analyse, Dokumentation und Validierung von Anforderungen mit Hilfe plangesteuerter und agiler Methoden",
+        "Architekturstile und Architekturmuster: Repository, Pipes und Filters, Client-Server, MVC, SOA, Microservices",
+        "Entwurfsmuster, u.a. Zustand, Befehl",
+        "Qualitätssicherung und Test: Reviews, Testen auf verschiedenen Teststufen, Verifikation und Validierung funktionaler und nicht-funktionaler Anforderungen",
+        "Inbetriebnahme und Wartung: DevOps, und Codeverwaltung Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmieren, Algorithmen und Datenstrukturen, Software Engineering"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elena Mäkiö",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elena Mäkiö"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "H. Balzert: Lehrbuch der Software-Technik (Bd. 2), Spektrum Akademischer Verlag 2009"
+    },
+    {
+      "reference": "M. Broy, M. Kuhrmann: Einführung in die Softwaretechnik, Springer 2021"
+    },
+    {
+      "reference": "C. Ebert: Systematisches Requirements Engineering, dpunkt.verlag 2023"
+    },
+    {
+      "reference": "J. Shore: Die Kunst der agilen Entwicklung, dpunkt.verlag 2023"
+    },
+    {
+      "reference": "I. Sommerville: Software Engineering, Pearson, 10th Edition 2018"
+    },
+    {
+      "reference": "I. Sommerville: Modernes Software-Engineering - Entwurf und Entwicklung von Softwareprodukten. Pearson 2020"
+    }
   ]
 }

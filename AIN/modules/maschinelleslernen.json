@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 60
+      "class_size": 60,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -78,7 +82,74 @@
       ]
     }
   ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Pre-Processing und explorative Datenanalyse",
+        "Regression (z. B. lineare und multiple OLS)",
+        "Klassifikation (z. B. Naive Bayes, k-NN)",
+        "Entscheidungsbäume (Regression und Klassifikation)",
+        "Ensemble Learning (z. B. Bagging, Boosting)",
+        "Unüberwachtes Lernen (z. B. Clustering, PCA, LDA)",
+        "Einführung in neuronale Netzwerke (z.B. Backpropagation, Gradient Descent)",
+        "Zeitreihenmodelle (z. B. ARIMA, Prophet, Time-Series-Transformer)",
+        "Grundlagen des Natural Language Processing (z. B. Word Embeddings, LSTM, Large Language Models)",
+        "Machine-Learning-Operations (z. B. Experiment-Tracking, Orchestrierung, Deployment)",
+        "Anwendung in Business Cases sowie ethische und gesellschaftliche Implikationen",
+        "Exkurse in vertiefende Themen (z. B. Explainable AI, Computer Vision, Reinforcement Learning) Durchführung praktischer Übungen mit Python und etablierten ML-Bibliotheken (z. B. scikit-learn, PyTorch,TensorFlow). Anwendung des Erlernten anhand realitätsnaher Datensätze und praxisorientierter Aufgabenstellungen."
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Mathematik für Informatiker 1 und 2"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Simon Albrecht",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Simon Albrecht"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "C. M. Bishop: Pattern Recognition and Machine Learning, Springer, 2006"
+    },
+    {
+      "reference": "A. Géron: Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems, O’Reilly, 2019"
+    },
+    {
+      "reference": "S. Raschka: Machine Learning mit Python, mitp-Verlag, 2017"
+    }
   ]
 }

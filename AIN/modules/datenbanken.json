@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 2
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "45 h",
       "self_study_hours": "45",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 4
     }
   ],
   "learning_outcomes": [
@@ -66,7 +70,53 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 2
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 4
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Lothar Piepmeyer",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Lothar Piepmeyer"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "C. J. Date: An Introduction to Database Systems, Pearson 2006"
+    },
+    {
+      "reference": "L. Piepmeyer: Grundkurs Datenbanksysteme: Von den Konzepten bis zur Anwendungsentwicklung, Carl Hanser Verlag 2011"
+    }
   ]
 }

@@ -16,7 +16,8 @@
       "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "78.75",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -26,7 +27,8 @@
       ],
       "contact_hours": "0 h",
       "self_study_hours": "720",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 24
     },
     {
       "label": "c)",
@@ -34,6 +36,7 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "78.75",
       "class_size": 75
@@ -79,11 +82,43 @@
   "teaching_methods": [
     {
       "items": [
+        "Seminar",
         "Seminar"
       ]
     }
   ],
+  "prerequisites": [
+    {
+      "items": [
+        "Abgeschlossenes Grundstudium (bei Antritt des Praktischen Studiensemesters). Das Seminar \"Einführung in das Praktische Studiensemester“ muss ein Semester vor Antritt des Praktischen Studiensemesters absolviert werden. Um ein qualifizierendes Praxissemester zu ermöglichen, dürfen vor Antritt des Praktischen Studiensemesters nur bis zu zwei Module im Umfang von bis zu 12 Leistungspunkten offen sein. Bei Fragen wenden Sie sich bitte an den Studiendekan."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1sbKO",
+      "description": "1sbKO (Kolloquium)",
+      "graded_assessment": false,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1sbA",
+      "description": "1sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 24
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Naresh Nayak",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Naresh Nayak"
+      ]
+    }
   ]
 }

@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 25
+      "class_size": 25,
+      "credit_points": 2
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "O",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 25
+      "class_size": 25,
+      "credit_points": 4
     }
   ],
   "learning_outcomes": [
@@ -64,11 +68,71 @@
     {
       "items": [
         "Grundlagen des Computational Thinking",
-        "Abstraktion, Dekomposition, Mustererkennung, Algorithmik"
+        "Abstraktion, Dekomposition, Mustererkennung, Algorithmik",
+        "Umgang mit generativer KI im Studium",
+        "Präsentation mit fachlichem Bezug",
+        "wirkungsvolle und zielgerichtete Kommunikation (u.a. Feedback geben und nehmen)",
+        "Teamarbeit (effizient und effektiv zusammenarbeiten)",
+        "Möglichkeiten und Grenzen des Einsatzes von KI-Tools beim Schreiben",
+        "Grundlagen des wissenschaftlichen Recherchierens",
+        "Es werden eLearnings zu den folgenden Themen vom Zentrum für Lehren und Lernen (ZLL) kuratiert und bereit gestellt:",
+        "Studieren an einer Hochschule und Lehrveranstaltungen",
+        "Zeit- und Selbstmanagement",
+        "Wissenschaftliches Recherchieren und Schreiben",
+        "Motivation und Umgang mit Stress"
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Seminar",
+        "Online-Selbstlernkurse"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 sbR",
+      "description": "1 sbR (Referat)",
+      "graded_assessment": true,
+      "credits": 2
+    },
+    {
+      "component": "b)",
+      "description": "1sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 4
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Uwe Hahne",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Uwe Hahne"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "J. M. Wing: Computational Thinking. Communications of the ACM, 49(3), 33-35"
+    },
+    {
+      "reference": "A. V. Aho: Computation and Computational Thinking. Ubiquity, an ACM publication, 2011"
+    },
+    {
+      "reference": "Selbstlernkurse mit Literaturhinweisen und Online-Ressourcen zu den jeweiligen Themenbereichen werden im Lernmanagementsystem der Hochschule bereitgestellt."
+    }
   ]
 }

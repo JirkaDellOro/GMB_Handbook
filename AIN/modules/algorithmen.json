@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 2
     }
   ],
   "learning_outcomes": [
@@ -64,7 +68,59 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Lothar Piepmeyer",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Lothar Piepmeyer"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "G. Krüger: Handbuch der Java-Programmierung, Addison-Wesley 2011"
+    },
+    {
+      "reference": "R. Kühnel Die Java 2 Fibel, Addison-Wesley 1999"
+    },
+    {
+      "reference": "R. Sedgewick, K. Wayne: Algorithmen und Datenstrukturen, Pearson 2014"
+    },
+    {
+      "reference": "G. Saake, K.-U. Sattler: Algorithmen und Datenstrukturen, dpunkt 2020"
+    }
   ]
 }

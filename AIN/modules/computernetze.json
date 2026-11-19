@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 2
     }
   ],
   "learning_outcomes": [
@@ -68,7 +72,65 @@
       ]
     }
   ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Achim Karduck",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Achim Karduck"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Schreiner: Computernetze, Hanser 2023"
+    },
+    {
+      "reference": "J. Scherff: Computernetzwerke, Vieweg 2021"
+    },
+    {
+      "reference": "W. Riggert, R. Lübben: Rechnernetze, Hanser 2025"
+    },
+    {
+      "reference": "A. Badach, E. Hoffmann: Technik der IP Netze - Grundlagen der IPv4- und IPv6 Kommunikation, Hanser 2023"
+    },
+    {
+      "reference": "A. Badach, E. Hoffmann: Zukunft der IP-Netze - Virtualisierte, software-definierte, intelligente Systemlösungen und"
+    },
+    {
+      "reference": "anwendungen, Hanser 2026"
+    }
   ]
 }

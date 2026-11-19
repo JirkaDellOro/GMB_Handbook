@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "Ü",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 2
     }
   ],
   "learning_outcomes": [
@@ -72,11 +76,74 @@
         "Methoden auf Basis diskreter Strukturen (Differentialrechnung mehrdimensionaler polynomialer Funktionen, mehrdimensionales Newton-Verfahren, Gradientenverfahren, Multivariate Analyse, Multidimensionale Skalierung)",
         "Anwendungsbeispiele: Mathematische Grundlage für",
         "Rendering",
-        "Bildverarbeitung (JPEG)"
+        "Bildverarbeitung (JPEG)",
+        "Trennkurvenbestimmung / Anomaliedetektion",
+        "fehlerkorrigierende Codierung",
+        "Regressionsanalyse",
+        "Markov-Kette Anhand von Übungsaufgaben werden die in der Vorlesung bereitgestellten Methoden und Verfahren geübt. Selbst- und Abschlusstests zur Lernstandermittlung."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Übung"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Mathematik für Informatiker 1"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "code": "1 sbA",
+      "description": "1 sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Olaf Neiße",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Olaf Neiße"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Berghammer: Mathematik für Informatiker, Springer 2021 ebook"
+    },
+    {
+      "reference": "L. Göllmann, Ch. Henig: Arbeitsbuch zur linearen Algebra: Aufgaben, Lösungen und Vertiefungen, Springer Spektrum, 2019"
+    },
+    {
+      "reference": "P. Hartmann: Mathematik für Informatiker - ein praxisbezogenes Lehrbuch, Springer e-Book, 2019"
+    },
+    {
+      "reference": "C. Meinel, M. Mundhenk: Mathematische Grundlagen der Informatik -- Mathematisches Denken und Beweisen, Springer Vieweg, 2015"
+    },
+    {
+      "reference": "E. Weitz: Konkrete Mathematik (nicht nur) für Informatiker - mit vielen Grafiken und Algorithmen in Python, Springer Spektrum e-Book, 2021"
+    },
+    {
+      "reference": "R. Zobel: Diskrete Strukturen -- eine angewandte Algebra für Informatiker, Wissenschaftsverl. Bibliogr. Institut,"
+    }
   ]
 }

@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -72,11 +76,62 @@
         "Attention Mechanismen",
         "Deep Learning Architekturen",
         "Deep Reinforcement Learning (DRL)",
-        "Hyperparameter Optimierung"
+        "Hyperparameter Optimierung",
+        "Autoencoder",
+        "Tools für Explainable AI Praktische Übungen mit Python, Tensorflow und PyTorch, Anwendungsbeispiele aus Robotik, Medizin und Musik"
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Mathematik für Informatiker 1 und 2"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Maja Temerinac-Ott",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Maja Temerinac-Ott"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "I. Goodfellow, Y. Bengio: Deep Learning (Adaptive Computation and Machine Learning series), The MIT Press ,2016"
+    },
+    {
+      "reference": "J. Papa, Pytorch Pocket Reference: Building and Deploying Deep Learning Models, O'Reilly, 2021"
+    },
+    {
+      "reference": "G. Aurelien, Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow, O'Reilly UK Ltd.; 3rd ed Edition, 2022"
+    }
   ]
 }

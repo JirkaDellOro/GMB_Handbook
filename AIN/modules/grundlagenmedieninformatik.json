@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "90",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "45",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -70,6 +74,36 @@
         "Theoretische Grundlagen: Informations- und Kommunikationstheorie, Kodierung, Kompression",
         "Anwendungsgebiete der Medieninformatik: Computer Graphics, Computer Vision, Bildverarbeitung, Audioverarbeitung, Multimedia-Systeme Einführung in spezifische Software-Tools und Programmiersprachen für Medieninformatiker und deren Anwendung an praktischen Beispielen"
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 M",
+      "description": "1 M (Mündliche Prüfung)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [

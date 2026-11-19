@@ -16,7 +16,8 @@
       "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 60
+      "class_size": 60,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -24,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -69,11 +72,53 @@
   "teaching_methods": [
     {
       "items": [
-        "Vorlesung"
+        "Vorlesung",
+        "Praktikum"
       ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Algorithmen und Datenstrukturen"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Lothar Piepmeyer",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Lothar Piepmeyer"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Grimm: C++ – kurz & gut: Aktuell zu C++17, O'Reilly 2018"
+    },
+    {
+      "reference": "S. Meyers: Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14, O'Reilly 2014"
+    },
+    {
+      "reference": "B. Stroustrup: Eine Tour durch C++: Der praktische Leitfaden für modernes C++, mitp Professional 2023"
+    }
   ]
 }

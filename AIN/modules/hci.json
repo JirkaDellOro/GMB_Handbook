@@ -14,9 +14,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "22.5 h",
       "self_study_hours": "90",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -24,9 +26,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "Pr",
       "contact_hours": "22.5 h",
       "self_study_hours": "45",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -78,11 +82,68 @@
         "Software Engineering interaktiver Systeme",
         "User Research / Benutzeranforderungen erheben",
         "Interaktionsdesign mit Information, Metaphern und Navigation",
-        "Prototyping und Interaktionstechnologien"
+        "Prototyping und Interaktionstechnologien",
+        "Evaluation: Nutzerevaluation und Expertenevaluation",
+        "Interaktion in aktuellen Feldern wie Ubiquitous Computing / Cyber-Physical Systems Alle Inhalte der Veranstaltung werden praktisch geübt und angewendet."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Seminar",
+        "Projekt"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 R",
+      "description": "1 R (Referat)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Thomas Schlegel",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Thomas Schlegel"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "A. M. Heinecke, J. Gerken: Mensch-Computer-Interaktion - Basiswissen für Entwickler und Gestalter, Xpert.press, Springer Vieweg, 2024"
+    },
+    {
+      "reference": "M. Herczeg: Software-Ergonomie: Theorien, Modelle und Kriterien für gebrauchstaugliche interaktive Computersysteme, De Gruyter 2018"
+    },
+    {
+      "reference": "B. Preim, R. Dachselt: Interaktive Systeme: Band 2: User Interface Engineering, 3D-Interaktion, Natural User Interfaces, Springer Vieweg 2015"
+    },
+    {
+      "reference": "B. Preim, R. Dachselt: Interaktive Systeme Band 1 - Grundlagen, Graphical User Interfaces, Informationsvisualisierung, Springer 2010"
+    },
+    {
+      "reference": "Einzelverweise in der Veranstaltung, u.a. DIN EN ISO 9241-110, DIN EN ISO 9241-210, D. Norman: Design of Everyday Things"
+    }
   ]
 }

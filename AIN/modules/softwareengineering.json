@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 60
+      "class_size": 60,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -64,11 +68,73 @@
     {
       "items": [
         "Herausforderungen bei der Softwareentwicklung",
-        "Ziele des Software Engineering"
+        "Ziele des Software Engineering",
+        "Zentrale Aktivitäten und grundlegende Vorgehensmodelle",
+        "Plangesteuertes vs. iterativ-inkrementelles Vorgehen",
+        "Agile Softwareentwicklung am Beispiel von Scrum",
+        "Modellierung von Anforderungen mit Use Case-Diagrammen",
+        "Objektorientierte Analyse und Entwurf mit UML",
+        "OCL im Kontext der Modellierung von Software",
+        "Transformation von Modellen in eine objektorientierte Zielsprache",
+        "Ausgewählte Entwurfsmuster",
+        "Software-Architekturen Anhand von Übungsaufgaben wird das in der Vorlesung erworbene Wissen semesterbegleitend vertieft und verfestigt. Dies umfasst insbesondere die Modellierung vorgegebener Anwendungsdomänen mit UML und OCL sowie dem Einsatz von Entwurfsmustern."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1 sbA",
+      "description": "1 sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Bernhard Hollunder",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Bernhard Hollunder"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "I. Sommerville. Modernes Software-Engineering - Entwurf und Entwicklung von Softwareprodukten, Pearson 2020"
+    },
+    {
+      "reference": "S. Kleuker. Grundkurs Software-Engineering mit UML: Der pragmatische Weg zu erfolgreichen Softwareprojekten, Springer Verlag 2025"
+    },
+    {
+      "reference": "P. Forbrig. Objektorientierte Softwareentwicklung mit UML, Hanser 2024"
+    },
+    {
+      "reference": "R. S. Wazlawick. Object-Oriented Analysis and Design for Information Systems: Modeling with BPMN, OCL, IFML, and Python, Morgan Kaufmann / Elsevier 2024"
+    }
   ]
 }

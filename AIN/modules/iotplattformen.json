@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -67,11 +71,67 @@
         "Software-Techniken aus der Programmierung autonomer Plattformen (Prozesse, Threads, Queues, Sockets)",
         "Domänenspezifische Anwendungsbeispiele autonomer Systeme:",
         "Kommunikation zwischen IoT-Systemen mit Hilfe des MQTT-Protokolls",
-        "Multimedia für interaktive Systeme auf Basis des GStreamer-Frameworks"
+        "Multimedia für interaktive Systeme auf Basis des GStreamer-Frameworks",
+        "Framebuffer, Farbmodelle und Grafik-Programmierung für autonome Systeme Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet. Dabei konfigurieren die Teilnehmer ein eigenes System inklusive Bootloader, Kernel und ggf. Root-Dateisystem. Dieses System setzen sie anschließend für ausgewählte Aspekte der Kommunikations-, Multimedia- und Grafik-Programmierung ein."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung, Rechnerarchitektur und Betriebssysteme"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "C. Hallinan: Embedded Linux Primer: A Practical Real-World Approach. Prentice Hall, 2010"
+    },
+    {
+      "reference": "M. Kofler: Raspberry Pi: Das umfassende Handbuch. Rheinwerk Computing, 2024"
+    },
+    {
+      "reference": "S. Pohl: Raspberry Pi Kompendium: Linux, Programmierung und Projekte. BMU, 2020"
+    },
+    {
+      "reference": "G. Smart: Practical Python Programming for IoT: Build advanced IoT projekts using a Raspberry Pi. Packt Publishing, 2020"
+    },
+    {
+      "reference": "R. J. Streif: Embedded Linux Systems With the Yocto Project. Prentice Hall Open Source Software Development,"
+    }
   ]
 }

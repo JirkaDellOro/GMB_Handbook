@@ -16,7 +16,8 @@
       "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -27,7 +28,8 @@
       "course_type": "P",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -72,7 +74,48 @@
       ]
     }
   ],
+  "prerequisites": [
+    {
+      "items": [
+        "Programmierung"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 3
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Dirk Eisenbiegler",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Dirk Eisenbiegler"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "M. Inden: Persistenzlösungen und REST-Services, Dpunkt 2016"
+    },
+    {
+      "reference": "M. Geers: Micro Frontends in Action, Manning 2020"
+    },
+    {
+      "reference": "B. Sletten: WebAssembly: The Definitive Guide: Safe, Fast, and Portable Code, O'Reilly 2021"
+    }
   ]
 }

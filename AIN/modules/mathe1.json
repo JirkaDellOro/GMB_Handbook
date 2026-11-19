@@ -13,8 +13,10 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "45 h",
-      "class_size": 75
+      "class_size": 75,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -22,9 +24,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "Ü",
       "contact_hours": "11.25 h",
       "self_study_hours": "18.75",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 1
     },
     {
       "label": "c)",
@@ -32,9 +36,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "18.75",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 1
     }
   ],
   "learning_outcomes": [
@@ -79,11 +85,88 @@
         "Anwendungsbeispiele:",
         "Grundlagen der Bildverarbeitung",
         "Codes (Gray, CRC, QR)",
-        "Einfaches Perzeptronenverfahren"
+        "Einfaches Perzeptronenverfahren",
+        "Übungsaufgaben, Selbsttests",
+        "Übungsaufgaben, Selbsttests"
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Übung",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Schulkenntnisse zur Mathematik"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "code": "1 sbA",
+      "description": "1 sbA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 1
+    },
+    {
+      "component": "c)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 1
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Olaf Neiße",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Olaf Neiße"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "R. Berghammer: Mathematik für Informatiker, Springer e-Book, 2021"
+    },
+    {
+      "reference": "S. Goebbels, J. Rethmann: Mathematik für Informatiker - Eine aus der Informatik motivierte Einführung mit zahlreichen Anwendungs- und Programmbeispielen, Springer e-Book, 2014"
+    },
+    {
+      "reference": "P. Hartmann: Mathematik für Informatiker - ein praxisbezogenes Lehrbuch, Springer e-Book, 2019"
+    },
+    {
+      "reference": "U. Schöning: Logik für Informatiker, Spektrum, Akad. Verl., 2005"
+    },
+    {
+      "reference": "W. Struckmann, D. Wätjen: Mathematik für Informatiker - Grundlagen und Anwendungen, Springer e-Book, 2016"
+    },
+    {
+      "reference": "G. Teschl, S. Teschl: Mathematik für Informatiker 1 - Diskrete Mathematik und Lineare Algebra, Springer Spektrum e-Book, 2013"
+    },
+    {
+      "reference": "E. Weitz: Konkrete Mathematik (nicht nur) für Informatiker - mit vielen Grafiken und Algorithmen in Python, Springer Spektrum e-Book, 2021"
+    },
+    {
+      "reference": "C. Turtur: Prüfungstrainer Mathematik - Klausur- und Übungsaufgaben mit vollständigen Musterlösungen, Springer Spektrum, 2014"
+    },
+    {
+      "reference": "L. Papula: Mathematik Klausur- und Übungsbuch, Springer Vieweg, 2020"
+    }
   ]
 }

@@ -16,7 +16,8 @@
       "course_type": "W",
       "contact_hours": "0 h",
       "self_study_hours": "120",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -27,7 +28,8 @@
       "course_type": "S",
       "contact_hours": "11.25 h",
       "self_study_hours": "48.75",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 2
     }
   ],
   "learning_outcomes": [
@@ -79,7 +81,31 @@
       ]
     }
   ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 A",
+      "description": "1 A (Praktische Arbeit)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "code": "1 sbR",
+      "description": "1 sbR (Referat)",
+      "graded_assessment": false,
+      "credits": 2
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Elmar Cochlovius",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Elmar Cochlovius"
+      ]
+    }
   ]
 }

@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 90
+      "class_size": 90,
+      "credit_points": 3
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "S",
       "contact_hours": "22.5 h",
       "self_study_hours": "67.5",
-      "class_size": 30
+      "class_size": 30,
+      "credit_points": 3
     }
   ],
   "learning_outcomes": [
@@ -69,7 +73,72 @@
       ]
     }
   ],
+  "individual_component_content": [
+    {
+      "items": [
+        "Einführung: Grundlagen und Begriffe",
+        "Vorgehensmodelle des Projektmanagements: planbasiert, agil, hybrid",
+        "Planbasiertes Projektmanagement: Phasen, ausgewählte Methoden und Techniken, kontinuierliche Aufgaben",
+        "Agiles Projektmanagement: Agile Werte, Scrum, Rollen, Artefakte, Events",
+        "Führung in Projekten",
+        "KI im Projektmanagement und Werkzeugunterstützung"
+      ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Seminar"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Kenntnisse im Software Engineering sind empfehlenswert."
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 3
+    },
+    {
+      "component": "b)",
+      "code": "1 sbR",
+      "description": "1 sbR (Referat)",
+      "graded_assessment": true,
+      "credits": 3
+    }
+  ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Steffen Thiel",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Steffen Thiel"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "H. Timinger: Modernes Projektmanagement – Mit traditionellem, agilem und hybriden Vorgehen zum Erfolg, Wiley"
+    },
+    {
+      "reference": "W. Jakoby: Projektmanagement für Ingenieure – Ein praxisnahes Lehrbuch für den systematischen Projekterfolg., Springer 2021"
+    },
+    {
+      "reference": "A. Johannsen, A. Kramer, H. Kostal, E. Sadowicz: Basiswissen für Software-Projektmanager im klassischen und agilen Umfeld, dpunkt 2017"
+    },
+    {
+      "reference": "M. Geirhos: IT-Projektmanagement – Was wirklich funktioniert, und was nicht, Rheinwerk Computing 2016"
+    }
   ]
 }

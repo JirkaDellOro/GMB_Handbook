@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 60
+      "class_size": 60,
+      "credit_points": 2
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "P",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 4
     }
   ],
   "learning_outcomes": [
@@ -69,11 +73,71 @@
         "Prozessorarchitekturen: von Neumann und Harvard, RISC und CISC",
         "Besonderheiten von C in der maschinennahen Programmierung",
         "Grundlagen von Assemblersprachen",
-        "vektorisierter Interrupt, Unterprogramme und Stack"
+        "vektorisierter Interrupt, Unterprogramme und Stack",
+        "Hardwareschnittstellen: GPIO, Timer, UART",
+        "Threads, Scheduling",
+        "Nebenläufigkeit, Deadlocks",
+        "Speicherverwaltung",
+        "Dateiverwaltung Die Vorlesungsinhalte werden in praktischen Übungen vertieft."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Praktikum"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 2
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 4
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. Ralf Gerlich",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. Ralf Gerlich"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "H. Bähring: Mikrorechnertechnik Band I+II, Springer, 2002"
+    },
+    {
+      "reference": "R. Oechsle: Parallele und verteilte Anwendung in Java, Hanser, 2022"
+    },
+    {
+      "reference": "A. Silberschatz et al: Operating System Concepts, Wiley, 2019"
+    },
+    {
+      "reference": "W. Stallings: Operating Systems: Internals and Design Principles, Pearson, 2017"
+    },
+    {
+      "reference": "A. S. Tanenbaum: Moderne Betriebssysteme, Pearson, 2016"
+    }
   ]
 }

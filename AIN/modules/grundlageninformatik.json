@@ -13,9 +13,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "V",
       "contact_hours": "45 h",
       "self_study_hours": "75",
-      "class_size": 45
+      "class_size": 45,
+      "credit_points": 4
     },
     {
       "label": "b)",
@@ -23,9 +25,11 @@
       "language": [
         "Deutsch"
       ],
+      "course_type": "Ü",
       "contact_hours": "22.5 h",
       "self_study_hours": "37.5",
-      "class_size": 15
+      "class_size": 15,
+      "credit_points": 2
     }
   ],
   "learning_outcomes": [
@@ -62,11 +66,63 @@
         "Betriebssysteme",
         "Rechnernetze",
         "Einführung in den Compilerbau",
-        "Einführung in die KI"
+        "Einführung in die KI Die Inhalte der Vorlesung werden in Übungsaufgaben angewendet."
       ]
+    }
+  ],
+  "teaching_methods": [
+    {
+      "items": [
+        "Vorlesung",
+        "Übung"
+      ]
+    }
+  ],
+  "prerequisites": [
+    {
+      "items": [
+        "Keine"
+      ]
+    }
+  ],
+  "assessment": [
+    {
+      "component": "a)",
+      "code": "1 K",
+      "description": "1 K (Klausur)",
+      "graded_assessment": true,
+      "credits": 4
+    },
+    {
+      "component": "b)",
+      "description": "1 sbaA (Praktische Arbeit)",
+      "graded_assessment": false,
+      "credits": 2
     }
   ],
   "applicability": [
     "Allgemeine Informatik B. Sc. (AIN)"
+  ],
+  "responsible_person": "Prof. Dr. N. Nayak",
+  "lecturers": [
+    {
+      "names": [
+        "Prof. Dr. N. Nayak"
+      ]
+    }
+  ],
+  "reading_list": [
+    {
+      "reference": "B. Küppers: Einführung in die Informatik - Theoretische und praktische Grundlagen, Springer Vieweg 2022"
+    },
+    {
+      "reference": "A. S. Tanenbaum, Nick Feamster, David Wetherall: Rechnernetze, 6. Auflage, Pearson 2024"
+    },
+    {
+      "reference": "A. S. Tanenbaum, Herbert Bos: Moderne Betriebssysteme, 5. Auflage, Pearson Studium 2025"
+    },
+    {
+      "reference": "W. Ertel: Grundkurs Künstliche Intelligenz, 6. Auflage, Springer Vieweg Wiesbaden 2025"
+    }
   ]
 }
