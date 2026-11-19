@@ -14,9 +14,9 @@ function appendText(_parent: HTMLElement, _tag: keyof HTMLElementTagNameMap, _te
 }
 function addList(_parent: HTMLElement, _items: string[] = []): void {
   const list: HTMLUListElement = createElement("ul");
-  for (const item: string of _items) {
+  _items.forEach((item: string): void => {
     appendText(list, "li", item);
-  }
+  });
   _parent.append(list);
 }
 function section(_title: string, _parent: HTMLElement): HTMLElement {
@@ -43,9 +43,9 @@ function createCurriculumHeadings(_columns: string[]): HTMLElement {
   const headings: HTMLDivElement = createElement("div", "curriculum-headings");
   headings.classList.add(`curriculum-columns-${_columns.length}`);
   headings.append(createElement("span"));
-  for (const name: string of _columns) {
+  _columns.forEach((name: string): void => {
     appendText(headings, "span", name);
-  }
+  });
   headings.append(createElement("span"));
   return headings;
 }
@@ -70,39 +70,39 @@ function appendSemesterRows(_grid: HTMLElement): void {
 }
 
 function appendStudyStages(_grid: HTMLElement, _curriculum: CurriculumData): void {
-  for (const stageData: StudyStage of _curriculum.studyStages) {
+  _curriculum.studyStages.forEach((stageData: StudyStage): void => {
     const stage: HTMLHeadingElement = createElement("h2", undefined, stageData.title);
     const firstRow: number = 8 - stageData.lastSemester;
     const rowSpan: number = stageData.lastSemester - stageData.firstSemester + 1;
     stage.style.gridColumn = String(_curriculum.columns.length + 2);
     stage.style.gridRow = `${firstRow} / span ${rowSpan}`;
     _grid.append(stage);
-  }
+  });
 }
 
 function createCurriculumCells(_modules: ModuleData[], _curriculum: CurriculumData): Map<string, CurriculumCell> {
   const cells: Map<string, CurriculumCell> = new Map<string, CurriculumCell>();
-  for (const module: ModuleData of _modules) {
+  _modules.forEach((module: ModuleData): void => {
     const position: CurriculumData["modules"][string] | undefined = _curriculum.modules[module.sourceRef ?? module.id];
-    if (!position) continue;
+    if (!position) return;
     const placements: CurriculumPlacement[] = position.placements ?? [position as CurriculumPlacement];
     addModulePlacements(cells, module, position, placements, _curriculum.columns);
-  }
+  });
   return cells;
 }
 
 function addModulePlacements(_cells: Map<string, CurriculumCell>, _module: ModuleData, _position: CurriculumData["modules"][string], _placements: CurriculumPlacement[], _columns: string[]): void {
-  for (const placement: CurriculumPlacement of _placements) {
+  _placements.forEach((placement: CurriculumPlacement): void => {
     const semester: number = Number(placement.semester ?? _module.semester);
     const column: number = _columns.indexOf(placement.column);
-    if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) continue;
+    if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0) return;
     const row: number = 8 - semester;
     const gridColumn: string = placement.span ? `${column + 2} / span ${placement.span}` : String(column + 2);
     const key: string = `${row}:${gridColumn}`;
     const cell: CurriculumCell = _cells.get(key) ?? { row, gridColumn, entries: [] };
     cell.entries.push(createCurriculumCellEntry(_module, semester, placement, _position.style));
     _cells.set(key, cell);
-  }
+  });
 }
 
 function createCurriculumCellEntry(_module: ModuleData, _semester: number, _placement: CurriculumPlacement, _positionStyle?: string): CurriculumCell["entries"][number] {
@@ -117,13 +117,13 @@ function createCurriculumCellEntry(_module: ModuleData, _semester: number, _plac
 }
 
 function appendCurriculumCells(_grid: HTMLElement, _cells: Map<string, CurriculumCell>): void {
-  for (const cell: CurriculumCell of _cells.values()) {
+  _cells.forEach((cell: CurriculumCell): void => {
     if (isSpecializationCell(cell)) {
       _grid.append(createSpecializationCell(cell));
     } else {
       appendModuleCell(_grid, cell);
     }
-  }
+  });
 }
 
 function isSpecializationCell(_cell: CurriculumCell): boolean {
@@ -135,12 +135,12 @@ function createSpecializationCell(_cell: CurriculumCell): HTMLElement {
   container.style.gridColumn = _cell.gridColumn;
   container.style.gridRow = String(_cell.row);
   container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].moduleNumber}`));
-  for (const entry: CurriculumCell["entries"][number] of _cell.entries) {
+  _cell.entries.forEach((entry: CurriculumCell["entries"][number]): void => {
     const link: HTMLAnchorElement = createElement("a", "curriculum-specialization-track", entry.track);
     link.href = createModuleUrl(entry.module);
     link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
     container.append(link);
-  }
+  });
   return container;
 }
 
@@ -152,9 +152,9 @@ function appendModuleCell(_grid: HTMLElement, _cell: CurriculumCell): void {
     container.style.gridRow = String(_cell.row);
     _grid.append(container);
   }
-  for (const entry: CurriculumCell["entries"][number] of _cell.entries) {
+  _cell.entries.forEach((entry: CurriculumCell["entries"][number]): void => {
     container.append(createModuleCellLink(entry, _cell, isStacked));
-  }
+  });
 }
 
 function createModuleCellLink(_entry: CurriculumCell["entries"][number], _cell: CurriculumCell, _isStacked: boolean): HTMLAnchorElement {
@@ -232,22 +232,22 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], 
   const ranges: StudyTableRange[] = _curriculum?.studyTables ?? studyTableRanges;
   const semesterModules: Map<number, ModuleData[]> = createSemesterModuleMap(_modules, _curriculum);
   const semesterCredits: Map<number, number> = calculateSemesterCredits(semesterModules, _curriculum);
-  for (const range: StudyTableRange of ranges) {
+  ranges.forEach((range: StudyTableRange): void => {
     _target.append(createStudyTableRange(range, semesterModules, semesterCredits, _curriculum));
-  }
+  });
 }
 
 function createSemesterModuleMap(_modules: ModuleData[], _curriculum?: CurriculumData): Map<number, ModuleData[]> {
   const semesterModules: Map<number, ModuleData[]> = new Map<number, ModuleData[]>();
-  for (const module: ModuleData of _modules) {
+  _modules.forEach((module: ModuleData): void => {
     const semesters: number[] = getModuleSemesters(module, _curriculum);
-    for (const semester: number of semesters) {
-      if (!isValidSemester(semester)) continue;
+    semesters.forEach((semester: number): void => {
+      if (!isValidSemester(semester)) return;
       const group: ModuleData[] = semesterModules.get(semester) ?? [];
       group.push(module);
       semesterModules.set(semester, group);
-    }
-  }
+    });
+  });
   return semesterModules;
 }
 
@@ -264,24 +264,22 @@ function isValidSemester(_semester: number): boolean {
 
 function calculateSemesterCredits(_semesterModules: Map<number, ModuleData[]>, _curriculum?: CurriculumData): Map<number, number> {
   const semesterCredits: Map<number, number> = new Map<number, number>();
-  for (const entry: [number, ModuleData[]] of _semesterModules) {
-    const semester: number = entry[0];
-    const modules: ModuleData[] = entry[1];
+  _semesterModules.forEach((modules: ModuleData[], semester: number): void => {
     semesterCredits.set(semester, calculateSemesterCreditTotal(modules, semester, _curriculum));
-  }
+  });
   return semesterCredits;
 }
 
 function calculateSemesterCreditTotal(_modules: ModuleData[], _semester: number, _curriculum?: CurriculumData): number {
   const counted: Set<string> = new Set<string>();
   let total: number = 0;
-  for (const module: ModuleData of _modules) {
+  _modules.forEach((module: ModuleData): void => {
     const placement: CurriculumPlacement | undefined = getModulePlacement(module, _semester, _curriculum);
     const group: string = placement?.moduleNumber ? `choice-${placement.moduleNumber}` : module.id;
-    if (counted.has(group)) continue;
+    if (counted.has(group)) return;
     counted.add(group);
     total += Number(module.credits) || 0;
-  }
+  });
   return total;
 }
 
@@ -294,7 +292,7 @@ function createStudyTableRange(_range: StudyTableRange, _semesterModules: Map<nu
   const sectionNode: HTMLElement = createElement("section");
   appendStudyTableHeading(sectionNode, _range, _curriculum);
   const gridScroll: HTMLDivElement = createElement("div", "study-grid-scroll");
-  for (let semester = _range.firstSemester; semester <= _range.lastSemester; semester++) {
+  for (let semester: number = _range.firstSemester; semester <= _range.lastSemester; semester++) {
     const semesterCard: HTMLElement = createSemesterTable(semester, _range.number, _semesterModules.get(semester) ?? [], _semesterCredits, _curriculum);
     gridScroll.append(semesterCard);
   }
@@ -356,9 +354,9 @@ function appendStudyTableRows(_grid: HTMLElement, _entries: StudyTableEntry[], _
     const blockEntries: StudyTableEntry[] = collectBlockEntries(_entries, index);
     const blockNumber: number | undefined = blockEntries[0].moduleNumber;
     appendStudyBlockLabel(_grid, blockNumber, gridRow, blockEntries);
-    for (const entry: StudyTableEntry of blockEntries) {
+    blockEntries.forEach((entry: StudyTableEntry): void => {
       gridRow += appendStudyModule(_grid, entry, blockNumber, _hasBlocks, gridRow);
-    }
+    });
     index += blockEntries.length;
   }
 }
@@ -464,12 +462,13 @@ export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
 
 export async function renderModuleList(_target: HTMLElement, _semesters: SemesterGroup[], _loadModule: (_moduleReference: string) => Promise<ModuleData>): Promise<void> {
   _target.replaceChildren();
-  for (const semester: SemesterGroup of _semesters) {
+  for (let index: number = 0; index < _semesters.length; index++) {
+    const semester: SemesterGroup = _semesters[index];
     const group: HTMLElement = section(semester.title, _target);
     const modules: ModuleData[] = await Promise.all(semester.modules.map((_moduleReference: string): Promise<ModuleData> => _loadModule(_moduleReference)));
-    for (const module: ModuleData of modules) {
+    modules.forEach((module: ModuleData): void => {
       group.append(renderModuleTile(module));
-    }
+    });
   }
 }
 
@@ -491,21 +490,21 @@ export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _s
 export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGroup[], _modules: ModuleData[]): void {
   _target.replaceChildren();
   const modulesByReference: Map<string, ModuleData> = new Map<string, ModuleData>();
-  for (const module: ModuleData of _modules) {
+  _modules.forEach((module: ModuleData): void => {
     modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
-  }
-  for (const semester: SemesterGroup of _semesters) {
+  });
+  _semesters.forEach((semester: SemesterGroup): void => {
     const group: HTMLElement = createElement("section", "module-detail-semester");
     appendText(group, "h2", semester.title);
-    for (const reference: string of semester.modules) {
+    semester.modules.forEach((reference: string): void => {
       const module: ModuleData | undefined = modulesByReference.get(reference);
-      if (!module) continue;
+      if (!module) return;
       const entry: HTMLDivElement = createElement("div", "module-detail-entry");
       renderModuleDetail(entry, module, false);
       group.append(entry);
-    }
+    });
     _target.append(group);
-  }
+  });
 }
 
 export function renderError(_target: HTMLElement, _title: string, _message: string): void {
@@ -542,14 +541,14 @@ function createModuleFacts(_module: ModuleData): HTMLElement {
     ["Frequency", _module.frequency],
     ["Duration", _module.duration == null ? "—" : `${_module.duration} semester`]
   ];
-  for (const entry: [string, DetailGridValue] of values) {
+  values.forEach((entry: [string, DetailGridValue]): void => {
     const label: string = entry[0];
     const value: DetailGridValue = entry[1];
     const cell: HTMLDivElement = createElement("div");
     appendText(cell, "span", label);
     appendText(cell, "span", value);
     facts.append(cell);
-  }
+  });
   return facts;
 }
 
@@ -570,9 +569,9 @@ function renderLearningOutcomes(_article: HTMLElement, _module: ModuleData): voi
   const outcomes: HTMLElement = section("Module Learning Outcomes", _article);
   if (_module.learning_outcomes_intro) appendText(outcomes, "p", _module.learning_outcomes_intro);
   const grid: HTMLDivElement = createElement("div", "outcome-grid");
-  for (const outcome: NonNullable<ModuleData["learning_outcomes"]>[number] of _module.learning_outcomes ?? []) {
+  (_module.learning_outcomes ?? []).forEach((outcome: NonNullable<ModuleData["learning_outcomes"]>[number]): void => {
     grid.append(createOutcomeCard(outcome));
-  }
+  });
   outcomes.append(grid);
 }
 
@@ -626,9 +625,9 @@ function renderPeople(_article: HTMLElement, _module: ModuleData): void {
   responsible.append(createElement("span", undefined, "Person responsible for module: "));
   responsible.append(document.createTextNode(_module.responsible_person || "—"));
   people.append(responsible);
-  for (const lecturer: NonNullable<ModuleData["lecturers"]>[number] of _module.lecturers ?? []) {
+  (_module.lecturers ?? []).forEach((lecturer: NonNullable<ModuleData["lecturers"]>[number]): void => {
     appendLecturer(people, _module, lecturer);
-  }
+  });
 }
 
 function appendLecturer(_parent: HTMLElement, _module: ModuleData, _lecturer: NonNullable<ModuleData["lecturers"]>[number]): void {
@@ -644,9 +643,9 @@ function appendLecturer(_parent: HTMLElement, _module: ModuleData, _lecturer: No
 function renderReadingList(_article: HTMLElement, _module: ModuleData): void {
   const reading: HTMLElement = section("Reading List", _article);
   const list: HTMLUListElement = createElement("ul", "reading-list");
-  for (const item: NonNullable<ModuleData["reading_list"]>[number] of _module.reading_list ?? []) {
+  (_module.reading_list ?? []).forEach((item: NonNullable<ModuleData["reading_list"]>[number]): void => {
     appendText(list, "li", item.reference);
-  }
+  });
   reading.append(list);
 }
 
@@ -666,19 +665,19 @@ function createDetailGrid(_className: string, _headers: string[], _rows: DetailG
 }
 
 function appendDetailGridHeaders(_grid: HTMLElement, _headers: string[]): void {
-  for (const title: string of _headers) {
+  _headers.forEach((title: string): void => {
     const cell: HTMLElement = createElement("header", undefined, title);
     cell.setAttribute("role", "columnheader");
     _grid.append(cell);
-  }
+  });
 }
 
 function appendDetailGridRows(_grid: HTMLElement, _rows: DetailGridRows): void {
-  for (const row: DetailGridValue[] of _rows) {
-    for (const value: DetailGridValue of row) {
+  _rows.forEach((row: DetailGridValue[]): void => {
+    row.forEach((value: DetailGridValue): void => {
       appendDetailGridCell(_grid, value);
-    }
-  }
+    });
+  });
 }
 
 function appendDetailGridCell(_grid: HTMLElement, _value: DetailGridValue): void {
@@ -689,8 +688,8 @@ function appendDetailGridCell(_grid: HTMLElement, _value: DetailGridValue): void
 }
 
 function appendComponentContent(_parent: HTMLElement, _module: ModuleData, _items: NonNullable<ModuleData["individual_component_content"]>): void {
-  for (const item: NonNullable<ModuleData["individual_component_content"]>[number] of _items) {
+  _items.forEach((item: NonNullable<ModuleData["individual_component_content"]>[number]): void => {
     if (item.component) appendText(_parent, "h3", componentReference(_module, item.component));
     addList(_parent, item.items);
-  }
+  });
 }

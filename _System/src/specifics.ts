@@ -69,11 +69,11 @@ function createParagraph(_paragraph: SpecificParagraph, _number: number): HTMLEl
 function createSubparagraphs(_items: SpecificSubparagraph[]): HTMLOListElement {
   const list: HTMLOListElement = createElement("ol", "specific-subparagraphs");
   list.type = "a";
-  for (const item: SpecificSubparagraph of _items) {
+  _items.forEach((item: SpecificSubparagraph): void => {
     const entry: HTMLLIElement = createElement("li");
     entry.append(createElement("p", undefined, item.text));
     list.append(entry);
-  }
+  });
   return list;
 }
 
