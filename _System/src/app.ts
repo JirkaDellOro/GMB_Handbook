@@ -97,9 +97,7 @@ function attachCurriculumPanel(_elements: AppElements, _modules: ModuleData[], _
   renderStudyTables(target, _modules, _curriculum);
 }
 
-function attachDetailsPanel(
-  _elements: AppElements, _semesters: SemesterGroup[], _modules: ModuleData[]
-): void {
+function attachDetailsPanel(_elements: AppElements, _semesters: SemesterGroup[], _modules: ModuleData[]): void {
   const panel: HTMLElement | null = _elements.detailsPanel;
   const target: HTMLElement | null = _elements.detailsTarget;
   if (!panel || !target) return;

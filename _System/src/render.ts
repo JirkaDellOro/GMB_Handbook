@@ -191,7 +191,7 @@ function createModuleUrl(_module: ModuleData): string {
 
 function hasBlockInformation(_curriculum: CurriculumData): boolean {
   return Object.values(_curriculum.modules).some((_position: CurriculumModulePosition): boolean =>
-    _position.block !== undefined || _position.placements?.some((_placement: CurriculumPlacement): boolean => _placement.block !== undefined)
+    _position.block !== undefined || Boolean(_position.placements?.some((_placement: CurriculumPlacement): boolean => _placement.block !== undefined))
   );
 }
 
