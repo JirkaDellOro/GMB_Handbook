@@ -98,6 +98,7 @@
 .study-semester-total > span:first-child { text-align: left; }
 .study-semester-total > span:last-child { margin-left: auto; text-align: right; }
 .study-data-grid > div { background: var(--white); }
+.study-data-grid > .study-block-label { background: var(--study); color: var(--white); }
 .study-data-grid > div:has(> a) { grid-row: span 1; font-weight: 700; }
 .study-data-grid > div:has(> a) > a { color: var(--dark); text-decoration: none; font-weight: 700; }
 .study-data-grid > div:has(> a) > a:hover { text-decoration: underline; }
