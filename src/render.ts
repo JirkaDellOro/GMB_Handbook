@@ -129,14 +129,6 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
     legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
     _target.append(legend);
   }
-
-  scroll.append(layout);
-  _target.append(scroll);
-  if (hasBlockInfo) {
-    const legend = createElement("p");
-    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-    _target.append(legend);
-  }
 }
 
 
@@ -234,8 +226,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], 
           const components = module.components?.length ? module.components : [undefined];
           const moduleCell = createElement("div", blockNumber !== undefined ? "study-block-module" : "");
           const moduleLink = createElement("a", undefined, track ? `${track}: ${module.title}` : module.title);
-          moduleLink.setAttribute("lang", "de");
-          moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
+              moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
           moduleCell.append(moduleLink);
           moduleCell.style.gridColumn = hasBlocks ? (blockNumber !== undefined ? "2" : "1 / span 2") : "1";
           moduleCell.style.gridRow = `${gridRow} / span ${components.length}`; grid.append(moduleCell);
@@ -331,8 +322,8 @@ export function renderError(_target: HTMLElement, _title: string, _message: stri
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {
   if (_showBackLink) {
-    const back = createElement("a", "back-link", "← All modules");
-    back.href = "./index.html?view=modules";
+    const back = createElement("a", "back-link", "← Programme overview");
+    back.href = "./index.html";
     _article.append(back);
   }
   _article.append(createModuleHeading(_module), createModuleFacts(_module));

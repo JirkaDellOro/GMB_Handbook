@@ -1,0 +1,14 @@
+{
+  "name": "module-handbooks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test",
+    "validate": "node scripts/validate-json.mjs",
+    "check": "npm run build && npm test && npm run validate"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
+  }
+}

@@ -128,14 +128,6 @@ export function renderCurriculum(_target, _modules, _curriculum) {
     legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
     _target.append(legend);
   }
-
-    scroll.append(layout);
-    _target.append(scroll);
-    if (hasBlockInfo) {
-        const legend = createElement("p");
-        legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-        _target.append(legend);
-    }
 }
 const studyTableRanges = [
     { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
@@ -225,7 +217,6 @@ export function renderStudyTables(_target, _modules, _curriculum) {
                     const components = module.components?.length ? module.components : [undefined];
                     const moduleCell = createElement("div", blockNumber !== undefined ? "study-block-module" : "");
                     const moduleLink = createElement("a", undefined, track ? `${track}: ${module.title}` : module.title);
-          moduleLink.setAttribute("lang", "de");
                     moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
                     moduleCell.append(moduleLink);
                     moduleCell.style.gridColumn = hasBlocks ? (blockNumber !== undefined ? "2" : "1 / span 2") : "1";
