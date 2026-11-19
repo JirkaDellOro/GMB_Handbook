@@ -129,14 +129,6 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
     legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
     _target.append(legend);
   }
-
-  scroll.append(layout);
-  _target.append(scroll);
-  if (hasBlockInfo) {
-    const legend = createElement("p");
-    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-    _target.append(legend);
-  }
 }
 
 
