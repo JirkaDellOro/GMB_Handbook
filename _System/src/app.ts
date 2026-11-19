@@ -21,7 +21,7 @@ async function start(): Promise<void> {
   const moduleRef = parameters.get("module");
   const elements = getElements();
   attachPrintControl();
-  if (!moduleRef) attachSpecificsPanel(elements);
+  if (!moduleRef) attachSpecificsPanel(elements, document.body.dataset.specifics ?? "./specifics.json");
 
   try {
     if (moduleRef) return await showModuleDetail(moduleRef, elements);
@@ -61,12 +61,12 @@ function attachPrintControl(): void {
   });
 }
 
-function attachSpecificsPanel(_elements: AppElements): void {
+function attachSpecificsPanel(_elements: AppElements, _reference: string): void {
   const panel = _elements.specificsPanel;
   const target = _elements.specificsTarget;
   if (!panel || !target) return;
-  void loadProgrammeMetadata("./specifics.json");
-  void loadSpecifics(target, "./specifics.json", "h2");
+  void loadProgrammeMetadata(_reference);
+  void loadSpecifics(target, _reference, "h2");
 }
 
 async function showModuleDetail(_reference: string, _elements: AppElements): Promise<void> {

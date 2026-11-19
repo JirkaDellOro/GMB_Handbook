@@ -7,7 +7,7 @@
   {
     "code": "GMB correct",
     "path": "./GMBcorrect/index.html",
-    "specifics": "./GMBcorrect/specifics.json"
+    "specifics": "./GMB/specifics.json"
   },
   {
     "code": "AIN",

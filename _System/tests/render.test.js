@@ -141,19 +141,18 @@ function findElement(_root, _predicate) {
 
 
 test("programme names, degrees and SPO versions come from specifics data", async () => {
-  const [ain, gmb, gmbCorrect, programmeConfig] = await Promise.all([
+  const [ain, gmb, programmeConfig] = await Promise.all([
     readFile(new URL("../../AIN/specifics.json", import.meta.url), "utf8"),
     readFile(new URL("../../GMB/specifics.json", import.meta.url), "utf8"),
-    readFile(new URL("../../GMBcorrect/specifics.json", import.meta.url), "utf8"),
     readFile(new URL("../programmes.json", import.meta.url), "utf8")
   ]);
-  const specifics = [JSON.parse(ain), JSON.parse(gmb), JSON.parse(gmbCorrect)];
+  const specifics = [JSON.parse(ain), JSON.parse(gmb)];
   assert.match(specifics[0].programme, /B\.\s*Sc\.$/);
   assert.match(specifics[1].programme, /B\.A\.$/);
-  assert.equal(specifics[2].programme, specifics[1].programme);
-  assert.deepEqual(specifics.map(_item => _item.spoVersion), [14, 11, 11]);
+  assert.deepEqual(specifics.map(_item => _item.spoVersion), [14, 11]);
   const entries = JSON.parse(programmeConfig);
   assert.ok(entries.every(_entry => !("title" in _entry) && !("degree" in _entry)));
+  assert.equal(entries[0].specifics, entries[1].specifics);
 });
 
 test("programme pages contain no duplicated programme names or degree labels", async () => {
@@ -168,4 +167,5 @@ test("programme pages contain no duplicated programme names or degree labels", a
     assert.match(page, /Module Handbook – Hochschule Furtwangen/);
     assert.doesNotMatch(page, /Allgemeine Informatik|Games &amp; Immersive Media/);
   }
+  assert.match(pages[2], /data-specifics="\.\.\/GMB\/specifics\.json"/);
 });
