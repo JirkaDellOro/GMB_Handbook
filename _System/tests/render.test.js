@@ -117,9 +117,9 @@ test("programme overview retains the intentional GMB correct variant", async () 
 
 test("programme entry points declare their primary document language", async () => {
   const [ain, gmb, gmbCorrect] = await Promise.all([
-    readFile(new URL("../AIN/index.html", import.meta.url), "utf8"),
-    readFile(new URL("../GMB/index.html", import.meta.url), "utf8"),
-    readFile(new URL("../GMBcorrect/index.html", import.meta.url), "utf8")
+    readFile(new URL("../../AIN/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMB/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMBcorrect/index.html", import.meta.url), "utf8")
   ]);
 
   assert.match(ain, /<html lang="de">/);
