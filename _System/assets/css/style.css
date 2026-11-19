@@ -46,12 +46,12 @@
 
 .study-grid-scroll { width: 100%; overflow-x: auto; border: 0; border-radius: 0; }
 .study-grid-scroll:has(> section) { display: grid; gap: 16px; }
-.study-grid-scroll > section { min-width: 1050px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--gray); }
+.study-grid-scroll > section { min-width: 1050px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--white); }
 .study-data-grid {
   display: grid;
   grid-template-columns: minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
   width: 100%;
-  background: var(--gray);
+  background: var(--white);
   font-size: inherit;
   line-height: inherit;
 }
@@ -64,7 +64,7 @@
   justify-content: center;
   padding: 8px 4px !important;
   border-right: 1px solid var(--line);
-  background: var(--white);
+  background: var(--gray);
   color: var(--study);
   font-weight: 700;
   text-align: center;
@@ -91,14 +91,13 @@
 .curriculum-specialization-track:hover { border-color: var(--white); color: var(--white); text-decoration: underline; }
 
 .study-data-grid > header,
-.detail-data-grid > header { padding: 11px 12px; border-bottom: 1px solid var(--line); background: var(--white); color: var(--muted); font-weight: 400; }
+.detail-data-grid > header { padding: 11px 12px; border-bottom: 1px solid var(--line); background: var(--gray); color: var(--muted); font-weight: 400; }
 .study-data-grid > div,
 .detail-data-grid > div { min-width: 0; padding: 11px 12px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 .study-semester-total { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: var(--study); color: var(--white); font-weight: 700; text-align: left; }
 .study-semester-total > span:first-child { text-align: left; }
 .study-semester-total > span:last-child { margin-left: auto; text-align: right; }
 .study-data-grid > div { background: var(--white); }
-.study-data-grid > div.study-row-shaded { background: var(--gray); }
 .study-data-grid > div:has(> a) { grid-row: span 1; font-weight: 700; }
 .study-data-grid > div:has(> a) > a { color: var(--dark); text-decoration: none; font-weight: 700; }
 .study-data-grid > div:has(> a) > a:hover { text-decoration: underline; }
@@ -108,7 +107,7 @@
 .detail-data-grid {
   display: grid;
   width: 100%;
-  background: var(--white);
+  background: var(--gray);
   border: 1px solid var(--line);
   border-radius: 8px;
   font-size: inherit;
@@ -125,18 +124,6 @@
 
 .component-grid > div,
 .assessment-grid > div { background: var(--white); }
-.component-grid > div:nth-child(14n + 8),
-.component-grid > div:nth-child(14n + 9),
-.component-grid > div:nth-child(14n + 10),
-.component-grid > div:nth-child(14n + 11),
-.component-grid > div:nth-child(14n + 12),
-.component-grid > div:nth-child(14n + 13),
-.component-grid > div:nth-child(14n + 14),
-.assessment-grid > div:nth-child(10n + 6),
-.assessment-grid > div:nth-child(10n + 7),
-.assessment-grid > div:nth-child(10n + 8),
-.assessment-grid > div:nth-child(10n + 9),
-.assessment-grid > div:nth-child(10n + 10) { background: var(--gray); }
 
 @media print {
   .detail-grid-scroll { overflow: visible; }
