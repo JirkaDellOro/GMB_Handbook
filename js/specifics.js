@@ -10,7 +10,9 @@ function createParagraph(_paragraph, _number) {
     const item = createElement("section", "specific-paragraph");
     const number = createElement("span", "specific-number", `(${_number})`);
     const content = createElement("div", "specific-copy");
-    content.append(createElement("p", undefined, _paragraph.text));
+    const paragraph = createElement("p");
+    paragraph.append(number, document.createTextNode(_paragraph.text));
+    content.append(paragraph);
     if (_paragraph.items)
         content.append(createSubparagraphs(_paragraph.items));
     item.append(number, content);
