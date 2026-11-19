@@ -12,7 +12,7 @@
 
 .curriculum-table-heading { margin: 28px 0 14px; font-size: var(--font-section); }
 .curriculum-scroll { width: 100%; overflow-x: auto; padding-bottom: 4px; }
-.curriculum-layout { min-width: 980px; }
+.curriculum-layout { width: 100%; min-width: 0; }
 .curriculum-headings,
 .curriculum-grid {
   display: grid;

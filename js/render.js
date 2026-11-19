@@ -29,13 +29,17 @@ export function renderCurriculum(_target, _modules, _curriculum) {
     appendText(_target, "h2", _curriculum.tableHeadings?.structure ?? "Table 1: Module Structure", "curriculum-table-heading");
     const scroll = createElement("div", "curriculum-scroll");
     const layout = createElement("div", "curriculum-layout");
+    layout.style.width = "100%";
+    const columnTemplate = `34px repeat(${_curriculum.columns.length}, minmax(0, 1fr)) 38px`;
     const headings = createElement("div", "curriculum-headings");
+    headings.style.gridTemplateColumns = columnTemplate;
     headings.append(createElement("span"));
     for (const name of _curriculum.columns)
         appendText(headings, "span", name);
     headings.append(createElement("span"));
     layout.append(headings);
     const grid = createElement("div", "curriculum-grid");
+    grid.style.gridTemplateColumns = columnTemplate;
     grid.setAttribute("aria-label", "Module structure by semester and subject area");
     for (let semester = 7; semester >= 1; semester--) {
         const row = createElement("output", undefined, String(semester));
@@ -219,7 +223,7 @@ export function renderStudyTables(_target, _modules, _curriculum) {
                 for (const blockEntry of blockEntries) {
                     const { module, track } = blockEntry;
                     const components = module.components?.length ? module.components : [undefined];
-                    const moduleCell = createElement("div");
+                    const moduleCell = createElement("div", blockNumber !== undefined ? "study-block-module" : "");
                     const moduleLink = createElement("a", undefined, track ? `${track}: ${module.title}` : module.title);
           moduleLink.setAttribute("lang", "de");
                     moduleLink.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
