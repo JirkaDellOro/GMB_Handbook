@@ -231,11 +231,11 @@
   .curriculum-grid > output { font-size: 10pt; }
   .curriculum-grid > h2 { font-size: 7pt; }
   .curriculum-module { padding: 2mm 1mm 4mm; border: .2mm solid #bbb; }
-  .curriculum-module > span:first-child { font-size: 6.5pt; }
+  .curriculum-module > span:first-child { font-size: var(--font-curriculum-title); }
   .curriculum-module:not(.curriculum-internship) > span:last-child { right: 1mm; bottom: 1mm; font-size: 6pt; }
   .curriculum-module-cell { gap: .5mm; }
   .curriculum-module-cell > .curriculum-module { padding: 1mm; }
-  .curriculum-module-cell .curriculum-module > span:first-child { font-size: 5.5pt; }
+  .curriculum-module-cell .curriculum-module > span:first-child { font-size: var(--font-curriculum-title); }
   #module-overview > section { margin: 0 0 5mm; break-inside: auto; }
   .study-grid-scroll:has(> section) { display: block; }
   .study-grid-scroll > section { min-width: 0; width: 100%; margin-bottom: 2mm; border-radius: 0; break-inside: auto; }
@@ -244,8 +244,8 @@
   .study-block-label { padding: 1mm .5mm !important; font-size: 6pt; }
   .study-data-grid > div:has(> a) > a { hyphens: auto; overflow-wrap: break-word; }
   .curriculum-specialization { gap: 1mm; padding: 1mm; }
-  .curriculum-specialization > strong { font-size: 6pt; }
-  .curriculum-specialization-track { padding: .5mm; font-size: 7pt; }
+  .curriculum-specialization > strong { font-size: var(--font-curriculum-title); }
+  .curriculum-specialization-track { padding: .5mm; font-size: var(--font-curriculum-title); }
   .study-data-grid > header, .study-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
   .study-semester-total { padding: 1.2mm 2mm; font-size: 7pt; }
   .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
