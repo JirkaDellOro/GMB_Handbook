@@ -36,7 +36,7 @@ function fetchSpecifics(_reference) {
     const cached = specificsCache.get(_reference);
     if (cached)
         return cached;
-    const request = fetch(_reference).then(checkResponse).then(_response => _response.json());
+    const request = fetch(_reference).then(checkResponse).then((_response) => _response.json());
     specificsCache.set(_reference, request);
     return request;
 }
@@ -65,11 +65,11 @@ function createParagraph(_paragraph, _number) {
 function createSubparagraphs(_items) {
     const list = createElement("ol", "specific-subparagraphs");
     list.type = "a";
-    for (const item of _items) {
+    _items.forEach((item) => {
         const entry = createElement("li");
         entry.append(createElement("p", undefined, item.text));
         list.append(entry);
-    }
+    });
     return list;
 }
 function setText(_selector, _value) {

@@ -37,10 +37,10 @@ function attachPrintControl() {
     if (!button || panels.length === 0)
         return;
     button.addEventListener("click", () => {
-        const previousStates = panels.map(_panel => _panel.open);
-        panels.forEach(_panel => _panel.open = true);
+        const previousStates = panels.map((_panel) => _panel.open);
+        panels.forEach((_panel) => { _panel.open = true; });
         window.addEventListener("afterprint", () => {
-            panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
+            panels.forEach((_panel, _index) => { _panel.open = previousStates[_index]; });
         }, { once: true });
         window.print();
     });
@@ -72,7 +72,7 @@ async function showProgramme(_elements) {
     if (!_elements.curriculumTarget)
         return;
     const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
-    const references = [...new Set(semesters.flatMap(_semester => _semester.modules))];
+    const references = [...new Set(semesters.flatMap((_semester) => _semester.modules))];
     const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(_elements.curriculumTarget, modules, curriculum);
     attachCurriculumPanel(_elements, modules, curriculum);
@@ -94,9 +94,11 @@ function attachDetailsPanel(_elements, _semesters, _modules) {
 }
 function renderPageError(_error, _moduleRef, _elements) {
     const message = _error instanceof Error ? _error.message : String(_error);
-    if (_elements.detailTarget && _moduleRef)
+    if (_elements.detailTarget && _moduleRef) {
         renderError(_elements.detailTarget, "Module not found", message);
-    if (_elements.curriculumTarget && !_moduleRef)
+    }
+    if (_elements.curriculumTarget && !_moduleRef) {
         renderError(_elements.curriculumTarget, "Study structure could not be loaded", message);
+    }
 }
 void start();

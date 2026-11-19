@@ -17,7 +17,7 @@ export function loadModule(_reference) {
     const cachedModule = moduleCache.get(_reference);
     if (cachedModule)
         return cachedModule;
-    const request = fetchJson(_reference).then(_module => addSourceReference(_module, _reference));
+    const request = fetchJson(_reference).then((_module) => addSourceReference(_module, _reference));
     moduleCache.set(_reference, request);
     return request;
 }

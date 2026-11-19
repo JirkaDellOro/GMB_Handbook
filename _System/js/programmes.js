@@ -34,9 +34,9 @@ async function createProgrammeCardData(_entry) {
 }
 function renderProgrammes(_target, _programmes) {
     _target.replaceChildren();
-    for (const programme of _programmes) {
+    _programmes.forEach((programme) => {
         _target.append(createProgrammeCard(programme));
-    }
+    });
 }
 function createProgrammeCard(_programme) {
     const link = document.createElement("a");
