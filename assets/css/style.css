@@ -71,6 +71,24 @@
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
+.study-data-grid > div:has(> a) > a {
+  display: block;
+  white-space: normal;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+.curriculum-specialization {
+  display: flex; flex-direction: column; justify-content: space-evenly; align-items: stretch;
+  gap: 5px; min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: 4px;
+  background: var(--gray); text-align: center;
+}
+.curriculum-specialization > strong { color: var(--study); font-size: var(--font-compact); line-height: 1.2; }
+.curriculum-specialization-track {
+  display: block; padding: 3px 5px; border: 1px solid var(--line); background: var(--white);
+  color: var(--dark); font-size: var(--font-small); font-weight: 700; text-decoration: none;
+}
+.curriculum-specialization-track:hover { border-color: var(--study); color: var(--study); }
 
 .study-data-grid > header,
 .detail-data-grid > header { padding: 11px 12px; border-bottom: 1px solid var(--line); background: var(--white); color: var(--muted); font-weight: 400; }
@@ -224,8 +242,10 @@
   .study-data-grid { grid-template-columns: 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; font-size: 6.5pt; line-height: 1.2; }
   .study-data-grid--blocks { grid-template-columns: 5mm 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; }
   .study-block-label { padding: 1mm .5mm !important; font-size: 6pt; }
-  .study-data-grid--blocks { grid-template-columns: 5mm 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; }
-  .study-block-label { padding: 1mm .5mm !important; font-size: 6pt; }
+  .study-data-grid > div:has(> a) > a { hyphens: auto; overflow-wrap: break-word; }
+  .curriculum-specialization { gap: 1mm; padding: 1mm; }
+  .curriculum-specialization > strong { font-size: 6pt; }
+  .curriculum-specialization-track { padding: .5mm; font-size: 7pt; }
   .study-data-grid > header, .study-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
   .study-semester-total { padding: 1.2mm 2mm; font-size: 7pt; }
   .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
