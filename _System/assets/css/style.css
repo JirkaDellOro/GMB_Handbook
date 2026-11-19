@@ -97,7 +97,9 @@
 .study-semester-total { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: var(--study); color: var(--white); font-weight: 700; text-align: left; }
 .study-semester-total > span:first-child { text-align: left; }
 .study-semester-total > span:last-child { margin-left: auto; text-align: right; }
-.study-data-grid > div:has(> a) { grid-row: span 1; background: var(--gray); font-weight: 700; }
+.study-data-grid > div { background: var(--white); }
+.study-data-grid > div.study-row-shaded { background: var(--gray); }
+.study-data-grid > div:has(> a) { grid-row: span 1; font-weight: 700; }
 .study-data-grid > div:has(> a) > a { color: var(--dark); text-decoration: none; font-weight: 700; }
 .study-data-grid > div:has(> a) > a:hover { text-decoration: underline; }
 
@@ -122,7 +124,19 @@
 }
 
 .component-grid > div,
-.assessment-grid > div { background: var(--gray); }
+.assessment-grid > div { background: var(--white); }
+.component-grid > div:nth-child(14n + 8),
+.component-grid > div:nth-child(14n + 9),
+.component-grid > div:nth-child(14n + 10),
+.component-grid > div:nth-child(14n + 11),
+.component-grid > div:nth-child(14n + 12),
+.component-grid > div:nth-child(14n + 13),
+.component-grid > div:nth-child(14n + 14),
+.assessment-grid > div:nth-child(10n + 6),
+.assessment-grid > div:nth-child(10n + 7),
+.assessment-grid > div:nth-child(10n + 8),
+.assessment-grid > div:nth-child(10n + 9),
+.assessment-grid > div:nth-child(10n + 10) { background: var(--gray); }
 
 @media print {
   .detail-grid-scroll { overflow: visible; }

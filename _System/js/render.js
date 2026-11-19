@@ -317,6 +317,7 @@ function appendStudyModule(_grid, _entry, _blockNumber, _hasBlocks, _gridRow) {
 function createStudyModuleCell(_entry, _blockNumber, _hasBlocks, _gridRow, _rowSpan) {
     const className = _blockNumber !== undefined ? "study-block-module" : "";
     const cell = createElement("div", className);
+    cell.classList.toggle("study-row-shaded", _gridRow % 2 === 0);
     const title = _entry.track ? `${_entry.track}: ${_entry.module.title}` : _entry.module.title;
     const link = createElement("a", undefined, title);
     link.href = createModuleUrl(_entry.module);
@@ -344,6 +345,7 @@ function createStudyComponentValues(_module, _component) {
 function appendStudyComponentValues(_grid, _values, _hasBlocks, _gridRow) {
     _values.forEach((_value, _index) => {
         const cell = createElement("div", undefined, String(_value));
+        cell.classList.toggle("study-row-shaded", _gridRow % 2 === 0);
         cell.style.gridColumn = String(_index + (_hasBlocks ? 3 : 2));
         cell.style.gridRow = String(_gridRow);
         _grid.append(cell);
