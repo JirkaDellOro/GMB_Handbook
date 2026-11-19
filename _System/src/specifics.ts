@@ -14,8 +14,12 @@ export async function loadSpecifics(_target: HTMLElement, _reference = "./specif
 export async function loadProgrammeMetadata(_reference = "./specifics.json"): Promise<void> {
   const data = await fetchSpecifics(_reference);
   const programmeName = getProgrammeName(data.programme);
-  document.title = `${programmeName} – Module Handbook`;
-  setMetaDescription(`Module handbook and study structure for ${data.programme}`);
+  const isSpecificsPage = document.body.classList.contains("specifics-page");
+  document.title = isSpecificsPage ? `Specifics – ${programmeName}` : `${programmeName} – Module Handbook`;
+  const description = isSpecificsPage
+    ? `Programme specifics for ${data.programme}`
+    : `Module handbook and study structure for ${data.programme}`;
+  setMetaDescription(description);
   setText("#programme-name-header", programmeName);
   setText("#programme-name", programmeName);
   setText("#programme-degree", getDegreeTitle(data.programme));
@@ -102,5 +106,9 @@ function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _classNam
 
 if (document.body.classList.contains("specifics-page")) {
   const target = document.querySelector<HTMLElement>("#specifics-content");
-  if (target) void loadSpecifics(target);
+  if (target) {
+    const reference = document.body.dataset.specifics ?? "./specifics.json";
+    void loadProgrammeMetadata(reference);
+    void loadSpecifics(target, reference);
+  }
 }

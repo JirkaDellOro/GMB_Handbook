@@ -169,3 +169,17 @@ test("programme pages contain no duplicated programme names or degree labels", a
   }
   assert.match(pages[2], /data-specifics="\.\.\/GMB\/specifics\.json"/);
 });
+
+
+test("specifics pages use centralized programme metadata", async () => {
+  const [gmb, gmbCorrect] = await Promise.all([
+    readFile(new URL("../../GMB/specifics.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMBcorrect/specifics.html", import.meta.url), "utf8")
+  ]);
+  for (const page of [gmb, gmbCorrect]) {
+    assert.match(page, /id="programme-name-header"/);
+    assert.match(page, /id="programme-version-header"/);
+    assert.doesNotMatch(page, /Games &amp; Immersive Media|B\.A\.|SPO Version 11/);
+  }
+  assert.match(gmbCorrect, /data-specifics="\.\.\/GMB\/specifics\.json"/);
+});
