@@ -75,6 +75,22 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
     position.block !== undefined || position.placements?.some(placement => placement.block !== undefined)
   );
   for (const cellData of cells.values()) {
+    const isSpecializationBlock = cellData.entries.length > 1 &&
+      cellData.entries.every(entry => entry.moduleNumber !== undefined && Boolean(entry.track));
+    if (isSpecializationBlock) {
+      const container = createElement("div", "curriculum-specialization");
+      container.style.gridColumn = cellData.gridColumn;
+      container.style.gridRow = String(cellData.row);
+      container.append(createElement("strong", undefined, `Vertiefungsmodul ${cellData.entries[0].moduleNumber}`));
+      for (const entry of cellData.entries) {
+        const link = createElement("a", "curriculum-specialization-track", entry.track);
+        link.href = `./index.html?module=${encodeURIComponent(entry.module.sourceRef ?? ("modules/" + entry.module.id + ".json"))}`;
+        link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
+        container.append(link);
+      }
+      grid.append(container);
+      continue;
+    }
     const isStacked = cellData.entries.length > 1;
     const container = isStacked ? createElement("div", "curriculum-module-cell") : grid;
     if (isStacked) {
@@ -102,6 +118,14 @@ export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _
     }
   }
   layout.append(grid);
+  scroll.append(layout);
+  _target.append(scroll);
+  if (hasBlockInfo) {
+    const legend = createElement("p");
+    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
+    _target.append(legend);
+  }
+
   scroll.append(layout);
   _target.append(scroll);
   if (hasBlockInfo) {
@@ -198,7 +222,7 @@ export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], 
         }
         const blockRowCount = blockEntries.reduce((_count, _entry) => _count + Math.max(1, _entry.module.components?.length ?? 0), 0);
         if (blockNumber !== undefined) {
-          const label = createElement("div", "study-block-label", `Vertiefungsmodul ${blockNumber}`);
+          const label = createElement("div", "study-block-label", `Vertiefungsmodul ${blockNumber} · 6 CP`);
           label.style.gridColumn = "1"; label.style.gridRow = `${gridRow} / span ${blockRowCount}`; grid.append(label);
         }
         for (const blockEntry of blockEntries) {
