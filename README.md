@@ -11,9 +11,9 @@ Shared static website for multiple study programmes. The application code, style
   - `manifest.json` – semester groups and module references
   - `curriculum.json` – curriculum layout and module positions
   - `modules/*.json` – module data owned by this programme
-- `src/*.ts` – shared TypeScript source
-- `js/*.js` – browser JavaScript used by the programme entry points
-- `assets/css/` and `assets/images/` – shared presentation and media
+- `_System/src/*.ts` – shared TypeScript source
+- `_System/js/*.js` – browser JavaScript used by the programme entry points
+- `_System/assets/css/` and `_System/assets/images/` – shared presentation and media
 
 Future programmes get their own sibling directory, for example `XYZ/`, with the same three programme-specific files and their own `modules/` directory. The application code is not copied.
 
@@ -59,14 +59,14 @@ Then open the local URL printed by the server.
 
 ## Build and validation
 
-The TypeScript compiler version is pinned in `package.json`. After changing files in `src/`, install the development dependency and run the complete check:
+The TypeScript compiler version is pinned in `package.json`. After changing files in `_System/src/`, install the development dependency and run the complete check:
 
 ```sh
 npm install
 npm run check
 ```
 
-The check compiles TypeScript into `js/`, runs the regression tests, and validates JSON syntax and module IDs. Missing component credit-point entries are reported as warnings rather than changed or treated as invalid content. The same checks run on pushes and pull requests through GitHub Actions.
+The check compiles TypeScript into `_System/js/`, runs the regression tests, and validates JSON syntax and module IDs. Missing component credit-point entries are reported as warnings rather than changed or treated as invalid content. The same checks run on pushes and pull requests through GitHub Actions.
 
 The generated files in `js/` are committed as well, so GitHub Pages can serve the site without a build pipeline. Keep `src/` and `js/` synchronized by compiling before publishing.
 

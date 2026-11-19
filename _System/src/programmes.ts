@@ -10,7 +10,7 @@ async function loadProgrammes(): Promise<void> {
   if (!target) return;
 
   try {
-    const response = await fetch("./programmes.json");
+    const response = await fetch("./_System/programmes.json");
     if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
     const programmes = await response.json() as StudyProgramme[];
     if (!Array.isArray(programmes)) throw new Error("The programme configuration must be a list.");

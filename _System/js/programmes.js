@@ -3,7 +3,7 @@ async function loadProgrammes() {
     if (!target)
         return;
     try {
-        const response = await fetch("./programmes.json");
+        const response = await fetch("./_System/programmes.json");
         if (!response.ok)
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         const programmes = await response.json();
