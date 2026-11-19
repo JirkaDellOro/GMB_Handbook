@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import { renderCurriculum } from "../js/render.js";
+import { renderCurriculum, renderModuleDetail } from "../js/render.js";
 
 class MockElement {
   constructor(_tagName) {
@@ -11,6 +11,7 @@ class MockElement {
     this.attributes = {};
     this.parentNode = null;
     this.className = "";
+    this.classList = { add: (..._names) => { this.className = [...new Set([...this.className.split(" "), ..._names])].filter(Boolean).join(" "); } };
     this.textContent = "";
     this.href = "";
   }
@@ -35,7 +36,14 @@ class MockElement {
 }
 
 function createDocument() {
-  return { createElement: _tagName => new MockElement(_tagName) };
+  return {
+    createElement: _tagName => new MockElement(_tagName),
+    createTextNode: _text => {
+      const node = new MockElement("#text");
+      node.textContent = _text;
+      return node;
+    }
+  };
 }
 
 function createCurriculum(_withBlockInfo) {
@@ -74,6 +82,19 @@ test("curriculum omits the legend when block information is absent", () => {
   renderCurriculum(target, [createModule()], createCurriculum(false));
 
   assert.equal(target.children.filter(_child => _child.tagName === "P").length, 0);
+  delete globalThis.document;
+});
+
+test("module detail back link returns to the programme overview", () => {
+  globalThis.document = createDocument();
+  const target = new MockElement("main");
+
+  renderModuleDetail(target, createModule());
+
+  const backLink = target.children[0].children.find(_child => _child.className === "back-link");
+  assert.ok(backLink);
+  assert.equal(backLink.href, "./index.html");
+  assert.equal(backLink.textContent, "← Programme overview");
   delete globalThis.document;
 });
 
