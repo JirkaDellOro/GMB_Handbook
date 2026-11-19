@@ -128,14 +128,6 @@ export function renderCurriculum(_target, _modules, _curriculum) {
     legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
     _target.append(legend);
   }
-
-    scroll.append(layout);
-    _target.append(scroll);
-    if (hasBlockInfo) {
-        const legend = createElement("p");
-        legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-        _target.append(legend);
-    }
 }
 const studyTableRanges = [
     { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
