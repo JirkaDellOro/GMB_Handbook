@@ -223,7 +223,7 @@ function componentAssessments(_module: ModuleData, _component: NonNullable<Modul
 
 function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
   if (_value === null || _value === undefined || _value === "") return "—";
-  const match = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
+  const match: RegExpMatchArray | null = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
   return match ? match[1].replace(",", ".") : String(_value);
 }
 
@@ -284,7 +284,7 @@ function calculateSemesterCreditTotal(_modules: ModuleData[], _semester: number,
 }
 
 function getModulePlacement(_module: ModuleData, _semester: number, _curriculum?: CurriculumData): CurriculumPlacement | undefined {
-  const position = _curriculum?.modules[_module.sourceRef ?? _module.id];
+  const position: CurriculumData["modules"][string] | undefined = _curriculum?.modules[_module.sourceRef ?? _module.id];
   return position?.placements?.find(_placement => Number(_placement.semester ?? _module.semester) === _semester);
 }
 
