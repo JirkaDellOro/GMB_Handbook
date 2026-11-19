@@ -64,8 +64,8 @@
   justify-content: center;
   padding: 8px 4px !important;
   border-right: 1px solid var(--line);
-  background: var(--gray);
-  color: var(--study);
+  background: var(--study);
+  color: var(--white);
   font-weight: 700;
   text-align: center;
   writing-mode: vertical-rl;
