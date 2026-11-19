@@ -63,7 +63,15 @@
 }
 .curriculum-module:hover { transform: translateY(-2px); box-shadow: 0 5px 14px var(--shadow); }
 .curriculum-module:focus-visible { outline: 3px solid var(--study); outline-offset: 3px; z-index: 2; }
-.curriculum-module > span:first-child { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 700; }
+.curriculum-module > span:first-child {
+  min-width: 0;
+  max-width: 100%;
+  font-size: var(--font-curriculum-title);
+  line-height: 1.2;
+  font-weight: 700;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
 .curriculum-module:not(.curriculum-internship) > span:last-child {
   font-size: var(--font-curriculum-title);
   line-height: 1;
