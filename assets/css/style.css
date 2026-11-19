@@ -64,8 +64,8 @@
   justify-content: center;
   padding: 8px 4px !important;
   border-right: 1px solid var(--line);
-  background: var(--gray);
-  color: var(--dark);
+  background: var(--study);
+  color: var(--white);
   font-weight: 700;
   text-align: center;
   writing-mode: vertical-rl;
@@ -83,10 +83,10 @@
   gap: 5px; min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: 4px;
   background: var(--study); color: var(--white); text-align: center;
 }
-.curriculum-specialization > strong { flex: 1 0 100%; color: var(--white); font-size: var(--font-compact); line-height: 1.2; }
+.curriculum-specialization > strong { flex: 1 0 100%; color: var(--white); font-size: var(--font-curriculum-title); line-height: 1.2; }
 .curriculum-specialization-track {
   display: block; flex: 1 1 0; padding: 5px 8px; border: 1px solid rgba(255,255,255,.65); background: transparent;
-  color: var(--white); font-size: var(--font-small); font-weight: 700; text-decoration: none;
+  color: var(--white); font-size: var(--font-curriculum-title); font-weight: 700; text-decoration: none;
 }
 .curriculum-specialization-track:hover { border-color: var(--white); color: var(--white); text-decoration: underline; }
 
@@ -98,6 +98,8 @@
 .study-semester-total > span:first-child { text-align: left; }
 .study-semester-total > span:last-child { margin-left: auto; text-align: right; }
 .study-data-grid > div:has(> a) { grid-row: span 1; background: var(--gray); font-weight: 700; }
+.study-data-grid > div.study-block-module { background: var(--study); color: var(--white); }
+.study-data-grid > div.study-block-module > a { color: var(--white); }
 .study-data-grid > div:has(> a) > a { color: var(--dark); text-decoration: none; font-weight: 700; }
 .study-data-grid > div:has(> a) > a:hover { text-decoration: underline; }
 
