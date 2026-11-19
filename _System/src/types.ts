@@ -8,7 +8,6 @@ export interface ModuleComponent {
   course_type?: string | null;
   credit_points?: string | number | null;
 }
-
 export interface ComponentSection { component?: string; items?: string[] }
 export interface LearningOutcome { category?: string; items?: string[] }
 export interface Assessment {
@@ -20,7 +19,6 @@ export interface Assessment {
 }
 export interface Lecturer { component?: string; names?: string[] }
 export interface ReadingItem { component?: string; reference?: string }
-
 export interface ModuleData {
   id: string;
   sourceRef?: string;
@@ -43,12 +41,7 @@ export interface ModuleData {
   lecturers?: Lecturer[];
   reading_list?: ReadingItem[];
 }
-
-export interface SemesterGroup {
-  title: string;
-  modules: string[];
-}
-
+export interface SemesterGroup { title: string; modules: string[] }
 export interface CurriculumPlacement {
   column: string;
   semester?: number;
@@ -58,14 +51,43 @@ export interface CurriculumPlacement {
   track?: string;
   moduleNumber?: number;
 }
-export interface CurriculumModulePosition extends Partial<CurriculumPlacement> {
-  placements?: CurriculumPlacement[];
+export interface CurriculumModulePosition extends Partial<CurriculumPlacement> { placements?: CurriculumPlacement[] }
+export interface StudyTableRange {
+  number: 2 | 3;
+  firstSemester: number;
+  lastSemester: number;
+  heading: string;
 }
+export interface CurriculumTableHeadings { structure?: string; foundation?: string; advanced?: string }
+export interface StudyStage { title: string; firstSemester: number; lastSemester: number }
 export interface CurriculumData {
-  programmeName?: string;
-  tableHeadings?: { structure?: string; foundation?: string; advanced?: string };
-  studyTables?: { number: 2 | 3; firstSemester: number; lastSemester: number; heading: string }[];
+  tableHeadings?: CurriculumTableHeadings;
+  studyTables?: StudyTableRange[];
   columns: string[];
-  studyStages: { title: string; firstSemester: number; lastSemester: number }[];
+  studyStages: StudyStage[];
   modules: Record<string, CurriculumModulePosition>;
 }
+export interface SpecificSubparagraph { text: string }
+export interface SpecificParagraph { text: string; items?: SpecificSubparagraph[] }
+export interface SpecificsData {
+  section: string;
+  title: string;
+  programme: string;
+  spoVersion: number;
+  paragraphs: SpecificParagraph[];
+  lastChange?: string;
+}
+export interface ProgrammeEntry { code: string; path: string; specifics: string }
+export type DetailGridValue = string | number | boolean | null | undefined;
+export type DetailGridRow = DetailGridValue[];
+export type DetailGridRows = DetailGridRow[];
+export interface StudyTableEntry { module: ModuleData; moduleNumber?: number; track?: string }
+export interface CurriculumCellEntry {
+  module: ModuleData;
+  semester: number;
+  block?: number | null;
+  style: string;
+  track?: string;
+  moduleNumber?: number;
+}
+export interface CurriculumCell { row: number; gridColumn: string; entries: CurriculumCellEntry[] }

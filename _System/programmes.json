@@ -1,20 +1,17 @@
 [
   {
     "code": "GMB",
-    "title": "Games & Immersive Media",
-    "degree": "Bachelor of Arts · SPO Version 11",
-    "path": "./GMB/index.html"
+    "path": "./GMB/index.html",
+    "specifics": "./GMB/specifics.json"
   },
   {
     "code": "GMB correct",
-    "title": "Games & Immersive Media",
-    "degree": "Bachelor of Arts · SPO Version 11",
-    "path": "./GMBcorrect/index.html"
+    "path": "./GMBcorrect/index.html",
+    "specifics": "./GMBcorrect/specifics.json"
   },
   {
     "code": "AIN",
-    "title": "Allgemeine Informatik",
-    "degree": "Bachelor of Science · SPO Version 14",
-    "path": "./AIN/index.html"
+    "path": "./AIN/index.html",
+    "specifics": "./AIN/specifics.json"
   }
 ]

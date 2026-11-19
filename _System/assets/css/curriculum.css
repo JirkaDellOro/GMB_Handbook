@@ -20,6 +20,8 @@
   column-gap: 10px;
 }
 .curriculum-headings { display: none; margin-bottom: 8px; align-items: end; }
+.curriculum-headings.curriculum-columns-5,
+.curriculum-grid.curriculum-columns-5 { grid-template-columns: 34px repeat(5, minmax(0, 1fr)) 38px; }
 .curriculum-headings > span:not(:first-child):not(:last-child) {
   padding: 0 2px 4px;
   color: var(--study);
@@ -107,6 +109,7 @@
 /* Multiple modules share one curriculum cell */
 .curriculum-module-cell {
   display: grid;
+  grid-auto-rows: minmax(0, 1fr);
   gap: 8px;
   min-width: 0;
   min-height: 0;

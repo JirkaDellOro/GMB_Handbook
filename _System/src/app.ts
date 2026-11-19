@@ -1,6 +1,6 @@
 import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderStudyTables } from "./render.js";
-import { loadSpecifics } from "./specifics.js";
+import { loadProgrammeMetadata, loadSpecifics } from "./specifics.js";
 import type { ModuleData, SemesterGroup } from "./types.js";
 
 interface AppElements {
@@ -21,7 +21,7 @@ async function start(): Promise<void> {
   const moduleRef = parameters.get("module");
   const elements = getElements();
   attachPrintControl();
-  attachSpecificsPanel(elements);
+  if (!moduleRef) attachSpecificsPanel(elements);
 
   try {
     if (moduleRef) return await showModuleDetail(moduleRef, elements);
@@ -65,6 +65,7 @@ function attachSpecificsPanel(_elements: AppElements): void {
   const panel = _elements.specificsPanel;
   const target = _elements.specificsTarget;
   if (!panel || !target) return;
+  void loadProgrammeMetadata("./specifics.json");
   void loadSpecifics(target, "./specifics.json", "h2");
 }
 
