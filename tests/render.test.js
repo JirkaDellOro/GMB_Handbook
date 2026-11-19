@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
-import { renderCurriculum, renderModuleDetail } from "../js/render.js";
+import { renderCurriculum, renderModuleDetail, renderStudyTables } from "../js/render.js";
 
 class MockElement {
   constructor(_tagName) {
@@ -85,6 +85,18 @@ test("curriculum omits the legend when block information is absent", () => {
   delete globalThis.document;
 });
 
+test("study table module links inherit the programme document language", () => {
+  globalThis.document = createDocument();
+  const target = new MockElement("main");
+
+  renderStudyTables(target, [createModule()]);
+
+  const moduleLink = findElement(target, _element => _element.tagName === "A");
+  assert.ok(moduleLink);
+  assert.equal(moduleLink.attributes.lang, undefined);
+  delete globalThis.document;
+});
+
 test("module detail back link returns to the programme overview", () => {
   globalThis.document = createDocument();
   const target = new MockElement("main");
@@ -109,3 +121,12 @@ test("programme entry points declare their primary document language", async () 
   assert.match(gmb, /<html lang="en">/);
   assert.match(gmbCorrect, /<html lang="en">/);
 });
+
+function findElement(_root, _predicate) {
+  if (_predicate(_root)) return _root;
+  for (const child of _root.children) {
+    const match = findElement(child, _predicate);
+    if (match) return match;
+  }
+  return undefined;
+}
