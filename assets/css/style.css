@@ -83,10 +83,10 @@
   gap: 5px; min-width: 0; padding: 8px; border: 1px solid var(--line); border-radius: 4px;
   background: var(--gray); text-align: center;
 }
-.curriculum-specialization > strong { flex: 1 0 100%; color: var(--study); font-size: var(--font-medium); line-height: 1.2; }
+.curriculum-specialization > strong { flex: 1 0 100%; color: var(--study); font-size: var(--font-compact); line-height: 1.2; }
 .curriculum-specialization-track {
   display: block; flex: 1 1 0; padding: 5px 8px; border: 1px solid var(--line); background: var(--white);
-  color: var(--dark); font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 700; text-decoration: none;
+  color: var(--dark); font-size: var(--font-small); font-weight: 700; text-decoration: none;
 }
 .curriculum-specialization-track:hover { border-color: var(--study); color: var(--study); }
 
