@@ -110,6 +110,11 @@ test("module detail back link returns to the programme overview", () => {
   delete globalThis.document;
 });
 
+test("programme overview retains the intentional GMB correct variant", async () => {
+  const programmes = JSON.parse(await readFile(new URL("../programmes.json", import.meta.url), "utf8"));
+  assert.ok(programmes.some(_programme => _programme.path === "./GMBcorrect/index.html"));
+});
+
 test("programme entry points declare their primary document language", async () => {
   const [ain, gmb, gmbCorrect] = await Promise.all([
     readFile(new URL("../AIN/index.html", import.meta.url), "utf8"),
