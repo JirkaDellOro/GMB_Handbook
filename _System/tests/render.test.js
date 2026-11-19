@@ -152,6 +152,8 @@ test("programme names, degrees and SPO versions come from specifics data", async
   assert.deepEqual(specifics.map(_item => _item.spoVersion), [14, 11]);
   const entries = JSON.parse(programmeConfig);
   assert.ok(entries.every(_entry => !("title" in _entry) && !("degree" in _entry)));
+  assert.deepEqual(specifics.map(_item => _item.code), ["AIN", "GMB"]);
+  assert.ok(entries.every(_entry => !("code" in _entry)));
   assert.equal(entries[0].specifics, entries[1].specifics);
 });
 

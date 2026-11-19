@@ -72,12 +72,13 @@ export interface SpecificParagraph { text: string; items?: SpecificSubparagraph[
 export interface SpecificsData {
   section: string;
   title: string;
+  code: string;
   programme: string;
   spoVersion: number;
   paragraphs: SpecificParagraph[];
   lastChange?: string;
 }
-export interface ProgrammeEntry { code: string; path: string; specifics: string }
+export interface ProgrammeEntry { path: string; specifics: string }
 export type DetailGridValue = string | number | boolean | null | undefined;
 export type DetailGridRow = DetailGridValue[];
 export type DetailGridRows = DetailGridRow[];

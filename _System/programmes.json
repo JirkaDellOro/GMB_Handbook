@@ -1,16 +1,13 @@
 [
   {
-    "code": "GMB",
     "path": "./GMB/index.html",
     "specifics": "./GMB/specifics.json"
   },
   {
-    "code": "GMB correct",
     "path": "./GMBcorrect/index.html",
     "specifics": "./GMB/specifics.json"
   },
   {
-    "code": "AIN",
     "path": "./AIN/index.html",
     "specifics": "./AIN/specifics.json"
   }
