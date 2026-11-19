@@ -74,34 +74,57 @@ export function renderCurriculum(_target, _modules, _curriculum) {
         position.block !== undefined || position.placements?.some(placement => placement.block !== undefined)
     );
     for (const cellData of cells.values()) {
-        const isStacked = cellData.entries.length > 1;
-        const container = isStacked ? createElement("div", "curriculum-module-cell") : grid;
-        if (isStacked) {
-            container.style.gridColumn = cellData.gridColumn;
-            container.style.gridRow = String(cellData.row);
-            container.style.gridTemplateRows = `repeat(${cellData.entries.length}, minmax(0, 1fr))`;
-            grid.append(container);
-        }
-        for (const entry of cellData.entries) {
-            const { module, semester, block, style, track, moduleNumber } = entry;
-            const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
-            link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
-            link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
-            if (!isStacked) {
-                link.style.gridColumn = cellData.gridColumn;
-                link.style.gridRow = String(cellData.row);
-            }
-            appendText(link, "span", module.title);
-            if (track || moduleNumber)
-                appendText(link, "small", [moduleNumber ? `Vertiefungsmodul ${moduleNumber}` : "", track ?? ""].filter(Boolean).join(" · "));
-            if (block !== undefined && style !== "internship") {
-                const blockLabel = block === null ? "–" : String(block);
-                appendText(link, "span", `${blockLabel}.${module.credits ?? "—"}`);
-            }
-            container.append(link);
-        }
+    const isSpecializationBlock = cellData.entries.length > 1 &&
+      cellData.entries.every(entry => entry.moduleNumber !== undefined && Boolean(entry.track));
+    if (isSpecializationBlock) {
+      const container = createElement("div", "curriculum-specialization");
+      container.style.gridColumn = cellData.gridColumn;
+      container.style.gridRow = String(cellData.row);
+      container.append(createElement("strong", undefined, `Vertiefungsmodul ${cellData.entries[0].moduleNumber}`));
+      for (const entry of cellData.entries) {
+        const link = createElement("a", "curriculum-specialization-track", entry.track);
+        link.href = `./index.html?module=${encodeURIComponent(entry.module.sourceRef ?? ("modules/" + entry.module.id + ".json"))}`;
+        link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
+        container.append(link);
+      }
+      grid.append(container);
+      continue;
     }
-    layout.append(grid);
+    const isStacked = cellData.entries.length > 1;
+    const container = isStacked ? createElement("div", "curriculum-module-cell") : grid;
+    if (isStacked) {
+      container.style.gridColumn = cellData.gridColumn;
+      container.style.gridRow = String(cellData.row);
+      container.style.gridTemplateRows = `repeat(${cellData.entries.length}, minmax(0, 1fr))`;
+      grid.append(container);
+    }
+    for (const entry of cellData.entries) {
+      const { module, semester, block, style, track, moduleNumber } = entry;
+      const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
+      link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
+      link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
+      if (!isStacked) {
+        link.style.gridColumn = cellData.gridColumn;
+        link.style.gridRow = String(cellData.row);
+      }
+      appendText(link, "span", module.title);
+      if (track || moduleNumber) appendText(link, "small", [moduleNumber ? `Vertiefungsmodul ${moduleNumber}` : "", track ?? ""].filter(Boolean).join(" · "));
+      if (block !== undefined && style !== "internship") {
+        const blockLabel = block === null ? "–" : String(block);
+        appendText(link, "span", `${blockLabel}.${module.credits ?? "—"}`);
+      }
+      container.append(link);
+    }
+  }
+  layout.append(grid);
+  scroll.append(layout);
+  _target.append(scroll);
+  if (hasBlockInfo) {
+    const legend = createElement("p");
+    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
+    _target.append(legend);
+  }
+
     scroll.append(layout);
     _target.append(scroll);
     if (hasBlockInfo) {
@@ -190,7 +213,7 @@ export function renderStudyTables(_target, _modules, _curriculum) {
                 }
                 const blockRowCount = blockEntries.reduce((_count, _entry) => _count + Math.max(1, _entry.module.components?.length ?? 0), 0);
                 if (blockNumber !== undefined) {
-                    const label = createElement("div", "study-block-label", `Vertiefungsmodul ${blockNumber}`);
+                    const label = createElement("div", "study-block-label", `Vertiefungsmodul ${blockNumber} · 6 CP`);
                     label.style.gridColumn = "1"; label.style.gridRow = `${gridRow} / span ${blockRowCount}`; grid.append(label);
                 }
                 for (const blockEntry of blockEntries) {
