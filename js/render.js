@@ -133,31 +133,50 @@ function contactHoursSws(_value) {
 }
 export function renderStudyTables(_target, _modules, _curriculum) {
     _target.replaceChildren();
-    const orderedModules = [..._modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
     const ranges = _curriculum?.studyTables ?? studyTableRanges;
     const programmeName = _curriculum?.programmeName ?? "Games & Immersive Media B.A.";
-    for (const range of ranges) {
-        const sectionNode = createElement("section");
-        const configuredHeading = range.number === 2 ? _curriculum?.tableHeadings?.foundation : _curriculum?.tableHeadings?.advanced;
-        appendText(sectionNode, "h2", configuredHeading ?? `Table ${range.number}: ${programmeName} (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
-        const semesterModules = new Map();
-        for (const module of orderedModules) {
-            const semester = Number(module.semester);
-            if (!Number.isInteger(semester) || semester < range.firstSemester || semester > range.lastSemester)
+    const semesterModules = new Map();
+    for (const module of _modules) {
+        const position = _curriculum?.modules[module.sourceRef ?? module.id];
+        const placements = position?.placements ?? (position ? [position] : []);
+        const semesters = placements.length
+            ? [...new Set(placements.map(_placement => Number(_placement.semester ?? module.semester)))]
+            : [Number(module.semester)];
+        for (const semester of semesters) {
+            if (!Number.isInteger(semester) || semester < 1 || semester > 7)
                 continue;
             const group = semesterModules.get(semester) ?? [];
             group.push(module);
             semesterModules.set(semester, group);
         }
+    }
+    const semesterCredits = new Map();
+    for (const [semester, modules] of semesterModules) {
+        const counted = new Set();
+        let total = 0;
+        for (const module of modules) {
+            const position = _curriculum?.modules[module.sourceRef ?? module.id];
+            const placement = position?.placements?.find(_item => Number(_item.semester ?? module.semester) === semester);
+            const group = placement?.moduleNumber ? `choice-${placement.moduleNumber}` : module.id;
+            if (counted.has(group))
+                continue;
+            counted.add(group);
+            total += Number(module.credits) || 0;
+        }
+        semesterCredits.set(semester, total);
+    }
+    for (const range of ranges) {
+        const sectionNode = createElement("section");
+        const configuredHeading = range.number === 2 ? _curriculum?.tableHeadings?.foundation : _curriculum?.tableHeadings?.advanced;
+        appendText(sectionNode, "h2", configuredHeading ?? `Table ${range.number}: ${programmeName} (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
         const gridScroll = createElement("div", "study-grid-scroll");
         for (let semester = range.firstSemester; semester <= range.lastSemester; semester++) {
             const semesterItems = semesterModules.get(semester) ?? [];
             const semesterCard = createElement("section");
             const grid = createElement("div", "study-data-grid");
             grid.setAttribute("aria-label", `Table ${range.number}: ${semester}. Curricular Semester`);
-            for (const title of ["Modules", "Component", "Type", "Hours", "Graded", "Non-Graded", "CP"]) {
+            for (const title of ["Modules", "Component", "Type", "Hours", "Graded", "Non-Graded", "CP"])
                 grid.append(createElement("header", undefined, title));
-            }
             for (const module of semesterItems) {
                 const components = module.components?.length ? module.components : [undefined];
                 const moduleCell = createElement("div");
@@ -176,20 +195,19 @@ export function renderStudyTables(_target, _modules, _curriculum) {
                         component?.credit_points ?? "—"
                     ];
                     for (const value of values)
-                        grid.append(createElement("div", undefined, value));
+                        grid.append(createElement("div", undefined, String(value)));
                 }
             }
             semesterCard.append(grid);
-            const semesterCredits = semesterItems.reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
             const semesterTotal = createElement("div", "study-semester-total");
             semesterTotal.append(createElement("span", undefined, `${semester}. Curricular Semester`));
-            semesterTotal.append(createElement("span", undefined, String(semesterCredits)));
+            semesterTotal.append(createElement("span", undefined, String(semesterCredits.get(semester) ?? 0)));
             semesterCard.append(semesterTotal);
             gridScroll.append(semesterCard);
         }
-        const overallCredits = orderedModules
-            .filter(_module => Number(_module.semester) >= range.firstSemester && Number(_module.semester) <= range.lastSemester)
-            .reduce((_totalCredits, _module) => _totalCredits + (Number(_module.credits) || 0), 0);
+        const overallCredits = [...semesterCredits.entries()]
+            .filter(([semester]) => semester >= range.firstSemester && semester <= range.lastSemester)
+            .reduce((_total, [_semester, _credits]) => _total + _credits, 0);
         const overallGrid = createElement("div", "study-data-grid");
         const overall = createElement("div", undefined, "Overall");
         overall.style.gridColumn = "span 6";
@@ -200,6 +218,7 @@ export function renderStudyTables(_target, _modules, _curriculum) {
         _target.append(sectionNode);
     }
 }
+
 export function renderModuleTile(_module) {
     const link = createElement("a", "module-tile");
     link.href = `./index.html?module=${encodeURIComponent(_module.sourceRef ?? ("modules/" + _module.id + ".json"))}`;
