@@ -49,7 +49,8 @@
   justify-content: center;
   min-width: 0;
   min-height: 0;
-  padding: 12px 10px 22px;
+  padding: 12px 10px;
+  gap: 4px;
   border-radius: 4px;
   background: var(--white);
   color: var(--dark);
@@ -62,9 +63,6 @@
 .curriculum-module:focus-visible { outline: 3px solid var(--study); outline-offset: 3px; z-index: 2; }
 .curriculum-module > span:first-child { font-size: var(--font-curriculum-title); line-height: 1.2; font-weight: 700; }
 .curriculum-module:not(.curriculum-internship) > span:last-child {
-  position: absolute;
-  right: 10px;
-  bottom: 6px;
   font-size: var(--font-curriculum-title);
   line-height: 1;
   font-weight: 700;
@@ -115,7 +113,6 @@
 }
 .curriculum-module-cell > .curriculum-module { padding: 4px; }
 .curriculum-module-cell .curriculum-module > span:first-child { line-height: 1.1; }
-.curriculum-module-cell .curriculum-module > span:last-child { right: 7px; bottom: 4px; }
 
 @media (max-width: 700px) {
   .home-page .site-header { align-items: flex-start; gap: 18px; flex-direction: column; }
@@ -125,7 +122,7 @@
   .curriculum-grid { row-gap: 7px; grid-template-rows: repeat(7, minmax(78px, 1fr)); }
   .curriculum-grid > output { font-size: var(--font-mobile-semester); }
   .curriculum-module { padding-left: 5px; padding-right: 5px; }
-  .curriculum-module > span:last-child { right: 5px; font-size: var(--font-xs); }
+  .curriculum-module > span:last-child { font-size: var(--font-xs); }
   .curriculum-headings > span:not(:first-child):not(:last-child) { font-size: var(--font-xs); }
   .curriculum-grid > h2 { font-size: var(--font-mobile-stage); }
 }
