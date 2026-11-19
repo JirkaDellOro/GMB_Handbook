@@ -1,4 +1,4 @@
-import type { CurriculumCell, CurriculumData, CurriculumPlacement, DetailGridRows, DetailGridValue, ModuleComponent, ModuleData, SemesterGroup, StudyStage, StudyTableEntry, StudyTableRange } from "./types.js";
+import type { Assessment, CurriculumCell, CurriculumData, CurriculumModulePosition, CurriculumPlacement, DetailGridRows, DetailGridValue, ModuleComponent, ModuleData, SemesterGroup, StudyStage, StudyTableEntry, StudyTableRange } from "./types.js";
 
 function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
   const node: HTMLElementTagNameMap[K] = document.createElement(_tag);
@@ -27,12 +27,12 @@ function section(_title: string, _parent: HTMLElement): HTMLElement {
 }
 
 export function renderCurriculum(_target: HTMLElement, _modules: ModuleData[], _curriculum: CurriculumData): void {
-  _target.replaceChildren();
-  appendText(_target, "h2", _curriculum.tableHeadings?.structure ?? "Table 1: Module Structure", "curriculum-table-heading");
   const scroll: HTMLDivElement = createElement("div", "curriculum-scroll");
   const layout: HTMLDivElement = createElement("div", "curriculum-layout");
   const headings: HTMLElement = createCurriculumHeadings(_curriculum.columns);
   const grid: HTMLElement = createCurriculumGrid(_modules, _curriculum);
+  _target.replaceChildren();
+  appendText(_target, "h2", _curriculum.tableHeadings?.structure ?? "Table 1: Module Structure", "curriculum-table-heading");
   layout.append(headings, grid);
   scroll.append(layout);
   _target.append(scroll);
@@ -127,7 +127,7 @@ function appendCurriculumCells(_grid: HTMLElement, _cells: Map<string, Curriculu
 }
 
 function isSpecializationCell(_cell: CurriculumCell): boolean {
-  return _cell.entries.length > 1 && _cell.entries.every(_entry => _entry.moduleNumber !== undefined && Boolean(_entry.track));
+  return _cell.entries.length > 1 && _cell.entries.every((_entry: CurriculumCell["entries"][number]): boolean => _entry.moduleNumber !== undefined && Boolean(_entry.track));
 }
 
 function createSpecializationCell(_cell: CurriculumCell): HTMLElement {
@@ -190,8 +190,8 @@ function createModuleUrl(_module: ModuleData): string {
 }
 
 function hasBlockInformation(_curriculum: CurriculumData): boolean {
-  return Object.values(_curriculum.modules).some(_position =>
-    _position.block !== undefined || _position.placements?.some(_placement => _placement.block !== undefined)
+  return Object.values(_curriculum.modules).some((_position: CurriculumModulePosition): boolean =>
+    _position.block !== undefined || _position.placements?.some((_placement: CurriculumPlacement): boolean => _placement.block !== undefined)
   );
 }
 
@@ -217,8 +217,8 @@ function componentReference(_module: ModuleData, _label?: string): string | unde
 
 function componentAssessments(_module: ModuleData, _component: NonNullable<ModuleData["components"]>[number], _graded: boolean): string {
   return (_module.assessment ?? [])
-    .filter(_item => _item.component === _component.label && _item.graded_assessment === _graded)
-    .map(_item => _item.code).filter(Boolean).join(", ");
+    .filter((_item: Assessment): boolean => _item.component === _component.label && _item.graded_assessment === _graded)
+    .map((_item: Assessment): string | null | undefined => _item.code).filter(Boolean).join(", ");
 }
 
 function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["contact_hours"]): string {
@@ -228,10 +228,10 @@ function contactHoursSws(_value: NonNullable<ModuleData["components"]>[number]["
 }
 
 export function renderStudyTables(_target: HTMLElement, _modules: ModuleData[], _curriculum?: CurriculumData): void {
-  _target.replaceChildren();
   const ranges: StudyTableRange[] = _curriculum?.studyTables ?? studyTableRanges;
   const semesterModules: Map<number, ModuleData[]> = createSemesterModuleMap(_modules, _curriculum);
   const semesterCredits: Map<number, number> = calculateSemesterCredits(semesterModules, _curriculum);
+  _target.replaceChildren();
   ranges.forEach((range: StudyTableRange): void => {
     _target.append(createStudyTableRange(range, semesterModules, semesterCredits, _curriculum));
   });
@@ -255,7 +255,7 @@ function getModuleSemesters(_module: ModuleData, _curriculum?: CurriculumData): 
   const position: CurriculumData["modules"][string] | undefined = _curriculum?.modules[_module.sourceRef ?? _module.id];
   const placements: CurriculumPlacement[] = position?.placements ?? (position ? [position as CurriculumPlacement] : []);
   if (placements.length === 0) return [Number(_module.semester)];
-  return [...new Set(placements.map(_placement => Number(_placement.semester ?? _module.semester)))];
+  return [...new Set(placements.map((_placement: CurriculumPlacement): number => Number(_placement.semester ?? _module.semester)))];
 }
 
 function isValidSemester(_semester: number): boolean {
@@ -285,13 +285,13 @@ function calculateSemesterCreditTotal(_modules: ModuleData[], _semester: number,
 
 function getModulePlacement(_module: ModuleData, _semester: number, _curriculum?: CurriculumData): CurriculumPlacement | undefined {
   const position: CurriculumData["modules"][string] | undefined = _curriculum?.modules[_module.sourceRef ?? _module.id];
-  return position?.placements?.find(_placement => Number(_placement.semester ?? _module.semester) === _semester);
+  return position?.placements?.find((_placement: CurriculumPlacement): boolean => Number(_placement.semester ?? _module.semester) === _semester);
 }
 
 function createStudyTableRange(_range: StudyTableRange, _semesterModules: Map<number, ModuleData[]>, _semesterCredits: Map<number, number>, _curriculum?: CurriculumData): HTMLElement {
   const sectionNode: HTMLElement = createElement("section");
-  appendStudyTableHeading(sectionNode, _range, _curriculum);
   const gridScroll: HTMLDivElement = createElement("div", "study-grid-scroll");
+  appendStudyTableHeading(sectionNode, _range, _curriculum);
   for (let semester: number = _range.firstSemester; semester <= _range.lastSemester; semester++) {
     const semesterCard: HTMLElement = createSemesterTable(semester, _range.number, _semesterModules.get(semester) ?? [], _semesterCredits, _curriculum);
     gridScroll.append(semesterCard);
@@ -318,7 +318,7 @@ function createSemesterTable(_semester: number, _tableNumber: number, _modules: 
 }
 
 function createStudyTableEntries(_modules: ModuleData[], _semester: number, _curriculum?: CurriculumData): StudyTableEntry[] {
-  return _modules.map(_module => {
+  return _modules.map((_module: ModuleData): StudyTableEntry => {
     const placement: CurriculumPlacement | undefined = getModulePlacement(_module, _semester, _curriculum);
     return { module: _module, moduleNumber: placement?.moduleNumber, track: placement?.track };
   });
@@ -438,8 +438,8 @@ function createSemesterTotal(_semester: number, _credits: Map<number, number>): 
 
 function createOverallCreditsGrid(_range: StudyTableRange, _semesterCredits: Map<number, number>): HTMLElement {
   const total: number = [..._semesterCredits.entries()]
-    .filter(([_semester]) => _semester >= _range.firstSemester && _semester <= _range.lastSemester)
-    .reduce((_sum, [_semester, _credits]) => _sum + _credits, 0);
+    .filter((_entry: [number, number]): boolean => _entry[0] >= _range.firstSemester && _entry[0] <= _range.lastSemester)
+    .reduce((_sum: number, _entry: [number, number]): number => _sum + _entry[1], 0);
   const grid: HTMLDivElement = createElement("div", "study-data-grid");
   const label: HTMLDivElement = createElement("div", undefined, "Overall");
   label.style.gridColumn = "span 6";
@@ -449,9 +449,9 @@ function createOverallCreditsGrid(_range: StudyTableRange, _semesterCredits: Map
 
 export function renderModuleTile(_module: ModuleData): HTMLAnchorElement {
   const link: HTMLAnchorElement = createElement("a", "module-tile");
+  const main: HTMLSpanElement = createElement("span");
   link.href = `./index.html?module=${encodeURIComponent(_module.sourceRef ?? ("modules/" + _module.id + ".json"))}`;
   appendText(link, "span", String(_module.semester ?? "").padStart(2, "0"));
-  const main: HTMLSpanElement = createElement("span");
   appendText(main, "span", _module.title);
   appendText(main, "small", `Semester ${_module.semester ?? "—"} · Required module`);
   link.append(main);
@@ -474,8 +474,8 @@ export async function renderModuleList(_target: HTMLElement, _semesters: Semeste
 
 
 export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _showBackLink = true): void {
-  _target.replaceChildren();
   const article: HTMLElement = createElement("article");
+  _target.replaceChildren();
   appendModuleHeader(article, _module, _showBackLink);
   renderCourseComponents(article, _module);
   renderLearningOutcomes(article, _module);
@@ -488,8 +488,8 @@ export function renderModuleDetail(_target: HTMLElement, _module: ModuleData, _s
 }
 
 export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGroup[], _modules: ModuleData[]): void {
-  _target.replaceChildren();
   const modulesByReference: Map<string, ModuleData> = new Map<string, ModuleData>();
+  _target.replaceChildren();
   _modules.forEach((module: ModuleData): void => {
     modulesByReference.set(module.sourceRef ?? `modules/${module.id}.json`, module);
   });
@@ -508,8 +508,8 @@ export function renderModuleDetails(_target: HTMLElement, _semesters: SemesterGr
 }
 
 export function renderError(_target: HTMLElement, _title: string, _message: string): void {
-  _target.replaceChildren();
-  const box: HTMLDivElement = createElement("div", "notice"); appendText(box, "h1", _title); appendText(box, "p", _message); _target.append(box);
+  const box: HTMLDivElement = createElement("div", "notice");
+  _target.replaceChildren(); appendText(box, "h1", _title); appendText(box, "p", _message); _target.append(box);
 }
 
 function appendModuleHeader(_article: HTMLElement, _module: ModuleData, _showBackLink: boolean): void {
@@ -534,13 +534,13 @@ function createModuleHeading(_module: ModuleData): HTMLElement {
 
 function createModuleFacts(_module: ModuleData): HTMLElement {
   const facts: HTMLElement = createElement("section", "facts-grid");
-  facts.setAttribute("aria-label", "Module information");
   const values: [string, DetailGridValue][] = [
     ["Workload", _module.workload_hours == null ? "—" : `${_module.workload_hours} h`],
     ["Semester", _module.semester],
     ["Frequency", _module.frequency],
     ["Duration", _module.duration == null ? "—" : `${_module.duration} semester`]
   ];
+  facts.setAttribute("aria-label", "Module information");
   values.forEach((entry: [string, DetailGridValue]): void => {
     const label: string = entry[0];
     const value: DetailGridValue = entry[1];
@@ -556,7 +556,7 @@ function renderCourseComponents(_article: HTMLElement, _module: ModuleData): voi
   appendDetailGridSection(
     _article, "Course Components", "component-grid",
     ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"],
-    (_module.components ?? []).map(_component => [
+    (_module.components ?? []).map((_component: ModuleComponent): DetailGridValue[] => [
       `${_component.label ? `${_component.label} ` : ""}${_component.name ?? ""}`.trim(),
       _component.course_type, _component.language?.join(" / "), _component.contact_hours,
       _component.self_study_hours === undefined ? undefined : `${_component.self_study_hours} h`,
@@ -566,9 +566,9 @@ function renderCourseComponents(_article: HTMLElement, _module: ModuleData): voi
 }
 
 function renderLearningOutcomes(_article: HTMLElement, _module: ModuleData): void {
+  const grid: HTMLDivElement = createElement("div", "outcome-grid");
   const outcomes: HTMLElement = section("Module Learning Outcomes", _article);
   if (_module.learning_outcomes_intro) appendText(outcomes, "p", _module.learning_outcomes_intro);
-  const grid: HTMLDivElement = createElement("div", "outcome-grid");
   (_module.learning_outcomes ?? []).forEach((outcome: NonNullable<ModuleData["learning_outcomes"]>[number]): void => {
     grid.append(createOutcomeCard(outcome));
   });
@@ -583,10 +583,10 @@ function createOutcomeCard(_outcome: NonNullable<ModuleData["learning_outcomes"]
 }
 
 function renderComponentContent(_article: HTMLElement, _module: ModuleData): void {
+  const columns: HTMLElement = createElement("section", "two-column-sections");
   const content: HTMLElement = section("Individual Component Content", _article);
   content.classList.add("component-content-panel");
   appendComponentContent(content, _module, _module.individual_component_content ?? []);
-  const columns: HTMLElement = createElement("section", "two-column-sections");
   columns.append(
     createComponentTextSection("Teaching Methods", _module, _module.teaching_methods ?? []),
     createComponentTextSection("Prerequisites", _module, _module.prerequisites ?? [])
@@ -605,7 +605,7 @@ function renderAssessments(_article: HTMLElement, _module: ModuleData): void {
   appendDetailGridSection(
     _article, "Methods of Assessment", "assessment-grid",
     ["Component", "Code", "Assessment", "Grading", "ECTS"],
-    (_module.assessment ?? []).map(_item => [
+    (_module.assessment ?? []).map((_item: Assessment): DetailGridValue[] => [
       componentReference(_module, _item.component), _item.code, _item.description,
       _item.graded_assessment == null ? undefined : _item.graded_assessment ? "Graded" : "Non-graded",
       _item.credits
@@ -620,8 +620,8 @@ function renderApplicability(_article: HTMLElement, _module: ModuleData): void {
 }
 
 function renderPeople(_article: HTMLElement, _module: ModuleData): void {
-  const people: HTMLElement = section("Person responsible for Module and Lecturers", _article);
   const responsible: HTMLParagraphElement = createElement("p");
+  const people: HTMLElement = section("Person responsible for Module and Lecturers", _article);
   responsible.append(createElement("span", undefined, "Person responsible for module: "));
   responsible.append(document.createTextNode(_module.responsible_person || "—"));
   people.append(responsible);
@@ -641,8 +641,8 @@ function appendLecturer(_parent: HTMLElement, _module: ModuleData, _lecturer: No
 }
 
 function renderReadingList(_article: HTMLElement, _module: ModuleData): void {
-  const reading: HTMLElement = section("Reading List", _article);
   const list: HTMLUListElement = createElement("ul", "reading-list");
+  const reading: HTMLElement = section("Reading List", _article);
   (_module.reading_list ?? []).forEach((item: NonNullable<ModuleData["reading_list"]>[number]): void => {
     appendText(list, "li", item.reference);
   });
@@ -650,8 +650,8 @@ function renderReadingList(_article: HTMLElement, _module: ModuleData): void {
 }
 
 function appendDetailGridSection(_parent: HTMLElement, _title: string, _className: string, _headers: string[], _rows: DetailGridRows): void {
-  const content: HTMLElement = section(_title, _parent);
   const scroll: HTMLDivElement = createElement("div", "detail-grid-scroll");
+  const content: HTMLElement = section(_title, _parent);
   scroll.append(createDetailGrid(_className, _headers, _rows));
   content.append(scroll);
 }
