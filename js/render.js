@@ -26,7 +26,7 @@ function section(_title, _parent) {
 }
 export function renderCurriculum(_target, _modules, _curriculum) {
     _target.replaceChildren();
-    appendText(_target, "h2", "Table 1: Module Structure", "curriculum-table-heading");
+    appendText(_target, "h2", _curriculum.tableHeadings?.structure ?? "Table 1: Module Structure", "curriculum-table-heading");
     const scroll = createElement("div", "curriculum-scroll");
     const layout = createElement("div", "curriculum-layout");
     const headings = createElement("div", "curriculum-headings");
@@ -56,17 +56,23 @@ export function renderCurriculum(_target, _modules, _curriculum) {
         const position = _curriculum.modules[module.sourceRef ?? module.id];
         if (!position)
             continue;
-        const semester = Number(module.semester);
-        const column = _curriculum.columns.indexOf(position.column);
-        if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0)
-            continue;
-        const row = 8 - semester;
-        const gridColumn = position.span ? `${column + 2} / span ${position.span}` : String(column + 2);
-        const key = `${row}:${gridColumn}`;
-        const cell = cells.get(key) ?? { row, gridColumn, entries: [] };
-        cell.entries.push({ module, semester, block: position.block, style: position.style ?? "" });
-        cells.set(key, cell);
+        const placements = position.placements ?? [position];
+        for (const placement of placements) {
+            const semester = Number(placement.semester ?? module.semester);
+            const column = _curriculum.columns.indexOf(placement.column);
+            if (!Number.isInteger(semester) || semester < 1 || semester > 7 || column < 0)
+                continue;
+            const row = 8 - semester;
+            const gridColumn = placement.span ? `${column + 2} / span ${placement.span}` : String(column + 2);
+            const key = `${row}:${gridColumn}`;
+            const cell = cells.get(key) ?? { row, gridColumn, entries: [] };
+            cell.entries.push({ module, semester, block: placement.block, style: placement.style ?? position.style ?? "", track: placement.track, moduleNumber: placement.moduleNumber });
+            cells.set(key, cell);
+        }
     }
+    const hasBlockInfo = Object.values(_curriculum.modules).some(position =>
+        position.block !== undefined || position.placements?.some(placement => placement.block !== undefined)
+    );
     for (const cellData of cells.values()) {
         const isStacked = cellData.entries.length > 1;
         const container = isStacked ? createElement("div", "curriculum-module-cell") : grid;
@@ -77,7 +83,7 @@ export function renderCurriculum(_target, _modules, _curriculum) {
             grid.append(container);
         }
         for (const entry of cellData.entries) {
-            const { module, semester, block, style } = entry;
+            const { module, semester, block, style, track, moduleNumber } = entry;
             const link = createElement("a", `curriculum-module${style ? ` curriculum-${style}` : ""}`);
             link.href = `./index.html?module=${encodeURIComponent(module.sourceRef ?? ("modules/" + module.id + ".json"))}`;
             link.setAttribute("aria-label", `${module.title}, semester ${semester}, ${module.credits ?? "unknown"} ECTS`);
@@ -86,7 +92,9 @@ export function renderCurriculum(_target, _modules, _curriculum) {
                 link.style.gridRow = String(cellData.row);
             }
             appendText(link, "span", module.title);
-            if (style !== "internship") {
+            if (track || moduleNumber)
+                appendText(link, "small", [moduleNumber ? `Vertiefungsmodul ${moduleNumber}` : "", track ?? ""].filter(Boolean).join(" · "));
+            if (block !== undefined && style !== "internship") {
                 const blockLabel = block === null ? "–" : String(block);
                 appendText(link, "span", `${blockLabel}.${module.credits ?? "—"}`);
             }
@@ -96,9 +104,11 @@ export function renderCurriculum(_target, _modules, _curriculum) {
     layout.append(grid);
     scroll.append(layout);
     _target.append(scroll);
-    const legend = createElement("p");
-    legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
-    _target.append(legend);
+    if (hasBlockInfo) {
+        const legend = createElement("p");
+        legend.textContent = "Legend: x.y = position in the sequence of modules . creditpoints (ECTS)";
+        _target.append(legend);
+    }
 }
 const studyTableRanges = [
     { number: 2, firstSemester: 1, lastSemester: 2, heading: "Foundation Studies" },
@@ -121,12 +131,15 @@ function contactHoursSws(_value) {
     const match = String(_value).match(/^\s*(\d+(?:[.,]\d+)?)/);
     return match ? match[1].replace(",", ".") : String(_value);
 }
-export function renderStudyTables(_target, _modules) {
+export function renderStudyTables(_target, _modules, _curriculum) {
     _target.replaceChildren();
     const orderedModules = [..._modules].sort((_firstModule, _secondModule) => Number(_firstModule.semester) - Number(_secondModule.semester));
-    for (const range of studyTableRanges) {
+    const ranges = _curriculum?.studyTables ?? studyTableRanges;
+    const programmeName = _curriculum?.programmeName ?? "Games & Immersive Media B.A.";
+    for (const range of ranges) {
         const sectionNode = createElement("section");
-        appendText(sectionNode, "h2", `Table ${range.number}: Games & Immersive Media B.A. (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
+        const configuredHeading = range.number === 2 ? _curriculum?.tableHeadings?.foundation : _curriculum?.tableHeadings?.advanced;
+        appendText(sectionNode, "h2", configuredHeading ?? `Table ${range.number}: ${programmeName} (${range.firstSemester}-${range.lastSemester} ${range.heading} Curricular Semester)`);
         const semesterModules = new Map();
         for (const module of orderedModules) {
             const semester = Number(module.semester);
