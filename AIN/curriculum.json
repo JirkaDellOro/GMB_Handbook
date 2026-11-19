@@ -240,7 +240,8 @@
         {
           "semester": 7,
           "column": "4",
-          "style": "project"
+          "style": "project",
+          "span": 2
         }
       ]
     },

@@ -1,4 +1,4 @@
-import type { CurriculumData, ModuleData, SemesterGroup } from "./types.js";
+import type { CurriculumData, CurriculumPlacement, ModuleData, SemesterGroup } from "./types.js";
 
 function createElement<K extends keyof HTMLElementTagNameMap>(_tag: K, _className?: string, _text?: string): HTMLElementTagNameMap[K] {
   const node = document.createElement(_tag);
