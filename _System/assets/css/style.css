@@ -39,6 +39,9 @@
 @media print{body{background:var(--white)}.site-header,.site-footer,.back-link{display:none}.page-shell{max-width:none;padding:0}#module-detail > article{max-width:none}.content-section{break-inside:avoid}.component-card,.outcome-grid > div{break-inside:avoid}.module-heading{padding-top:0}.module-tile{break-inside:avoid}}
 .module-tile:focus-visible,.primary-link:focus-visible,.back-link:focus-visible,.site-header a:focus-visible{outline:3px solid var(--study);outline-offset:3px}
 .module-tile[aria-current="page"]{border-color:var(--study)}
+.module-tile[href*="correct"]::after {
+  content:"corrected"
+}
 
 
 /* Official curriculum tables 2 and 3 */
