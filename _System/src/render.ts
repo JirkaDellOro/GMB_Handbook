@@ -514,7 +514,7 @@ function createModuleFacts(_module: ModuleData): HTMLElement {
 function renderCourseComponents(_article: HTMLElement, _module: ModuleData): void {
   appendDetailGridSection(
     _article, "Course Components", "component-grid",
-    ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"],
+    ["Component", "Type", "Language", "Contact", "Self-study", "Class size", "CP"],
     (_module.components ?? []).map((_component: ModuleComponent): DetailGridValue[] => [
       `${_component.label ? `${_component.label} ` : ""}${_component.name ?? ""}`.trim(),
       _component.course_type, _component.language?.join(" / "), _component.contact_hours,

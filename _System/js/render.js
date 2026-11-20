@@ -465,7 +465,7 @@ function createModuleFacts(_module) {
     return facts;
 }
 function renderCourseComponents(_article, _module) {
-    appendDetailGridSection(_article, "Course Components", "component-grid", ["Component", "Course type", "Language", "Contact hours", "Self-study", "Class size", "ECTS"], (_module.components ?? []).map((_component) => [
+    appendDetailGridSection(_article, "Course Components", "component-grid", ["Component", "Type", "Language", "Contact", "Self-study", "Class size", "CP"], (_module.components ?? []).map((_component) => [
         `${_component.label ? `${_component.label} ` : ""}${_component.name ?? ""}`.trim(),
         _component.course_type, _component.language?.join(" / "), _component.contact_hours,
         _component.self_study_hours === undefined ? undefined : `${_component.self_study_hours} h`,
