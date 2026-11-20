@@ -4,11 +4,12 @@ Read this before working on the project. It transfers project knowledge to a new
 
 ## Repository
 - Repository: https://github.com/JirkaDellOro/GMB_Handbook
-- Working branch: `module-table-data`
-- Last verified HEAD when prepared: `99ab8886d1bda8eaee6c596ea0e55154d4b4a71d`
+- Authoritative branch: `main`. The former working branch `module-table-data` has been merged; do not assume it is the active development branch.
+- Last verified `main` HEAD when this handover was updated: `04d4e07055f463dcb787da88bd7437123f2cb096`
 - Static HFU module-handbook site, published through GitHub Pages.
 - Programme directories: `AIN/`, `GMB/`, `GMBcorrect/`. GMBcorrect is a deliberate parallel/corrected variant and must be preserved.
 - Shared application, styles and assets live in `_System/`.
+- Project instructions are stored in `_Instructions/`: this handover and `PDF_TO_MODULEHANDBOOK.md`.
 - `_System/programmes.json` registers programme landing pages and their specifics files.
 
 ## Programme directory
@@ -54,7 +55,8 @@ Use exact property names and types from live interfaces and examples. Omit unava
 Do not edit generated JS independently. After TypeScript changes, build and test. CSS belongs in stylesheets, not TS/JS.
 
 ## Non-negotiable working rules
-- Fetch current branch HEAD immediately before every GitHub edit.
+- Treat `main` as authoritative unless the user explicitly specifies another branch.
+- Fetch the current `main` HEAD immediately before every GitHub edit.
 - Use compare-and-swap when updating the branch: exact old HEAD as `expected_sha`; never overwrite a newer commit.
 - Inspect relevant files before editing; remembered contents may be stale.
 - Make only requested changes and report exact changed files.
@@ -70,16 +72,16 @@ Do not edit generated JS independently. After TypeScript changes, build and test
 - User pulls changes themselves. Never claim local or deployed success unless verified.
 
 ## GitHub edit procedure
-1. Fetch `https://api.github.com/repos/JirkaDellOro/GMB_Handbook/branches/module-table-data`.
-2. Record current commit SHA and tree SHA.
-3. Fetch and inspect target files from that branch.
+1. Fetch `https://api.github.com/repos/JirkaDellOro/GMB_Handbook/branches/main`.
+2. Record the current commit SHA and tree SHA.
+3. Fetch and inspect target files from `main`.
 4. Create blobs and a tree based on the fetched tree SHA.
 5. Create a commit whose parent is the fetched HEAD.
-6. Update `refs/heads/module-table-data` with `expected_sha` equal to that old HEAD.
-7. Fetch branch again and verify new HEAD. If compare-and-swap fails, reconcile against the new HEAD; do not blindly retry.
+6. Update `refs/heads/main` with `expected_sha` equal to that old HEAD.
+7. Fetch `main` again and verify the new HEAD. If compare-and-swap fails, reconcile against the new HEAD; do not blindly retry.
 
 ## Current state at handover
-HEAD was `99ab8886d1bda8eaee6c596ea0e55154d4b4a71d`. Recent user-approved work repaired truncated AIN module names, improved module-name wrapping, changed module component headings to Component / Type / Language / Contact / Self-study / Class size / CP, tuned widths in Tables 2 and 3 and Methods of Assessment, corrected table backgrounds, and improved responsive wrapping. The user has said the current result is satisfactory for now. Do not revisit without a request.
+When this file was updated, `main` was at `04d4e07055f463dcb787da88bd7437123f2cb096`. Recent user-approved work repaired truncated AIN module names, improved module-name wrapping, changed module component headings to Component / Type / Language / Contact / Self-study / Class size / CP, tuned widths in Tables 2 and 3 and Methods of Assessment, corrected table backgrounds, and improved responsive wrapping. The user has said the current result is satisfactory for now. Do not revisit without a request.
 
 ## Collaboration
 The user is technically experienced and expects concise, precise communication. Avoid generic progress messages, speculative changes and overstated verification. Ask one focused question only when a decision blocks safe work.
