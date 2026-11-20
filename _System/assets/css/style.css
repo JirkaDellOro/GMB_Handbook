@@ -122,19 +122,20 @@
   min-width: 760px;
 }
 .assessment-grid {
-  grid-template-columns: minmax(135px, 1.1fr) minmax(65px, .55fr) minmax(240px, 2fr) minmax(115px, .9fr) minmax(65px, .55fr);
+  grid-template-columns: minmax(260px, 2.4fr) minmax(55px, .5fr) minmax(160px, 1.5fr) minmax(90px, .8fr) minmax(50px, .5fr);
   min-width: 760px;
 }
 
 .component-grid > div,
 .assessment-grid > div { background: var(--white); }
 .component-grid > :nth-child(7n + 1) { hyphens: auto; overflow-wrap: break-word; word-break: normal; }
+.assessment-grid > :nth-child(5n + 1) { hyphens: auto; overflow-wrap: break-word; word-break: normal; }
 
 @media print {
   .detail-grid-scroll { overflow: visible; }
   .detail-data-grid { min-width: 0; }
   .component-grid { grid-template-columns: 2.8fr .75fr .7fr .7fr .75fr .7fr .45fr; }
-  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+  .assessment-grid { grid-template-columns: 2.4fr .5fr 1.5fr .8fr .5fr; }
 }
 
 
@@ -257,7 +258,7 @@
   .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
   .detail-data-grid > header, .detail-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
   .component-grid { grid-template-columns: 2.8fr .75fr .7fr .7fr .75fr .7fr .45fr; }
-  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+  .assessment-grid { grid-template-columns: 2.4fr .5fr 1.5fr .8fr .5fr; }
   #module-details .module-detail-semester { margin: 0 0 5mm; }
   #module-details .module-detail-semester > h2 { margin: 0 0 3mm; padding-bottom: 2mm; font-size: 16pt; break-after: avoid; }
   #module-details .module-detail-entry { padding: 3mm 0 5mm; break-inside: avoid-page; }
