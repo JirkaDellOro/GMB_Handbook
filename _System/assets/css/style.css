@@ -128,6 +128,7 @@
 
 .component-grid > div,
 .assessment-grid > div { background: var(--white); }
+.component-grid > :nth-child(7n + 1) { hyphens: auto; overflow-wrap: break-word; word-break: normal; }
 
 @media print {
   .detail-grid-scroll { overflow: visible; }
