@@ -14,7 +14,7 @@ Use the public GitHub interface before extracting data. Do not rely on this inst
 AIN and GMB have different curriculum layouts. Choose the closest structural template based on the PDF. Use GMBcorrect only if explicitly requested.
 
 ## 2. ZIP structure
-Create a folder named with a short lowercase ASCII programme code, e.g. `ABC/`:
+Create a folder named with the acronym for the programme, e.g. `ABC/`:
 ```
 ABC/
   index.html
