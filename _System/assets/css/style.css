@@ -39,6 +39,9 @@
 @media print{body{background:var(--white)}.site-header,.site-footer,.back-link{display:none}.page-shell{max-width:none;padding:0}#module-detail > article{max-width:none}.content-section{break-inside:avoid}.component-card,.outcome-grid > div{break-inside:avoid}.module-heading{padding-top:0}.module-tile{break-inside:avoid}}
 .module-tile:focus-visible,.primary-link:focus-visible,.back-link:focus-visible,.site-header a:focus-visible{outline:3px solid var(--study);outline-offset:3px}
 .module-tile[aria-current="page"]{border-color:var(--study)}
+.module-tile[href*="correct"]::after {
+  content:"corrected"
+}
 
 
 /* Official curriculum tables 2 and 3 */
@@ -46,17 +49,17 @@
 
 .study-grid-scroll { width: 100%; overflow-x: auto; border: 0; border-radius: 0; }
 .study-grid-scroll:has(> section) { display: grid; gap: 16px; }
-.study-grid-scroll > section { min-width: 1050px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--gray); }
+.study-grid-scroll > section { min-width: 1050px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--white); }
 .study-data-grid {
   display: grid;
-  grid-template-columns: minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
+  grid-template-columns: minmax(190px, 1.7fr) minmax(240px, 2.2fr) minmax(60px, .45fr) minmax(60px, .45fr) minmax(80px, .65fr) minmax(80px, .65fr) minmax(45px, .35fr);
   width: 100%;
-  background: var(--gray);
+  background: var(--white);
   font-size: inherit;
   line-height: inherit;
 }
 .study-data-grid--blocks {
-  grid-template-columns: 30px minmax(135px, 1.15fr) minmax(190px, 1.8fr) minmax(90px, .75fr) minmax(90px, .8fr) minmax(130px, 1.1fr) minmax(130px, 1.1fr) minmax(72px, .55fr);
+  grid-template-columns: 30px minmax(190px, 1.7fr) minmax(240px, 2.2fr) minmax(60px, .45fr) minmax(60px, .45fr) minmax(80px, .65fr) minmax(80px, .65fr) minmax(45px, .35fr);
 }
 .study-block-label {
   display: flex;
@@ -64,8 +67,8 @@
   justify-content: center;
   padding: 8px 4px !important;
   border-right: 1px solid var(--line);
-  background: var(--white);
-  color: var(--study);
+  background: var(--study);
+  color: var(--white);
   font-weight: 700;
   text-align: center;
   writing-mode: vertical-rl;
@@ -91,13 +94,15 @@
 .curriculum-specialization-track:hover { border-color: var(--white); color: var(--white); text-decoration: underline; }
 
 .study-data-grid > header,
-.detail-data-grid > header { padding: 11px 12px; border-bottom: 1px solid var(--line); background: var(--white); color: var(--muted); font-weight: 400; }
+.detail-data-grid > header { padding: 11px 12px; border-bottom: 1px solid var(--line); background: var(--gray); color: var(--muted); font-weight: 400; }
 .study-data-grid > div,
 .detail-data-grid > div { min-width: 0; padding: 11px 12px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 .study-semester-total { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: var(--study); color: var(--white); font-weight: 700; text-align: left; }
 .study-semester-total > span:first-child { text-align: left; }
 .study-semester-total > span:last-child { margin-left: auto; text-align: right; }
-.study-data-grid > div:has(> a) { grid-row: span 1; background: var(--gray); font-weight: 700; }
+.study-data-grid > div { background: var(--white); }
+.study-data-grid > .study-block-label { background: var(--study); color: var(--white); }
+.study-data-grid > div:has(> a) { grid-row: span 1; font-weight: 700; }
 .study-data-grid > div:has(> a) > a { color: var(--dark); text-decoration: none; font-weight: 700; }
 .study-data-grid > div:has(> a) > a:hover { text-decoration: underline; }
 
@@ -106,29 +111,31 @@
 .detail-data-grid {
   display: grid;
   width: 100%;
-  background: var(--white);
+  background: var(--gray);
   border: 1px solid var(--line);
   border-radius: 8px;
   font-size: inherit;
   line-height: inherit;
 }
 .component-grid {
-  grid-template-columns: minmax(150px, 1.35fr) repeat(5, minmax(105px, 1fr)) minmax(65px, .6fr);
-  min-width: 850px;
+  grid-template-columns: minmax(260px, 2.8fr) minmax(75px, .75fr) minmax(70px, .7fr) minmax(70px, .7fr) minmax(75px, .75fr) minmax(70px, .7fr) minmax(45px, .45fr);
+  min-width: 760px;
 }
 .assessment-grid {
-  grid-template-columns: minmax(135px, 1.1fr) minmax(65px, .55fr) minmax(240px, 2fr) minmax(115px, .9fr) minmax(65px, .55fr);
+  grid-template-columns: minmax(260px, 2.4fr) minmax(55px, .5fr) minmax(160px, 1.5fr) minmax(90px, .8fr) minmax(50px, .5fr);
   min-width: 760px;
 }
 
 .component-grid > div,
-.assessment-grid > div { background: var(--gray); }
+.assessment-grid > div { background: var(--white); }
+.component-grid > :nth-child(7n + 1) { hyphens: auto; overflow-wrap: break-word; word-break: normal; }
+.assessment-grid > :nth-child(5n + 1) { hyphens: auto; overflow-wrap: break-word; word-break: normal; }
 
 @media print {
   .detail-grid-scroll { overflow: visible; }
   .detail-data-grid { min-width: 0; }
-  .component-grid { grid-template-columns: 1.35fr repeat(5, 1fr) .6fr; }
-  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+  .component-grid { grid-template-columns: 2.8fr .75fr .7fr .7fr .75fr .7fr .45fr; }
+  .assessment-grid { grid-template-columns: 2.4fr .5fr 1.5fr .8fr .5fr; }
 }
 
 
@@ -239,8 +246,8 @@
   #module-overview > section { margin: 0 0 5mm; break-inside: auto; }
   .study-grid-scroll:has(> section) { display: block; }
   .study-grid-scroll > section { min-width: 0; width: 100%; margin-bottom: 2mm; border-radius: 0; break-inside: auto; }
-  .study-data-grid { grid-template-columns: 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; font-size: 6.5pt; line-height: 1.2; }
-  .study-data-grid--blocks { grid-template-columns: 5mm 1.15fr 1.8fr .7fr .65fr 1fr 1fr .45fr; }
+  .study-data-grid { grid-template-columns: 1.7fr 2.2fr .45fr .45fr .65fr .65fr .35fr; font-size: 6.5pt; line-height: 1.2; }
+  .study-data-grid--blocks { grid-template-columns: 5mm 1.7fr 2.2fr .45fr .45fr .65fr .65fr .35fr; }
   .study-block-label { padding: 1mm .5mm !important; font-size: 6pt; }
   .study-data-grid > div:has(> a) > a { hyphens: auto; overflow-wrap: break-word; }
   .curriculum-specialization { gap: 1mm; padding: 1mm; }
@@ -250,8 +257,8 @@
   .study-semester-total { padding: 1.2mm 2mm; font-size: 7pt; }
   .detail-data-grid { min-width: 0; font-size: 7pt; line-height: 1.2; }
   .detail-data-grid > header, .detail-data-grid > div { padding: 1.2mm 1mm; overflow-wrap: anywhere; }
-  .component-grid { grid-template-columns: 1.35fr repeat(5, 1fr) .6fr; }
-  .assessment-grid { grid-template-columns: 1.1fr .55fr 2fr .9fr .55fr; }
+  .component-grid { grid-template-columns: 2.8fr .75fr .7fr .7fr .75fr .7fr .45fr; }
+  .assessment-grid { grid-template-columns: 2.4fr .5fr 1.5fr .8fr .5fr; }
   #module-details .module-detail-semester { margin: 0 0 5mm; }
   #module-details .module-detail-semester > h2 { margin: 0 0 3mm; padding-bottom: 2mm; font-size: 16pt; break-after: avoid; }
   #module-details .module-detail-entry { padding: 3mm 0 5mm; break-inside: avoid-page; }

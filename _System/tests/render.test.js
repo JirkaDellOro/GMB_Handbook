@@ -48,7 +48,7 @@ function createDocument() {
 
 function createCurriculum(_withBlockInfo) {
   return {
-    columns: ["SWE"],
+    columns: ["SWE", "AAI", "MIN", "X", "Y"],
     studyStages: [],
     modules: {
       "modules/test.json": {
@@ -72,6 +72,9 @@ test("curriculum renders a single legend when block information exists", () => {
 
   assert.equal(target.children.filter(_child => _child.tagName === "P").length, 1);
   assert.equal(target.children.filter(_child => _child.className === "curriculum-scroll").length, 1);
+  const grid = findElement(target, _element => _element.className.includes("curriculum-grid"));
+  assert.ok(grid.className.includes("curriculum-columns-5"));
+  assert.equal(grid.style.gridTemplateColumns, undefined);
   delete globalThis.document;
 });
 
@@ -117,9 +120,9 @@ test("programme overview retains the intentional GMB correct variant", async () 
 
 test("programme entry points declare their primary document language", async () => {
   const [ain, gmb, gmbCorrect] = await Promise.all([
-    readFile(new URL("../AIN/index.html", import.meta.url), "utf8"),
-    readFile(new URL("../GMB/index.html", import.meta.url), "utf8"),
-    readFile(new URL("../GMBcorrect/index.html", import.meta.url), "utf8")
+    readFile(new URL("../../AIN/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMB/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMBcorrect/index.html", import.meta.url), "utf8")
   ]);
 
   assert.match(ain, /<html lang="de">/);
@@ -135,3 +138,50 @@ function findElement(_root, _predicate) {
   }
   return undefined;
 }
+
+
+test("programme names, degrees and SPO versions come from specifics data", async () => {
+  const [ain, gmb, programmeConfig] = await Promise.all([
+    readFile(new URL("../../AIN/specifics.json", import.meta.url), "utf8"),
+    readFile(new URL("../../GMB/specifics.json", import.meta.url), "utf8"),
+    readFile(new URL("../programmes.json", import.meta.url), "utf8")
+  ]);
+  const specifics = [JSON.parse(ain), JSON.parse(gmb)];
+  assert.match(specifics[0].programme, /B\.\s*Sc\.$/);
+  assert.match(specifics[1].programme, /B\.A\.$/);
+  assert.deepEqual(specifics.map(_item => _item.spoVersion), [14, 11]);
+  const entries = JSON.parse(programmeConfig);
+  assert.ok(entries.every(_entry => !("title" in _entry) && !("degree" in _entry)));
+  assert.deepEqual(specifics.map(_item => _item.code), ["AIN", "GMB"]);
+  assert.ok(entries.every(_entry => !("code" in _entry)));
+  assert.equal(entries[0].specifics, entries[1].specifics);
+});
+
+test("programme pages contain no duplicated programme names or degree labels", async () => {
+  const pages = await Promise.all([
+    readFile(new URL("../../AIN/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMB/index.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMBcorrect/index.html", import.meta.url), "utf8")
+  ]);
+  for (const page of pages) {
+    assert.match(page, /id="programme-name"/);
+    assert.match(page, /id="programme-degree"/);
+    assert.match(page, /Module Handbook – Hochschule Furtwangen/);
+    assert.doesNotMatch(page, /Allgemeine Informatik|Games &amp; Immersive Media/);
+  }
+  assert.match(pages[2], /data-specifics="\.\.\/GMB\/specifics\.json"/);
+});
+
+
+test("specifics pages use centralized programme metadata", async () => {
+  const [gmb, gmbCorrect] = await Promise.all([
+    readFile(new URL("../../GMB/specifics.html", import.meta.url), "utf8"),
+    readFile(new URL("../../GMBcorrect/specifics.html", import.meta.url), "utf8")
+  ]);
+  for (const page of [gmb, gmbCorrect]) {
+    assert.match(page, /id="programme-name-header"/);
+    assert.match(page, /id="programme-version-header"/);
+    assert.doesNotMatch(page, /Games &amp; Immersive Media|B\.A\.|SPO Version 11/);
+  }
+  assert.match(gmbCorrect, /data-specifics="\.\.\/GMB\/specifics\.json"/);
+});

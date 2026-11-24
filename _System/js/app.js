@@ -1,12 +1,13 @@
 import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderStudyTables } from "./render.js";
-import { loadSpecifics } from "./specifics.js";
+import { loadProgrammeMetadata, loadSpecifics } from "./specifics.js";
 async function start() {
     const parameters = new URLSearchParams(window.location.search);
     const moduleRef = parameters.get("module");
     const elements = getElements();
     attachPrintControl();
-    attachSpecificsPanel(elements);
+    if (!moduleRef)
+        attachSpecificsPanel(elements, document.body.dataset.specifics ?? "./specifics.json");
     try {
         if (moduleRef)
             return await showModuleDetail(moduleRef, elements);
@@ -36,20 +37,21 @@ function attachPrintControl() {
     if (!button || panels.length === 0)
         return;
     button.addEventListener("click", () => {
-        const previousStates = panels.map(_panel => _panel.open);
-        panels.forEach(_panel => _panel.open = true);
+        const previousStates = panels.map((_panel) => _panel.open);
+        panels.forEach((_panel) => { _panel.open = true; });
         window.addEventListener("afterprint", () => {
-            panels.forEach((_panel, _index) => _panel.open = previousStates[_index]);
+            panels.forEach((_panel, _index) => { _panel.open = previousStates[_index]; });
         }, { once: true });
         window.print();
     });
 }
-function attachSpecificsPanel(_elements) {
+function attachSpecificsPanel(_elements, _reference) {
     const panel = _elements.specificsPanel;
     const target = _elements.specificsTarget;
     if (!panel || !target)
         return;
-    void loadSpecifics(target, "./specifics.json", "h2");
+    void loadProgrammeMetadata(_reference);
+    void loadSpecifics(target, _reference, "h2");
 }
 async function showModuleDetail(_reference, _elements) {
     if (_elements.detailView)
@@ -70,7 +72,7 @@ async function showProgramme(_elements) {
     if (!_elements.curriculumTarget)
         return;
     const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
-    const references = [...new Set(semesters.flatMap(_semester => _semester.modules))];
+    const references = [...new Set(semesters.flatMap((_semester) => _semester.modules))];
     const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(_elements.curriculumTarget, modules, curriculum);
     attachCurriculumPanel(_elements, modules, curriculum);
@@ -92,9 +94,11 @@ function attachDetailsPanel(_elements, _semesters, _modules) {
 }
 function renderPageError(_error, _moduleRef, _elements) {
     const message = _error instanceof Error ? _error.message : String(_error);
-    if (_elements.detailTarget && _moduleRef)
+    if (_elements.detailTarget && _moduleRef) {
         renderError(_elements.detailTarget, "Module not found", message);
-    if (_elements.curriculumTarget && !_moduleRef)
+    }
+    if (_elements.curriculumTarget && !_moduleRef) {
         renderError(_elements.curriculumTarget, "Study structure could not be loaded", message);
+    }
 }
 void start();

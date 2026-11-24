@@ -2,7 +2,8 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const ignoredDirectories = new Set([".git", "node_modules"]);
-const jsonFiles = await findJsonFiles(process.cwd());
+const repositoryRoot = path.resolve(process.cwd(), "..");
+const jsonFiles = await findJsonFiles(repositoryRoot);
 let moduleCount = 0;
 let errorCount = 0;
 let warningCount = 0;

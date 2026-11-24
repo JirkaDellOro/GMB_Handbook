@@ -1,0 +1,14 @@
+[
+  {
+    "path": "./GMB/index.html",
+    "specifics": "./GMB/specifics.json"
+  },
+  {
+    "path": "./GMBcorrect/index.html",
+    "specifics": "./GMB/specifics.json"
+  },
+  {
+    "path": "./AIN/index.html",
+    "specifics": "./AIN/specifics.json"
+  }
+]
