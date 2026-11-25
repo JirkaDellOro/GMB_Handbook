@@ -1,7 +1,7 @@
-import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
+import { loadCurriculum, loadModule } from "./modules.js";
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderStudyTables } from "./render.js";
 import { loadProgrammeMetadata, loadSpecifics } from "./specifics.js";
-import type { ModuleData, SemesterGroup } from "./types.js";
+import type { CurriculumData, ModuleData, SemesterGroup } from "./types.js";
 
 interface AppElements {
   curriculumView: HTMLElement | null;
@@ -82,7 +82,8 @@ async function showProgramme(_elements: AppElements): Promise<void> {
   if (_elements.curriculumView) _elements.curriculumView.hidden = false;
   if (_elements.detailView) _elements.detailView.hidden = true;
   if (!_elements.curriculumTarget) return;
-  const [semesters, curriculum]: [SemesterGroup[], Awaited<ReturnType<typeof loadCurriculum>>] = await Promise.all([loadManifest(), loadCurriculum()]);
+  const curriculum: CurriculumData = await loadCurriculum();
+  const semesters: SemesterGroup[] = curriculum.semesters;
   const references: string[] = [...new Set(semesters.flatMap((_semester: SemesterGroup): string[] => _semester.modules))];
   const modules: ModuleData[] = await Promise.all(references.map(loadModule));
   renderCurriculum(_elements.curriculumTarget, modules, curriculum);

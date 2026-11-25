@@ -1,4 +1,4 @@
-import { loadCurriculum, loadManifest, loadModule } from "./modules.js";
+import { loadCurriculum, loadModule } from "./modules.js";
 import { renderCurriculum, renderError, renderModuleDetail, renderModuleDetails, renderStudyTables } from "./render.js";
 import { loadProgrammeMetadata, loadSpecifics } from "./specifics.js";
 async function start() {
@@ -71,7 +71,8 @@ async function showProgramme(_elements) {
         _elements.detailView.hidden = true;
     if (!_elements.curriculumTarget)
         return;
-    const [semesters, curriculum] = await Promise.all([loadManifest(), loadCurriculum()]);
+    const curriculum = await loadCurriculum();
+    const semesters = curriculum.semesters;
     const references = [...new Set(semesters.flatMap((_semester) => _semester.modules))];
     const modules = await Promise.all(references.map(loadModule));
     renderCurriculum(_elements.curriculumTarget, modules, curriculum);

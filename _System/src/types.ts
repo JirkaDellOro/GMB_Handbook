@@ -42,6 +42,26 @@ export interface ModuleData {
   reading_list?: ReadingItem[];
 }
 export interface SemesterGroup { title: string; modules: string[] }
+export interface CurriculumModuleEntry {
+  id: string;
+  file: string;
+  column?: string;
+  block?: number | null;
+  style?: "project" | "internship";
+  span?: number;
+  track?: string;
+}
+export interface CurriculumSpecialization { title: string; modules: CurriculumModuleEntry[] }
+export type CurriculumItem = CurriculumModuleEntry | CurriculumSpecialization;
+export interface CurriculumSemester { semester: number; modules: CurriculumItem[] }
+export interface CurriculumStage { title: string; semesters: CurriculumSemester[] }
+export interface CurriculumFileData {
+  programmeName?: string;
+  tableHeadings?: CurriculumTableHeadings;
+  studyTables?: StudyTableRange[];
+  columns: string[];
+  studyStages: CurriculumStage[];
+}
 export interface CurriculumPlacement {
   column: string;
   semester?: number;
@@ -49,9 +69,9 @@ export interface CurriculumPlacement {
   style?: "project" | "internship";
   span?: number;
   track?: string;
-  moduleNumber?: number;
+  specializationTitle?: string;
 }
-export interface CurriculumModulePosition extends Partial<CurriculumPlacement> { placements?: CurriculumPlacement[] }
+export interface CurriculumModulePosition { placements: CurriculumPlacement[] }
 export interface StudyTableRange {
   number: 2 | 3;
   firstSemester: number;
@@ -61,10 +81,12 @@ export interface StudyTableRange {
 export interface CurriculumTableHeadings { structure?: string; foundation?: string; advanced?: string }
 export interface StudyStage { title: string; firstSemester: number; lastSemester: number }
 export interface CurriculumData {
+  programmeName?: string;
   tableHeadings?: CurriculumTableHeadings;
   studyTables?: StudyTableRange[];
   columns: string[];
   studyStages: StudyStage[];
+  semesters: SemesterGroup[];
   modules: Record<string, CurriculumModulePosition>;
 }
 export interface SpecificSubparagraph { text: string }
@@ -82,13 +104,13 @@ export interface ProgrammeEntry { path: string; specifics: string }
 export type DetailGridValue = string | number | boolean | null | undefined;
 export type DetailGridRow = DetailGridValue[];
 export type DetailGridRows = DetailGridRow[];
-export interface StudyTableEntry { module: ModuleData; moduleNumber?: number; track?: string }
+export interface StudyTableEntry { module: ModuleData; block?: number | null; specializationTitle?: string; track?: string }
 export interface CurriculumCellEntry {
   module: ModuleData;
   semester: number;
   block?: number | null;
   style: string;
   track?: string;
-  moduleNumber?: number;
+  specializationTitle?: string;
 }
 export interface CurriculumCell { row: number; gridColumn: string; entries: CurriculumCellEntry[] }

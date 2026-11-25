@@ -58,12 +58,12 @@ function createCurriculumCells(_modules, _curriculum) {
         const position = _curriculum.modules[module.sourceRef ?? module.id];
         if (!position)
             return;
-        const placements = position.placements ?? [position];
-        addModulePlacements(cells, module, position, placements, _curriculum.columns);
+        const placements = position.placements;
+        addModulePlacements(cells, module, placements, _curriculum.columns);
     });
     return cells;
 }
-function addModulePlacements(_cells, _module, _position, _placements, _columns) {
+function addModulePlacements(_cells, _module, _placements, _columns) {
     _placements.forEach((placement) => {
         const semester = Number(placement.semester ?? _module.semester);
         const column = _columns.indexOf(placement.column);
@@ -73,18 +73,18 @@ function addModulePlacements(_cells, _module, _position, _placements, _columns) 
         const gridColumn = placement.span ? `${column + 2} / span ${placement.span}` : String(column + 2);
         const key = `${row}:${gridColumn}`;
         const cell = _cells.get(key) ?? { row, gridColumn, entries: [] };
-        cell.entries.push(createCurriculumCellEntry(_module, semester, placement, _position.style));
+        cell.entries.push(createCurriculumCellEntry(_module, semester, placement));
         _cells.set(key, cell);
     });
 }
-function createCurriculumCellEntry(_module, _semester, _placement, _positionStyle) {
+function createCurriculumCellEntry(_module, _semester, _placement) {
     return {
         module: _module,
         semester: _semester,
         block: _placement.block,
-        style: _placement.style ?? _positionStyle ?? "",
+        style: _placement.style ?? "",
         track: _placement.track,
-        moduleNumber: _placement.moduleNumber
+        specializationTitle: _placement.specializationTitle
     };
 }
 function appendCurriculumCells(_grid, _cells) {
@@ -98,17 +98,17 @@ function appendCurriculumCells(_grid, _cells) {
     });
 }
 function isSpecializationCell(_cell) {
-    return _cell.entries.length > 1 && _cell.entries.every((_entry) => _entry.moduleNumber !== undefined && Boolean(_entry.track));
+    return _cell.entries.length > 1 && _cell.entries.every((_entry) => _entry.block !== undefined && Boolean(_entry.track));
 }
 function createSpecializationCell(_cell) {
     const container = createElement("div", "curriculum-specialization");
     container.style.gridColumn = _cell.gridColumn;
     container.style.gridRow = String(_cell.row);
-    container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].moduleNumber}`));
+    container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].block}`));
     _cell.entries.forEach((entry) => {
         const link = createElement("a", "curriculum-specialization-track", entry.track);
         link.href = createModuleUrl(entry.module);
-        link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
+        link.setAttribute("aria-label", `Vertiefungsmodul ${entry.block}, ${entry.track}: ${entry.module.title}`);
         container.append(link);
     });
     return container;
@@ -140,9 +140,9 @@ function createModuleCellLink(_entry, _cell, _isStacked) {
     return link;
 }
 function appendModulePlacementLabel(_link, _entry) {
-    if (!_entry.track && !_entry.moduleNumber)
+    if (!_entry.track && !_entry.specializationTitle)
         return;
-    const label = [_entry.moduleNumber ? `Vertiefungsmodul ${_entry.moduleNumber}` : "", _entry.track ?? ""].filter(Boolean).join(" · ");
+    const label = [_entry.specializationTitle ?? "", _entry.track ?? ""].filter(Boolean).join(" · ");
     appendText(_link, "small", label);
 }
 function appendModuleBlockLabel(_link, _entry) {
@@ -156,7 +156,7 @@ function createModuleUrl(_module) {
     return `./index.html?module=${encodeURIComponent(reference)}`;
 }
 function hasBlockInformation(_curriculum) {
-    return Object.values(_curriculum.modules).some((_position) => _position.block !== undefined || Boolean(_position.placements?.some((_placement) => _placement.block !== undefined)));
+    return Object.values(_curriculum.modules).some((_position) => Boolean(_position.placements?.some((_placement) => _placement.block !== undefined)));
 }
 function appendCurriculumLegend(_target) {
     const legend = createElement("p");
@@ -208,7 +208,7 @@ function calculateSemesterCreditTotal(_modules, _semester, _curriculum) {
     let total = 0;
     _modules.forEach((module) => {
         const placement = getModulePlacement(module, _semester, _curriculum);
-        const group = placement?.moduleNumber ? `choice-${placement.moduleNumber}` : module.id;
+        const group = placement?.specializationTitle && placement.block !== undefined ? `choice-${placement.block}` : module.id;
         if (counted.has(group))
             return;
         counted.add(group);
@@ -239,7 +239,7 @@ function appendStudyTableHeading(_section, _range, _curriculum) {
 }
 function createSemesterTable(_semester, _tableNumber, _modules, _semesterCredits, _curriculum) {
     const entries = createStudyTableEntries(_modules, _semester, _curriculum);
-    const hasBlocks = entries.some((_entry) => _entry.moduleNumber !== undefined);
+    const hasBlocks = entries.some((_entry) => _entry.specializationTitle !== undefined);
     const card = createElement("section");
     const grid = createStudyDataGrid(_semester, _tableNumber, hasBlocks);
     appendStudyTableRows(grid, entries, hasBlocks);
@@ -247,10 +247,13 @@ function createSemesterTable(_semester, _tableNumber, _modules, _semesterCredits
     return card;
 }
 function createStudyTableEntries(_modules, _semester, _curriculum) {
-    return _modules.map((_module) => {
+    const entries = _modules.map((_module) => {
         const placement = getModulePlacement(_module, _semester, _curriculum);
-        return { module: _module, moduleNumber: placement?.moduleNumber, track: placement?.track };
+        return { module: _module, block: placement?.block, specializationTitle: placement?.specializationTitle, track: placement?.track };
     });
+    return entries.some((_entry) => _entry.specializationTitle !== undefined)
+        ? entries.sort((_left, _right) => Number(_left.block ?? 99) - Number(_right.block ?? 99))
+        : entries;
 }
 function createStudyDataGrid(_semester, _tableNumber, _hasBlocks) {
     const className = _hasBlocks ? "study-data-grid study-data-grid--blocks" : "study-data-grid";
@@ -278,7 +281,7 @@ function appendStudyTableRows(_grid, _entries, _hasBlocks) {
     let gridRow = 2;
     for (let index = 0; index < _entries.length;) {
         const blockEntries = collectBlockEntries(_entries, index);
-        const blockNumber = blockEntries[0].moduleNumber;
+        const blockNumber = blockEntries[0].specializationTitle !== undefined ? blockEntries[0].block ?? undefined : undefined;
         appendStudyBlockLabel(_grid, blockNumber, gridRow, blockEntries);
         blockEntries.forEach((entry) => {
             gridRow += appendStudyModule(_grid, entry, blockNumber, _hasBlocks, gridRow);
@@ -288,11 +291,11 @@ function appendStudyTableRows(_grid, _entries, _hasBlocks) {
 }
 function collectBlockEntries(_entries, _startIndex) {
     const first = _entries[_startIndex];
-    if (first.moduleNumber === undefined)
+    if (first.specializationTitle === undefined || first.block === undefined || first.block === null)
         return [first];
     const blockEntries = [first];
     let index = _startIndex + 1;
-    while (index < _entries.length && _entries[index].moduleNumber === first.moduleNumber) {
+    while (index < _entries.length && _entries[index].specializationTitle !== undefined && _entries[index].block === first.block) {
         blockEntries.push(_entries[index]);
         index++;
     }

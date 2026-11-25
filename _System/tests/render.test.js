@@ -52,9 +52,11 @@ function createCurriculum(_withBlockInfo) {
     studyStages: [],
     modules: {
       "modules/test.json": {
-        column: "SWE",
-        semester: 1,
-        ...(_withBlockInfo ? { block: 1 } : {})
+        placements: [{
+          column: "SWE",
+          semester: 1,
+          ...(_withBlockInfo ? { block: 1 } : {})
+        }]
       }
     }
   };
@@ -184,4 +186,28 @@ test("specifics pages use centralized programme metadata", async () => {
     assert.doesNotMatch(page, /Games &amp; Immersive Media|B\.A\.|SPO Version 11/);
   }
   assert.match(gmbCorrect, /data-specifics="\.\.\/GMB\/specifics\.json"/);
+});
+
+test("curriculum data contains nested semester module structures without manifests", async () => {
+  for (const programme of ["AIN", "GMB", "GMBcorrect"]) {
+    const curriculum = JSON.parse(await readFile(new URL(`../../${programme}/curriculum.json`, import.meta.url), "utf8"));
+    assert.ok(curriculum.studyStages.every(_stage => Array.isArray(_stage.semesters)));
+    assert.ok(curriculum.studyStages.flatMap(_stage => _stage.semesters).every(_semester => Number.isInteger(_semester.semester) && Array.isArray(_semester.modules)));
+    assert.ok(curriculum.studyStages.flatMap(_stage => _stage.semesters).flatMap(_semester => _semester.modules).every(_item => "file" in _item || ("title" in _item && Array.isArray(_item.modules))));
+    await assert.rejects(readFile(new URL(`../../${programme}/manifest.json`, import.meta.url)));
+  }
+});
+test("AIN curriculum nests modules under the three official specializations", async () => {
+  const curriculum = JSON.parse(await readFile(new URL("../../AIN/curriculum.json", import.meta.url), "utf8"));
+  const groups = curriculum.studyStages.flatMap(_stage => _stage.semesters).flatMap(_semester => _semester.modules).filter(_item => "title" in _item);
+  assert.deepEqual([...new Set(groups.map(_group => _group.title))], ["Software Engineering", "Applied Artificial Intelligence", "Medieninformatik"]);
+  assert.ok(groups.every(_group => _group.modules.every(_module => _module.block !== undefined && _module.track)));
+});
+
+test("curriculum semester groups are ordered chronologically", async () => {
+  for (const programme of ["AIN", "GMB", "GMBcorrect"]) {
+    const curriculum = JSON.parse(await readFile(new URL(`../../${programme}/curriculum.json`, import.meta.url), "utf8"));
+    const semesters = curriculum.studyStages.flatMap(_stage => _stage.semesters).map(_semester => _semester.semester);
+    assert.deepEqual(semesters, [1, 2, 3, 4, 5, 6, 7]);
+  }
 });

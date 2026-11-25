@@ -7,8 +7,8 @@ Repository: https://github.com/JirkaDellOro/GMB_Handbook
 
 ## 1. Inspect the live repository first
 Use the public GitHub interface before extracting data. Do not rely on this instruction alone for the current schema. Read:
-- `AIN/specifics.json`, `AIN/manifest.json`, `AIN/curriculum.json`, one AIN module JSON
-- `GMB/specifics.json`, `GMB/manifest.json`, `GMB/curriculum.json`, one GMB module JSON
+- `AIN/specifics.json`, `AIN/curriculum.json`, one AIN module JSON
+- `GMB/specifics.json`, `GMB/curriculum.json`, one GMB module JSON
 - `_System/src/types.ts`, `_System/programmes.json`, `AIN/index.html` or `GMB/index.html`
 
 AIN and GMB have different curriculum layouts. Choose the closest structural template based on the PDF. Use GMBcorrect only if explicitly requested.
@@ -19,7 +19,6 @@ Create a folder named with the acronym for the programme, e.g. `ABC/`:
 ABC/
   index.html
   specifics.json
-  manifest.json
   curriculum.json
   assets/images/cover-photo.jpg
   modules/module-id.json
@@ -62,11 +61,18 @@ Do not omit difficult content silently. Revisit unclear pages and cross-check al
 ### specifics.json
 Follow `SpecificsData` in `_System/src/types.ts`: `title`, `programme` (official name including degree), `section`, `code`, `spoVersion`, `paragraphs` (each with `text` and optional `items`), optional `lastChange`. The display name and degree are derived from `specifics.json.programme`; do not hardcode them in HTML.
 
-### manifest.json
-An array of semester groups, each with `title` and ordered `modules` references, e.g. `modules/algorithmen.json`. Include all modules in the correct semester and order. Do not list duplicates unless the official source explicitly requires them.
-
 ### curriculum.json
-Follow the live `CurriculumData` interface: `columns`, `studyStages` (`title`, `firstSemester`, `lastSemester`) and `modules` keyed by exact manifest references. Placements use supported fields: `column`, `semester`, optional `block`, `style` (`project` or `internship`), `span`, `track`, `moduleNumber`, or `placements` for multiple placements. Follow the chosen live layout. Do not invent placements. Check all manifest/curriculum references for consistency.
+Follow the live `CurriculumFileData` interface in `_System/src/types.ts`. This single file contains the complete study-plan hierarchy and replaces the former separate manifest.
+
+Use the hierarchy:
+- `studyStages`: ordered study sections, each with `title` and `semesters`
+- semester: `semester` number and ordered `modules`
+- simple module entry: `id`, `file`, optional `column`, `block`, `style` (`project` or `internship`), `span`, `track`
+- specialization group: `title` and nested `modules` array containing simple module entries
+
+A specialization group is identified by having both `title` and `modules`; no extra type field or group ID is needed. Use a group only when the PDF distinguishes a specialization/track. Otherwise put simple module entries directly in the semester's `modules` array. Presentation columns are layout metadata, not a hierarchy level.
+
+Preserve semester order, module order, specialization assignments and optional block sequence. The module `id` must match the filename stem; `file` is a relative path such as `modules/algorithmen.json`. Check every referenced file exists. Do not invent placements.
 
 ### Module JSON
 Required: `id`, `title`. Follow exact names and types in `_System/src/types.ts` and live examples. Supported groups include:
@@ -85,9 +91,9 @@ Use a current programme page as template. Preserve expected element IDs and shar
 ## 6. Validate before delivery
 - Parse every JSON file as UTF-8 JSON.
 - Check every module filename stem against its `id`.
-- Check every manifest path resolves to a module file.
-- Check curriculum keys exactly match manifest references.
-- Check all modules are represented in the manifest and placed as required.
+- Check every module `file` reference in `curriculum.json` resolves to a module file.
+- Check every module ID matches its referenced filename.
+- Check all modules are represented in the curriculum in the correct semester, order and specialization.
 - Check semester order, tracks, columns and placements against the PDF.
 - Reconcile module credits and component credits with the source; report discrepancies, do not silently fix them.
 - Check all module components, outcomes, assessments, regulations and other source content were transferred.

@@ -64,13 +64,13 @@ function createCurriculumCells(_modules: ModuleData[], _curriculum: CurriculumDa
   _modules.forEach((module: ModuleData): void => {
     const position: CurriculumData["modules"][string] | undefined = _curriculum.modules[module.sourceRef ?? module.id];
     if (!position) return;
-    const placements: CurriculumPlacement[] = position.placements ?? [position as CurriculumPlacement];
-    addModulePlacements(cells, module, position, placements, _curriculum.columns);
+    const placements: CurriculumPlacement[] = position.placements;
+    addModulePlacements(cells, module, placements, _curriculum.columns);
   });
   return cells;
 }
 
-function addModulePlacements(_cells: Map<string, CurriculumCell>, _module: ModuleData, _position: CurriculumData["modules"][string], _placements: CurriculumPlacement[], _columns: string[]): void {
+function addModulePlacements(_cells: Map<string, CurriculumCell>, _module: ModuleData, _placements: CurriculumPlacement[], _columns: string[]): void {
   _placements.forEach((placement: CurriculumPlacement): void => {
     const semester: number = Number(placement.semester ?? _module.semester);
     const column: number = _columns.indexOf(placement.column);
@@ -79,19 +79,19 @@ function addModulePlacements(_cells: Map<string, CurriculumCell>, _module: Modul
     const gridColumn: string = placement.span ? `${column + 2} / span ${placement.span}` : String(column + 2);
     const key: string = `${row}:${gridColumn}`;
     const cell: CurriculumCell = _cells.get(key) ?? { row, gridColumn, entries: [] };
-    cell.entries.push(createCurriculumCellEntry(_module, semester, placement, _position.style));
+    cell.entries.push(createCurriculumCellEntry(_module, semester, placement));
     _cells.set(key, cell);
   });
 }
 
-function createCurriculumCellEntry(_module: ModuleData, _semester: number, _placement: CurriculumPlacement, _positionStyle?: string): CurriculumCell["entries"][number] {
+function createCurriculumCellEntry(_module: ModuleData, _semester: number, _placement: CurriculumPlacement): CurriculumCell["entries"][number] {
   return {
     module: _module,
     semester: _semester,
     block: _placement.block,
-    style: _placement.style ?? _positionStyle ?? "",
+    style: _placement.style ?? "",
     track: _placement.track,
-    moduleNumber: _placement.moduleNumber
+    specializationTitle: _placement.specializationTitle
   };
 }
 
@@ -106,18 +106,18 @@ function appendCurriculumCells(_grid: HTMLElement, _cells: Map<string, Curriculu
 }
 
 function isSpecializationCell(_cell: CurriculumCell): boolean {
-  return _cell.entries.length > 1 && _cell.entries.every((_entry: CurriculumCell["entries"][number]): boolean => _entry.moduleNumber !== undefined && Boolean(_entry.track));
+  return _cell.entries.length > 1 && _cell.entries.every((_entry: CurriculumCell["entries"][number]): boolean => _entry.block !== undefined && Boolean(_entry.track));
 }
 
 function createSpecializationCell(_cell: CurriculumCell): HTMLElement {
   const container: HTMLDivElement = createElement("div", "curriculum-specialization");
   container.style.gridColumn = _cell.gridColumn;
   container.style.gridRow = String(_cell.row);
-  container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].moduleNumber}`));
+  container.append(createElement("strong", undefined, `Vertiefungsmodul ${_cell.entries[0].block}`));
   _cell.entries.forEach((entry: CurriculumCell["entries"][number]): void => {
     const link: HTMLAnchorElement = createElement("a", "curriculum-specialization-track", entry.track);
     link.href = createModuleUrl(entry.module);
-    link.setAttribute("aria-label", `Vertiefungsmodul ${entry.moduleNumber}, ${entry.track}: ${entry.module.title}`);
+    link.setAttribute("aria-label", `Vertiefungsmodul ${entry.block}, ${entry.track}: ${entry.module.title}`);
     container.append(link);
   });
   return container;
@@ -152,8 +152,8 @@ function createModuleCellLink(_entry: CurriculumCell["entries"][number], _cell: 
 }
 
 function appendModulePlacementLabel(_link: HTMLElement, _entry: CurriculumCell["entries"][number]): void {
-  if (!_entry.track && !_entry.moduleNumber) return;
-  const label: string = [_entry.moduleNumber ? `Vertiefungsmodul ${_entry.moduleNumber}` : "", _entry.track ?? ""].filter(Boolean).join(" · ");
+  if (!_entry.track && !_entry.specializationTitle) return;
+  const label: string = [_entry.specializationTitle ?? "", _entry.track ?? ""].filter(Boolean).join(" · ");
   appendText(_link, "small", label);
 }
 
@@ -170,7 +170,7 @@ function createModuleUrl(_module: ModuleData): string {
 
 function hasBlockInformation(_curriculum: CurriculumData): boolean {
   return Object.values(_curriculum.modules).some((_position: CurriculumModulePosition): boolean =>
-    _position.block !== undefined || Boolean(_position.placements?.some((_placement: CurriculumPlacement): boolean => _placement.block !== undefined))
+    Boolean(_position.placements?.some((_placement: CurriculumPlacement): boolean => _placement.block !== undefined))
   );
 }
 
@@ -231,7 +231,7 @@ function calculateSemesterCreditTotal(_modules: ModuleData[], _semester: number,
   let total: number = 0;
   _modules.forEach((module: ModuleData): void => {
     const placement: CurriculumPlacement | undefined = getModulePlacement(module, _semester, _curriculum);
-    const group: string = placement?.moduleNumber ? `choice-${placement.moduleNumber}` : module.id;
+    const group: string = placement?.specializationTitle && placement.block !== undefined ? `choice-${placement.block}` : module.id;
     if (counted.has(group)) return;
     counted.add(group);
     total += Number(module.credits) || 0;
@@ -265,7 +265,7 @@ function appendStudyTableHeading(_section: HTMLElement, _range: StudyTableRange,
 
 function createSemesterTable(_semester: number, _tableNumber: number, _modules: ModuleData[], _semesterCredits: Map<number, number>, _curriculum?: CurriculumData): HTMLElement {
   const entries: StudyTableEntry[] = createStudyTableEntries(_modules, _semester, _curriculum);
-  const hasBlocks: boolean = entries.some((_entry: StudyTableEntry): boolean => _entry.moduleNumber !== undefined);
+  const hasBlocks: boolean = entries.some((_entry: StudyTableEntry): boolean => _entry.specializationTitle !== undefined);
   const card: HTMLElement = createElement("section");
   const grid: HTMLElement = createStudyDataGrid(_semester, _tableNumber, hasBlocks);
   appendStudyTableRows(grid, entries, hasBlocks);
@@ -274,10 +274,13 @@ function createSemesterTable(_semester: number, _tableNumber: number, _modules: 
 }
 
 function createStudyTableEntries(_modules: ModuleData[], _semester: number, _curriculum?: CurriculumData): StudyTableEntry[] {
-  return _modules.map((_module: ModuleData): StudyTableEntry => {
+  const entries: StudyTableEntry[] = _modules.map((_module: ModuleData): StudyTableEntry => {
     const placement: CurriculumPlacement | undefined = getModulePlacement(_module, _semester, _curriculum);
-    return { module: _module, moduleNumber: placement?.moduleNumber, track: placement?.track };
+    return { module: _module, block: placement?.block, specializationTitle: placement?.specializationTitle, track: placement?.track };
   });
+  return entries.some((_entry: StudyTableEntry): boolean => _entry.specializationTitle !== undefined)
+    ? entries.sort((_left: StudyTableEntry, _right: StudyTableEntry): number => Number(_left.block ?? 99) - Number(_right.block ?? 99))
+    : entries;
 }
 
 function createStudyDataGrid(_semester: number, _tableNumber: number, _hasBlocks: boolean): HTMLElement {
@@ -308,7 +311,7 @@ function appendStudyTableRows(_grid: HTMLElement, _entries: StudyTableEntry[], _
   let gridRow: number = 2;
   for (let index: number = 0; index < _entries.length;) {
     const blockEntries: StudyTableEntry[] = collectBlockEntries(_entries, index);
-    const blockNumber: number | undefined = blockEntries[0].moduleNumber;
+    const blockNumber: number | undefined = blockEntries[0].specializationTitle !== undefined ? blockEntries[0].block ?? undefined : undefined;
     appendStudyBlockLabel(_grid, blockNumber, gridRow, blockEntries);
     blockEntries.forEach((entry: StudyTableEntry): void => {
       gridRow += appendStudyModule(_grid, entry, blockNumber, _hasBlocks, gridRow);
@@ -319,10 +322,10 @@ function appendStudyTableRows(_grid: HTMLElement, _entries: StudyTableEntry[], _
 
 function collectBlockEntries(_entries: StudyTableEntry[], _startIndex: number): StudyTableEntry[] {
   const first: StudyTableEntry = _entries[_startIndex];
-  if (first.moduleNumber === undefined) return [first];
+  if (first.specializationTitle === undefined || first.block === undefined || first.block === null) return [first];
   const blockEntries: StudyTableEntry[] = [first];
   let index: number = _startIndex + 1;
-  while (index < _entries.length && _entries[index].moduleNumber === first.moduleNumber) {
+  while (index < _entries.length && _entries[index].specializationTitle !== undefined && _entries[index].block === first.block) {
     blockEntries.push(_entries[index]);
     index++;
   }
