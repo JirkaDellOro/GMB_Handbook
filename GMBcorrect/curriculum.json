@@ -18,32 +18,32 @@
           "modules": [
             {
               "id": "project1",
-              "file": "modules/project1.json",
+              "file": "../GMB/modules/project1.json",
               "column": "Projects",
               "block": 1,
               "style": "project"
             },
             {
               "id": "visual1",
-              "file": "modules/visual1.json",
+              "file": "../GMB/modules/visual1.json",
               "column": "Visual",
               "block": 3
             },
             {
               "id": "theory1",
-              "file": "modules/theory1.json",
+              "file": "../GMB/modules/theory1.json",
               "column": "Theory",
               "block": 2
             },
             {
               "id": "code1",
-              "file": "modules/code1.json",
+              "file": "../GMB/modules/code1.json",
               "column": "Code",
               "block": 4
             },
             {
               "id": "stem1",
-              "file": "modules/stem1.json",
+              "file": "../GMB/modules/stem1.json",
               "column": "STEM",
               "block": null
             }
