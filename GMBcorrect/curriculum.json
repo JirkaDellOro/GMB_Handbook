@@ -22,7 +22,7 @@
     }
   ],
   "modules": {
-    "modules/visual1.json": {
+    "../GMB/modules/visual1.json": {
       "column": "Visual",
       "block": 3
     },
@@ -42,7 +42,7 @@
       "column": "Sound",
       "block": 1
     },
-    "modules/theory1.json": {
+    "../GMB/modules/theory1.json": {
       "column": "Theory",
       "block": 2
     },
@@ -54,7 +54,7 @@
       "column": "Theory",
       "block": 2
     },
-    "modules/stem1.json": {
+    "../GMB/modules/stem1.json": {
       "column": "STEM",
       "block": null
     },
@@ -66,7 +66,7 @@
       "column": "STEM",
       "block": 3
     },
-    "modules/code1.json": {
+    "../GMB/modules/code1.json": {
       "column": "Code",
       "block": 4
     },
@@ -106,7 +106,7 @@
       "column": "Electives",
       "block": null
     },
-    "modules/project1.json": {
+    "../GMB/modules/project1.json": {
       "column": "Projects",
       "block": 1,
       "style": "project"

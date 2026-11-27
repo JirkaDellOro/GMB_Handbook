@@ -2,11 +2,11 @@
   {
     "title": "Semester 1",
     "modules": [
-      "modules/project1.json",
-      "modules/visual1.json",
-      "modules/theory1.json",
-      "modules/code1.json",
-      "modules/stem1.json"
+      "../GMB/modules/project1.json",
+      "../GMB/modules/visual1.json",
+      "../GMB/modules/theory1.json",
+      "../GMB/modules/code1.json",
+      "../GMB/modules/stem1.json"
     ]
   },
   {
