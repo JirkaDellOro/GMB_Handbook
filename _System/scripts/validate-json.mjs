@@ -24,6 +24,9 @@ for (const filePath of jsonFiles) {
     validateModuleId(filePath, data);
     warningCount += reportMissingComponentCredits(filePath, data);
   }
+  if (path.basename(filePath) === "curriculum.json" && ["AIN", "GMB", "GMBcorrect"].includes(path.basename(path.dirname(filePath)))) {
+    validateCurriculum(filePath, data);
+  }
 }
 
 if (errorCount > 0) process.exitCode = 1;
@@ -61,6 +64,41 @@ function reportMissingComponentCredits(_filePath, _module) {
   return 1;
 }
 
+function validateCurriculum(_filePath, _curriculum) {
+  if (!Array.isArray(_curriculum.studyStages) || !Array.isArray(_curriculum.columns)) {
+    reportError(_filePath, "curriculum must define columns and studyStages arrays");
+    return;
+  }
+  for (const stage of _curriculum.studyStages) {
+    if (!stage.title || !Array.isArray(stage.semesters)) {
+      reportError(_filePath, "each study stage must have a title and semesters array");
+      continue;
+    }
+    for (const semester of stage.semesters) {
+      if (!Number.isInteger(semester.semester) || !Array.isArray(semester.modules)) {
+        reportError(_filePath, "each semester must have an integer semester number and modules array");
+        continue;
+      }
+      for (const item of semester.modules) {
+        if (isSpecialization(item)) {
+          if (!item.title || !Array.isArray(item.modules) || item.modules.length === 0) {
+            reportError(_filePath, "specialization groups need a title and non-empty modules array");
+            continue;
+          }
+          item.modules.forEach(module => validateCurriculumModule(_filePath, module));
+        } else validateCurriculumModule(_filePath, item);
+      }
+    }
+  }
+}
+function isSpecialization(_item) {
+  return _item && typeof _item === "object" && "title" in _item && "modules" in _item;
+}
+function validateCurriculumModule(_filePath, _module) {
+  if (!_module || typeof _module !== "object" || !_module.id || !_module.file || path.basename(_module.file, ".json") !== _module.id) {
+    reportError(_filePath, "each module entry must have matching id and file values");
+  }
+}
 function reportError(_filePath, _message) {
   errorCount++;
   console.error(`ERROR ${_filePath}: ${_message}`);

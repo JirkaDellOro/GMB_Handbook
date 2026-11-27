@@ -4,8 +4,8 @@ Read this before working on the project. It transfers project knowledge to a new
 
 ## Repository
 - Repository: https://github.com/JirkaDellOro/GMB_Handbook
-- Authoritative branch: `main`. The former working branch `module-table-data` has been merged; do not assume it is the active development branch.
-- Last verified `main` HEAD when this handover was updated: `04d4e07055f463dcb787da88bd7437123f2cb096`
+- Base branch: `main` (last verified HEAD: `3ed33e741402aab23eebe3e086ad6d48022e7feb`).
+- Current working branch: `module-table-data`. Continue working there until the user explicitly asks to merge or switch branches.
 - Static HFU module-handbook site, published through GitHub Pages.
 - Programme directories: `AIN/`, `GMB/`, `GMBcorrect/`. GMBcorrect is a deliberate parallel/corrected variant and must be preserved.
 - Shared application, styles and assets live in `_System/`.
@@ -16,22 +16,30 @@ Read this before working on the project. It transfers project knowledge to a new
 A programme normally contains:
 - `index.html`: page shell, shared CSS/JS references into `../_System/`
 - `specifics.json`: programme metadata and SPO-specific text
-- `manifest.json`: semester groups and ordered module references
-- `curriculum.json`: study stages, columns and visual placements
+- `curriculum.json`: complete study-plan hierarchy, semester membership, ordered module references and visual placements
 - `modules/*.json`: module descriptions
 - `assets/images/cover-photo.jpg`: cover image
 
-Manifest module references are relative paths such as `modules/code1.json`. Keys in `curriculum.json.modules` must match those references exactly. Each module's `id` must match its filename stem. Cross-programme references can be relative paths such as `../GMB/modules/code1.json`; do not duplicate shared modules without checking first.
+Module references are stored directly in `curriculum.json` as relative paths such as `modules/code1.json`. Each module's `id` must match its filename stem. Cross-programme references can be relative paths such as `../GMB/modules/code1.json`; do not duplicate shared modules without checking first. Programme `manifest.json` files have been removed.
 
 ## Data model
 ### specifics.json
 Follow `SpecificsData` in `_System/src/types.ts`. Main fields: `title`, `programme` (official name including degree), `section`, `code`, `spoVersion`, `paragraphs` (each has `text`, optional `items`), optional `lastChange`. Display name and degree are derived from `specifics.json.programme`. Never hardcode programme name/degree in HTML or shared rendering code.
 
-### manifest.json
-Array of semester groups: `{ "title": "Semester 1", "modules": ["modules/moduleid.json"] }`. Preserve actual order and semester membership.
-
 ### curriculum.json
-Follow `CurriculumData` in the live types. Includes `columns`, `studyStages` (`title`, `firstSemester`, `lastSemester`) and `modules` keyed by exact manifest references. Placements support `column`, `semester`, optional `block`, `style` (`project` or `internship`), `span`, `track`, `moduleNumber`, or multiple entries in `placements`. AIN and GMB use different layouts: use the closest matching live example, not copied academic content.
+Follow the live `CurriculumFileData` and normalized `CurriculumData` types in `_System/src/types.ts`.
+
+The file stores the complete hierarchy:
+- `studyStages`: ordered sections with `title` and `semesters`
+- semester: `semester` number and ordered `modules`
+- a simple module entry: `id`, `file`, optional `column`, `block`, `style`, `span`, `track`
+- a specialization group: `title` and nested `modules` array containing simple module entries
+
+A group is recognized by having both `title` and `modules`; no explicit type field or group ID is needed. The hierarchy is normally **study stage → semester → module**, or **study stage → semester → specialization → module**. Presentation columns are layout metadata, not a content hierarchy.
+
+For AIN the specialization group titles are the official names: Software Engineering, Applied Artificial Intelligence, Medieninformatik. The `track` codes (SWE, AAI, MIN) remain on individual module entries for the existing displays. The former `moduleNumber` is represented as optional `block` on each module entry; it preserves the sequence of specialization modules 1–4 and is not the specialization group title.
+
+There is no separate `manifest.json`. The application normalizes `curriculum.json` into module placements and semester groups for rendering. Keep the data order chronological by semester and preserve module order within each semester. AIN and GMB use different layouts: use the closest matching live example, not copied academic content.
 
 ### Module JSON
 Required: `id`, `title`. Optional fields are defined in `_System/src/types.ts`. Common fields:
@@ -49,14 +57,14 @@ Use exact property names and types from live interfaces and examples. Omit unava
 - `_System/js/*.js`: generated browser JS; keep synchronized with source.
 - `_System/assets/css/`: shared styles.
 - `_System/programmes.json`: programme registry.
-- `_System/scripts/validate-json.mjs`: JSON syntax, module IDs and missing component-credit warnings.
+- `_System/scripts/validate-json.mjs`: JSON syntax, module IDs, nested curriculum structure and missing component-credit warnings.
 - `_System/package.json`: `npm run check` runs build, tests and JSON validation.
 
 Do not edit generated JS independently. After TypeScript changes, build and test. CSS belongs in stylesheets, not TS/JS.
 
 ## Non-negotiable working rules
 - Treat `main` as authoritative unless the user explicitly specifies another branch.
-- Fetch the current `main` HEAD immediately before every GitHub edit.
+- Fetch the current HEAD of the explicitly selected working branch immediately before every GitHub edit.
 - Use compare-and-swap when updating the branch: exact old HEAD as `expected_sha`; never overwrite a newer commit.
 - Inspect relevant files before editing; remembered contents may be stale.
 - Make only requested changes and report exact changed files.
@@ -72,16 +80,16 @@ Do not edit generated JS independently. After TypeScript changes, build and test
 - User pulls changes themselves. Never claim local or deployed success unless verified.
 
 ## GitHub edit procedure
-1. Fetch `https://api.github.com/repos/JirkaDellOro/GMB_Handbook/branches/main`.
+1. Fetch `https://api.github.com/repos/JirkaDellOro/GMB_Handbook/branches/module-table-data`.
 2. Record the current commit SHA and tree SHA.
-3. Fetch and inspect target files from `main`.
+3. Fetch and inspect target files from `module-table-data`.
 4. Create blobs and a tree based on the fetched tree SHA.
 5. Create a commit whose parent is the fetched HEAD.
-6. Update `refs/heads/main` with `expected_sha` equal to that old HEAD.
-7. Fetch `main` again and verify the new HEAD. If compare-and-swap fails, reconcile against the new HEAD; do not blindly retry.
+6. Update `refs/heads/module-table-data` with `expected_sha` equal to that old HEAD.
+7. Fetch the branch again and verify the new HEAD. If compare-and-swap fails, reconcile against the new HEAD; do not blindly retry. Do not modify `main` unless explicitly asked.
 
 ## Current state at handover
-When this file was updated, `main` was at `04d4e07055f463dcb787da88bd7437123f2cb096`. Recent user-approved work repaired truncated AIN module names, improved module-name wrapping, changed module component headings to Component / Type / Language / Contact / Self-study / Class size / CP, tuned widths in Tables 2 and 3 and Methods of Assessment, corrected table backgrounds, and improved responsive wrapping. The user has said the current result is satisfactory for now. Do not revisit without a request.
+The current working branch `module-table-data` contains the unified curriculum model. All three programme `manifest.json` files are removed. AIN uses nested specialization groups for Software Engineering, Applied Artificial Intelligence and Medieninformatik; module sequence numbers are stored as `block`. GMB and GMBcorrect use the same stage → semester → module structure without specialization groups. The app derives semester lists and placement data from `curriculum.json`. Tests and JSON validation were extended for the new schema. The user has not yet asked to merge this work into `main`.
 
 ## Collaboration
 The user is technically experienced and expects concise, precise communication. Avoid generic progress messages, speculative changes and overstated verification. Ask one focused question only when a decision blocks safe work.
